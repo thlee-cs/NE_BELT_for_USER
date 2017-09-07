@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<items version="2" >
+
+    <item
+        is-multidex="false"
+        jar="/Users/kevin/Desktop/NE_BELT_APP-master/achartengine-1.1.0/achartengine-1.1.0.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="9932e3fb9fbe54e80873e77f72a99f79e33b3250">
+        <dex dex="/Users/kevin/Desktop/NE_BELT_APP-master/Application/build/intermediates/pre-dexed/debug/achartengine-1.1.0_6c5d2a142e54f3a1a817a5483ee48826dba0ebfd.jar" />
+    </item>
+
+</items>
