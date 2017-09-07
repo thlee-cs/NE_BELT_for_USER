@@ -121,18 +121,7 @@ public class DeviceControlActivity extends Activity {
     private int[] ecgDataArray = new int[EcgDataListSize];
     private int[] moiDataArray = new int[MoiDataListSize];
 
-//    public long updateTimeMillis;
-//    public static final String STRSAVEPATH = Environment.getExternalStorageDirectory()+"/NE_BELT APP/";
-//    public String filename;
-//
-//    private final String LIST_NAME = "NE_BELT1";
-//    private final String LIST_UUID = "00002902-0000-1000-8000-00805f9b34fb";
-//
-//    public final static UUID UUID_SERVICE_MARGAUXL =
-//            UUID.fromString(SampleGattAttributes.SERVICE_MARGAUXL);
-//    public static String READ = "0783b03e-8535-b5a0-7140-a304d2495cb8";
-//    public static String WRITE = "0783b03e-8535-b5a0-7140-a304d2495cba";
-//    public static String FLOW_CTRL = "0783b03e-8535-b5a0-7140-a304d2495cb9";
+
 
     private static String[] STORAGE_PERMISSION = {
             Manifest.permission.WRITE_EXTERNAL_STORAGE,
@@ -395,65 +384,6 @@ public class DeviceControlActivity extends Activity {
         }
     }
 
-    // If a given GATT characteristic is selected, check for supported features.  This sample
-    // demonstrates 'Read' and 'Notify' features.  See
-    // http://d.android.com/reference/android/bluetooth/BluetoothGatt.html for the complete
-    // list of supported characteristic features.
-//    private final ExpandableListView.OnChildClickListener servicesListClickListner =
-//            new ExpandableListView.OnChildClickListener() {
-//                @Override
-//                public boolean onChildClick(ExpandableListView parent, View v, int groupPosition,
-//                                            int childPosition, long id) {
-//                    if (mGattCharacteristics != null) {
-//                        final BluetoothGattCharacteristic characteristic =
-//                                mGattCharacteristics.get(groupPosition).get(childPosition);
-//                        final int charaProp = characteristic.getProperties();
-//                        Log.e(TAG, String.valueOf(characteristic.getUuid().toString()));
-//                        if (characteristic.getUuid().toString().equals(WRITE)){
-//                            mNotifyCharacteristic_W = characteristic;
-////                            Log.d(TAG, "write");
-//                            SystemClock.sleep(100);
-//                            request_basic();
-//                            SystemClock.sleep(100);
-//                            request_Impedance();
-//                            SystemClock.sleep(100);
-//                            request_Initial();
-//                            SystemClock.sleep(100);
-//                            request_pm();
-//                            SystemClock.sleep(100);
-//                            request_some();
-//                            SystemClock.sleep(100);
-//                            request_start();
-//                            SystemClock.sleep(100);
-////                            mFileManager.createFile("example");
-//                        }
-//                        if ((charaProp | BluetoothGattCharacteristic.PROPERTY_READ) > 0) {
-//                            // If there is an active notification on a characteristic, clear
-//                            // it first so it doesn't update the data field on the user interface.
-////                            if (mNotifyCharacteristic != null) {
-////                                mBluetoothLeService.setCharacteristicNotification(
-////                                        mNotifyCharacteristic, false);
-////                                mNotifyCharacteristic = null;
-////                            }
-////                            mBluetoothLeService.readCharacteristic(characteristic);
-//
-//
-//                            mNotifyCharacteristic = characteristic;
-//                            mBluetoothLeService.setCharacteristicNotification(
-//                                    mNotifyCharacteristic, true);
-//                            mBluetoothLeService.readCharacteristic(characteristic);
-//
-//                        }
-//                        if ((charaProp | BluetoothGattCharacteristic.PROPERTY_NOTIFY) > 0) {
-//                            mNotifyCharacteristic = characteristic;
-////                            mBluetoothLeService.setCharacteristicNotification(
-////                                    characteristic, true);
-//                        }
-//                        return true;
-//                    }
-//                    return false;
-//                }
-//            };
 
     private void clearUI() {
 //        mGattServicesList.setAdapter((SimpleExpandableListAdapter) null);
