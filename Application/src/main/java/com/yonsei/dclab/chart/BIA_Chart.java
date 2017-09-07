@@ -31,7 +31,7 @@ import org.achartengine.renderer.XYSeriesRenderer;
  */
 public class BIA_Chart extends View {
 
-    private final static String TAG = BluetoothLeService.class.getSimpleName();
+    private final static String TAG = BIA_Chart.class.getSimpleName();
     private Context mContext;
 
     public int resid = 0;
@@ -45,8 +45,8 @@ public class BIA_Chart extends View {
     private double MAXBIATime = 10; //250 = 0.250 * 4 * 10 /40
     private double mXAxisMax = MAXBIATime;
 
-    public int staringPoint = 8200;
-    public int yUpDown = 300;
+    public int staringPoint = 8500;
+    public int yUpDown = 1500;
 
     //private double MAXBIAValue = 6000;
     //private double MAXBIAValue = 80000;
@@ -213,7 +213,7 @@ public class BIA_Chart extends View {
 
     public void updateChart(int[] biaVal) {
 
-        Log.d(TAG, String.format("MyDEBUG: Update Chart"));
+//        Log.d(TAG, String.format("MyDEBUG: Update Chart"));
         // if (pause) return;
         mXYSeries.clear();
 

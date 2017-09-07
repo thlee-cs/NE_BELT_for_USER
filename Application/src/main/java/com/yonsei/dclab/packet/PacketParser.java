@@ -48,7 +48,6 @@ public class PacketParser {
         }
     }
 
-//
 //    private void runParser() {
 //
 //        switch (mSTATUS) {
@@ -122,7 +121,7 @@ public class PacketParser {
         else {
             ArrayList<Byte> byteList = mPacketList.get(0);
             mPacketList.remove(0);
-            Log.e(TAG, String.valueOf(mPacketList.size()));
+//            Log.e(TAG, String.valueOf(mPacketList.size()));
             byte[] data = new byte[byteList.size()];
             for(int i = 0; i < data.length; i++) data[i] = byteList.get(i);
             return data;

@@ -63,10 +63,6 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_marginLeft="16dip"
-        android:layout_marginRight="16dip"
-        android:layout_marginTop="8dip"
-        android:layout_marginBottom="20dip"
         android:orientation="horizontal">
 
         <LinearLayout
@@ -178,11 +174,28 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_marginBottom="20dip"
-        android:layout_marginLeft="16dip"
-        android:layout_marginRight="16dip"
-        android:layout_marginTop="8dip"
         android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:orientation="horizontal">
+
+            <EditText
+                android:id="@+id/rot_st"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="2" />
+
+            <EditText
+                android:id="@+id/rot_ed"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="8" />
+        </LinearLayout>
 
         <Button
             android:id="@+id/connect_confirm"
