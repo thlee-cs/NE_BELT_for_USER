@@ -82,7 +82,7 @@ public class FileManager {
         return file.length();
     }
 
-    public void saveData(Packet packet, int NEventMarker) {//, String strVolume
+    public void saveData(Packet packet, int NEventMarker, int BiaMarker) {//, String strVolume
         FileOutputStream fos;
         if(packetLookup != packet.seqNum){
             packetLookup = packet.seqNum;
@@ -91,7 +91,7 @@ public class FileManager {
                 Time now = new Time();
                 now.set(System.currentTimeMillis());
                 String text = "";
-                text += String.format("\nSEQ=%d, NE=%d", packet.seqNum, NEventMarker);
+                text += String.format("\nSEQ=%d, NE=%d, Bia=%d", packet.seqNum, NEventMarker, BiaMarker);
                 for (int i = 0; i < packet.rawData.get(0).size(); i++) {//rawData.get(x).size() == 64
                     text += String.format("\n%d, %d, %d", packet.rawData.get(0).get(i), packet.rawData.get(1).get(i), packet.rawData.get(2).get(i));
                 }

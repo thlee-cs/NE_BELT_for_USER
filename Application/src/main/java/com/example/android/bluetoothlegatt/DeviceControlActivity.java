@@ -86,6 +86,7 @@ public class DeviceControlActivity extends Activity {
     private TextView mTextView_BodyImpedance;
     private TextView mTextView_MoistureSensor;
     private Handler mUpdateDataHandler;
+    private  Handler mRotationHandler;
 
 //    private ExpandableListView mGattServicesList;
     private BluetoothLeService mBluetoothLeService;
@@ -114,7 +115,9 @@ public class DeviceControlActivity extends Activity {
     private int BiaDataListSize = 64 * 4 * 10;
     private int EcgDataListSize = 64 * 4 * 10;
     private int MoiDataListSize = 64 * 4 * 10;
+
     private int NEventMarker = 0;
+    private int BiaMarker = 0;
 
 
     private int[] biaDataArray = new int[BiaDataListSize];
@@ -254,7 +257,7 @@ public class DeviceControlActivity extends Activity {
                     SystemClock.sleep(100);
                     request_start();
                     SystemClock.sleep(100);
-//                    mBluetoothLeService.readCharacteristic(mNotifyCharacteristic);
+                    mRotationHandler.postDelayed(rotationMethod, 0);
                     break;
                 default:
                     break;
@@ -362,7 +365,7 @@ public class DeviceControlActivity extends Activity {
 //                mUpdateDataHandler.postDelayed(updateDataMethod, 5000);
 //            }
 //        }
-        mFileManager.saveData(packet, NEventMarker);
+        mFileManager.saveData(packet, NEventMarker, BiaMarker);
         NEventMarker = 0;
 
         int fileKb = (int) (mFileManager.getFileSize()/1000);
@@ -450,12 +453,12 @@ public class DeviceControlActivity extends Activity {
         bindService(gattServiceIntent, mServiceConnection, BIND_AUTO_CREATE);
         mPacketParser = new PacketParser();
 
-        mFileManager.createFile("Sample");
+        mFileManager.createFile("Sample");// Later, it will be user name.
         Arrays.fill(biaDataArray, 0);
         Arrays.fill(ecgDataArray, 0);
         Arrays.fill(moiDataArray, 0);
 
-
+        mRotationHandler = new Handler();
     }
 
     @Override
@@ -532,6 +535,19 @@ public class DeviceControlActivity extends Activity {
             if (mTextView_BodyImpedance != null) mTextView_BodyImpedance.setText(String.format("%,d", mBiaDataList.get(mBiaDataList.size() - 1)));
             if (mTextView_MoistureSensor != null) mTextView_MoistureSensor.setText(String.format("%,d", mMoiDataList.get(mMoiDataList.size() - 1)));
             mUpdateDataHandler.postDelayed(updateDataMethod, 5000);
+        }
+    };
+
+    int bia_ctrl_time = 0;
+    private Runnable rotationMethod = new Runnable() {
+        public void run() {
+
+            bia_ctrl_time = bia_ctrl_time+2;
+            if (bia_ctrl_time == 2 ) request_bia_on();
+            else if(bia_ctrl_time == 8) request_bia_off();
+            else if(bia_ctrl_time == 10) bia_ctrl_time = 0;
+
+            mRotationHandler.postDelayed(rotationMethod, 2000);
         }
     };
 
@@ -639,6 +655,22 @@ public class DeviceControlActivity extends Activity {
         Log.d(TAG, String.format("0a 00 0000"));
         setMargauxLWrite(new byte[]{(byte) 0x55, (byte) 0xaa, (byte) 0xff, (byte) 0xff,
                 (byte) 0x04, (byte) 0x00, (byte) 0x0A, (byte) 0x00, (byte) 0x00, (byte) 0x00,
+                (byte) 0x44, (byte) 0x99, (byte) 0xee, (byte) 0xee});
+    }
+    public void request_bia_off() {
+        Log.d(TAG, String.format("1B 4001A348 00000000_bia_off"));
+        BiaMarker = 0;
+        setMargauxLWrite(new byte[]{(byte) 0x55, (byte) 0xaa, (byte) 0xff, (byte) 0xff,
+                (byte) 0x04, (byte) 0x00, (byte) 0x1B, (byte) 0x48, (byte) 0xA3, (byte) 0x01, (byte) 0x40,
+                (byte) 0x00, (byte) 0x00, (byte) 0x00, (byte) 0x00,
+                (byte) 0x44, (byte) 0x99, (byte) 0xee, (byte) 0xee});
+    }
+    public void request_bia_on() {
+        Log.d(TAG, String.format("1B 4001A348 00000003_bia_on"));
+        BiaMarker = 1;
+        setMargauxLWrite(new byte[]{(byte) 0x55, (byte) 0xaa, (byte) 0xff, (byte) 0xff,
+                (byte) 0x04, (byte) 0x00, (byte) 0x1B, (byte) 0x48, (byte) 0xA3, (byte) 0x01, (byte) 0x40,
+                (byte) 0x03, (byte) 0x00, (byte) 0x00, (byte) 0x00,
                 (byte) 0x44, (byte) 0x99, (byte) 0xee, (byte) 0xee});
     }
 
