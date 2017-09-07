@@ -77,6 +77,7 @@ public class DeviceControlActivity extends Activity {
     private TextView mDataField;
     private TextView mSaveView;
     private Button mSaveButton;
+    private Button mBiaSetButton;
     private Button mPostureset;
     private Button mStartButton;
     private EditText mWriteport;
@@ -232,6 +233,7 @@ public class DeviceControlActivity extends Activity {
             }
         }
     };
+    int rot_state = 0;
     Button.OnClickListener mClickListener = new View.OnClickListener(){
         @Override
         public void onClick(View v) {
@@ -257,7 +259,17 @@ public class DeviceControlActivity extends Activity {
                     SystemClock.sleep(100);
                     request_start();
                     SystemClock.sleep(100);
-                    mRotationHandler.postDelayed(rotationMethod, 0);
+                    break;
+                case R.id.bia_rot:
+                    if (rot_state == 0){
+                        mRotationHandler.postDelayed(rotationMethod, 2000);
+                        mBiaSetButton.setText("STOP");
+                        rot_state = 1; //on
+                    }else if (rot_state ==1){
+                        mRotationHandler.removeCallbacks(rotationMethod);
+                        mBiaSetButton.setText("BIA set");
+                        rot_state = 0; //off
+                    }
                     break;
                 default:
                     break;
@@ -444,6 +456,8 @@ public class DeviceControlActivity extends Activity {
         mSaveButton.setOnClickListener(mClickListener);
         mStartButton = (Button) findViewById(R.id.start_button);
         mStartButton.setOnClickListener(mClickListener);
+        mBiaSetButton =  (Button) findViewById(R.id.bia_rot);
+        mBiaSetButton.setOnClickListener(mClickListener);
 
         mSaveView = (TextView) findViewById(R.id.save_view);
 
@@ -619,6 +633,7 @@ public class DeviceControlActivity extends Activity {
 
     public void request_Impedance() {
         Log.d(TAG, String.format("0b 74 0500"));
+        BiaMarker = 1;
         setMargauxLWrite(new byte[]{(byte) 0x55, (byte) 0xaa, (byte) 0xff, (byte) 0xff,
                 (byte) 0x04, (byte) 0x00, (byte) 0x0B, (byte) 0x74, (byte) 0x00, (byte) 0x05,
                 (byte) 0x44, (byte) 0x99, (byte) 0xee, (byte) 0xee});
