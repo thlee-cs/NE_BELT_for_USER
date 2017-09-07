@@ -264,11 +264,12 @@ public class DeviceControlActivity extends Activity {
                     if (rot_state == 0){
                         mRotationHandler.postDelayed(rotationMethod, 2000);
                         mBiaSetButton.setText("STOP");
-                        rot_state = 1; //on
+                        rot_state = 1; //rotation on
                     }else if (rot_state ==1){
                         mRotationHandler.removeCallbacks(rotationMethod);
+                        request_bia_on(); //bia on
                         mBiaSetButton.setText("BIA set");
-                        rot_state = 0; //off
+                        rot_state = 0; //rotation off
                     }
                     break;
                 default:
