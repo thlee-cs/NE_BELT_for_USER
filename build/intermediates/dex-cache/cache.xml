@@ -3,12 +3,12 @@
 
     <item
         is-multidex="false"
-        jar="/Users/kevin/Desktop/NE_BELT_APP-master/achartengine-1.1.0/achartengine-1.1.0.jar"
+        jar="/Users/kevin/Documents/NE_BELT/achartengine-1.1.0/achartengine-1.1.0.jar"
         jumboMode="false"
         optimize="true"
         revision="25.0.2"
         sha1="9932e3fb9fbe54e80873e77f72a99f79e33b3250">
-        <dex dex="/Users/kevin/Desktop/NE_BELT_APP-master/Application/build/intermediates/pre-dexed/debug/achartengine-1.1.0_6c5d2a142e54f3a1a817a5483ee48826dba0ebfd.jar" />
+        <dex dex="/Users/kevin/Documents/NE_BELT/Application/build/intermediates/pre-dexed/debug/achartengine-1.1.0_20e301eb9bd63b7dd960040cca07e599ff26a84b.jar" />
     </item>
 
 </items>
