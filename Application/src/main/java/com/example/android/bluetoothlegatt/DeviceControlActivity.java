@@ -121,7 +121,18 @@ public class DeviceControlActivity extends Activity {
     private int[] ecgDataArray = new int[EcgDataListSize];
     private int[] moiDataArray = new int[MoiDataListSize];
 
-
+//    public long updateTimeMillis;
+//    public static final String STRSAVEPATH = Environment.getExternalStorageDirectory()+"/NE_BELT APP/";
+//    public String filename;
+//
+//    private final String LIST_NAME = "NE_BELT1";
+//    private final String LIST_UUID = "00002902-0000-1000-8000-00805f9b34fb";
+//
+//    public final static UUID UUID_SERVICE_MARGAUXL =
+//            UUID.fromString(SampleGattAttributes.SERVICE_MARGAUXL);
+//    public static String READ = "0783b03e-8535-b5a0-7140-a304d2495cb8";
+//    public static String WRITE = "0783b03e-8535-b5a0-7140-a304d2495cba";
+//    public static String FLOW_CTRL = "0783b03e-8535-b5a0-7140-a304d2495cb9";
 
     private static String[] STORAGE_PERMISSION = {
             Manifest.permission.WRITE_EXTERNAL_STORAGE,
@@ -166,7 +177,7 @@ public class DeviceControlActivity extends Activity {
                 mConnected = false;
                 //updateConnectionState(R.string.disconnected);
                 invalidateOptionsMenu();
-                clearUI();
+               // clearUI();
             } else if (BluetoothLeService.ACTION_GATT_SERVICES_DISCOVERED.equals(action)) {
                 // Show all the supported services and characteristics on the user interface.
                 getGattServices(mBluetoothLeService.getSupportedGattServices());

@@ -83,45 +83,45 @@
                     android:id="@+id/textView_HR"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text=" HR ="
+                    android:text=" HR = "
                     android:textAppearance="?android:attr/textAppearanceLarge"
-                    android:textColor="#ffff8a65"
+                    android:textColor="#800000"
                     android:textSize="15dp" />
 
                 <TextView
                     android:id="@+id/textView_heartrate"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="1,234"
+                    android:text="98"
                     android:textAppearance="?android:attr/textAppearanceLarge"
-                    android:textColor="#ffff8a65"
+                    android:textColor="#800000"
                     android:textSize="15dp" />
 
                 <TextView
                     android:id="@+id/textView_BIA"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text=" BIA ="
+                    android:text="         BIA = "
                     android:textAppearance="?android:attr/textAppearanceLarge"
-                    android:textColor="#ffff8a65"
+                    android:textColor="#008b8b"
                     android:textSize="15dp" />
 
                 <TextView
                     android:id="@+id/textView_bodyImpedance"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="1,234"
+                    android:text="3,000"
                     android:textAppearance="?android:attr/textAppearanceLarge"
-                    android:textColor="#ffff8a65"
+                    android:textColor="#008b8b"
                     android:textSize="15dp" />
 
                 <TextView
                     android:id="@+id/textView_Urine"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="   Urine="
+                    android:text="         Urine="
                     android:textAppearance="?android:attr/textAppearanceLarge"
-                    android:textColor="#ffff8a65"
+                    android:textColor="#ffd700"
                     android:textSize="15dp" />
 
                 <TextView
@@ -129,9 +129,9 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:text="1,234"
+                    android:text="8,200"
                     android:textAppearance="?android:attr/textAppearanceLarge"
-                    android:textColor="#ffff8a65"
+                    android:textColor="#ffd700"
                     android:textSize="15dp" />
             </LinearLayout>
 
@@ -168,6 +168,31 @@
         </LinearLayout>
 
     </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginLeft="16dip"
+        android:layout_marginRight="16dip"
+        android:layout_marginTop="8dip"
+        android:layout_marginBottom="20dip"
+        android:orientation="vertical">
+
+        <Button
+            android:id="@+id/connect_confirm"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="연결 상태 확인" />
+
+        <Button
+            android:id="@+id/put_confirm"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="착용 상태 확인" />
+
+        </LinearLayout>
 
 
     <!--<LinearLayout android:orientation="horizontal"-->
