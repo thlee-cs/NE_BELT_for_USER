@@ -191,6 +191,12 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:text="착용 상태 확인" />
+        <Button
+            android:id="@+id/ne_diary"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="야뇨 일지 확인" />
 
     </LinearLayout>
 
