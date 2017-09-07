@@ -73,16 +73,13 @@ public class DeviceControlActivity extends Activity {
     public static final String EXTRAS_DEVICE_NAME = "NE_BELT1";
     public static final String EXTRAS_DEVICE_ADDRESS = "98:2D:68:2D:60:05";
 
-    private TextView mConnectionState;
-    private TextView mDataField;
+
     private TextView mSaveView;
     private Button mSaveButton;
-    private Button mBiaSetButton;
-    private Button mPostureset;
     private Button mStartButton;
+    private Button mBiaSetButton;
     private EditText mRotst;
     private EditText mRoted;
-    private EditText mWriteport;
     private String mDeviceName;
     private String mDeviceAddress;
     private BIA_Chart mBIA_Chart;
@@ -93,23 +90,16 @@ public class DeviceControlActivity extends Activity {
 
 //    private ExpandableListView mGattServicesList;
     private BluetoothLeService mBluetoothLeService;
-//    private BluetoothGattCharacteristic mGattCharMargauxLiteWrite;
     private ArrayList<ArrayList<BluetoothGattCharacteristic>> mGattCharacteristics =
             new ArrayList<ArrayList<BluetoothGattCharacteristic>>();
 
     private boolean mConnected = false;
-
     private FileManager mFileManager;
     private PacketParser mPacketParser;
-
     private Vibrator vibe;
-
     private BluetoothGattCharacteristic mNotifyCharacteristic;
     private BluetoothGattCharacteristic mNotifyCharacteristic_W;
     private BluetoothGattCharacteristic mNotifyCharacteristic_C;
-
-//    private ArrayList<ArrayList<Integer>> mMULDataList = new ArrayList<ArrayList<Integer>>();
-//    private ArrayList<Integer> mMULDataListTemp = new ArrayList<Integer>();
     private ArrayList<Integer> mBiaDataList = new ArrayList<Integer>();
     private ArrayList<Integer> mEcgDataList = new ArrayList<Integer>();
     private ArrayList<Integer> mMoiDataList = new ArrayList<Integer>();
@@ -122,23 +112,9 @@ public class DeviceControlActivity extends Activity {
     private int NEventMarker = 0;
     private int BiaMarker = 0;
 
-
     private int[] biaDataArray = new int[BiaDataListSize];
     private int[] ecgDataArray = new int[EcgDataListSize];
     private int[] moiDataArray = new int[MoiDataListSize];
-
-//    public long updateTimeMillis;
-//    public static final String STRSAVEPATH = Environment.getExternalStorageDirectory()+"/NE_BELT APP/";
-//    public String filename;
-//
-//    private final String LIST_NAME = "NE_BELT1";
-//    private final String LIST_UUID = "00002902-0000-1000-8000-00805f9b34fb";
-//
-//    public final static UUID UUID_SERVICE_MARGAUXL =
-//            UUID.fromString(SampleGattAttributes.SERVICE_MARGAUXL);
-//    public static String READ = "0783b03e-8535-b5a0-7140-a304d2495cb8";
-//    public static String WRITE = "0783b03e-8535-b5a0-7140-a304d2495cba";
-//    public static String FLOW_CTRL = "0783b03e-8535-b5a0-7140-a304d2495cb9";
 
     private static String[] STORAGE_PERMISSION = {
             Manifest.permission.WRITE_EXTERNAL_STORAGE,
@@ -165,25 +141,16 @@ public class DeviceControlActivity extends Activity {
         }
     };
 
-    // Handles various events fired by the Service.
-    // ACTION_GATT_CONNECTED: connected to a GATT server.
-    // ACTION_GATT_DISCONNECTED: disconnected from a GATT server.
-    // ACTION_GATT_SERVICES_DISCOVERED: discovered GATT services.
-    // ACTION_DATA_AVAILABLE: received data from the device.  This can be a result of read
-    //                        or notification operations.
     private final BroadcastReceiver mGattUpdateReceiver = new BroadcastReceiver() {
         @Override
         public void onReceive(Context context, Intent intent) {
             final String action = intent.getAction();
             if (BluetoothLeService.ACTION_GATT_CONNECTED.equals(action)) {
                 mConnected = true;
-                //updateConnectionState(R.string.connected);
                 invalidateOptionsMenu();
             } else if (BluetoothLeService.ACTION_GATT_DISCONNECTED.equals(action)) {
                 mConnected = false;
-                //updateConnectionState(R.string.disconnected);
                 invalidateOptionsMenu();
-               // clearUI();
             } else if (BluetoothLeService.ACTION_GATT_SERVICES_DISCOVERED.equals(action)) {
                 // Show all the supported services and characteristics on the user interface.
                 getGattServices(mBluetoothLeService.getSupportedGattServices());
@@ -206,27 +173,8 @@ public class DeviceControlActivity extends Activity {
                         data = mPacketParser.get();
                         Packet packet_v0 = new Packet(mDeviceName, mDeviceAddress, data);
                         if (packet_v0.isMULdata()){
-//                            Log.d(TAG, "isBIAdata");
-//                            Log.d(TAG, String.format("BIA data length = %d ", packet_v0.rawData.size()));
                             receivedData(packet_v0);
                         }
-
-//                        if (getSyncEndIndex(data)>0){
-//                            byte[] Pdata = mPacketParser.get();
-
-//                            final StringBuilder stringBuilder = new StringBuilder(data.length);
-//                            for (byte byteChar : data)
-//                                stringBuilder.append(String.format("%02X ", byteChar));
-//                            Log.d(TAG, "DATA_AVAILABLE = " + stringBuilder.toString());
-
-//                            Packet packet_v0 = new Packet(mDeviceName, mDeviceAddress, Pdata);
-//                            Log.d(TAG, String.format("ECG data length = %d ", packet_v0.rawData.get(0).size()));
-//                            Log.d(TAG, String.format("BIA data length = %d ", packet_v0.rawData.get(1).size()));
-//                            Log.d(TAG, String.format("Moi data length = %d ", packet_v0.rawData.get(2).size()));
-
-//                            receivedData(packet_v0);
-//                            displayData("%d, %d, %d", packet_v0.rawData.get(0).get(0), packet_v0.rawData.get(1).get(0), packet_v0.rawData.get(2).get(0));
-//                        }
 
                     } catch (Exception e) {
 
@@ -242,9 +190,6 @@ public class DeviceControlActivity extends Activity {
         @Override
         public void onClick(View v) {
             switch (v.getId()) {
-//                case R.id.makefile:
-//                    mFileManager.createFile("example");
-//                    break;
                 case R.id.save:
                     mFileManager.createFile("NE");
                     break;
@@ -297,21 +242,6 @@ public class DeviceControlActivity extends Activity {
     }
 
     public void receivedData(Packet packet) {
-//        for (int j = 0; j < packet.cfgNumCh; j++){
-//            mMULDataListTemp = new ArrayList<Integer>();
-//            for(int i = 0; i < packet.rawData.get(j).size(); i++) mMULDataListTemp.add(packet.rawData.get(j).get(i));
-//            mMULDataList.add(mMULDataListTemp);
-//            while(mMULDataList.get(j).size()>MULDataListSize) mMULDataList.get(j).remove(0);
-//        }
-
-//        int[] ecgDataArray = new int[MULDataListSize];
-//        int[] biaDataArray = new int[MULDataListSize];
-//        int[] moiDataArray = new int[MULDataListSize];
-//        for (int i = 0; i < MULDataListSize; i++) {
-//            mEcgDataList.add(packet.rawData.get(0).get(i));
-//            mBiaDataList.add(packet.rawData.get(1).get(i));
-//            mMoiDataList.add(packet.rawData.get(2).get(i));
-//        }
 
         for (int i = 0; i < MULDataListSize; i++) {
             mEcgDataList.add(packet.rawData.get(0).get(i));
@@ -359,17 +289,6 @@ public class DeviceControlActivity extends Activity {
             }
         }
 
-
-//        if(mChartSelect.equals("BIA")) {
-//            if (mBIA_Chart != null) {
-//               // mBIA_Chart.setPoint(biaDataArray[0]); // set BIA Chart Y scale
-//               // mBIA_Chart.buildRenderer(0xff7d7d7d);
-//                mBIA_Chart.updateChart(biaDataArray);
-//                mUpdateDataHandler = new Handler();
-//                mUpdateDataHandler.postDelayed(updateDataMethod, 5000);
-//            }
-//        }
-
         if (mBIA_Chart != null) {
             // mBIA_Chart.setPoint(ecgDataArray[0]); // set ECG Chart Y scale
             // mBIA_Chart.buildRenderer(0xff7d7d7d);
@@ -378,15 +297,6 @@ public class DeviceControlActivity extends Activity {
             mUpdateDataHandler.postDelayed(updateDataMethod, 5000);
         }
 
-//        else if(mChartSelect.equals("MOISTURE")) {
-//            if (mBIA_Chart != null) {
-//                //mBIA_Chart.setPoint(moiDataArray[0]); // set Moisture Chart Y scale
-//               // mBIA_Chart.buildRenderer(0xff7d7d7d);
-//                mBIA_Chart.updateChart(moiDataArray);
-//                mUpdateDataHandler = new Handler();
-//                mUpdateDataHandler.postDelayed(updateDataMethod, 5000);
-//            }
-//        }
         mFileManager.saveData(packet, NEventMarker, BiaMarker);
         NEventMarker = 0;
 
@@ -420,12 +330,6 @@ public class DeviceControlActivity extends Activity {
         }
     }
 
-
-    private void clearUI() {
-//        mGattServicesList.setAdapter((SimpleExpandableListAdapter) null);
-//        mDataField.setText(R.string.no_data);
-    }
-
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -452,16 +356,7 @@ public class DeviceControlActivity extends Activity {
         mTextView_MoistureSensor = (TextView) findViewById(R.id.textView_moisturesensor);
 
         mFileManager = new FileManager();
-        // Sets up UI references.
-        //((TextView) findViewById(R.id.device_address)).setText(mDeviceAddress);
-//        mGattServicesList = (ExpandableListView) findViewById(R.id.gatt_services_list);
-//        mGattServicesList.setOnChildClickListener(servicesListClickListner);
-        //mConnectionState = (TextView) findViewById(R.id.connection_state);
-        //mDataField = (TextView) findViewById(R.id.data_value);
-        //mWriteport = (EditText) findViewById(R.id.write_port);
 
-        //mMakefile = (Button) findViewById(R.id.makefile);
-        //mMakefile.setOnClickListener(mClickListener);
         mSaveButton = (Button) findViewById(R.id.save);
         mSaveButton.setOnClickListener(mClickListener);
         mStartButton = (Button) findViewById(R.id.start_button);
@@ -491,17 +386,11 @@ public class DeviceControlActivity extends Activity {
     @Override
     protected void onResume() {
         super.onResume();
-//        registerReceiver(mGattUpdateReceiver, makeGattUpdateIntentFilter());
-//        if (mBluetoothLeService != null) {
-//            final boolean result = mBluetoothLeService.connect(mDeviceAddress);
-//            Log.d(TAG, "Connect request result=" + result);
-//        }
     }
 
     @Override
     protected void onPause() {
         super.onPause();
-//        unregisterReceiver(mGattUpdateReceiver);
     }
 
     @Override
@@ -541,21 +430,6 @@ public class DeviceControlActivity extends Activity {
         return super.onOptionsItemSelected(item);
     }
 
-//    private void updateConnectionState(final int resourceId) {
-//        runOnUiThread(new Runnable() {
-//            @Override
-//            public void run() {
-//                mConnectionState.setText(resourceId);
-//            }
-//        });
-//    }
-//
-//    private void displayData(String data, Integer integer, Integer integer1, Integer integer2) {
-//        if (data != null) {
-//            mDataField.setText(data);
-//        }
-//    }
-
     private Runnable updateDataMethod = new Runnable() {
         public void run() {
 
@@ -578,72 +452,6 @@ public class DeviceControlActivity extends Activity {
             mRotationHandler.postDelayed(rotationMethod, 1000);
         }
     };
-
-    // Demonstrates how to iterate through the supported GATT Services/Characteristics.
-    // In this sample, we populate the data structure that is bound to the ExpandableListView
-    // on the UI.
-//    private void displayGattServices(List<BluetoothGattService> gattServices) {
-//        if (gattServices == null) return;
-//        String uuid = null;
-//        String unknownServiceString = getResources().getString(R.string.unknown_service);
-//        String unknownCharaString = getResources().getString(R.string.unknown_characteristic);
-//        ArrayList<HashMap<String, String>> gattServiceData = new ArrayList<HashMap<String, String>>();
-//        ArrayList<ArrayList<HashMap<String, String>>> gattCharacteristicData
-//                = new ArrayList<ArrayList<HashMap<String, String>>>();
-//        mGattCharacteristics = new ArrayList<ArrayList<BluetoothGattCharacteristic>>();
-//
-//        // Loops through available GATT Services.
-//        for (BluetoothGattService gattService : gattServices) {
-//            Log.d(TAG, String.format("BluetoothGattService = %s", gattService.getUuid().toString()));
-//            HashMap<String, String> currentServiceData = new HashMap<String, String>();
-//            uuid = gattService.getUuid().toString();
-//            currentServiceData.put(
-//                    LIST_NAME, SampleGattAttributes.lookup(uuid, unknownServiceString));
-//            currentServiceData.put(LIST_UUID, uuid);
-//
-//            if (SampleGattAttributes.lookup(uuid, unknownServiceString) != getResources().getString(R.string.unknown_service)) {
-//                gattServiceData.add(currentServiceData);
-//
-//                ArrayList<HashMap<String, String>> gattCharacteristicGroupData =
-//                        new ArrayList<HashMap<String, String>>();
-//                List<BluetoothGattCharacteristic> gattCharacteristics =
-//                        gattService.getCharacteristics();
-//                ArrayList<BluetoothGattCharacteristic> charas =
-//                        new ArrayList<BluetoothGattCharacteristic>();
-//
-//
-//                // Loops through available Characteristics.
-//                for (BluetoothGattCharacteristic gattCharacteristic : gattCharacteristics) {
-//                    charas.add(gattCharacteristic);
-//                    HashMap<String, String> currentCharaData = new HashMap<String, String>();
-//                    uuid = gattCharacteristic.getUuid().toString();
-//                    currentCharaData.put(
-//                            LIST_NAME, SampleGattAttributes.lookup(uuid, unknownCharaString));
-//                    currentCharaData.put(LIST_UUID, uuid);
-//                    gattCharacteristicGroupData.add(currentCharaData);
-//                }
-//                mGattCharacteristics.add(charas);
-//                gattCharacteristicData.add(gattCharacteristicGroupData);
-//            }
-//
-//
-//        }
-//
-//        SimpleExpandableListAdapter gattServiceAdapter = new SimpleExpandableListAdapter(
-//                this,
-//                gattServiceData,
-//                android.R.layout.simple_expandable_list_item_2,
-//                new String[] {LIST_NAME, LIST_UUID},
-//                new int[] { android.R.id.text1, android.R.id.text2 },
-//                gattCharacteristicData,
-//                android.R.layout.simple_expandable_list_item_2,
-//                new String[] {LIST_NAME, LIST_UUID},
-//                new int[] { android.R.id.text1, android.R.id.text2 }
-//        );
-//        mGattServicesList.setAdapter(gattServiceAdapter);
-//    }
-//
-//
 
     public void request_Impedance() {
         Log.d(TAG, String.format("0b 74 0500"));
