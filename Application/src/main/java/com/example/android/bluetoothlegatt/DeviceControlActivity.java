@@ -55,6 +55,7 @@ import com.yonsei.dclab.chart.BIA_Chart;
 import com.yonsei.dclab.file.FileManager;
 import com.yonsei.dclab.packet.Packet;
 import com.yonsei.dclab.packet.PacketParser;
+import com.yonsei.dclab.processing.QRSDetector2;
 import com.yonsei.dclab.classification.BeatDetectionAndClassification;
 
 import static com.yonsei.dclab.classification.ECGCODES.NORMAL;
@@ -111,6 +112,10 @@ public class DeviceControlActivity extends Activity {
 
     private int NEventMarker = 0;
     private int BiaMarker = 0;
+
+    private int rot_state = 0;
+    private int rot_st;
+    private int rot_ed;
 
     private int[] biaDataArray = new int[BiaDataListSize];
     private int[] ecgDataArray = new int[EcgDataListSize];
@@ -183,9 +188,6 @@ public class DeviceControlActivity extends Activity {
             }
         }
     };
-    int rot_state = 0;
-    int rot_st;
-    int rot_ed;
     Button.OnClickListener mClickListener = new View.OnClickListener(){
         @Override
         public void onClick(View v) {
@@ -232,14 +234,6 @@ public class DeviceControlActivity extends Activity {
         }
     };
 
-    public int getSyncEndIndex(byte[] mBuffer) {
-        for(int i = 0; i < mBuffer.length - 3; i++) {
-            if (mBuffer[i] == (byte) 0x44 & mBuffer[i + 1] == (byte) 0x99 & mBuffer[i + 2] == (byte) 0xee & mBuffer[i + 3] == (byte) 0xee) {
-                return i;
-            }
-        }
-        return -1;
-    }
 
     public void receivedData(Packet packet) {
 
@@ -274,18 +268,11 @@ public class DeviceControlActivity extends Activity {
         }
 
         //Set Heart rate
-        BeatDetectionAndClassification bdac = OSEAFactory.createBDAC(sampleRate, sampleRate/2);
-        for (int j = 0; j < ecgDataArray.length; j++) {
-            BeatDetectionAndClassification.BeatDetectAndClassifyResult result = bdac.BeatDetectAndClassify(ecgDataArray[j]);
-            if (result.samplesSinceRWaveIfSuccess != 0) {
-                int qrsPosition =  j - result.samplesSinceRWaveIfSuccess;
-                if (result.beatType == UNKNOWN) {
-                    Log.e(TAG,"A unknown beat type was detected at sample: " + qrsPosition);
-                } else if (result.beatType == NORMAL) {
-                    Log.e(TAG,"A normal beat type was detected at sample: " + qrsPosition);
-                } else if (result.beatType == PVC) {
-                    Log.e(TAG,"A premature ventricular contraction was detected at sample: " + qrsPosition);
-                }
+        QRSDetector2 qrsDetector = OSEAFactory.createQRSDetector2(sampleRate);
+        for (int i = 0; i < ecgDataArray.length; i++) {
+            int result = qrsDetector.QRSDet(ecgDataArray[i]);
+            if (result != 0) {
+                Log.w(TAG,"A QRS-Complex was detected at sample: " + (i-result));
             }
         }
 
@@ -301,7 +288,6 @@ public class DeviceControlActivity extends Activity {
         NEventMarker = 0;
 
         int fileKb = (int) (mFileManager.getFileSize()/1000);
-        String tFilesize = String.valueOf(fileKb);
         mSaveView.setText("Storage Time : " + mFileManager.getStorageTime()+"File Size : "+fileKb+" KB");
     }
 
