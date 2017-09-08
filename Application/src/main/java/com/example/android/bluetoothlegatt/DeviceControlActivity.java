@@ -440,15 +440,17 @@ public class DeviceControlActivity extends Activity {
     };
 
     int bia_ctrl_time = 0;
-//    int bia_temp;
+    int bia_temp=0;
     private Runnable rotationMethod = new Runnable() {
         public void run() {
-
-            if (bia_ctrl_time == rot_st ) request_bia_on();
-            else if(bia_ctrl_time == rot_ed) request_bia_off();
-            else if(bia_ctrl_time == 10) bia_ctrl_time = 0;
-
-            bia_ctrl_time = bia_ctrl_time + 1;
+            if (bia_temp == rot_st ) {
+                request_bia_on();
+            }
+            else if(bia_temp == rot_st+rot_ed) {
+                request_bia_off();
+                bia_temp  = -1;
+            }
+            bia_temp = bia_temp + 1;
             mRotationHandler.postDelayed(rotationMethod, 1000);
         }
     };
