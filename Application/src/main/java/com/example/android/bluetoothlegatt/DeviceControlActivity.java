@@ -74,7 +74,7 @@ public class DeviceControlActivity extends Activity {
     public static final String EXTRAS_DEVICE_NAME = "NE_BELT1";
     public static final String EXTRAS_DEVICE_ADDRESS = "98:2D:68:2D:60:05";
 
-
+    private int mfile_Num;
     private TextView mSaveView;
     private Button mSaveButton;
     private Button mStartButton;
@@ -106,9 +106,9 @@ public class DeviceControlActivity extends Activity {
     private ArrayList<Integer> mMoiDataList = new ArrayList<Integer>();
     private int MULDataListSize = 64;
     // 256Hz, 10sec
-    private int BiaDataListSize = 64 * 4 * 10;
-    private int EcgDataListSize = 64 * 4 * 10;
-    private int MoiDataListSize = 64 * 4 * 10;
+    private int BiaDataListSize = 64 * 4 * 10 * 2;
+    private int EcgDataListSize = 64 * 4 * 10 * 2;
+    private int MoiDataListSize = 64 * 4 * 10 * 2;
 
     private int NEventMarker = 0;
     private int BiaMarker = 0;
@@ -193,7 +193,8 @@ public class DeviceControlActivity extends Activity {
         public void onClick(View v) {
             switch (v.getId()) {
                 case R.id.save:
-                    mFileManager.createFile("NE");
+                    mfile_Num = mfile_Num + 1;
+                    mFileManager.createFile("NE _ #" + (mfile_Num));
                     break;
                 case R.id.start_button:
                     Log.d(TAG,"start");
@@ -288,11 +289,16 @@ public class DeviceControlActivity extends Activity {
             mUpdateDataHandler.postDelayed(updateDataMethod, 5000);
         }
 
+
         mFileManager.saveData(packet, NEventMarker, BiaMarker);
         NEventMarker = 0;
 
         int fileKb = (int) (mFileManager.getFileSize()/1000);
         mSaveView.setText("Storage Time : " + mFileManager.getStorageTime()+"File Size : "+fileKb+" KB");
+        if (mFileManager.getMinute() > 29){
+            mfile_Num ++;
+            mFileManager.createFile("NE _ #" + (mfile_Num));// Later, it will be user name.
+        }
     }
 
     private void getGattServices(List<BluetoothGattService> gattServices) {
@@ -365,7 +371,7 @@ public class DeviceControlActivity extends Activity {
         bindService(gattServiceIntent, mServiceConnection, BIND_AUTO_CREATE);
         mPacketParser = new PacketParser();
 
-        mFileManager.createFile("Sample");// Later, it will be user name.
+        mFileManager.createFile("NE _ #" + (mfile_Num));// Later, it will be user name.
         Arrays.fill(biaDataArray, 0);
         Arrays.fill(ecgDataArray, 0);
         Arrays.fill(moiDataArray, 0);

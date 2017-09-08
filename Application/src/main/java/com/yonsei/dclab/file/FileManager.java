@@ -77,6 +77,13 @@ public class FileManager {
         return String.format("%02dh %02dm %02ds", hours, minutes, seconds);
     }
 
+    public int getMinute() {
+        long storageTime = updateTimeMillis - startTimeMillis;
+        int minutes = (int)((storageTime / (1000*60)) % 60);
+        return minutes;
+    }
+
+
     public long getFileSize() {
         File file = file = new File(STRSAVEPATH+filename);
         return file.length();
