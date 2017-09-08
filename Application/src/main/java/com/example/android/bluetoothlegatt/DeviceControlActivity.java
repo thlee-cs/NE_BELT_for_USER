@@ -197,8 +197,8 @@ public class DeviceControlActivity extends Activity {
                     break;
                 case R.id.start_button:
                     Log.d(TAG,"start");
-                    SystemClock.sleep(100);
-                    request_basic();
+//                    SystemClock.sleep(100);
+//                    request_basic();
                     SystemClock.sleep(100);
                     request_Impedance();
                     SystemClock.sleep(100);
@@ -211,7 +211,7 @@ public class DeviceControlActivity extends Activity {
                     request_ecg_gain();
                     SystemClock.sleep(100);
                     request_start();
-                    SystemClock.sleep(100);
+//                    SystemClock.sleep(100);
                     break;
                 case R.id.bia_rot:
                     if (rot_state == 0){
