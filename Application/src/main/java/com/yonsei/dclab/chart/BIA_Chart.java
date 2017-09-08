@@ -46,7 +46,7 @@ public class BIA_Chart extends View {
     private double mXAxisMax = MAXBIATime;
 
     public int staringPoint = 8500;
-    public int yUpDown = 1500;
+    public int yUpDown = 5000;
 
     //private double MAXBIAValue = 6000;
     //private double MAXBIAValue = 80000;

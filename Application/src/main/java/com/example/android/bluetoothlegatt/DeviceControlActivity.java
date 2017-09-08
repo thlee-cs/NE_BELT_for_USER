@@ -234,9 +234,8 @@ public class DeviceControlActivity extends Activity {
         }
     };
 
-
+    int for_count = 0;
     public void receivedData(Packet packet) {
-
         for (int i = 0; i < MULDataListSize; i++) {
             mEcgDataList.add(packet.rawData.get(0).get(i));
             mBiaDataList.add(packet.rawData.get(1).get(i));
@@ -260,6 +259,7 @@ public class DeviceControlActivity extends Activity {
                 moiDataArray[i] = mMoiDataList.get(i);
             }
         }
+
         //Set Urine bell
         if((moiDataArray[0] <= 8300 && moiDataArray[0] >= 7900)||(moiDataArray[255] <= 8300 && moiDataArray[255] >= 7900)||(moiDataArray[511] <= 8300 && moiDataArray[511] >= 7900)||(moiDataArray[766] <= 8300 && moiDataArray[766] >= 7900)||(moiDataArray[1023] <= 8300 && moiDataArray[1023] >= 7900)||(moiDataArray[1278] <= 8300 && moiDataArray[1278] >= 7900)||(moiDataArray[1533] <= 8300 && moiDataArray[1533] >= 7900)||(moiDataArray[1788] <= 8300 && moiDataArray[1788] >= 7900)){
             if((moiDataArray[4] <= 8300 && moiDataArray[4] >= 7900)||(moiDataArray[259] <= 8300 && moiDataArray[259] >= 7900)||(moiDataArray[515] <= 8300 && moiDataArray[515] >= 7900)||(moiDataArray[770] <= 8300 && moiDataArray[770] >= 7900)||(moiDataArray[1027] <= 8300 && moiDataArray[1027] >= 7900)||(moiDataArray[1282] <= 8300 && moiDataArray[1282] >= 7900)||(moiDataArray[1537] <= 8300 && moiDataArray[1537] >= 7900)||(moiDataArray[1792] <= 8300 && moiDataArray[1792] >= 7900))
@@ -269,10 +269,14 @@ public class DeviceControlActivity extends Activity {
 
         //Set Heart rate
         QRSDetector2 qrsDetector = OSEAFactory.createQRSDetector2(sampleRate);
+        for_count= for_count+1;
+        int beat_array [] ;
         for (int i = 0; i < ecgDataArray.length; i++) {
             int result = qrsDetector.QRSDet(ecgDataArray[i]);
             if (result != 0) {
-                Log.w(TAG,"A QRS-Complex was detected at sample: " + (i-result));
+                Log.w(TAG,(for_count)+": A QRS-Complex was detected at sample: " + (i-result));
+                Log.w(TAG," "+(result));
+                ecgDataArray[i-result] = 0;
             }
         }
 
@@ -429,10 +433,11 @@ public class DeviceControlActivity extends Activity {
     int bia_temp=0;
     private Runnable rotationMethod = new Runnable() {
         public void run() {
-            if (bia_temp == rot_st ) {
+            if (bia_temp == 0){
+                request_bia_off();
+            }else if (bia_temp == rot_st ) {
                 request_bia_on();
-            }
-            else if(bia_temp == rot_st+rot_ed) {
+            }else if(bia_temp == rot_st+rot_ed) {
                 request_bia_off();
                 bia_temp  = -1;
             }
