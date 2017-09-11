@@ -1,382 +1,458 @@
 [
     {
-        "merged": "/Users/kevin/Desktop/NE_BELT_APP-master/C:\\Users\\Yeop_DCLab\\Documents\\GitHub\\NE_BELT_APP\\Application\\build\\intermediates\\res\\merged\\debug\\color\\abc_btn_colored_borderless_text_material.xml",
-        "source": "/Users/kevin/Desktop/NE_BELT_APP-master/C:\\Users\\Yeop_DCLab\\.android\\build-cache\\7330c284f0756ea1af22e82431fa83292ba7b697\\output\\res\\color\\abc_btn_colored_borderless_text_material.xml"
+        "merged": "C:\\Users\\Yeop_DCLab\\Documents\\GitHub\\NE_BELT\\Application\\build\\intermediates\\res\\merged\\debug\\color\\abc_primary_text_material_light.xml",
+        "source": "C:\\Users\\Yeop_DCLab\\.android\\build-cache\\7330c284f0756ea1af22e82431fa83292ba7b697\\output\\res\\color\\abc_primary_text_material_light.xml"
     },
     {
-        "merged": "/Users/kevin/Desktop/NE_BELT_APP-master/C:\\Users\\kevin\\Documents\\GIT\\NE_BELT\\C:\\Users\\Yeop_DCLab\\Documents\\GitHub\\BluetoothLeGatt\\Application\\build\\intermediates\\res\\merged\\debug\\color\\abc_hint_foreground_material_light.xml",
-        "source": "/Users/kevin/Desktop/NE_BELT_APP-master/C:\\Users\\kevin\\Documents\\GIT\\NE_BELT\\C:\\Users\\Yeop_DCLab\\.android\\build-cache\\7330c284f0756ea1af22e82431fa83292ba7b697\\output\\res\\color\\abc_hint_foreground_material_light.xml"
+        "merged": "C:\\Users\\Yeop_DCLab\\Documents\\GitHub\\NE_BELT\\Application\\build\\intermediates\\res\\merged\\debug\\color\\switch_thumb_material_dark.xml",
+        "source": "C:\\Users\\Yeop_DCLab\\.android\\build-cache\\7330c284f0756ea1af22e82431fa83292ba7b697\\output\\res\\color\\switch_thumb_material_dark.xml"
     },
     {
-        "merged": "/Users/kevin/Desktop/NE_BELT_APP-master/C:\\Users\\kevin\\Documents\\GIT\\NE_BELT\\C:\\Users\\Yeop_DCLab\\Documents\\GitHub\\BluetoothLeGatt\\Application\\build\\intermediates\\res\\merged\\debug\\color\\abc_search_url_text.xml",
-        "source": "/Users/kevin/Desktop/NE_BELT_APP-master/C:\\Users\\kevin\\Documents\\GIT\\NE_BELT\\C:\\Users\\Yeop_DCLab\\.android\\build-cache\\7330c284f0756ea1af22e82431fa83292ba7b697\\output\\res\\color\\abc_search_url_text.xml"
+        "merged": "C:\\Users\\kevin\\Desktop\\NE_BELT_APP-master\\C:\\Users\\kevin\\Documents\\GIT\\NE_BELT\\Application\\build\\intermediates\\res\\merged\\debug\\color\\abc_secondary_text_material_light.xml",
+        "source": "C:\\Users\\kevin\\Desktop\\NE_BELT_APP-master\\C:\\Users\\kevin\\.android\\build-cache\\0d31f01a5a8303c0a97438928fe79c30d4370616\\output\\res\\color\\abc_secondary_text_material_light.xml"
     },
     {
-        "merged": "/Users/kevin/Desktop/NE_BELT_APP-master/C:\\Users\\kevin\\Documents\\GIT\\NE_BELT\\Application\\build\\intermediates\\res\\merged\\debug\\color\\abc_primary_text_disable_only_material_dark.xml",
-        "source": "/Users/kevin/Desktop/NE_BELT_APP-master/C:\\Users\\kevin\\.android\\build-cache\\0d31f01a5a8303c0a97438928fe79c30d4370616\\output\\res\\color\\abc_primary_text_disable_only_material_dark.xml"
+        "merged": "C:\\Users\\kevin\\Desktop\\NE_BELT_APP-master\\C:\\Users\\Yeop_DCLab\\Documents\\GitHub\\NE_BELT_APP\\Application\\build\\intermediates\\res\\merged\\debug\\color\\abc_tint_switch_thumb.xml",
+        "source": "C:\\Users\\kevin\\Desktop\\NE_BELT_APP-master\\C:\\Users\\Yeop_DCLab\\.android\\build-cache\\7330c284f0756ea1af22e82431fa83292ba7b697\\output\\res\\color\\abc_tint_switch_thumb.xml"
     },
     {
-        "merged": "/Users/kevin/Desktop/NE_BELT_APP-master/C:\\Users\\kevin\\Documents\\GIT\\NE_BELT\\C:\\Users\\Yeop_DCLab\\Documents\\GitHub\\BluetoothLeGatt\\Application\\build\\intermediates\\res\\merged\\debug\\color\\abc_primary_text_material_dark.xml",
-        "source": "/Users/kevin/Desktop/NE_BELT_APP-master/C:\\Users\\kevin\\Documents\\GIT\\NE_BELT\\C:\\Users\\Yeop_DCLab\\.android\\build-cache\\7330c284f0756ea1af22e82431fa83292ba7b697\\output\\res\\color\\abc_primary_text_material_dark.xml"
+        "merged": "C:\\Users\\Yeop_DCLab\\Documents\\GitHub\\NE_BELT\\Application\\build\\intermediates\\res\\merged\\debug\\color\\abc_tint_edittext.xml",
+        "source": "C:\\Users\\Yeop_DCLab\\.android\\build-cache\\7330c284f0756ea1af22e82431fa83292ba7b697\\output\\res\\color\\abc_tint_edittext.xml"
     },
     {
-        "merged": "/Users/kevin/Desktop/NE_BELT_APP-master/C:\\Users\\kevin\\Documents\\GIT\\NE_BELT\\C:\\Users\\Yeop_DCLab\\Documents\\GitHub\\BluetoothLeGatt\\Application\\build\\intermediates\\res\\merged\\debug\\color\\abc_tint_btn_checkable.xml",
-        "source": "/Users/kevin/Desktop/NE_BELT_APP-master/C:\\Users\\kevin\\Documents\\GIT\\NE_BELT\\C:\\Users\\Yeop_DCLab\\.android\\build-cache\\7330c284f0756ea1af22e82431fa83292ba7b697\\output\\res\\color\\abc_tint_btn_checkable.xml"
+        "merged": "C:\\Users\\kevin\\Desktop\\NE_BELT_APP-master\\C:\\Users\\kevin\\Documents\\GIT\\NE_BELT\\Application\\build\\intermediates\\res\\merged\\debug\\color\\abc_tint_btn_checkable.xml",
+        "source": "C:\\Users\\kevin\\Desktop\\NE_BELT_APP-master\\C:\\Users\\kevin\\.android\\build-cache\\0d31f01a5a8303c0a97438928fe79c30d4370616\\output\\res\\color\\abc_tint_btn_checkable.xml"
     },
     {
-        "merged": "/Users/kevin/Desktop/NE_BELT_APP-master/C:\\Users\\Yeop_DCLab\\Documents\\GitHub\\NE_BELT_APP\\Application\\build\\intermediates\\res\\merged\\debug\\color\\abc_tint_btn_checkable.xml",
-        "source": "/Users/kevin/Desktop/NE_BELT_APP-master/C:\\Users\\Yeop_DCLab\\.android\\build-cache\\7330c284f0756ea1af22e82431fa83292ba7b697\\output\\res\\color\\abc_tint_btn_checkable.xml"
+        "merged": "C:\\Users\\kevin\\Documents\\NE_BELT\\Application\\build\\intermediates\\res\\merged\\debug\\color\\abc_secondary_text_material_light.xml",
+        "source": "C:\\Users\\kevin\\.android\\build-cache\\0d31f01a5a8303c0a97438928fe79c30d4370616\\output\\res\\color\\abc_secondary_text_material_light.xml"
     },
     {
-        "merged": "/Users/kevin/Documents/NE_BELT/Application/build/intermediates/res/merged/debug/color/abc_primary_text_disable_only_material_light.xml",
-        "source": "/Users/kevin/.android/build-cache/0d31f01a5a8303c0a97438928fe79c30d4370616/output/res/color/abc_primary_text_disable_only_material_light.xml"
+        "merged": "C:\\Users\\kevin\\Desktop\\NE_BELT_APP-master\\Application\\build\\intermediates\\res\\merged\\debug\\color\\abc_tint_edittext.xml",
+        "source": "C:\\Users\\kevin\\.android\\build-cache\\0d31f01a5a8303c0a97438928fe79c30d4370616\\output\\res\\color\\abc_tint_edittext.xml"
     },
     {
-        "merged": "/Users/kevin/Documents/NE_BELT/Application/build/intermediates/res/merged/debug/color/abc_tint_spinner.xml",
-        "source": "/Users/kevin/.android/build-cache/0d31f01a5a8303c0a97438928fe79c30d4370616/output/res/color/abc_tint_spinner.xml"
+        "merged": "C:\\Users\\kevin\\Desktop\\NE_BELT_APP-master\\C:\\Users\\Yeop_DCLab\\Documents\\GitHub\\NE_BELT_APP\\Application\\build\\intermediates\\res\\merged\\debug\\color\\abc_tint_default.xml",
+        "source": "C:\\Users\\kevin\\Desktop\\NE_BELT_APP-master\\C:\\Users\\Yeop_DCLab\\.android\\build-cache\\7330c284f0756ea1af22e82431fa83292ba7b697\\output\\res\\color\\abc_tint_default.xml"
     },
     {
-        "merged": "/Users/kevin/Documents/NE_BELT/Application/build/intermediates/res/merged/debug/color/abc_secondary_text_material_light.xml",
-        "source": "/Users/kevin/.android/build-cache/0d31f01a5a8303c0a97438928fe79c30d4370616/output/res/color/abc_secondary_text_material_light.xml"
+        "merged": "C:\\Users\\kevin\\Documents\\NE_BELT\\Application\\build\\intermediates\\res\\merged\\debug\\color\\abc_primary_text_disable_only_material_dark.xml",
+        "source": "C:\\Users\\kevin\\.android\\build-cache\\0d31f01a5a8303c0a97438928fe79c30d4370616\\output\\res\\color\\abc_primary_text_disable_only_material_dark.xml"
     },
     {
-        "merged": "/Users/kevin/Desktop/NE_BELT_APP-master/Application/build/intermediates/res/merged/debug/color/abc_primary_text_disable_only_material_light.xml",
-        "source": "/Users/kevin/.android/build-cache/0d31f01a5a8303c0a97438928fe79c30d4370616/output/res/color/abc_primary_text_disable_only_material_light.xml"
+        "merged": "C:\\Users\\Yeop_DCLab\\Documents\\GitHub\\NE_BELT\\Application\\build\\intermediates\\res\\merged\\debug\\color\\abc_tint_spinner.xml",
+        "source": "C:\\Users\\Yeop_DCLab\\.android\\build-cache\\7330c284f0756ea1af22e82431fa83292ba7b697\\output\\res\\color\\abc_tint_spinner.xml"
     },
     {
-        "merged": "/Users/kevin/Documents/NE_BELT/Application/build/intermediates/res/merged/debug/color/abc_primary_text_disable_only_material_dark.xml",
-        "source": "/Users/kevin/.android/build-cache/0d31f01a5a8303c0a97438928fe79c30d4370616/output/res/color/abc_primary_text_disable_only_material_dark.xml"
+        "merged": "C:\\Users\\kevin\\Desktop\\NE_BELT_APP-master\\C:\\Users\\kevin\\Documents\\GIT\\NE_BELT\\C:\\Users\\Yeop_DCLab\\Documents\\GitHub\\BluetoothLeGatt\\Application\\build\\intermediates\\res\\merged\\debug\\color\\abc_primary_text_material_light.xml",
+        "source": "C:\\Users\\kevin\\Desktop\\NE_BELT_APP-master\\C:\\Users\\kevin\\Documents\\GIT\\NE_BELT\\C:\\Users\\Yeop_DCLab\\.android\\build-cache\\7330c284f0756ea1af22e82431fa83292ba7b697\\output\\res\\color\\abc_primary_text_material_light.xml"
     },
     {
-        "merged": "/Users/kevin/Desktop/NE_BELT_APP-master/Application/build/intermediates/res/merged/debug/color/abc_tint_switch_track.xml",
-        "source": "/Users/kevin/.android/build-cache/0d31f01a5a8303c0a97438928fe79c30d4370616/output/res/color/abc_tint_switch_track.xml"
+        "merged": "C:\\Users\\kevin\\Desktop\\NE_BELT_APP-master\\C:\\Users\\Yeop_DCLab\\Documents\\GitHub\\NE_BELT_APP\\Application\\build\\intermediates\\res\\merged\\debug\\color\\abc_btn_colored_borderless_text_material.xml",
+        "source": "C:\\Users\\kevin\\Desktop\\NE_BELT_APP-master\\C:\\Users\\Yeop_DCLab\\.android\\build-cache\\7330c284f0756ea1af22e82431fa83292ba7b697\\output\\res\\color\\abc_btn_colored_borderless_text_material.xml"
     },
     {
-        "merged": "/Users/kevin/Desktop/NE_BELT_APP-master/C:\\Users\\kevin\\Documents\\GIT\\NE_BELT\\C:\\Users\\Yeop_DCLab\\Documents\\GitHub\\BluetoothLeGatt\\Application\\build\\intermediates\\res\\merged\\debug\\color\\abc_tint_switch_thumb.xml",
-        "source": "/Users/kevin/Desktop/NE_BELT_APP-master/C:\\Users\\kevin\\Documents\\GIT\\NE_BELT\\C:\\Users\\Yeop_DCLab\\.android\\build-cache\\7330c284f0756ea1af22e82431fa83292ba7b697\\output\\res\\color\\abc_tint_switch_thumb.xml"
+        "merged": "C:\\Users\\Yeop_DCLab\\Documents\\GitHub\\NE_BELT\\Application\\build\\intermediates\\res\\merged\\debug\\color\\abc_tint_seek_thumb.xml",
+        "source": "C:\\Users\\Yeop_DCLab\\.android\\build-cache\\7330c284f0756ea1af22e82431fa83292ba7b697\\output\\res\\color\\abc_tint_seek_thumb.xml"
     },
     {
-        "merged": "/Users/kevin/Desktop/NE_BELT_APP-master/Application/build/intermediates/res/merged/debug/color/abc_secondary_text_material_light.xml",
-        "source": "/Users/kevin/.android/build-cache/0d31f01a5a8303c0a97438928fe79c30d4370616/output/res/color/abc_secondary_text_material_light.xml"
+        "merged": "C:\\Users\\Yeop_DCLab\\Documents\\GitHub\\NE_BELT\\Application\\build\\intermediates\\res\\merged\\debug\\color\\abc_search_url_text.xml",
+        "source": "C:\\Users\\Yeop_DCLab\\.android\\build-cache\\7330c284f0756ea1af22e82431fa83292ba7b697\\output\\res\\color\\abc_search_url_text.xml"
     },
     {
-        "merged": "/Users/kevin/Desktop/NE_BELT_APP-master/C:\\Users\\kevin\\Documents\\GIT\\NE_BELT\\Application\\build\\intermediates\\res\\merged\\debug\\color\\abc_secondary_text_material_light.xml",
-        "source": "/Users/kevin/Desktop/NE_BELT_APP-master/C:\\Users\\kevin\\.android\\build-cache\\0d31f01a5a8303c0a97438928fe79c30d4370616\\output\\res\\color\\abc_secondary_text_material_light.xml"
+        "merged": "C:\\Users\\kevin\\Desktop\\NE_BELT_APP-master\\Application\\build\\intermediates\\res\\merged\\debug\\color\\switch_thumb_material_light.xml",
+        "source": "C:\\Users\\kevin\\.android\\build-cache\\0d31f01a5a8303c0a97438928fe79c30d4370616\\output\\res\\color\\switch_thumb_material_light.xml"
     },
     {
-        "merged": "/Users/kevin/Desktop/NE_BELT_APP-master/Application/build/intermediates/res/merged/debug/color/abc_secondary_text_material_dark.xml",
-        "source": "/Users/kevin/.android/build-cache/0d31f01a5a8303c0a97438928fe79c30d4370616/output/res/color/abc_secondary_text_material_dark.xml"
+        "merged": "C:\\Users\\kevin\\Desktop\\NE_BELT_APP-master\\C:\\Users\\kevin\\Documents\\GIT\\NE_BELT\\C:\\Users\\Yeop_DCLab\\Documents\\GitHub\\BluetoothLeGatt\\Application\\build\\intermediates\\res\\merged\\debug\\color\\abc_tint_edittext.xml",
+        "source": "C:\\Users\\kevin\\Desktop\\NE_BELT_APP-master\\C:\\Users\\kevin\\Documents\\GIT\\NE_BELT\\C:\\Users\\Yeop_DCLab\\.android\\build-cache\\7330c284f0756ea1af22e82431fa83292ba7b697\\output\\res\\color\\abc_tint_edittext.xml"
     },
     {
-        "merged": "/Users/kevin/Desktop/NE_BELT_APP-master/C:\\Users\\kevin\\Documents\\GIT\\NE_BELT\\Application\\build\\intermediates\\res\\merged\\debug\\color\\abc_hint_foreground_material_light.xml",
-        "source": "/Users/kevin/Desktop/NE_BELT_APP-master/C:\\Users\\kevin\\.android\\build-cache\\0d31f01a5a8303c0a97438928fe79c30d4370616\\output\\res\\color\\abc_hint_foreground_material_light.xml"
+        "merged": "C:\\Users\\kevin\\Desktop\\NE_BELT_APP-master\\C:\\Users\\kevin\\Documents\\GIT\\NE_BELT\\Application\\build\\intermediates\\res\\merged\\debug\\color\\switch_thumb_material_dark.xml",
+        "source": "C:\\Users\\kevin\\Desktop\\NE_BELT_APP-master\\C:\\Users\\kevin\\.android\\build-cache\\0d31f01a5a8303c0a97438928fe79c30d4370616\\output\\res\\color\\switch_thumb_material_dark.xml"
     },
     {
-        "merged": "/Users/kevin/Desktop/NE_BELT_APP-master/C:\\Users\\kevin\\Documents\\GIT\\NE_BELT\\Application\\build\\intermediates\\res\\merged\\debug\\color\\switch_thumb_material_dark.xml",
-        "source": "/Users/kevin/Desktop/NE_BELT_APP-master/C:\\Users\\kevin\\.android\\build-cache\\0d31f01a5a8303c0a97438928fe79c30d4370616\\output\\res\\color\\switch_thumb_material_dark.xml"
+        "merged": "C:\\Users\\Yeop_DCLab\\Documents\\GitHub\\NE_BELT\\Application\\build\\intermediates\\res\\merged\\debug\\color\\abc_tint_switch_thumb.xml",
+        "source": "C:\\Users\\Yeop_DCLab\\.android\\build-cache\\7330c284f0756ea1af22e82431fa83292ba7b697\\output\\res\\color\\abc_tint_switch_thumb.xml"
     },
     {
-        "merged": "/Users/kevin/Desktop/NE_BELT_APP-master/C:\\Users\\kevin\\Documents\\GIT\\NE_BELT\\Application\\build\\intermediates\\res\\merged\\debug\\color\\abc_primary_text_disable_only_material_light.xml",
-        "source": "/Users/kevin/Desktop/NE_BELT_APP-master/C:\\Users\\kevin\\.android\\build-cache\\0d31f01a5a8303c0a97438928fe79c30d4370616\\output\\res\\color\\abc_primary_text_disable_only_material_light.xml"
+        "merged": "C:\\Users\\kevin\\Desktop\\NE_BELT_APP-master\\C:\\Users\\Yeop_DCLab\\Documents\\GitHub\\NE_BELT_APP\\Application\\build\\intermediates\\res\\merged\\debug\\color\\abc_primary_text_disable_only_material_light.xml",
+        "source": "C:\\Users\\kevin\\Desktop\\NE_BELT_APP-master\\C:\\Users\\Yeop_DCLab\\.android\\build-cache\\7330c284f0756ea1af22e82431fa83292ba7b697\\output\\res\\color\\abc_primary_text_disable_only_material_light.xml"
     },
     {
-        "merged": "/Users/kevin/Desktop/NE_BELT_APP-master/C:\\Users\\kevin\\Documents\\GIT\\NE_BELT\\C:\\Users\\Yeop_DCLab\\Documents\\GitHub\\BluetoothLeGatt\\Application\\build\\intermediates\\res\\merged\\debug\\color\\abc_tint_spinner.xml",
-        "source": "/Users/kevin/Desktop/NE_BELT_APP-master/C:\\Users\\kevin\\Documents\\GIT\\NE_BELT\\C:\\Users\\Yeop_DCLab\\.android\\build-cache\\7330c284f0756ea1af22e82431fa83292ba7b697\\output\\res\\color\\abc_tint_spinner.xml"
+        "merged": "C:\\Users\\Yeop_DCLab\\Documents\\GitHub\\NE_BELT\\Application\\build\\intermediates\\res\\merged\\debug\\color\\abc_btn_colored_borderless_text_material.xml",
+        "source": "C:\\Users\\Yeop_DCLab\\.android\\build-cache\\7330c284f0756ea1af22e82431fa83292ba7b697\\output\\res\\color\\abc_btn_colored_borderless_text_material.xml"
     },
     {
-        "merged": "/Users/kevin/Documents/NE_BELT/Application/build/intermediates/res/merged/debug/color/abc_hint_foreground_material_light.xml",
-        "source": "/Users/kevin/.android/build-cache/0d31f01a5a8303c0a97438928fe79c30d4370616/output/res/color/abc_hint_foreground_material_light.xml"
+        "merged": "C:\\Users\\kevin\\Desktop\\NE_BELT_APP-master\\Application\\build\\intermediates\\res\\merged\\debug\\color\\abc_secondary_text_material_dark.xml",
+        "source": "C:\\Users\\kevin\\.android\\build-cache\\0d31f01a5a8303c0a97438928fe79c30d4370616\\output\\res\\color\\abc_secondary_text_material_dark.xml"
     },
     {
-        "merged": "/Users/kevin/Desktop/NE_BELT_APP-master/Application/build/intermediates/res/merged/debug/color/abc_tint_btn_checkable.xml",
-        "source": "/Users/kevin/.android/build-cache/0d31f01a5a8303c0a97438928fe79c30d4370616/output/res/color/abc_tint_btn_checkable.xml"
+        "merged": "C:\\Users\\kevin\\Desktop\\NE_BELT_APP-master\\C:\\Users\\Yeop_DCLab\\Documents\\GitHub\\NE_BELT_APP\\Application\\build\\intermediates\\res\\merged\\debug\\color\\abc_primary_text_material_light.xml",
+        "source": "C:\\Users\\kevin\\Desktop\\NE_BELT_APP-master\\C:\\Users\\Yeop_DCLab\\.android\\build-cache\\7330c284f0756ea1af22e82431fa83292ba7b697\\output\\res\\color\\abc_primary_text_material_light.xml"
     },
     {
-        "merged": "/Users/kevin/Documents/NE_BELT/Application/build/intermediates/res/merged/debug/color/abc_primary_text_material_dark.xml",
-        "source": "/Users/kevin/.android/build-cache/0d31f01a5a8303c0a97438928fe79c30d4370616/output/res/color/abc_primary_text_material_dark.xml"
+        "merged": "C:\\Users\\Yeop_DCLab\\Documents\\GitHub\\NE_BELT\\Application\\build\\intermediates\\res\\merged\\debug\\color\\abc_hint_foreground_material_dark.xml",
+        "source": "C:\\Users\\Yeop_DCLab\\.android\\build-cache\\7330c284f0756ea1af22e82431fa83292ba7b697\\output\\res\\color\\abc_hint_foreground_material_dark.xml"
     },
     {
-        "merged": "/Users/kevin/Desktop/NE_BELT_APP-master/Application/build/intermediates/res/merged/debug/color/abc_primary_text_material_dark.xml",
-        "source": "/Users/kevin/.android/build-cache/0d31f01a5a8303c0a97438928fe79c30d4370616/output/res/color/abc_primary_text_material_dark.xml"
+        "merged": "C:\\Users\\Yeop_DCLab\\Documents\\GitHub\\NE_BELT\\Application\\build\\intermediates\\res\\merged\\debug\\color\\abc_secondary_text_material_dark.xml",
+        "source": "C:\\Users\\Yeop_DCLab\\.android\\build-cache\\7330c284f0756ea1af22e82431fa83292ba7b697\\output\\res\\color\\abc_secondary_text_material_dark.xml"
     },
     {
-        "merged": "/Users/kevin/Desktop/NE_BELT_APP-master/C:\\Users\\kevin\\Documents\\GIT\\NE_BELT\\Application\\build\\intermediates\\res\\merged\\debug\\color\\abc_tint_default.xml",
-        "source": "/Users/kevin/Desktop/NE_BELT_APP-master/C:\\Users\\kevin\\.android\\build-cache\\0d31f01a5a8303c0a97438928fe79c30d4370616\\output\\res\\color\\abc_tint_default.xml"
+        "merged": "C:\\Users\\kevin\\Desktop\\NE_BELT_APP-master\\Application\\build\\intermediates\\res\\merged\\debug\\color\\abc_tint_seek_thumb.xml",
+        "source": "C:\\Users\\kevin\\.android\\build-cache\\0d31f01a5a8303c0a97438928fe79c30d4370616\\output\\res\\color\\abc_tint_seek_thumb.xml"
     },
     {
-        "merged": "/Users/kevin/Desktop/NE_BELT_APP-master/C:\\Users\\kevin\\Documents\\GIT\\NE_BELT\\C:\\Users\\Yeop_DCLab\\Documents\\GitHub\\BluetoothLeGatt\\Application\\build\\intermediates\\res\\merged\\debug\\color\\switch_thumb_material_light.xml",
-        "source": "/Users/kevin/Desktop/NE_BELT_APP-master/C:\\Users\\kevin\\Documents\\GIT\\NE_BELT\\C:\\Users\\Yeop_DCLab\\.android\\build-cache\\7330c284f0756ea1af22e82431fa83292ba7b697\\output\\res\\color\\switch_thumb_material_light.xml"
+        "merged": "C:\\Users\\kevin\\Desktop\\NE_BELT_APP-master\\Application\\build\\intermediates\\res\\merged\\debug\\color\\abc_search_url_text.xml",
+        "source": "C:\\Users\\kevin\\.android\\build-cache\\0d31f01a5a8303c0a97438928fe79c30d4370616\\output\\res\\color\\abc_search_url_text.xml"
     },
     {
-        "merged": "/Users/kevin/Desktop/NE_BELT_APP-master/C:\\Users\\kevin\\Documents\\GIT\\NE_BELT\\Application\\build\\intermediates\\res\\merged\\debug\\color\\abc_primary_text_material_light.xml",
-        "source": "/Users/kevin/Desktop/NE_BELT_APP-master/C:\\Users\\kevin\\.android\\build-cache\\0d31f01a5a8303c0a97438928fe79c30d4370616\\output\\res\\color\\abc_primary_text_material_light.xml"
+        "merged": "C:\\Users\\kevin\\Desktop\\NE_BELT_APP-master\\C:\\Users\\Yeop_DCLab\\Documents\\GitHub\\NE_BELT_APP\\Application\\build\\intermediates\\res\\merged\\debug\\color\\abc_secondary_text_material_dark.xml",
+        "source": "C:\\Users\\kevin\\Desktop\\NE_BELT_APP-master\\C:\\Users\\Yeop_DCLab\\.android\\build-cache\\7330c284f0756ea1af22e82431fa83292ba7b697\\output\\res\\color\\abc_secondary_text_material_dark.xml"
     },
     {
-        "merged": "/Users/kevin/Desktop/NE_BELT_APP-master/Application/build/intermediates/res/merged/debug/color/abc_btn_colored_borderless_text_material.xml",
-        "source": "/Users/kevin/.android/build-cache/0d31f01a5a8303c0a97438928fe79c30d4370616/output/res/color/abc_btn_colored_borderless_text_material.xml"
+        "merged": "C:\\Users\\kevin\\Desktop\\NE_BELT_APP-master\\C:\\Users\\Yeop_DCLab\\Documents\\GitHub\\NE_BELT_APP\\Application\\build\\intermediates\\res\\merged\\debug\\color\\abc_tint_switch_track.xml",
+        "source": "C:\\Users\\kevin\\Desktop\\NE_BELT_APP-master\\C:\\Users\\Yeop_DCLab\\.android\\build-cache\\7330c284f0756ea1af22e82431fa83292ba7b697\\output\\res\\color\\abc_tint_switch_track.xml"
     },
     {
-        "merged": "/Users/kevin/Desktop/NE_BELT_APP-master/C:\\Users\\Yeop_DCLab\\Documents\\GitHub\\NE_BELT_APP\\Application\\build\\intermediates\\res\\merged\\debug\\color\\abc_primary_text_material_dark.xml",
-        "source": "/Users/kevin/Desktop/NE_BELT_APP-master/C:\\Users\\Yeop_DCLab\\.android\\build-cache\\7330c284f0756ea1af22e82431fa83292ba7b697\\output\\res\\color\\abc_primary_text_material_dark.xml"
+        "merged": "C:\\Users\\kevin\\Desktop\\NE_BELT_APP-master\\C:\\Users\\kevin\\Documents\\GIT\\NE_BELT\\C:\\Users\\Yeop_DCLab\\Documents\\GitHub\\BluetoothLeGatt\\Application\\build\\intermediates\\res\\merged\\debug\\color\\abc_primary_text_disable_only_material_dark.xml",
+        "source": "C:\\Users\\kevin\\Desktop\\NE_BELT_APP-master\\C:\\Users\\kevin\\Documents\\GIT\\NE_BELT\\C:\\Users\\Yeop_DCLab\\.android\\build-cache\\7330c284f0756ea1af22e82431fa83292ba7b697\\output\\res\\color\\abc_primary_text_disable_only_material_dark.xml"
     },
     {
-        "merged": "/Users/kevin/Documents/NE_BELT/Application/build/intermediates/res/merged/debug/color/abc_tint_switch_thumb.xml",
-        "source": "/Users/kevin/.android/build-cache/0d31f01a5a8303c0a97438928fe79c30d4370616/output/res/color/abc_tint_switch_thumb.xml"
+        "merged": "C:\\Users\\kevin\\Documents\\NE_BELT\\Application\\build\\intermediates\\res\\merged\\debug\\color\\abc_tint_default.xml",
+        "source": "C:\\Users\\kevin\\.android\\build-cache\\0d31f01a5a8303c0a97438928fe79c30d4370616\\output\\res\\color\\abc_tint_default.xml"
     },
     {
-        "merged": "/Users/kevin/Desktop/NE_BELT_APP-master/C:\\Users\\Yeop_DCLab\\Documents\\GitHub\\NE_BELT_APP\\Application\\build\\intermediates\\res\\merged\\debug\\color\\switch_thumb_material_dark.xml",
-        "source": "/Users/kevin/Desktop/NE_BELT_APP-master/C:\\Users\\Yeop_DCLab\\.android\\build-cache\\7330c284f0756ea1af22e82431fa83292ba7b697\\output\\res\\color\\switch_thumb_material_dark.xml"
+        "merged": "C:\\Users\\kevin\\Desktop\\NE_BELT_APP-master\\C:\\Users\\kevin\\Documents\\GIT\\NE_BELT\\Application\\build\\intermediates\\res\\merged\\debug\\color\\abc_hint_foreground_material_light.xml",
+        "source": "C:\\Users\\kevin\\Desktop\\NE_BELT_APP-master\\C:\\Users\\kevin\\.android\\build-cache\\0d31f01a5a8303c0a97438928fe79c30d4370616\\output\\res\\color\\abc_hint_foreground_material_light.xml"
     },
     {
-        "merged": "/Users/kevin/Desktop/NE_BELT_APP-master/C:\\Users\\Yeop_DCLab\\Documents\\GitHub\\NE_BELT_APP\\Application\\build\\intermediates\\res\\merged\\debug\\color\\abc_tint_seek_thumb.xml",
-        "source": "/Users/kevin/Desktop/NE_BELT_APP-master/C:\\Users\\Yeop_DCLab\\.android\\build-cache\\7330c284f0756ea1af22e82431fa83292ba7b697\\output\\res\\color\\abc_tint_seek_thumb.xml"
+        "merged": "C:\\Users\\kevin\\Desktop\\NE_BELT_APP-master\\C:\\Users\\kevin\\Documents\\GIT\\NE_BELT\\C:\\Users\\Yeop_DCLab\\Documents\\GitHub\\BluetoothLeGatt\\Application\\build\\intermediates\\res\\merged\\debug\\color\\abc_tint_spinner.xml",
+        "source": "C:\\Users\\kevin\\Desktop\\NE_BELT_APP-master\\C:\\Users\\kevin\\Documents\\GIT\\NE_BELT\\C:\\Users\\Yeop_DCLab\\.android\\build-cache\\7330c284f0756ea1af22e82431fa83292ba7b697\\output\\res\\color\\abc_tint_spinner.xml"
     },
     {
-        "merged": "/Users/kevin/Desktop/NE_BELT_APP-master/C:\\Users\\Yeop_DCLab\\Documents\\GitHub\\NE_BELT_APP\\Application\\build\\intermediates\\res\\merged\\debug\\color\\switch_thumb_material_light.xml",
-        "source": "/Users/kevin/Desktop/NE_BELT_APP-master/C:\\Users\\Yeop_DCLab\\.android\\build-cache\\7330c284f0756ea1af22e82431fa83292ba7b697\\output\\res\\color\\switch_thumb_material_light.xml"
+        "merged": "C:\\Users\\kevin\\Desktop\\NE_BELT_APP-master\\C:\\Users\\kevin\\Documents\\GIT\\NE_BELT\\C:\\Users\\Yeop_DCLab\\Documents\\GitHub\\BluetoothLeGatt\\Application\\build\\intermediates\\res\\merged\\debug\\color\\switch_thumb_material_light.xml",
+        "source": "C:\\Users\\kevin\\Desktop\\NE_BELT_APP-master\\C:\\Users\\kevin\\Documents\\GIT\\NE_BELT\\C:\\Users\\Yeop_DCLab\\.android\\build-cache\\7330c284f0756ea1af22e82431fa83292ba7b697\\output\\res\\color\\switch_thumb_material_light.xml"
     },
     {
-        "merged": "/Users/kevin/Desktop/NE_BELT_APP-master/C:\\Users\\Yeop_DCLab\\Documents\\GitHub\\NE_BELT_APP\\Application\\build\\intermediates\\res\\merged\\debug\\color\\abc_search_url_text.xml",
-        "source": "/Users/kevin/Desktop/NE_BELT_APP-master/C:\\Users\\Yeop_DCLab\\.android\\build-cache\\7330c284f0756ea1af22e82431fa83292ba7b697\\output\\res\\color\\abc_search_url_text.xml"
+        "merged": "C:\\Users\\kevin\\Documents\\NE_BELT\\Application\\build\\intermediates\\res\\merged\\debug\\color\\abc_tint_spinner.xml",
+        "source": "C:\\Users\\kevin\\.android\\build-cache\\0d31f01a5a8303c0a97438928fe79c30d4370616\\output\\res\\color\\abc_tint_spinner.xml"
     },
     {
-        "merged": "/Users/kevin/Desktop/NE_BELT_APP-master/C:\\Users\\Yeop_DCLab\\Documents\\GitHub\\NE_BELT_APP\\Application\\build\\intermediates\\res\\merged\\debug\\color\\abc_tint_edittext.xml",
-        "source": "/Users/kevin/Desktop/NE_BELT_APP-master/C:\\Users\\Yeop_DCLab\\.android\\build-cache\\7330c284f0756ea1af22e82431fa83292ba7b697\\output\\res\\color\\abc_tint_edittext.xml"
+        "merged": "C:\\Users\\kevin\\Desktop\\NE_BELT_APP-master\\C:\\Users\\kevin\\Documents\\GIT\\NE_BELT\\C:\\Users\\Yeop_DCLab\\Documents\\GitHub\\BluetoothLeGatt\\Application\\build\\intermediates\\res\\merged\\debug\\color\\abc_tint_seek_thumb.xml",
+        "source": "C:\\Users\\kevin\\Desktop\\NE_BELT_APP-master\\C:\\Users\\kevin\\Documents\\GIT\\NE_BELT\\C:\\Users\\Yeop_DCLab\\.android\\build-cache\\7330c284f0756ea1af22e82431fa83292ba7b697\\output\\res\\color\\abc_tint_seek_thumb.xml"
     },
     {
-        "merged": "/Users/kevin/Desktop/NE_BELT_APP-master/Application/build/intermediates/res/merged/debug/color/abc_tint_switch_thumb.xml",
-        "source": "/Users/kevin/.android/build-cache/0d31f01a5a8303c0a97438928fe79c30d4370616/output/res/color/abc_tint_switch_thumb.xml"
+        "merged": "C:\\Users\\kevin\\Desktop\\NE_BELT_APP-master\\C:\\Users\\Yeop_DCLab\\Documents\\GitHub\\NE_BELT_APP\\Application\\build\\intermediates\\res\\merged\\debug\\color\\abc_tint_btn_checkable.xml",
+        "source": "C:\\Users\\kevin\\Desktop\\NE_BELT_APP-master\\C:\\Users\\Yeop_DCLab\\.android\\build-cache\\7330c284f0756ea1af22e82431fa83292ba7b697\\output\\res\\color\\abc_tint_btn_checkable.xml"
     },
     {
-        "merged": "/Users/kevin/Documents/NE_BELT/Application/build/intermediates/res/merged/debug/color/abc_tint_default.xml",
-        "source": "/Users/kevin/.android/build-cache/0d31f01a5a8303c0a97438928fe79c30d4370616/output/res/color/abc_tint_default.xml"
+        "merged": "C:\\Users\\kevin\\Desktop\\NE_BELT_APP-master\\C:\\Users\\Yeop_DCLab\\Documents\\GitHub\\NE_BELT_APP\\Application\\build\\intermediates\\res\\merged\\debug\\color\\abc_secondary_text_material_light.xml",
+        "source": "C:\\Users\\kevin\\Desktop\\NE_BELT_APP-master\\C:\\Users\\Yeop_DCLab\\.android\\build-cache\\7330c284f0756ea1af22e82431fa83292ba7b697\\output\\res\\color\\abc_secondary_text_material_light.xml"
     },
     {
-        "merged": "/Users/kevin/Desktop/NE_BELT_APP-master/C:\\Users\\Yeop_DCLab\\Documents\\GitHub\\NE_BELT_APP\\Application\\build\\intermediates\\res\\merged\\debug\\color\\abc_secondary_text_material_dark.xml",
-        "source": "/Users/kevin/Desktop/NE_BELT_APP-master/C:\\Users\\Yeop_DCLab\\.android\\build-cache\\7330c284f0756ea1af22e82431fa83292ba7b697\\output\\res\\color\\abc_secondary_text_material_dark.xml"
+        "merged": "C:\\Users\\Yeop_DCLab\\Documents\\GitHub\\NE_BELT\\Application\\build\\intermediates\\res\\merged\\debug\\color\\abc_primary_text_disable_only_material_light.xml",
+        "source": "C:\\Users\\Yeop_DCLab\\.android\\build-cache\\7330c284f0756ea1af22e82431fa83292ba7b697\\output\\res\\color\\abc_primary_text_disable_only_material_light.xml"
     },
     {
-        "merged": "/Users/kevin/Desktop/NE_BELT_APP-master/Application/build/intermediates/res/merged/debug/color/abc_tint_spinner.xml",
-        "source": "/Users/kevin/.android/build-cache/0d31f01a5a8303c0a97438928fe79c30d4370616/output/res/color/abc_tint_spinner.xml"
+        "merged": "C:\\Users\\kevin\\Documents\\NE_BELT\\Application\\build\\intermediates\\res\\merged\\debug\\color\\switch_thumb_material_light.xml",
+        "source": "C:\\Users\\kevin\\.android\\build-cache\\0d31f01a5a8303c0a97438928fe79c30d4370616\\output\\res\\color\\switch_thumb_material_light.xml"
     },
     {
-        "merged": "/Users/kevin/Desktop/NE_BELT_APP-master/C:\\Users\\kevin\\Documents\\GIT\\NE_BELT\\Application\\build\\intermediates\\res\\merged\\debug\\color\\abc_tint_btn_checkable.xml",
-        "source": "/Users/kevin/Desktop/NE_BELT_APP-master/C:\\Users\\kevin\\.android\\build-cache\\0d31f01a5a8303c0a97438928fe79c30d4370616\\output\\res\\color\\abc_tint_btn_checkable.xml"
+        "merged": "C:\\Users\\kevin\\Desktop\\NE_BELT_APP-master\\C:\\Users\\kevin\\Documents\\GIT\\NE_BELT\\Application\\build\\intermediates\\res\\merged\\debug\\color\\abc_secondary_text_material_dark.xml",
+        "source": "C:\\Users\\kevin\\Desktop\\NE_BELT_APP-master\\C:\\Users\\kevin\\.android\\build-cache\\0d31f01a5a8303c0a97438928fe79c30d4370616\\output\\res\\color\\abc_secondary_text_material_dark.xml"
     },
     {
-        "merged": "/Users/kevin/Desktop/NE_BELT_APP-master/C:\\Users\\kevin\\Documents\\GIT\\NE_BELT\\C:\\Users\\Yeop_DCLab\\Documents\\GitHub\\BluetoothLeGatt\\Application\\build\\intermediates\\res\\merged\\debug\\color\\abc_tint_seek_thumb.xml",
-        "source": "/Users/kevin/Desktop/NE_BELT_APP-master/C:\\Users\\kevin\\Documents\\GIT\\NE_BELT\\C:\\Users\\Yeop_DCLab\\.android\\build-cache\\7330c284f0756ea1af22e82431fa83292ba7b697\\output\\res\\color\\abc_tint_seek_thumb.xml"
+        "merged": "C:\\Users\\kevin\\Desktop\\NE_BELT_APP-master\\C:\\Users\\kevin\\Documents\\GIT\\NE_BELT\\C:\\Users\\Yeop_DCLab\\Documents\\GitHub\\BluetoothLeGatt\\Application\\build\\intermediates\\res\\merged\\debug\\color\\abc_hint_foreground_material_light.xml",
+        "source": "C:\\Users\\kevin\\Desktop\\NE_BELT_APP-master\\C:\\Users\\kevin\\Documents\\GIT\\NE_BELT\\C:\\Users\\Yeop_DCLab\\.android\\build-cache\\7330c284f0756ea1af22e82431fa83292ba7b697\\output\\res\\color\\abc_hint_foreground_material_light.xml"
     },
     {
-        "merged": "/Users/kevin/Desktop/NE_BELT_APP-master/C:\\Users\\kevin\\Documents\\GIT\\NE_BELT\\C:\\Users\\Yeop_DCLab\\Documents\\GitHub\\BluetoothLeGatt\\Application\\build\\intermediates\\res\\merged\\debug\\color\\abc_tint_default.xml",
-        "source": "/Users/kevin/Desktop/NE_BELT_APP-master/C:\\Users\\kevin\\Documents\\GIT\\NE_BELT\\C:\\Users\\Yeop_DCLab\\.android\\build-cache\\7330c284f0756ea1af22e82431fa83292ba7b697\\output\\res\\color\\abc_tint_default.xml"
+        "merged": "C:\\Users\\kevin\\Desktop\\NE_BELT_APP-master\\C:\\Users\\kevin\\Documents\\GIT\\NE_BELT\\Application\\build\\intermediates\\res\\merged\\debug\\color\\abc_tint_edittext.xml",
+        "source": "C:\\Users\\kevin\\Desktop\\NE_BELT_APP-master\\C:\\Users\\kevin\\.android\\build-cache\\0d31f01a5a8303c0a97438928fe79c30d4370616\\output\\res\\color\\abc_tint_edittext.xml"
     },
     {
-        "merged": "/Users/kevin/Desktop/NE_BELT_APP-master/C:\\Users\\Yeop_DCLab\\Documents\\GitHub\\NE_BELT_APP\\Application\\build\\intermediates\\res\\merged\\debug\\color\\abc_tint_switch_thumb.xml",
-        "source": "/Users/kevin/Desktop/NE_BELT_APP-master/C:\\Users\\Yeop_DCLab\\.android\\build-cache\\7330c284f0756ea1af22e82431fa83292ba7b697\\output\\res\\color\\abc_tint_switch_thumb.xml"
+        "merged": "C:\\Users\\Yeop_DCLab\\Documents\\GitHub\\NE_BELT\\Application\\build\\intermediates\\res\\merged\\debug\\color\\abc_hint_foreground_material_light.xml",
+        "source": "C:\\Users\\Yeop_DCLab\\.android\\build-cache\\7330c284f0756ea1af22e82431fa83292ba7b697\\output\\res\\color\\abc_hint_foreground_material_light.xml"
     },
     {
-        "merged": "/Users/kevin/Desktop/NE_BELT_APP-master/Application/build/intermediates/res/merged/debug/color/switch_thumb_material_dark.xml",
-        "source": "/Users/kevin/.android/build-cache/0d31f01a5a8303c0a97438928fe79c30d4370616/output/res/color/switch_thumb_material_dark.xml"
+        "merged": "C:\\Users\\kevin\\Desktop\\NE_BELT_APP-master\\C:\\Users\\kevin\\Documents\\GIT\\NE_BELT\\Application\\build\\intermediates\\res\\merged\\debug\\color\\abc_primary_text_disable_only_material_dark.xml",
+        "source": "C:\\Users\\kevin\\Desktop\\NE_BELT_APP-master\\C:\\Users\\kevin\\.android\\build-cache\\0d31f01a5a8303c0a97438928fe79c30d4370616\\output\\res\\color\\abc_primary_text_disable_only_material_dark.xml"
     },
     {
-        "merged": "/Users/kevin/Desktop/NE_BELT_APP-master/C:\\Users\\Yeop_DCLab\\Documents\\GitHub\\NE_BELT_APP\\Application\\build\\intermediates\\res\\merged\\debug\\color\\abc_tint_default.xml",
-        "source": "/Users/kevin/Desktop/NE_BELT_APP-master/C:\\Users\\Yeop_DCLab\\.android\\build-cache\\7330c284f0756ea1af22e82431fa83292ba7b697\\output\\res\\color\\abc_tint_default.xml"
+        "merged": "C:\\Users\\kevin\\Documents\\NE_BELT\\Application\\build\\intermediates\\res\\merged\\debug\\color\\abc_secondary_text_material_dark.xml",
+        "source": "C:\\Users\\kevin\\.android\\build-cache\\0d31f01a5a8303c0a97438928fe79c30d4370616\\output\\res\\color\\abc_secondary_text_material_dark.xml"
     },
     {
-        "merged": "/Users/kevin/Desktop/NE_BELT_APP-master/Application/build/intermediates/res/merged/debug/color/abc_tint_default.xml",
-        "source": "/Users/kevin/.android/build-cache/0d31f01a5a8303c0a97438928fe79c30d4370616/output/res/color/abc_tint_default.xml"
+        "merged": "C:\\Users\\kevin\\Desktop\\NE_BELT_APP-master\\C:\\Users\\kevin\\Documents\\GIT\\NE_BELT\\C:\\Users\\Yeop_DCLab\\Documents\\GitHub\\BluetoothLeGatt\\Application\\build\\intermediates\\res\\merged\\debug\\color\\abc_primary_text_material_dark.xml",
+        "source": "C:\\Users\\kevin\\Desktop\\NE_BELT_APP-master\\C:\\Users\\kevin\\Documents\\GIT\\NE_BELT\\C:\\Users\\Yeop_DCLab\\.android\\build-cache\\7330c284f0756ea1af22e82431fa83292ba7b697\\output\\res\\color\\abc_primary_text_material_dark.xml"
     },
     {
-        "merged": "/Users/kevin/Desktop/NE_BELT_APP-master/C:\\Users\\kevin\\Documents\\GIT\\NE_BELT\\C:\\Users\\Yeop_DCLab\\Documents\\GitHub\\BluetoothLeGatt\\Application\\build\\intermediates\\res\\merged\\debug\\color\\abc_primary_text_disable_only_material_light.xml",
-        "source": "/Users/kevin/Desktop/NE_BELT_APP-master/C:\\Users\\kevin\\Documents\\GIT\\NE_BELT\\C:\\Users\\Yeop_DCLab\\.android\\build-cache\\7330c284f0756ea1af22e82431fa83292ba7b697\\output\\res\\color\\abc_primary_text_disable_only_material_light.xml"
+        "merged": "C:\\Users\\kevin\\Desktop\\NE_BELT_APP-master\\C:\\Users\\kevin\\Documents\\GIT\\NE_BELT\\C:\\Users\\Yeop_DCLab\\Documents\\GitHub\\BluetoothLeGatt\\Application\\build\\intermediates\\res\\merged\\debug\\color\\abc_hint_foreground_material_dark.xml",
+        "source": "C:\\Users\\kevin\\Desktop\\NE_BELT_APP-master\\C:\\Users\\kevin\\Documents\\GIT\\NE_BELT\\C:\\Users\\Yeop_DCLab\\.android\\build-cache\\7330c284f0756ea1af22e82431fa83292ba7b697\\output\\res\\color\\abc_hint_foreground_material_dark.xml"
     },
     {
-        "merged": "/Users/kevin/Desktop/NE_BELT_APP-master/C:\\Users\\kevin\\Documents\\GIT\\NE_BELT\\C:\\Users\\Yeop_DCLab\\Documents\\GitHub\\BluetoothLeGatt\\Application\\build\\intermediates\\res\\merged\\debug\\color\\abc_hint_foreground_material_dark.xml",
-        "source": "/Users/kevin/Desktop/NE_BELT_APP-master/C:\\Users\\kevin\\Documents\\GIT\\NE_BELT\\C:\\Users\\Yeop_DCLab\\.android\\build-cache\\7330c284f0756ea1af22e82431fa83292ba7b697\\output\\res\\color\\abc_hint_foreground_material_dark.xml"
+        "merged": "C:\\Users\\kevin\\Desktop\\NE_BELT_APP-master\\C:\\Users\\kevin\\Documents\\GIT\\NE_BELT\\Application\\build\\intermediates\\res\\merged\\debug\\color\\abc_btn_colored_borderless_text_material.xml",
+        "source": "C:\\Users\\kevin\\Desktop\\NE_BELT_APP-master\\C:\\Users\\kevin\\.android\\build-cache\\0d31f01a5a8303c0a97438928fe79c30d4370616\\output\\res\\color\\abc_btn_colored_borderless_text_material.xml"
     },
     {
-        "merged": "/Users/kevin/Desktop/NE_BELT_APP-master/C:\\Users\\kevin\\Documents\\GIT\\NE_BELT\\Application\\build\\intermediates\\res\\merged\\debug\\color\\abc_btn_colored_borderless_text_material.xml",
-        "source": "/Users/kevin/Desktop/NE_BELT_APP-master/C:\\Users\\kevin\\.android\\build-cache\\0d31f01a5a8303c0a97438928fe79c30d4370616\\output\\res\\color\\abc_btn_colored_borderless_text_material.xml"
+        "merged": "C:\\Users\\kevin\\Desktop\\NE_BELT_APP-master\\C:\\Users\\kevin\\Documents\\GIT\\NE_BELT\\C:\\Users\\Yeop_DCLab\\Documents\\GitHub\\BluetoothLeGatt\\Application\\build\\intermediates\\res\\merged\\debug\\color\\abc_tint_default.xml",
+        "source": "C:\\Users\\kevin\\Desktop\\NE_BELT_APP-master\\C:\\Users\\kevin\\Documents\\GIT\\NE_BELT\\C:\\Users\\Yeop_DCLab\\.android\\build-cache\\7330c284f0756ea1af22e82431fa83292ba7b697\\output\\res\\color\\abc_tint_default.xml"
     },
     {
-        "merged": "/Users/kevin/Desktop/NE_BELT_APP-master/C:\\Users\\Yeop_DCLab\\Documents\\GitHub\\NE_BELT_APP\\Application\\build\\intermediates\\res\\merged\\debug\\color\\abc_hint_foreground_material_dark.xml",
-        "source": "/Users/kevin/Desktop/NE_BELT_APP-master/C:\\Users\\Yeop_DCLab\\.android\\build-cache\\7330c284f0756ea1af22e82431fa83292ba7b697\\output\\res\\color\\abc_hint_foreground_material_dark.xml"
+        "merged": "C:\\Users\\kevin\\Desktop\\NE_BELT_APP-master\\C:\\Users\\kevin\\Documents\\GIT\\NE_BELT\\C:\\Users\\Yeop_DCLab\\Documents\\GitHub\\BluetoothLeGatt\\Application\\build\\intermediates\\res\\merged\\debug\\color\\abc_search_url_text.xml",
+        "source": "C:\\Users\\kevin\\Desktop\\NE_BELT_APP-master\\C:\\Users\\kevin\\Documents\\GIT\\NE_BELT\\C:\\Users\\Yeop_DCLab\\.android\\build-cache\\7330c284f0756ea1af22e82431fa83292ba7b697\\output\\res\\color\\abc_search_url_text.xml"
     },
     {
-        "merged": "/Users/kevin/Desktop/NE_BELT_APP-master/C:\\Users\\kevin\\Documents\\GIT\\NE_BELT\\C:\\Users\\Yeop_DCLab\\Documents\\GitHub\\BluetoothLeGatt\\Application\\build\\intermediates\\res\\merged\\debug\\color\\abc_secondary_text_material_dark.xml",
-        "source": "/Users/kevin/Desktop/NE_BELT_APP-master/C:\\Users\\kevin\\Documents\\GIT\\NE_BELT\\C:\\Users\\Yeop_DCLab\\.android\\build-cache\\7330c284f0756ea1af22e82431fa83292ba7b697\\output\\res\\color\\abc_secondary_text_material_dark.xml"
+        "merged": "C:\\Users\\kevin\\Desktop\\NE_BELT_APP-master\\Application\\build\\intermediates\\res\\merged\\debug\\color\\abc_btn_colored_borderless_text_material.xml",
+        "source": "C:\\Users\\kevin\\.android\\build-cache\\0d31f01a5a8303c0a97438928fe79c30d4370616\\output\\res\\color\\abc_btn_colored_borderless_text_material.xml"
     },
     {
-        "merged": "/Users/kevin/Desktop/NE_BELT_APP-master/Application/build/intermediates/res/merged/debug/color/abc_primary_text_disable_only_material_dark.xml",
-        "source": "/Users/kevin/.android/build-cache/0d31f01a5a8303c0a97438928fe79c30d4370616/output/res/color/abc_primary_text_disable_only_material_dark.xml"
+        "merged": "C:\\Users\\Yeop_DCLab\\Documents\\GitHub\\NE_BELT\\Application\\build\\intermediates\\res\\merged\\debug\\color\\abc_tint_default.xml",
+        "source": "C:\\Users\\Yeop_DCLab\\.android\\build-cache\\7330c284f0756ea1af22e82431fa83292ba7b697\\output\\res\\color\\abc_tint_default.xml"
     },
     {
-        "merged": "/Users/kevin/Documents/NE_BELT/Application/build/intermediates/res/merged/debug/color/abc_tint_edittext.xml",
-        "source": "/Users/kevin/.android/build-cache/0d31f01a5a8303c0a97438928fe79c30d4370616/output/res/color/abc_tint_edittext.xml"
+        "merged": "C:\\Users\\kevin\\Documents\\NE_BELT\\Application\\build\\intermediates\\res\\merged\\debug\\color\\abc_tint_seek_thumb.xml",
+        "source": "C:\\Users\\kevin\\.android\\build-cache\\0d31f01a5a8303c0a97438928fe79c30d4370616\\output\\res\\color\\abc_tint_seek_thumb.xml"
     },
     {
-        "merged": "/Users/kevin/Desktop/NE_BELT_APP-master/C:\\Users\\Yeop_DCLab\\Documents\\GitHub\\NE_BELT_APP\\Application\\build\\intermediates\\res\\merged\\debug\\color\\abc_hint_foreground_material_light.xml",
-        "source": "/Users/kevin/Desktop/NE_BELT_APP-master/C:\\Users\\Yeop_DCLab\\.android\\build-cache\\7330c284f0756ea1af22e82431fa83292ba7b697\\output\\res\\color\\abc_hint_foreground_material_light.xml"
+        "merged": "C:\\Users\\kevin\\Documents\\NE_BELT\\Application\\build\\intermediates\\res\\merged\\debug\\color\\abc_search_url_text.xml",
+        "source": "C:\\Users\\kevin\\.android\\build-cache\\0d31f01a5a8303c0a97438928fe79c30d4370616\\output\\res\\color\\abc_search_url_text.xml"
     },
     {
-        "merged": "/Users/kevin/Desktop/NE_BELT_APP-master/C:\\Users\\Yeop_DCLab\\Documents\\GitHub\\NE_BELT_APP\\Application\\build\\intermediates\\res\\merged\\debug\\color\\abc_tint_switch_track.xml",
-        "source": "/Users/kevin/Desktop/NE_BELT_APP-master/C:\\Users\\Yeop_DCLab\\.android\\build-cache\\7330c284f0756ea1af22e82431fa83292ba7b697\\output\\res\\color\\abc_tint_switch_track.xml"
+        "merged": "C:\\Users\\kevin\\Desktop\\NE_BELT_APP-master\\C:\\Users\\kevin\\Documents\\GIT\\NE_BELT\\Application\\build\\intermediates\\res\\merged\\debug\\color\\abc_primary_text_material_dark.xml",
+        "source": "C:\\Users\\kevin\\Desktop\\NE_BELT_APP-master\\C:\\Users\\kevin\\.android\\build-cache\\0d31f01a5a8303c0a97438928fe79c30d4370616\\output\\res\\color\\abc_primary_text_material_dark.xml"
     },
     {
-        "merged": "/Users/kevin/Documents/NE_BELT/Application/build/intermediates/res/merged/debug/color/abc_hint_foreground_material_dark.xml",
-        "source": "/Users/kevin/.android/build-cache/0d31f01a5a8303c0a97438928fe79c30d4370616/output/res/color/abc_hint_foreground_material_dark.xml"
+        "merged": "C:\\Users\\kevin\\Desktop\\NE_BELT_APP-master\\C:\\Users\\Yeop_DCLab\\Documents\\GitHub\\NE_BELT_APP\\Application\\build\\intermediates\\res\\merged\\debug\\color\\abc_tint_spinner.xml",
+        "source": "C:\\Users\\kevin\\Desktop\\NE_BELT_APP-master\\C:\\Users\\Yeop_DCLab\\.android\\build-cache\\7330c284f0756ea1af22e82431fa83292ba7b697\\output\\res\\color\\abc_tint_spinner.xml"
     },
     {
-        "merged": "/Users/kevin/Documents/NE_BELT/Application/build/intermediates/res/merged/debug/color/abc_tint_btn_checkable.xml",
-        "source": "/Users/kevin/.android/build-cache/0d31f01a5a8303c0a97438928fe79c30d4370616/output/res/color/abc_tint_btn_checkable.xml"
+        "merged": "C:\\Users\\kevin\\Desktop\\NE_BELT_APP-master\\C:\\Users\\kevin\\Documents\\GIT\\NE_BELT\\C:\\Users\\Yeop_DCLab\\Documents\\GitHub\\BluetoothLeGatt\\Application\\build\\intermediates\\res\\merged\\debug\\color\\abc_btn_colored_borderless_text_material.xml",
+        "source": "C:\\Users\\kevin\\Desktop\\NE_BELT_APP-master\\C:\\Users\\kevin\\Documents\\GIT\\NE_BELT\\C:\\Users\\Yeop_DCLab\\.android\\build-cache\\7330c284f0756ea1af22e82431fa83292ba7b697\\output\\res\\color\\abc_btn_colored_borderless_text_material.xml"
     },
     {
-        "merged": "/Users/kevin/Desktop/NE_BELT_APP-master/C:\\Users\\kevin\\Documents\\GIT\\NE_BELT\\Application\\build\\intermediates\\res\\merged\\debug\\color\\abc_tint_edittext.xml",
-        "source": "/Users/kevin/Desktop/NE_BELT_APP-master/C:\\Users\\kevin\\.android\\build-cache\\0d31f01a5a8303c0a97438928fe79c30d4370616\\output\\res\\color\\abc_tint_edittext.xml"
+        "merged": "C:\\Users\\kevin\\Documents\\NE_BELT\\Application\\build\\intermediates\\res\\merged\\debug\\color\\abc_primary_text_disable_only_material_light.xml",
+        "source": "C:\\Users\\kevin\\.android\\build-cache\\0d31f01a5a8303c0a97438928fe79c30d4370616\\output\\res\\color\\abc_primary_text_disable_only_material_light.xml"
     },
     {
-        "merged": "/Users/kevin/Desktop/NE_BELT_APP-master/C:\\Users\\Yeop_DCLab\\Documents\\GitHub\\NE_BELT_APP\\Application\\build\\intermediates\\res\\merged\\debug\\color\\abc_tint_spinner.xml",
-        "source": "/Users/kevin/Desktop/NE_BELT_APP-master/C:\\Users\\Yeop_DCLab\\.android\\build-cache\\7330c284f0756ea1af22e82431fa83292ba7b697\\output\\res\\color\\abc_tint_spinner.xml"
+        "merged": "C:\\Users\\kevin\\Documents\\NE_BELT\\Application\\build\\intermediates\\res\\merged\\debug\\color\\abc_tint_edittext.xml",
+        "source": "C:\\Users\\kevin\\.android\\build-cache\\0d31f01a5a8303c0a97438928fe79c30d4370616\\output\\res\\color\\abc_tint_edittext.xml"
     },
     {
-        "merged": "/Users/kevin/Desktop/NE_BELT_APP-master/C:\\Users\\kevin\\Documents\\GIT\\NE_BELT\\C:\\Users\\Yeop_DCLab\\Documents\\GitHub\\BluetoothLeGatt\\Application\\build\\intermediates\\res\\merged\\debug\\color\\abc_tint_edittext.xml",
-        "source": "/Users/kevin/Desktop/NE_BELT_APP-master/C:\\Users\\kevin\\Documents\\GIT\\NE_BELT\\C:\\Users\\Yeop_DCLab\\.android\\build-cache\\7330c284f0756ea1af22e82431fa83292ba7b697\\output\\res\\color\\abc_tint_edittext.xml"
+        "merged": "C:\\Users\\kevin\\Documents\\NE_BELT\\Application\\build\\intermediates\\res\\merged\\debug\\color\\abc_tint_btn_checkable.xml",
+        "source": "C:\\Users\\kevin\\.android\\build-cache\\0d31f01a5a8303c0a97438928fe79c30d4370616\\output\\res\\color\\abc_tint_btn_checkable.xml"
     },
     {
-        "merged": "/Users/kevin/Desktop/NE_BELT_APP-master/C:\\Users\\kevin\\Documents\\GIT\\NE_BELT\\Application\\build\\intermediates\\res\\merged\\debug\\color\\abc_tint_spinner.xml",
-        "source": "/Users/kevin/Desktop/NE_BELT_APP-master/C:\\Users\\kevin\\.android\\build-cache\\0d31f01a5a8303c0a97438928fe79c30d4370616\\output\\res\\color\\abc_tint_spinner.xml"
+        "merged": "C:\\Users\\kevin\\Documents\\NE_BELT\\Application\\build\\intermediates\\res\\merged\\debug\\color\\abc_primary_text_material_light.xml",
+        "source": "C:\\Users\\kevin\\.android\\build-cache\\0d31f01a5a8303c0a97438928fe79c30d4370616\\output\\res\\color\\abc_primary_text_material_light.xml"
     },
     {
-        "merged": "/Users/kevin/Desktop/NE_BELT_APP-master/C:\\Users\\kevin\\Documents\\GIT\\NE_BELT\\Application\\build\\intermediates\\res\\merged\\debug\\color\\abc_tint_switch_track.xml",
-        "source": "/Users/kevin/Desktop/NE_BELT_APP-master/C:\\Users\\kevin\\.android\\build-cache\\0d31f01a5a8303c0a97438928fe79c30d4370616\\output\\res\\color\\abc_tint_switch_track.xml"
+        "merged": "C:\\Users\\kevin\\Desktop\\NE_BELT_APP-master\\C:\\Users\\kevin\\Documents\\GIT\\NE_BELT\\C:\\Users\\Yeop_DCLab\\Documents\\GitHub\\BluetoothLeGatt\\Application\\build\\intermediates\\res\\merged\\debug\\color\\abc_tint_switch_track.xml",
+        "source": "C:\\Users\\kevin\\Desktop\\NE_BELT_APP-master\\C:\\Users\\kevin\\Documents\\GIT\\NE_BELT\\C:\\Users\\Yeop_DCLab\\.android\\build-cache\\7330c284f0756ea1af22e82431fa83292ba7b697\\output\\res\\color\\abc_tint_switch_track.xml"
     },
     {
-        "merged": "/Users/kevin/Desktop/NE_BELT_APP-master/C:\\Users\\kevin\\Documents\\GIT\\NE_BELT\\C:\\Users\\Yeop_DCLab\\Documents\\GitHub\\BluetoothLeGatt\\Application\\build\\intermediates\\res\\merged\\debug\\color\\abc_primary_text_material_light.xml",
-        "source": "/Users/kevin/Desktop/NE_BELT_APP-master/C:\\Users\\kevin\\Documents\\GIT\\NE_BELT\\C:\\Users\\Yeop_DCLab\\.android\\build-cache\\7330c284f0756ea1af22e82431fa83292ba7b697\\output\\res\\color\\abc_primary_text_material_light.xml"
+        "merged": "C:\\Users\\kevin\\Documents\\NE_BELT\\Application\\build\\intermediates\\res\\merged\\debug\\color\\abc_primary_text_material_dark.xml",
+        "source": "C:\\Users\\kevin\\.android\\build-cache\\0d31f01a5a8303c0a97438928fe79c30d4370616\\output\\res\\color\\abc_primary_text_material_dark.xml"
     },
     {
-        "merged": "/Users/kevin/Desktop/NE_BELT_APP-master/C:\\Users\\kevin\\Documents\\GIT\\NE_BELT\\C:\\Users\\Yeop_DCLab\\Documents\\GitHub\\BluetoothLeGatt\\Application\\build\\intermediates\\res\\merged\\debug\\color\\switch_thumb_material_dark.xml",
-        "source": "/Users/kevin/Desktop/NE_BELT_APP-master/C:\\Users\\kevin\\Documents\\GIT\\NE_BELT\\C:\\Users\\Yeop_DCLab\\.android\\build-cache\\7330c284f0756ea1af22e82431fa83292ba7b697\\output\\res\\color\\switch_thumb_material_dark.xml"
+        "merged": "C:\\Users\\kevin\\Desktop\\NE_BELT_APP-master\\C:\\Users\\kevin\\Documents\\GIT\\NE_BELT\\C:\\Users\\Yeop_DCLab\\Documents\\GitHub\\BluetoothLeGatt\\Application\\build\\intermediates\\res\\merged\\debug\\color\\abc_primary_text_disable_only_material_light.xml",
+        "source": "C:\\Users\\kevin\\Desktop\\NE_BELT_APP-master\\C:\\Users\\kevin\\Documents\\GIT\\NE_BELT\\C:\\Users\\Yeop_DCLab\\.android\\build-cache\\7330c284f0756ea1af22e82431fa83292ba7b697\\output\\res\\color\\abc_primary_text_disable_only_material_light.xml"
     },
     {
-        "merged": "/Users/kevin/Desktop/NE_BELT_APP-master/C:\\Users\\Yeop_DCLab\\Documents\\GitHub\\NE_BELT_APP\\Application\\build\\intermediates\\res\\merged\\debug\\color\\abc_primary_text_material_light.xml",
-        "source": "/Users/kevin/Desktop/NE_BELT_APP-master/C:\\Users\\Yeop_DCLab\\.android\\build-cache\\7330c284f0756ea1af22e82431fa83292ba7b697\\output\\res\\color\\abc_primary_text_material_light.xml"
+        "merged": "C:\\Users\\kevin\\Documents\\NE_BELT\\Application\\build\\intermediates\\res\\merged\\debug\\color\\abc_tint_switch_thumb.xml",
+        "source": "C:\\Users\\kevin\\.android\\build-cache\\0d31f01a5a8303c0a97438928fe79c30d4370616\\output\\res\\color\\abc_tint_switch_thumb.xml"
     },
     {
-        "merged": "/Users/kevin/Desktop/NE_BELT_APP-master/C:\\Users\\kevin\\Documents\\GIT\\NE_BELT\\Application\\build\\intermediates\\res\\merged\\debug\\color\\switch_thumb_material_light.xml",
-        "source": "/Users/kevin/Desktop/NE_BELT_APP-master/C:\\Users\\kevin\\.android\\build-cache\\0d31f01a5a8303c0a97438928fe79c30d4370616\\output\\res\\color\\switch_thumb_material_light.xml"
+        "merged": "C:\\Users\\kevin\\Desktop\\NE_BELT_APP-master\\C:\\Users\\kevin\\Documents\\GIT\\NE_BELT\\Application\\build\\intermediates\\res\\merged\\debug\\color\\abc_hint_foreground_material_dark.xml",
+        "source": "C:\\Users\\kevin\\Desktop\\NE_BELT_APP-master\\C:\\Users\\kevin\\.android\\build-cache\\0d31f01a5a8303c0a97438928fe79c30d4370616\\output\\res\\color\\abc_hint_foreground_material_dark.xml"
     },
     {
-        "merged": "/Users/kevin/Desktop/NE_BELT_APP-master/C:\\Users\\Yeop_DCLab\\Documents\\GitHub\\NE_BELT_APP\\Application\\build\\intermediates\\res\\merged\\debug\\color\\abc_primary_text_disable_only_material_dark.xml",
-        "source": "/Users/kevin/Desktop/NE_BELT_APP-master/C:\\Users\\Yeop_DCLab\\.android\\build-cache\\7330c284f0756ea1af22e82431fa83292ba7b697\\output\\res\\color\\abc_primary_text_disable_only_material_dark.xml"
+        "merged": "C:\\Users\\kevin\\Desktop\\NE_BELT_APP-master\\C:\\Users\\Yeop_DCLab\\Documents\\GitHub\\NE_BELT_APP\\Application\\build\\intermediates\\res\\merged\\debug\\color\\abc_primary_text_disable_only_material_dark.xml",
+        "source": "C:\\Users\\kevin\\Desktop\\NE_BELT_APP-master\\C:\\Users\\Yeop_DCLab\\.android\\build-cache\\7330c284f0756ea1af22e82431fa83292ba7b697\\output\\res\\color\\abc_primary_text_disable_only_material_dark.xml"
     },
     {
-        "merged": "/Users/kevin/Desktop/NE_BELT_APP-master/C:\\Users\\kevin\\Documents\\GIT\\NE_BELT\\Application\\build\\intermediates\\res\\merged\\debug\\color\\abc_secondary_text_material_dark.xml",
-        "source": "/Users/kevin/Desktop/NE_BELT_APP-master/C:\\Users\\kevin\\.android\\build-cache\\0d31f01a5a8303c0a97438928fe79c30d4370616\\output\\res\\color\\abc_secondary_text_material_dark.xml"
+        "merged": "C:\\Users\\kevin\\Desktop\\NE_BELT_APP-master\\Application\\build\\intermediates\\res\\merged\\debug\\color\\abc_secondary_text_material_light.xml",
+        "source": "C:\\Users\\kevin\\.android\\build-cache\\0d31f01a5a8303c0a97438928fe79c30d4370616\\output\\res\\color\\abc_secondary_text_material_light.xml"
     },
     {
-        "merged": "/Users/kevin/Desktop/NE_BELT_APP-master/C:\\Users\\kevin\\Documents\\GIT\\NE_BELT\\Application\\build\\intermediates\\res\\merged\\debug\\color\\abc_primary_text_material_dark.xml",
-        "source": "/Users/kevin/Desktop/NE_BELT_APP-master/C:\\Users\\kevin\\.android\\build-cache\\0d31f01a5a8303c0a97438928fe79c30d4370616\\output\\res\\color\\abc_primary_text_material_dark.xml"
+        "merged": "C:\\Users\\kevin\\Desktop\\NE_BELT_APP-master\\Application\\build\\intermediates\\res\\merged\\debug\\color\\abc_primary_text_material_dark.xml",
+        "source": "C:\\Users\\kevin\\.android\\build-cache\\0d31f01a5a8303c0a97438928fe79c30d4370616\\output\\res\\color\\abc_primary_text_material_dark.xml"
     },
     {
-        "merged": "/Users/kevin/Desktop/NE_BELT_APP-master/C:\\Users\\Yeop_DCLab\\Documents\\GitHub\\NE_BELT_APP\\Application\\build\\intermediates\\res\\merged\\debug\\color\\abc_primary_text_disable_only_material_light.xml",
-        "source": "/Users/kevin/Desktop/NE_BELT_APP-master/C:\\Users\\Yeop_DCLab\\.android\\build-cache\\7330c284f0756ea1af22e82431fa83292ba7b697\\output\\res\\color\\abc_primary_text_disable_only_material_light.xml"
+        "merged": "C:\\Users\\kevin\\Desktop\\NE_BELT_APP-master\\C:\\Users\\kevin\\Documents\\GIT\\NE_BELT\\Application\\build\\intermediates\\res\\merged\\debug\\color\\abc_tint_switch_thumb.xml",
+        "source": "C:\\Users\\kevin\\Desktop\\NE_BELT_APP-master\\C:\\Users\\kevin\\.android\\build-cache\\0d31f01a5a8303c0a97438928fe79c30d4370616\\output\\res\\color\\abc_tint_switch_thumb.xml"
     },
     {
-        "merged": "/Users/kevin/Documents/NE_BELT/Application/build/intermediates/res/merged/debug/color/abc_btn_colored_borderless_text_material.xml",
-        "source": "/Users/kevin/.android/build-cache/0d31f01a5a8303c0a97438928fe79c30d4370616/output/res/color/abc_btn_colored_borderless_text_material.xml"
+        "merged": "C:\\Users\\kevin\\Desktop\\NE_BELT_APP-master\\Application\\build\\intermediates\\res\\merged\\debug\\color\\abc_tint_default.xml",
+        "source": "C:\\Users\\kevin\\.android\\build-cache\\0d31f01a5a8303c0a97438928fe79c30d4370616\\output\\res\\color\\abc_tint_default.xml"
     },
     {
-        "merged": "/Users/kevin/Desktop/NE_BELT_APP-master/C:\\Users\\kevin\\Documents\\GIT\\NE_BELT\\C:\\Users\\Yeop_DCLab\\Documents\\GitHub\\BluetoothLeGatt\\Application\\build\\intermediates\\res\\merged\\debug\\color\\abc_secondary_text_material_light.xml",
-        "source": "/Users/kevin/Desktop/NE_BELT_APP-master/C:\\Users\\kevin\\Documents\\GIT\\NE_BELT\\C:\\Users\\Yeop_DCLab\\.android\\build-cache\\7330c284f0756ea1af22e82431fa83292ba7b697\\output\\res\\color\\abc_secondary_text_material_light.xml"
+        "merged": "C:\\Users\\kevin\\Desktop\\NE_BELT_APP-master\\C:\\Users\\Yeop_DCLab\\Documents\\GitHub\\NE_BELT_APP\\Application\\build\\intermediates\\res\\merged\\debug\\color\\abc_hint_foreground_material_dark.xml",
+        "source": "C:\\Users\\kevin\\Desktop\\NE_BELT_APP-master\\C:\\Users\\Yeop_DCLab\\.android\\build-cache\\7330c284f0756ea1af22e82431fa83292ba7b697\\output\\res\\color\\abc_hint_foreground_material_dark.xml"
     },
     {
-        "merged": "/Users/kevin/Documents/NE_BELT/Application/build/intermediates/res/merged/debug/color/switch_thumb_material_dark.xml",
-        "source": "/Users/kevin/.android/build-cache/0d31f01a5a8303c0a97438928fe79c30d4370616/output/res/color/switch_thumb_material_dark.xml"
+        "merged": "C:\\Users\\Yeop_DCLab\\Documents\\GitHub\\NE_BELT\\Application\\build\\intermediates\\res\\merged\\debug\\color\\abc_tint_btn_checkable.xml",
+        "source": "C:\\Users\\Yeop_DCLab\\.android\\build-cache\\7330c284f0756ea1af22e82431fa83292ba7b697\\output\\res\\color\\abc_tint_btn_checkable.xml"
     },
     {
-        "merged": "/Users/kevin/Documents/NE_BELT/Application/build/intermediates/res/merged/debug/color/abc_tint_switch_track.xml",
-        "source": "/Users/kevin/.android/build-cache/0d31f01a5a8303c0a97438928fe79c30d4370616/output/res/color/abc_tint_switch_track.xml"
+        "merged": "C:\\Users\\kevin\\Desktop\\NE_BELT_APP-master\\C:\\Users\\kevin\\Documents\\GIT\\NE_BELT\\Application\\build\\intermediates\\res\\merged\\debug\\color\\abc_tint_default.xml",
+        "source": "C:\\Users\\kevin\\Desktop\\NE_BELT_APP-master\\C:\\Users\\kevin\\.android\\build-cache\\0d31f01a5a8303c0a97438928fe79c30d4370616\\output\\res\\color\\abc_tint_default.xml"
     },
     {
-        "merged": "/Users/kevin/Desktop/NE_BELT_APP-master/Application/build/intermediates/res/merged/debug/color/switch_thumb_material_light.xml",
-        "source": "/Users/kevin/.android/build-cache/0d31f01a5a8303c0a97438928fe79c30d4370616/output/res/color/switch_thumb_material_light.xml"
+        "merged": "C:\\Users\\kevin\\Desktop\\NE_BELT_APP-master\\C:\\Users\\kevin\\Documents\\GIT\\NE_BELT\\C:\\Users\\Yeop_DCLab\\Documents\\GitHub\\BluetoothLeGatt\\Application\\build\\intermediates\\res\\merged\\debug\\color\\abc_tint_switch_thumb.xml",
+        "source": "C:\\Users\\kevin\\Desktop\\NE_BELT_APP-master\\C:\\Users\\kevin\\Documents\\GIT\\NE_BELT\\C:\\Users\\Yeop_DCLab\\.android\\build-cache\\7330c284f0756ea1af22e82431fa83292ba7b697\\output\\res\\color\\abc_tint_switch_thumb.xml"
     },
     {
-        "merged": "/Users/kevin/Documents/NE_BELT/Application/build/intermediates/res/merged/debug/color/switch_thumb_material_light.xml",
-        "source": "/Users/kevin/.android/build-cache/0d31f01a5a8303c0a97438928fe79c30d4370616/output/res/color/switch_thumb_material_light.xml"
+        "merged": "C:\\Users\\kevin\\Desktop\\NE_BELT_APP-master\\C:\\Users\\kevin\\Documents\\GIT\\NE_BELT\\Application\\build\\intermediates\\res\\merged\\debug\\color\\switch_thumb_material_light.xml",
+        "source": "C:\\Users\\kevin\\Desktop\\NE_BELT_APP-master\\C:\\Users\\kevin\\.android\\build-cache\\0d31f01a5a8303c0a97438928fe79c30d4370616\\output\\res\\color\\switch_thumb_material_light.xml"
     },
     {
-        "merged": "/Users/kevin/Desktop/NE_BELT_APP-master/C:\\Users\\kevin\\Documents\\GIT\\NE_BELT\\C:\\Users\\Yeop_DCLab\\Documents\\GitHub\\BluetoothLeGatt\\Application\\build\\intermediates\\res\\merged\\debug\\color\\abc_tint_switch_track.xml",
-        "source": "/Users/kevin/Desktop/NE_BELT_APP-master/C:\\Users\\kevin\\Documents\\GIT\\NE_BELT\\C:\\Users\\Yeop_DCLab\\.android\\build-cache\\7330c284f0756ea1af22e82431fa83292ba7b697\\output\\res\\color\\abc_tint_switch_track.xml"
+        "merged": "C:\\Users\\Yeop_DCLab\\Documents\\GitHub\\NE_BELT\\Application\\build\\intermediates\\res\\merged\\debug\\color\\switch_thumb_material_light.xml",
+        "source": "C:\\Users\\Yeop_DCLab\\.android\\build-cache\\7330c284f0756ea1af22e82431fa83292ba7b697\\output\\res\\color\\switch_thumb_material_light.xml"
     },
     {
-        "merged": "/Users/kevin/Documents/NE_BELT/Application/build/intermediates/res/merged/debug/color/abc_secondary_text_material_dark.xml",
-        "source": "/Users/kevin/.android/build-cache/0d31f01a5a8303c0a97438928fe79c30d4370616/output/res/color/abc_secondary_text_material_dark.xml"
+        "merged": "C:\\Users\\kevin\\Desktop\\NE_BELT_APP-master\\Application\\build\\intermediates\\res\\merged\\debug\\color\\abc_primary_text_disable_only_material_dark.xml",
+        "source": "C:\\Users\\kevin\\.android\\build-cache\\0d31f01a5a8303c0a97438928fe79c30d4370616\\output\\res\\color\\abc_primary_text_disable_only_material_dark.xml"
     },
     {
-        "merged": "/Users/kevin/Documents/NE_BELT/Application/build/intermediates/res/merged/debug/color/abc_search_url_text.xml",
-        "source": "/Users/kevin/.android/build-cache/0d31f01a5a8303c0a97438928fe79c30d4370616/output/res/color/abc_search_url_text.xml"
+        "merged": "C:\\Users\\kevin\\Desktop\\NE_BELT_APP-master\\Application\\build\\intermediates\\res\\merged\\debug\\color\\switch_thumb_material_dark.xml",
+        "source": "C:\\Users\\kevin\\.android\\build-cache\\0d31f01a5a8303c0a97438928fe79c30d4370616\\output\\res\\color\\switch_thumb_material_dark.xml"
     },
     {
-        "merged": "/Users/kevin/Documents/NE_BELT/Application/build/intermediates/res/merged/debug/color/abc_tint_seek_thumb.xml",
-        "source": "/Users/kevin/.android/build-cache/0d31f01a5a8303c0a97438928fe79c30d4370616/output/res/color/abc_tint_seek_thumb.xml"
+        "merged": "C:\\Users\\kevin\\Desktop\\NE_BELT_APP-master\\Application\\build\\intermediates\\res\\merged\\debug\\color\\abc_hint_foreground_material_light.xml",
+        "source": "C:\\Users\\kevin\\.android\\build-cache\\0d31f01a5a8303c0a97438928fe79c30d4370616\\output\\res\\color\\abc_hint_foreground_material_light.xml"
     },
     {
-        "merged": "/Users/kevin/Desktop/NE_BELT_APP-master/C:\\Users\\kevin\\Documents\\GIT\\NE_BELT\\C:\\Users\\Yeop_DCLab\\Documents\\GitHub\\BluetoothLeGatt\\Application\\build\\intermediates\\res\\merged\\debug\\color\\abc_btn_colored_borderless_text_material.xml",
-        "source": "/Users/kevin/Desktop/NE_BELT_APP-master/C:\\Users\\kevin\\Documents\\GIT\\NE_BELT\\C:\\Users\\Yeop_DCLab\\.android\\build-cache\\7330c284f0756ea1af22e82431fa83292ba7b697\\output\\res\\color\\abc_btn_colored_borderless_text_material.xml"
+        "merged": "C:\\Users\\kevin\\Desktop\\NE_BELT_APP-master\\Application\\build\\intermediates\\res\\merged\\debug\\color\\abc_tint_switch_thumb.xml",
+        "source": "C:\\Users\\kevin\\.android\\build-cache\\0d31f01a5a8303c0a97438928fe79c30d4370616\\output\\res\\color\\abc_tint_switch_thumb.xml"
     },
     {
-        "merged": "/Users/kevin/Desktop/NE_BELT_APP-master/Application/build/intermediates/res/merged/debug/color/abc_tint_seek_thumb.xml",
-        "source": "/Users/kevin/.android/build-cache/0d31f01a5a8303c0a97438928fe79c30d4370616/output/res/color/abc_tint_seek_thumb.xml"
+        "merged": "C:\\Users\\kevin\\Desktop\\NE_BELT_APP-master\\C:\\Users\\Yeop_DCLab\\Documents\\GitHub\\NE_BELT_APP\\Application\\build\\intermediates\\res\\merged\\debug\\color\\abc_tint_edittext.xml",
+        "source": "C:\\Users\\kevin\\Desktop\\NE_BELT_APP-master\\C:\\Users\\Yeop_DCLab\\.android\\build-cache\\7330c284f0756ea1af22e82431fa83292ba7b697\\output\\res\\color\\abc_tint_edittext.xml"
     },
     {
-        "merged": "/Users/kevin/Documents/NE_BELT/Application/build/intermediates/res/merged/debug/color/abc_primary_text_material_light.xml",
-        "source": "/Users/kevin/.android/build-cache/0d31f01a5a8303c0a97438928fe79c30d4370616/output/res/color/abc_primary_text_material_light.xml"
+        "merged": "C:\\Users\\kevin\\Desktop\\NE_BELT_APP-master\\C:\\Users\\kevin\\Documents\\GIT\\NE_BELT\\Application\\build\\intermediates\\res\\merged\\debug\\color\\abc_tint_spinner.xml",
+        "source": "C:\\Users\\kevin\\Desktop\\NE_BELT_APP-master\\C:\\Users\\kevin\\.android\\build-cache\\0d31f01a5a8303c0a97438928fe79c30d4370616\\output\\res\\color\\abc_tint_spinner.xml"
     },
     {
-        "merged": "/Users/kevin/Desktop/NE_BELT_APP-master/C:\\Users\\kevin\\Documents\\GIT\\NE_BELT\\C:\\Users\\Yeop_DCLab\\Documents\\GitHub\\BluetoothLeGatt\\Application\\build\\intermediates\\res\\merged\\debug\\color\\abc_primary_text_disable_only_material_dark.xml",
-        "source": "/Users/kevin/Desktop/NE_BELT_APP-master/C:\\Users\\kevin\\Documents\\GIT\\NE_BELT\\C:\\Users\\Yeop_DCLab\\.android\\build-cache\\7330c284f0756ea1af22e82431fa83292ba7b697\\output\\res\\color\\abc_primary_text_disable_only_material_dark.xml"
+        "merged": "C:\\Users\\kevin\\Desktop\\NE_BELT_APP-master\\C:\\Users\\Yeop_DCLab\\Documents\\GitHub\\NE_BELT_APP\\Application\\build\\intermediates\\res\\merged\\debug\\color\\abc_hint_foreground_material_light.xml",
+        "source": "C:\\Users\\kevin\\Desktop\\NE_BELT_APP-master\\C:\\Users\\Yeop_DCLab\\.android\\build-cache\\7330c284f0756ea1af22e82431fa83292ba7b697\\output\\res\\color\\abc_hint_foreground_material_light.xml"
     },
     {
-        "merged": "/Users/kevin/Desktop/NE_BELT_APP-master/Application/build/intermediates/res/merged/debug/color/abc_search_url_text.xml",
-        "source": "/Users/kevin/.android/build-cache/0d31f01a5a8303c0a97438928fe79c30d4370616/output/res/color/abc_search_url_text.xml"
+        "merged": "C:\\Users\\kevin\\Desktop\\NE_BELT_APP-master\\C:\\Users\\kevin\\Documents\\GIT\\NE_BELT\\Application\\build\\intermediates\\res\\merged\\debug\\color\\abc_primary_text_disable_only_material_light.xml",
+        "source": "C:\\Users\\kevin\\Desktop\\NE_BELT_APP-master\\C:\\Users\\kevin\\.android\\build-cache\\0d31f01a5a8303c0a97438928fe79c30d4370616\\output\\res\\color\\abc_primary_text_disable_only_material_light.xml"
     },
     {
-        "merged": "/Users/kevin/Desktop/NE_BELT_APP-master/Application/build/intermediates/res/merged/debug/color/abc_hint_foreground_material_light.xml",
-        "source": "/Users/kevin/.android/build-cache/0d31f01a5a8303c0a97438928fe79c30d4370616/output/res/color/abc_hint_foreground_material_light.xml"
+        "merged": "C:\\Users\\kevin\\Desktop\\NE_BELT_APP-master\\Application\\build\\intermediates\\res\\merged\\debug\\color\\abc_hint_foreground_material_dark.xml",
+        "source": "C:\\Users\\kevin\\.android\\build-cache\\0d31f01a5a8303c0a97438928fe79c30d4370616\\output\\res\\color\\abc_hint_foreground_material_dark.xml"
     },
     {
-        "merged": "/Users/kevin/Desktop/NE_BELT_APP-master/C:\\Users\\kevin\\Documents\\GIT\\NE_BELT\\Application\\build\\intermediates\\res\\merged\\debug\\color\\abc_search_url_text.xml",
-        "source": "/Users/kevin/Desktop/NE_BELT_APP-master/C:\\Users\\kevin\\.android\\build-cache\\0d31f01a5a8303c0a97438928fe79c30d4370616\\output\\res\\color\\abc_search_url_text.xml"
+        "merged": "C:\\Users\\kevin\\Desktop\\NE_BELT_APP-master\\C:\\Users\\kevin\\Documents\\GIT\\NE_BELT\\C:\\Users\\Yeop_DCLab\\Documents\\GitHub\\BluetoothLeGatt\\Application\\build\\intermediates\\res\\merged\\debug\\color\\switch_thumb_material_dark.xml",
+        "source": "C:\\Users\\kevin\\Desktop\\NE_BELT_APP-master\\C:\\Users\\kevin\\Documents\\GIT\\NE_BELT\\C:\\Users\\Yeop_DCLab\\.android\\build-cache\\7330c284f0756ea1af22e82431fa83292ba7b697\\output\\res\\color\\switch_thumb_material_dark.xml"
     },
     {
-        "merged": "/Users/kevin/Desktop/NE_BELT_APP-master/C:\\Users\\kevin\\Documents\\GIT\\NE_BELT\\Application\\build\\intermediates\\res\\merged\\debug\\color\\abc_tint_seek_thumb.xml",
-        "source": "/Users/kevin/Desktop/NE_BELT_APP-master/C:\\Users\\kevin\\.android\\build-cache\\0d31f01a5a8303c0a97438928fe79c30d4370616\\output\\res\\color\\abc_tint_seek_thumb.xml"
+        "merged": "C:\\Users\\kevin\\Documents\\NE_BELT\\Application\\build\\intermediates\\res\\merged\\debug\\color\\abc_btn_colored_borderless_text_material.xml",
+        "source": "C:\\Users\\kevin\\.android\\build-cache\\0d31f01a5a8303c0a97438928fe79c30d4370616\\output\\res\\color\\abc_btn_colored_borderless_text_material.xml"
     },
     {
-        "merged": "/Users/kevin/Desktop/NE_BELT_APP-master/Application/build/intermediates/res/merged/debug/color/abc_tint_edittext.xml",
-        "source": "/Users/kevin/.android/build-cache/0d31f01a5a8303c0a97438928fe79c30d4370616/output/res/color/abc_tint_edittext.xml"
+        "merged": "C:\\Users\\kevin\\Desktop\\NE_BELT_APP-master\\C:\\Users\\kevin\\Documents\\GIT\\NE_BELT\\Application\\build\\intermediates\\res\\merged\\debug\\color\\abc_tint_switch_track.xml",
+        "source": "C:\\Users\\kevin\\Desktop\\NE_BELT_APP-master\\C:\\Users\\kevin\\.android\\build-cache\\0d31f01a5a8303c0a97438928fe79c30d4370616\\output\\res\\color\\abc_tint_switch_track.xml"
     },
     {
-        "merged": "/Users/kevin/Desktop/NE_BELT_APP-master/C:\\Users\\kevin\\Documents\\GIT\\NE_BELT\\Application\\build\\intermediates\\res\\merged\\debug\\color\\abc_hint_foreground_material_dark.xml",
-        "source": "/Users/kevin/Desktop/NE_BELT_APP-master/C:\\Users\\kevin\\.android\\build-cache\\0d31f01a5a8303c0a97438928fe79c30d4370616\\output\\res\\color\\abc_hint_foreground_material_dark.xml"
+        "merged": "C:\\Users\\kevin\\Desktop\\NE_BELT_APP-master\\C:\\Users\\kevin\\Documents\\GIT\\NE_BELT\\C:\\Users\\Yeop_DCLab\\Documents\\GitHub\\BluetoothLeGatt\\Application\\build\\intermediates\\res\\merged\\debug\\color\\abc_tint_btn_checkable.xml",
+        "source": "C:\\Users\\kevin\\Desktop\\NE_BELT_APP-master\\C:\\Users\\kevin\\Documents\\GIT\\NE_BELT\\C:\\Users\\Yeop_DCLab\\.android\\build-cache\\7330c284f0756ea1af22e82431fa83292ba7b697\\output\\res\\color\\abc_tint_btn_checkable.xml"
     },
     {
-        "merged": "/Users/kevin/Desktop/NE_BELT_APP-master/Application/build/intermediates/res/merged/debug/color/abc_primary_text_material_light.xml",
-        "source": "/Users/kevin/.android/build-cache/0d31f01a5a8303c0a97438928fe79c30d4370616/output/res/color/abc_primary_text_material_light.xml"
+        "merged": "C:\\Users\\kevin\\Desktop\\NE_BELT_APP-master\\Application\\build\\intermediates\\res\\merged\\debug\\color\\abc_primary_text_material_light.xml",
+        "source": "C:\\Users\\kevin\\.android\\build-cache\\0d31f01a5a8303c0a97438928fe79c30d4370616\\output\\res\\color\\abc_primary_text_material_light.xml"
     },
     {
-        "merged": "/Users/kevin/Desktop/NE_BELT_APP-master/Application/build/intermediates/res/merged/debug/color/abc_hint_foreground_material_dark.xml",
-        "source": "/Users/kevin/.android/build-cache/0d31f01a5a8303c0a97438928fe79c30d4370616/output/res/color/abc_hint_foreground_material_dark.xml"
+        "merged": "C:\\Users\\kevin\\Desktop\\NE_BELT_APP-master\\Application\\build\\intermediates\\res\\merged\\debug\\color\\abc_tint_btn_checkable.xml",
+        "source": "C:\\Users\\kevin\\.android\\build-cache\\0d31f01a5a8303c0a97438928fe79c30d4370616\\output\\res\\color\\abc_tint_btn_checkable.xml"
     },
     {
-        "merged": "/Users/kevin/Desktop/NE_BELT_APP-master/C:\\Users\\Yeop_DCLab\\Documents\\GitHub\\NE_BELT_APP\\Application\\build\\intermediates\\res\\merged\\debug\\color\\abc_secondary_text_material_light.xml",
-        "source": "/Users/kevin/Desktop/NE_BELT_APP-master/C:\\Users\\Yeop_DCLab\\.android\\build-cache\\7330c284f0756ea1af22e82431fa83292ba7b697\\output\\res\\color\\abc_secondary_text_material_light.xml"
+        "merged": "C:\\Users\\Yeop_DCLab\\Documents\\GitHub\\NE_BELT\\Application\\build\\intermediates\\res\\merged\\debug\\color\\abc_tint_switch_track.xml",
+        "source": "C:\\Users\\Yeop_DCLab\\.android\\build-cache\\7330c284f0756ea1af22e82431fa83292ba7b697\\output\\res\\color\\abc_tint_switch_track.xml"
     },
     {
-        "merged": "/Users/kevin/Desktop/NE_BELT_APP-master/C:\\Users\\kevin\\Documents\\GIT\\NE_BELT\\Application\\build\\intermediates\\res\\merged\\debug\\color\\abc_tint_switch_thumb.xml",
-        "source": "/Users/kevin/Desktop/NE_BELT_APP-master/C:\\Users\\kevin\\.android\\build-cache\\0d31f01a5a8303c0a97438928fe79c30d4370616\\output\\res\\color\\abc_tint_switch_thumb.xml"
+        "merged": "C:\\Users\\kevin\\Desktop\\NE_BELT_APP-master\\C:\\Users\\kevin\\Documents\\GIT\\NE_BELT\\C:\\Users\\Yeop_DCLab\\Documents\\GitHub\\BluetoothLeGatt\\Application\\build\\intermediates\\res\\merged\\debug\\color\\abc_secondary_text_material_light.xml",
+        "source": "C:\\Users\\kevin\\Desktop\\NE_BELT_APP-master\\C:\\Users\\kevin\\Documents\\GIT\\NE_BELT\\C:\\Users\\Yeop_DCLab\\.android\\build-cache\\7330c284f0756ea1af22e82431fa83292ba7b697\\output\\res\\color\\abc_secondary_text_material_light.xml"
+    },
+    {
+        "merged": "C:\\Users\\kevin\\Documents\\NE_BELT\\Application\\build\\intermediates\\res\\merged\\debug\\color\\abc_hint_foreground_material_dark.xml",
+        "source": "C:\\Users\\kevin\\.android\\build-cache\\0d31f01a5a8303c0a97438928fe79c30d4370616\\output\\res\\color\\abc_hint_foreground_material_dark.xml"
+    },
+    {
+        "merged": "C:\\Users\\kevin\\Documents\\NE_BELT\\Application\\build\\intermediates\\res\\merged\\debug\\color\\abc_hint_foreground_material_light.xml",
+        "source": "C:\\Users\\kevin\\.android\\build-cache\\0d31f01a5a8303c0a97438928fe79c30d4370616\\output\\res\\color\\abc_hint_foreground_material_light.xml"
+    },
+    {
+        "merged": "C:\\Users\\kevin\\Desktop\\NE_BELT_APP-master\\C:\\Users\\Yeop_DCLab\\Documents\\GitHub\\NE_BELT_APP\\Application\\build\\intermediates\\res\\merged\\debug\\color\\switch_thumb_material_dark.xml",
+        "source": "C:\\Users\\kevin\\Desktop\\NE_BELT_APP-master\\C:\\Users\\Yeop_DCLab\\.android\\build-cache\\7330c284f0756ea1af22e82431fa83292ba7b697\\output\\res\\color\\switch_thumb_material_dark.xml"
+    },
+    {
+        "merged": "C:\\Users\\kevin\\Desktop\\NE_BELT_APP-master\\C:\\Users\\Yeop_DCLab\\Documents\\GitHub\\NE_BELT_APP\\Application\\build\\intermediates\\res\\merged\\debug\\color\\switch_thumb_material_light.xml",
+        "source": "C:\\Users\\kevin\\Desktop\\NE_BELT_APP-master\\C:\\Users\\Yeop_DCLab\\.android\\build-cache\\7330c284f0756ea1af22e82431fa83292ba7b697\\output\\res\\color\\switch_thumb_material_light.xml"
+    },
+    {
+        "merged": "C:\\Users\\kevin\\Desktop\\NE_BELT_APP-master\\C:\\Users\\kevin\\Documents\\GIT\\NE_BELT\\C:\\Users\\Yeop_DCLab\\Documents\\GitHub\\BluetoothLeGatt\\Application\\build\\intermediates\\res\\merged\\debug\\color\\abc_secondary_text_material_dark.xml",
+        "source": "C:\\Users\\kevin\\Desktop\\NE_BELT_APP-master\\C:\\Users\\kevin\\Documents\\GIT\\NE_BELT\\C:\\Users\\Yeop_DCLab\\.android\\build-cache\\7330c284f0756ea1af22e82431fa83292ba7b697\\output\\res\\color\\abc_secondary_text_material_dark.xml"
+    },
+    {
+        "merged": "C:\\Users\\kevin\\Desktop\\NE_BELT_APP-master\\Application\\build\\intermediates\\res\\merged\\debug\\color\\abc_tint_spinner.xml",
+        "source": "C:\\Users\\kevin\\.android\\build-cache\\0d31f01a5a8303c0a97438928fe79c30d4370616\\output\\res\\color\\abc_tint_spinner.xml"
+    },
+    {
+        "merged": "C:\\Users\\kevin\\Desktop\\NE_BELT_APP-master\\C:\\Users\\Yeop_DCLab\\Documents\\GitHub\\NE_BELT_APP\\Application\\build\\intermediates\\res\\merged\\debug\\color\\abc_primary_text_material_dark.xml",
+        "source": "C:\\Users\\kevin\\Desktop\\NE_BELT_APP-master\\C:\\Users\\Yeop_DCLab\\.android\\build-cache\\7330c284f0756ea1af22e82431fa83292ba7b697\\output\\res\\color\\abc_primary_text_material_dark.xml"
+    },
+    {
+        "merged": "C:\\Users\\kevin\\Desktop\\NE_BELT_APP-master\\C:\\Users\\kevin\\Documents\\GIT\\NE_BELT\\Application\\build\\intermediates\\res\\merged\\debug\\color\\abc_search_url_text.xml",
+        "source": "C:\\Users\\kevin\\Desktop\\NE_BELT_APP-master\\C:\\Users\\kevin\\.android\\build-cache\\0d31f01a5a8303c0a97438928fe79c30d4370616\\output\\res\\color\\abc_search_url_text.xml"
+    },
+    {
+        "merged": "C:\\Users\\kevin\\Desktop\\NE_BELT_APP-master\\C:\\Users\\kevin\\Documents\\GIT\\NE_BELT\\Application\\build\\intermediates\\res\\merged\\debug\\color\\abc_tint_seek_thumb.xml",
+        "source": "C:\\Users\\kevin\\Desktop\\NE_BELT_APP-master\\C:\\Users\\kevin\\.android\\build-cache\\0d31f01a5a8303c0a97438928fe79c30d4370616\\output\\res\\color\\abc_tint_seek_thumb.xml"
+    },
+    {
+        "merged": "C:\\Users\\Yeop_DCLab\\Documents\\GitHub\\NE_BELT\\Application\\build\\intermediates\\res\\merged\\debug\\color\\abc_primary_text_disable_only_material_dark.xml",
+        "source": "C:\\Users\\Yeop_DCLab\\.android\\build-cache\\7330c284f0756ea1af22e82431fa83292ba7b697\\output\\res\\color\\abc_primary_text_disable_only_material_dark.xml"
+    },
+    {
+        "merged": "C:\\Users\\kevin\\Desktop\\NE_BELT_APP-master\\C:\\Users\\Yeop_DCLab\\Documents\\GitHub\\NE_BELT_APP\\Application\\build\\intermediates\\res\\merged\\debug\\color\\abc_tint_seek_thumb.xml",
+        "source": "C:\\Users\\kevin\\Desktop\\NE_BELT_APP-master\\C:\\Users\\Yeop_DCLab\\.android\\build-cache\\7330c284f0756ea1af22e82431fa83292ba7b697\\output\\res\\color\\abc_tint_seek_thumb.xml"
+    },
+    {
+        "merged": "C:\\Users\\kevin\\Desktop\\NE_BELT_APP-master\\C:\\Users\\Yeop_DCLab\\Documents\\GitHub\\NE_BELT_APP\\Application\\build\\intermediates\\res\\merged\\debug\\color\\abc_search_url_text.xml",
+        "source": "C:\\Users\\kevin\\Desktop\\NE_BELT_APP-master\\C:\\Users\\Yeop_DCLab\\.android\\build-cache\\7330c284f0756ea1af22e82431fa83292ba7b697\\output\\res\\color\\abc_search_url_text.xml"
+    },
+    {
+        "merged": "C:\\Users\\Yeop_DCLab\\Documents\\GitHub\\NE_BELT\\Application\\build\\intermediates\\res\\merged\\debug\\color\\abc_primary_text_material_dark.xml",
+        "source": "C:\\Users\\Yeop_DCLab\\.android\\build-cache\\7330c284f0756ea1af22e82431fa83292ba7b697\\output\\res\\color\\abc_primary_text_material_dark.xml"
+    },
+    {
+        "merged": "C:\\Users\\kevin\\Documents\\NE_BELT\\Application\\build\\intermediates\\res\\merged\\debug\\color\\abc_tint_switch_track.xml",
+        "source": "C:\\Users\\kevin\\.android\\build-cache\\0d31f01a5a8303c0a97438928fe79c30d4370616\\output\\res\\color\\abc_tint_switch_track.xml"
+    },
+    {
+        "merged": "C:\\Users\\Yeop_DCLab\\Documents\\GitHub\\NE_BELT\\Application\\build\\intermediates\\res\\merged\\debug\\color\\abc_secondary_text_material_light.xml",
+        "source": "C:\\Users\\Yeop_DCLab\\.android\\build-cache\\7330c284f0756ea1af22e82431fa83292ba7b697\\output\\res\\color\\abc_secondary_text_material_light.xml"
+    },
+    {
+        "merged": "C:\\Users\\kevin\\Desktop\\NE_BELT_APP-master\\Application\\build\\intermediates\\res\\merged\\debug\\color\\abc_primary_text_disable_only_material_light.xml",
+        "source": "C:\\Users\\kevin\\.android\\build-cache\\0d31f01a5a8303c0a97438928fe79c30d4370616\\output\\res\\color\\abc_primary_text_disable_only_material_light.xml"
+    },
+    {
+        "merged": "C:\\Users\\kevin\\Desktop\\NE_BELT_APP-master\\C:\\Users\\kevin\\Documents\\GIT\\NE_BELT\\Application\\build\\intermediates\\res\\merged\\debug\\color\\abc_primary_text_material_light.xml",
+        "source": "C:\\Users\\kevin\\Desktop\\NE_BELT_APP-master\\C:\\Users\\kevin\\.android\\build-cache\\0d31f01a5a8303c0a97438928fe79c30d4370616\\output\\res\\color\\abc_primary_text_material_light.xml"
+    },
+    {
+        "merged": "C:\\Users\\kevin\\Desktop\\NE_BELT_APP-master\\Application\\build\\intermediates\\res\\merged\\debug\\color\\abc_tint_switch_track.xml",
+        "source": "C:\\Users\\kevin\\.android\\build-cache\\0d31f01a5a8303c0a97438928fe79c30d4370616\\output\\res\\color\\abc_tint_switch_track.xml"
+    },
+    {
+        "merged": "C:\\Users\\kevin\\Documents\\NE_BELT\\Application\\build\\intermediates\\res\\merged\\debug\\color\\switch_thumb_material_dark.xml",
+        "source": "C:\\Users\\kevin\\.android\\build-cache\\0d31f01a5a8303c0a97438928fe79c30d4370616\\output\\res\\color\\switch_thumb_material_dark.xml"
     }
 ]

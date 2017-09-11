@@ -1,123 +1,123 @@
 -- Merging decision tree log ---
 manifest
-ADDED from /Users/kevin/Documents/NE_BELT/Application/src/main/AndroidManifest.xml:20:1-59:12
+ADDED from C:\Users\Yeop_DCLab\Documents\GitHub\NE_BELT\Application\src\main\AndroidManifest.xml:20:1-59:12
 	package
-		ADDED from /Users/kevin/Documents/NE_BELT/Application/src/main/AndroidManifest.xml:21:5-50
+		ADDED from C:\Users\Yeop_DCLab\Documents\GitHub\NE_BELT\Application\src\main\AndroidManifest.xml:21:5-50
 	android:versionName
-		ADDED from /Users/kevin/Documents/NE_BELT/Application/src/main/AndroidManifest.xml:23:5-30
-		INJECTED from /Users/kevin/Documents/NE_BELT/Application/src/main/AndroidManifest.xml
-		INJECTED from /Users/kevin/Documents/NE_BELT/Application/src/main/AndroidManifest.xml
+		ADDED from C:\Users\Yeop_DCLab\Documents\GitHub\NE_BELT\Application\src\main\AndroidManifest.xml:23:5-30
+		INJECTED from C:\Users\Yeop_DCLab\Documents\GitHub\NE_BELT\Application\src\main\AndroidManifest.xml
+		INJECTED from C:\Users\Yeop_DCLab\Documents\GitHub\NE_BELT\Application\src\main\AndroidManifest.xml
 	android:versionCode
-		ADDED from /Users/kevin/Documents/NE_BELT/Application/src/main/AndroidManifest.xml:22:5-28
-		INJECTED from /Users/kevin/Documents/NE_BELT/Application/src/main/AndroidManifest.xml
-		INJECTED from /Users/kevin/Documents/NE_BELT/Application/src/main/AndroidManifest.xml
+		ADDED from C:\Users\Yeop_DCLab\Documents\GitHub\NE_BELT\Application\src\main\AndroidManifest.xml:22:5-28
+		INJECTED from C:\Users\Yeop_DCLab\Documents\GitHub\NE_BELT\Application\src\main\AndroidManifest.xml
+		INJECTED from C:\Users\Yeop_DCLab\Documents\GitHub\NE_BELT\Application\src\main\AndroidManifest.xml
 	xmlns:android
-		ADDED from /Users/kevin/Documents/NE_BELT/Application/src/main/AndroidManifest.xml:20:11-69
+		ADDED from C:\Users\Yeop_DCLab\Documents\GitHub\NE_BELT\Application\src\main\AndroidManifest.xml:20:11-69
 uses-feature#android.hardware.bluetooth_le
-ADDED from /Users/kevin/Documents/NE_BELT/Application/src/main/AndroidManifest.xml:31:5-89
+ADDED from C:\Users\Yeop_DCLab\Documents\GitHub\NE_BELT\Application\src\main\AndroidManifest.xml:31:5-89
 	android:required
-		ADDED from /Users/kevin/Documents/NE_BELT/Application/src/main/AndroidManifest.xml:31:64-87
+		ADDED from C:\Users\Yeop_DCLab\Documents\GitHub\NE_BELT\Application\src\main\AndroidManifest.xml:31:64-87
 	android:name
-		ADDED from /Users/kevin/Documents/NE_BELT/Application/src/main/AndroidManifest.xml:31:19-63
+		ADDED from C:\Users\Yeop_DCLab\Documents\GitHub\NE_BELT\Application\src\main\AndroidManifest.xml:31:19-63
 uses-permission#android.permission.BLUETOOTH
-ADDED from /Users/kevin/Documents/NE_BELT/Application/src/main/AndroidManifest.xml:33:5-67
+ADDED from C:\Users\Yeop_DCLab\Documents\GitHub\NE_BELT\Application\src\main\AndroidManifest.xml:33:5-67
 	android:name
-		ADDED from /Users/kevin/Documents/NE_BELT/Application/src/main/AndroidManifest.xml:33:22-65
+		ADDED from C:\Users\Yeop_DCLab\Documents\GitHub\NE_BELT\Application\src\main\AndroidManifest.xml:33:22-65
 uses-permission#android.permission.BLUETOOTH_ADMIN
-ADDED from /Users/kevin/Documents/NE_BELT/Application/src/main/AndroidManifest.xml:34:5-73
+ADDED from C:\Users\Yeop_DCLab\Documents\GitHub\NE_BELT\Application\src\main\AndroidManifest.xml:34:5-73
 	android:name
-		ADDED from /Users/kevin/Documents/NE_BELT/Application/src/main/AndroidManifest.xml:34:22-71
+		ADDED from C:\Users\Yeop_DCLab\Documents\GitHub\NE_BELT\Application\src\main\AndroidManifest.xml:34:22-71
 uses-permission#android.permission.WAKE_LOCK
-ADDED from /Users/kevin/Documents/NE_BELT/Application/src/main/AndroidManifest.xml:35:5-68
+ADDED from C:\Users\Yeop_DCLab\Documents\GitHub\NE_BELT\Application\src\main\AndroidManifest.xml:35:5-68
 	android:name
-		ADDED from /Users/kevin/Documents/NE_BELT/Application/src/main/AndroidManifest.xml:35:22-65
+		ADDED from C:\Users\Yeop_DCLab\Documents\GitHub\NE_BELT\Application\src\main\AndroidManifest.xml:35:22-65
 uses-permission#android.permission.VIBRATE
-ADDED from /Users/kevin/Documents/NE_BELT/Application/src/main/AndroidManifest.xml:36:5-65
+ADDED from C:\Users\Yeop_DCLab\Documents\GitHub\NE_BELT\Application\src\main\AndroidManifest.xml:36:5-65
 	android:name
-		ADDED from /Users/kevin/Documents/NE_BELT/Application/src/main/AndroidManifest.xml:36:22-63
+		ADDED from C:\Users\Yeop_DCLab\Documents\GitHub\NE_BELT\Application\src\main\AndroidManifest.xml:36:22-63
 uses-permission#android.permission.WRITE_EXTERNAL_STORAGE
-ADDED from /Users/kevin/Documents/NE_BELT/Application/src/main/AndroidManifest.xml:37:5-80
+ADDED from C:\Users\Yeop_DCLab\Documents\GitHub\NE_BELT\Application\src\main\AndroidManifest.xml:37:5-80
 	android:name
-		ADDED from /Users/kevin/Documents/NE_BELT/Application/src/main/AndroidManifest.xml:37:22-78
+		ADDED from C:\Users\Yeop_DCLab\Documents\GitHub\NE_BELT\Application\src\main\AndroidManifest.xml:37:22-78
 uses-permission#android.permission.ACCESS_NETWORK_STATE
-ADDED from /Users/kevin/Documents/NE_BELT/Application/src/main/AndroidManifest.xml:38:5-79
+ADDED from C:\Users\Yeop_DCLab\Documents\GitHub\NE_BELT\Application\src\main\AndroidManifest.xml:38:5-79
 	android:name
-		ADDED from /Users/kevin/Documents/NE_BELT/Application/src/main/AndroidManifest.xml:38:22-76
+		ADDED from C:\Users\Yeop_DCLab\Documents\GitHub\NE_BELT\Application\src\main\AndroidManifest.xml:38:22-76
 uses-permission#android.permission.INTERNET
-ADDED from /Users/kevin/Documents/NE_BELT/Application/src/main/AndroidManifest.xml:39:5-66
+ADDED from C:\Users\Yeop_DCLab\Documents\GitHub\NE_BELT\Application\src\main\AndroidManifest.xml:39:5-66
 	android:name
-		ADDED from /Users/kevin/Documents/NE_BELT/Application/src/main/AndroidManifest.xml:39:22-64
+		ADDED from C:\Users\Yeop_DCLab\Documents\GitHub\NE_BELT\Application\src\main\AndroidManifest.xml:39:22-64
 uses-permission#android.permission.GET_ACCOUNTS
-ADDED from /Users/kevin/Documents/NE_BELT/Application/src/main/AndroidManifest.xml:40:5-71
+ADDED from C:\Users\Yeop_DCLab\Documents\GitHub\NE_BELT\Application\src\main\AndroidManifest.xml:40:5-71
 	android:name
-		ADDED from /Users/kevin/Documents/NE_BELT/Application/src/main/AndroidManifest.xml:40:22-68
+		ADDED from C:\Users\Yeop_DCLab\Documents\GitHub\NE_BELT\Application\src\main\AndroidManifest.xml:40:22-68
 uses-permission#android.permission.ACCESS_COARSE_LOCATION
-ADDED from /Users/kevin/Documents/NE_BELT/Application/src/main/AndroidManifest.xml:41:5-80
+ADDED from C:\Users\Yeop_DCLab\Documents\GitHub\NE_BELT\Application\src\main\AndroidManifest.xml:41:5-80
 	android:name
-		ADDED from /Users/kevin/Documents/NE_BELT/Application/src/main/AndroidManifest.xml:41:22-78
+		ADDED from C:\Users\Yeop_DCLab\Documents\GitHub\NE_BELT\Application\src\main\AndroidManifest.xml:41:22-78
 application
-ADDED from /Users/kevin/Documents/NE_BELT/Application/src/main/AndroidManifest.xml:45:5-57:19
-MERGED from [com.android.support:support-v13:25.0.1] /Users/kevin/.android/build-cache/5bf2316544129dba954dadcc2aae2ab7b9fc5a44/output/AndroidManifest.xml:25:5-20
-MERGED from [com.android.support:cardview-v7:25.0.1] /Users/kevin/.android/build-cache/954cdd024a5e8e6bdf998c7141268a6a72c4e358/output/AndroidManifest.xml:22:5-20
-MERGED from [com.android.support:appcompat-v7:25.0.1] /Users/kevin/.android/build-cache/0d31f01a5a8303c0a97438928fe79c30d4370616/output/AndroidManifest.xml:25:5-20
-MERGED from [com.android.support:support-v4:25.0.1] /Users/kevin/.android/build-cache/7bdd44bb7d1a3cb139fb9a83194092265ae1b117/output/AndroidManifest.xml:25:5-20
-MERGED from [com.android.support:support-fragment:25.0.1] /Users/kevin/.android/build-cache/944cbe85137c1820c4b401d29e6a200f41587de0/output/AndroidManifest.xml:25:5-20
-MERGED from [com.android.support:support-media-compat:25.0.1] /Users/kevin/.android/build-cache/77ffab535ae6b8962aae9751a6284b0cd192a84f/output/AndroidManifest.xml:25:5-20
-MERGED from [com.android.support:support-core-ui:25.0.1] /Users/kevin/.android/build-cache/e020939113b8480fe6549f7c978cb1a7ac48dd18/output/AndroidManifest.xml:25:5-20
-MERGED from [com.android.support:support-core-utils:25.0.1] /Users/kevin/.android/build-cache/e3836a222436e43f26313c069b143c7387d0f476/output/AndroidManifest.xml:25:5-20
-MERGED from [com.android.support:animated-vector-drawable:25.0.1] /Users/kevin/.android/build-cache/c88437955a111d966e713655af0f85ef734ec4c5/output/AndroidManifest.xml:22:5-20
-MERGED from [com.android.support:support-vector-drawable:25.0.1] /Users/kevin/.android/build-cache/17421d4cd2e073c5cbb9163771219973aeb2e600/output/AndroidManifest.xml:23:5-20
-MERGED from [com.android.support:support-compat:25.0.1] /Users/kevin/.android/build-cache/8e221d61123c01963fb30d977a18d18c98db8da8/output/AndroidManifest.xml:25:5-20
+ADDED from C:\Users\Yeop_DCLab\Documents\GitHub\NE_BELT\Application\src\main\AndroidManifest.xml:45:5-57:19
+MERGED from [com.android.support:support-v13:25.0.1] C:\Users\Yeop_DCLab\.android\build-cache\662a5cd87b3f662cbdd22673392031e12b62cfd7\output\AndroidManifest.xml:25:5-20
+MERGED from [com.android.support:cardview-v7:25.0.1] C:\Users\Yeop_DCLab\.android\build-cache\96d4e232c26bac7f4deeb2646712b84ea0ad2c39\output\AndroidManifest.xml:22:5-20
+MERGED from [com.android.support:appcompat-v7:25.0.1] C:\Users\Yeop_DCLab\.android\build-cache\7330c284f0756ea1af22e82431fa83292ba7b697\output\AndroidManifest.xml:25:5-20
+MERGED from [com.android.support:support-v4:25.0.1] C:\Users\Yeop_DCLab\.android\build-cache\3711e972ee84da8ab08ad548dda20ce0021cb1e2\output\AndroidManifest.xml:25:5-20
+MERGED from [com.android.support:support-fragment:25.0.1] C:\Users\Yeop_DCLab\.android\build-cache\3bb18d33dfa00bd9f01afe1f1a2e97663656fd4d\output\AndroidManifest.xml:25:5-20
+MERGED from [com.android.support:support-media-compat:25.0.1] C:\Users\Yeop_DCLab\.android\build-cache\b61e7a7cf314efbadb3ef55d467fe938807109ca\output\AndroidManifest.xml:25:5-20
+MERGED from [com.android.support:support-core-ui:25.0.1] C:\Users\Yeop_DCLab\.android\build-cache\24ad55344ecbd67f6655c1e9bd8cfc910cdcca47\output\AndroidManifest.xml:25:5-20
+MERGED from [com.android.support:support-core-utils:25.0.1] C:\Users\Yeop_DCLab\.android\build-cache\9ca90bbd1bd4ecdcbc1c6b9ad39f6739f7d9d71e\output\AndroidManifest.xml:25:5-20
+MERGED from [com.android.support:animated-vector-drawable:25.0.1] C:\Users\Yeop_DCLab\.android\build-cache\c8739e385cb4078c4418c6a2f0f18a4cd103fad1\output\AndroidManifest.xml:22:5-20
+MERGED from [com.android.support:support-vector-drawable:25.0.1] C:\Users\Yeop_DCLab\.android\build-cache\bc905eef107723852facabbcb7754b204532bec1\output\AndroidManifest.xml:23:5-20
+MERGED from [com.android.support:support-compat:25.0.1] C:\Users\Yeop_DCLab\.android\build-cache\4a3e01ab0b2e6fdb8a3077c0461b8f61e0ab6b3c\output\AndroidManifest.xml:25:5-20
 	android:label
-		ADDED from /Users/kevin/Documents/NE_BELT/Application/src/main/AndroidManifest.xml:45:18-50
+		ADDED from C:\Users\Yeop_DCLab\Documents\GitHub\NE_BELT\Application\src\main\AndroidManifest.xml:45:18-50
 	android:icon
-		ADDED from /Users/kevin/Documents/NE_BELT/Application/src/main/AndroidManifest.xml:46:9-45
+		ADDED from C:\Users\Yeop_DCLab\Documents\GitHub\NE_BELT\Application\src\main\AndroidManifest.xml:46:9-45
 	android:theme
-		ADDED from /Users/kevin/Documents/NE_BELT/Application/src/main/AndroidManifest.xml:47:9-56
+		ADDED from C:\Users\Yeop_DCLab\Documents\GitHub\NE_BELT\Application\src\main\AndroidManifest.xml:47:9-56
 activity#com.example.android.bluetoothlegatt.DeviceScanActivity
-ADDED from /Users/kevin/Documents/NE_BELT/Application/src/main/AndroidManifest.xml:48:9-54:20
+ADDED from C:\Users\Yeop_DCLab\Documents\GitHub\NE_BELT\Application\src\main\AndroidManifest.xml:48:9-54:20
 	android:label
-		ADDED from /Users/kevin/Documents/NE_BELT/Application/src/main/AndroidManifest.xml:49:13-45
+		ADDED from C:\Users\Yeop_DCLab\Documents\GitHub\NE_BELT\Application\src\main\AndroidManifest.xml:49:13-45
 	android:name
-		ADDED from /Users/kevin/Documents/NE_BELT/Application/src/main/AndroidManifest.xml:48:19-53
+		ADDED from C:\Users\Yeop_DCLab\Documents\GitHub\NE_BELT\Application\src\main\AndroidManifest.xml:48:19-53
 intent-filter#android.intent.action.MAIN+android.intent.category.LAUNCHER
-ADDED from /Users/kevin/Documents/NE_BELT/Application/src/main/AndroidManifest.xml:50:13-53:29
+ADDED from C:\Users\Yeop_DCLab\Documents\GitHub\NE_BELT\Application\src\main\AndroidManifest.xml:50:13-53:29
 action#android.intent.action.MAIN
-ADDED from /Users/kevin/Documents/NE_BELT/Application/src/main/AndroidManifest.xml:51:17-68
+ADDED from C:\Users\Yeop_DCLab\Documents\GitHub\NE_BELT\Application\src\main\AndroidManifest.xml:51:17-68
 	android:name
-		ADDED from /Users/kevin/Documents/NE_BELT/Application/src/main/AndroidManifest.xml:51:25-66
+		ADDED from C:\Users\Yeop_DCLab\Documents\GitHub\NE_BELT\Application\src\main\AndroidManifest.xml:51:25-66
 category#android.intent.category.LAUNCHER
-ADDED from /Users/kevin/Documents/NE_BELT/Application/src/main/AndroidManifest.xml:52:17-76
+ADDED from C:\Users\Yeop_DCLab\Documents\GitHub\NE_BELT\Application\src\main\AndroidManifest.xml:52:17-76
 	android:name
-		ADDED from /Users/kevin/Documents/NE_BELT/Application/src/main/AndroidManifest.xml:52:27-74
+		ADDED from C:\Users\Yeop_DCLab\Documents\GitHub\NE_BELT\Application\src\main\AndroidManifest.xml:52:27-74
 activity#com.example.android.bluetoothlegatt.DeviceControlActivity
-ADDED from /Users/kevin/Documents/NE_BELT/Application/src/main/AndroidManifest.xml:55:9-58
+ADDED from C:\Users\Yeop_DCLab\Documents\GitHub\NE_BELT\Application\src\main\AndroidManifest.xml:55:9-58
 	android:name
-		ADDED from /Users/kevin/Documents/NE_BELT/Application/src/main/AndroidManifest.xml:55:19-56
+		ADDED from C:\Users\Yeop_DCLab\Documents\GitHub\NE_BELT\Application\src\main\AndroidManifest.xml:55:19-56
 service#com.example.android.bluetoothlegatt.BluetoothLeService
-ADDED from /Users/kevin/Documents/NE_BELT/Application/src/main/AndroidManifest.xml:56:9-77
+ADDED from C:\Users\Yeop_DCLab\Documents\GitHub\NE_BELT\Application\src\main\AndroidManifest.xml:56:9-77
 	android:enabled
-		ADDED from /Users/kevin/Documents/NE_BELT/Application/src/main/AndroidManifest.xml:56:53-75
+		ADDED from C:\Users\Yeop_DCLab\Documents\GitHub\NE_BELT\Application\src\main\AndroidManifest.xml:56:53-75
 	android:name
-		ADDED from /Users/kevin/Documents/NE_BELT/Application/src/main/AndroidManifest.xml:56:18-52
+		ADDED from C:\Users\Yeop_DCLab\Documents\GitHub\NE_BELT\Application\src\main\AndroidManifest.xml:56:18-52
 uses-sdk
-INJECTED from /Users/kevin/Documents/NE_BELT/Application/src/main/AndroidManifest.xml reason: use-sdk injection requested
-MERGED from [com.android.support:support-v13:25.0.1] /Users/kevin/.android/build-cache/5bf2316544129dba954dadcc2aae2ab7b9fc5a44/output/AndroidManifest.xml:21:5-23:55
-MERGED from [com.android.support:cardview-v7:25.0.1] /Users/kevin/.android/build-cache/954cdd024a5e8e6bdf998c7141268a6a72c4e358/output/AndroidManifest.xml:20:5-43
-MERGED from [com.android.support:appcompat-v7:25.0.1] /Users/kevin/.android/build-cache/0d31f01a5a8303c0a97438928fe79c30d4370616/output/AndroidManifest.xml:21:5-23:78
-MERGED from [com.android.support:support-v4:25.0.1] /Users/kevin/.android/build-cache/7bdd44bb7d1a3cb139fb9a83194092265ae1b117/output/AndroidManifest.xml:21:5-23:54
-MERGED from [com.android.support:support-fragment:25.0.1] /Users/kevin/.android/build-cache/944cbe85137c1820c4b401d29e6a200f41587de0/output/AndroidManifest.xml:21:5-23:60
-MERGED from [com.android.support:support-media-compat:25.0.1] /Users/kevin/.android/build-cache/77ffab535ae6b8962aae9751a6284b0cd192a84f/output/AndroidManifest.xml:21:5-23:63
-MERGED from [com.android.support:support-core-ui:25.0.1] /Users/kevin/.android/build-cache/e020939113b8480fe6549f7c978cb1a7ac48dd18/output/AndroidManifest.xml:21:5-23:58
-MERGED from [com.android.support:support-core-utils:25.0.1] /Users/kevin/.android/build-cache/e3836a222436e43f26313c069b143c7387d0f476/output/AndroidManifest.xml:21:5-23:61
-MERGED from [com.android.support:animated-vector-drawable:25.0.1] /Users/kevin/.android/build-cache/c88437955a111d966e713655af0f85ef734ec4c5/output/AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:support-vector-drawable:25.0.1] /Users/kevin/.android/build-cache/17421d4cd2e073c5cbb9163771219973aeb2e600/output/AndroidManifest.xml:21:5-43
-MERGED from [com.android.support:support-compat:25.0.1] /Users/kevin/.android/build-cache/8e221d61123c01963fb30d977a18d18c98db8da8/output/AndroidManifest.xml:21:5-23:58
+INJECTED from C:\Users\Yeop_DCLab\Documents\GitHub\NE_BELT\Application\src\main\AndroidManifest.xml reason: use-sdk injection requested
+MERGED from [com.android.support:support-v13:25.0.1] C:\Users\Yeop_DCLab\.android\build-cache\662a5cd87b3f662cbdd22673392031e12b62cfd7\output\AndroidManifest.xml:21:5-23:55
+MERGED from [com.android.support:cardview-v7:25.0.1] C:\Users\Yeop_DCLab\.android\build-cache\96d4e232c26bac7f4deeb2646712b84ea0ad2c39\output\AndroidManifest.xml:20:5-43
+MERGED from [com.android.support:appcompat-v7:25.0.1] C:\Users\Yeop_DCLab\.android\build-cache\7330c284f0756ea1af22e82431fa83292ba7b697\output\AndroidManifest.xml:21:5-23:78
+MERGED from [com.android.support:support-v4:25.0.1] C:\Users\Yeop_DCLab\.android\build-cache\3711e972ee84da8ab08ad548dda20ce0021cb1e2\output\AndroidManifest.xml:21:5-23:54
+MERGED from [com.android.support:support-fragment:25.0.1] C:\Users\Yeop_DCLab\.android\build-cache\3bb18d33dfa00bd9f01afe1f1a2e97663656fd4d\output\AndroidManifest.xml:21:5-23:60
+MERGED from [com.android.support:support-media-compat:25.0.1] C:\Users\Yeop_DCLab\.android\build-cache\b61e7a7cf314efbadb3ef55d467fe938807109ca\output\AndroidManifest.xml:21:5-23:63
+MERGED from [com.android.support:support-core-ui:25.0.1] C:\Users\Yeop_DCLab\.android\build-cache\24ad55344ecbd67f6655c1e9bd8cfc910cdcca47\output\AndroidManifest.xml:21:5-23:58
+MERGED from [com.android.support:support-core-utils:25.0.1] C:\Users\Yeop_DCLab\.android\build-cache\9ca90bbd1bd4ecdcbc1c6b9ad39f6739f7d9d71e\output\AndroidManifest.xml:21:5-23:61
+MERGED from [com.android.support:animated-vector-drawable:25.0.1] C:\Users\Yeop_DCLab\.android\build-cache\c8739e385cb4078c4418c6a2f0f18a4cd103fad1\output\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-vector-drawable:25.0.1] C:\Users\Yeop_DCLab\.android\build-cache\bc905eef107723852facabbcb7754b204532bec1\output\AndroidManifest.xml:21:5-43
+MERGED from [com.android.support:support-compat:25.0.1] C:\Users\Yeop_DCLab\.android\build-cache\4a3e01ab0b2e6fdb8a3077c0461b8f61e0ab6b3c\output\AndroidManifest.xml:21:5-23:58
 	tools:overrideLibrary
-		ADDED from [com.android.support:support-v13:25.0.1] /Users/kevin/.android/build-cache/5bf2316544129dba954dadcc2aae2ab7b9fc5a44/output/AndroidManifest.xml:23:9-52
+		ADDED from [com.android.support:support-v13:25.0.1] C:\Users\Yeop_DCLab\.android\build-cache\662a5cd87b3f662cbdd22673392031e12b62cfd7\output\AndroidManifest.xml:23:9-52
 	android:targetSdkVersion
-		INJECTED from /Users/kevin/Documents/NE_BELT/Application/src/main/AndroidManifest.xml
-		INJECTED from /Users/kevin/Documents/NE_BELT/Application/src/main/AndroidManifest.xml
+		INJECTED from C:\Users\Yeop_DCLab\Documents\GitHub\NE_BELT\Application\src\main\AndroidManifest.xml
+		INJECTED from C:\Users\Yeop_DCLab\Documents\GitHub\NE_BELT\Application\src\main\AndroidManifest.xml
 	android:minSdkVersion
-		INJECTED from /Users/kevin/Documents/NE_BELT/Application/src/main/AndroidManifest.xml
-		INJECTED from /Users/kevin/Documents/NE_BELT/Application/src/main/AndroidManifest.xml
+		INJECTED from C:\Users\Yeop_DCLab\Documents\GitHub\NE_BELT\Application\src\main\AndroidManifest.xml
+		INJECTED from C:\Users\Yeop_DCLab\Documents\GitHub\NE_BELT\Application\src\main\AndroidManifest.xml

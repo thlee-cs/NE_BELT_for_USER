@@ -1,6 +1,6 @@
 [
     {
-        "outputFile": "/Users/kevin/Desktop/NE_BELT_APP-master/Application/build/intermediates/incremental/mergeDebugResources/merged.dir/values-port/values-port.xml",
+        "outputFile": "C:\\Users\\Yeop_DCLab\\Documents\\GitHub\\NE_BELT\\Application\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-port\\values-port.xml",
         "map": [
             {
                 "to": {
@@ -11,7 +11,7 @@
                     "endOffset": 106
                 },
                 "from": {
-                    "file": "/Users/kevin/.android/build-cache/0d31f01a5a8303c0a97438928fe79c30d4370616/output/res/values-port/values-port.xml",
+                    "file": "C:\\Users\\Yeop_DCLab\\.android\\build-cache\\7330c284f0756ea1af22e82431fa83292ba7b697\\output\\res\\values-port\\values-port.xml",
                     "position": {
                         "startLine": 2,
                         "startColumn": 4,
@@ -24,7 +24,7 @@
         ]
     },
     {
-        "outputFile": "/Users/kevin/Desktop/NE_BELT_APP-master/C:\\Users\\kevin\\Documents\\GIT\\NE_BELT\\Application\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-port\\values-port.xml",
+        "outputFile": "C:\\Users\\kevin\\Desktop\\NE_BELT_APP-master\\Application\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-port\\values-port.xml",
         "map": [
             {
                 "to": {
@@ -35,7 +35,7 @@
                     "endOffset": 106
                 },
                 "from": {
-                    "file": "/Users/kevin/Desktop/NE_BELT_APP-master/C:\\Users\\kevin\\.android\\build-cache\\0d31f01a5a8303c0a97438928fe79c30d4370616\\output\\res\\values-port\\values-port.xml",
+                    "file": "C:\\Users\\kevin\\.android\\build-cache\\0d31f01a5a8303c0a97438928fe79c30d4370616\\output\\res\\values-port\\values-port.xml",
                     "position": {
                         "startLine": 2,
                         "startColumn": 4,
@@ -48,7 +48,7 @@
         ]
     },
     {
-        "outputFile": "/Users/kevin/Desktop/NE_BELT_APP-master/C:\\Users\\Yeop_DCLab\\Documents\\GitHub\\NE_BELT_APP\\Application\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-port\\values-port.xml",
+        "outputFile": "C:\\Users\\kevin\\Desktop\\NE_BELT_APP-master\\C:\\Users\\kevin\\Documents\\GIT\\NE_BELT\\Application\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-port\\values-port.xml",
         "map": [
             {
                 "to": {
@@ -59,7 +59,7 @@
                     "endOffset": 106
                 },
                 "from": {
-                    "file": "/Users/kevin/Desktop/NE_BELT_APP-master/C:\\Users\\Yeop_DCLab\\.android\\build-cache\\7330c284f0756ea1af22e82431fa83292ba7b697\\output\\res\\values-port\\values-port.xml",
+                    "file": "C:\\Users\\kevin\\Desktop\\NE_BELT_APP-master\\C:\\Users\\kevin\\.android\\build-cache\\0d31f01a5a8303c0a97438928fe79c30d4370616\\output\\res\\values-port\\values-port.xml",
                     "position": {
                         "startLine": 2,
                         "startColumn": 4,
@@ -72,7 +72,7 @@
         ]
     },
     {
-        "outputFile": "/Users/kevin/Documents/NE_BELT/Application/build/intermediates/incremental/mergeDebugResources/merged.dir/values-port/values-port.xml",
+        "outputFile": "C:\\Users\\kevin\\Desktop\\NE_BELT_APP-master\\C:\\Users\\Yeop_DCLab\\Documents\\GitHub\\NE_BELT_APP\\Application\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-port\\values-port.xml",
         "map": [
             {
                 "to": {
@@ -83,7 +83,7 @@
                     "endOffset": 106
                 },
                 "from": {
-                    "file": "/Users/kevin/.android/build-cache/0d31f01a5a8303c0a97438928fe79c30d4370616/output/res/values-port/values-port.xml",
+                    "file": "C:\\Users\\kevin\\Desktop\\NE_BELT_APP-master\\C:\\Users\\Yeop_DCLab\\.android\\build-cache\\7330c284f0756ea1af22e82431fa83292ba7b697\\output\\res\\values-port\\values-port.xml",
                     "position": {
                         "startLine": 2,
                         "startColumn": 4,
@@ -96,7 +96,7 @@
         ]
     },
     {
-        "outputFile": "/Users/kevin/Desktop/NE_BELT_APP-master/C:\\Users\\kevin\\Documents\\GIT\\NE_BELT\\C:\\Users\\Yeop_DCLab\\Documents\\GitHub\\BluetoothLeGatt\\Application\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-port\\values-port.xml",
+        "outputFile": "C:\\Users\\kevin\\Desktop\\NE_BELT_APP-master\\C:\\Users\\kevin\\Documents\\GIT\\NE_BELT\\C:\\Users\\Yeop_DCLab\\Documents\\GitHub\\BluetoothLeGatt\\Application\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-port\\values-port.xml",
         "map": [
             {
                 "to": {
@@ -107,7 +107,31 @@
                     "endOffset": 106
                 },
                 "from": {
-                    "file": "/Users/kevin/Desktop/NE_BELT_APP-master/C:\\Users\\kevin\\Documents\\GIT\\NE_BELT\\C:\\Users\\Yeop_DCLab\\.android\\build-cache\\7330c284f0756ea1af22e82431fa83292ba7b697\\output\\res\\values-port\\values-port.xml",
+                    "file": "C:\\Users\\kevin\\Desktop\\NE_BELT_APP-master\\C:\\Users\\kevin\\Documents\\GIT\\NE_BELT\\C:\\Users\\Yeop_DCLab\\.android\\build-cache\\7330c284f0756ea1af22e82431fa83292ba7b697\\output\\res\\values-port\\values-port.xml",
+                    "position": {
+                        "startLine": 2,
+                        "startColumn": 4,
+                        "startOffset": 55,
+                        "endColumn": 55,
+                        "endOffset": 106
+                    }
+                }
+            }
+        ]
+    },
+    {
+        "outputFile": "C:\\Users\\kevin\\Documents\\NE_BELT\\Application\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-port\\values-port.xml",
+        "map": [
+            {
+                "to": {
+                    "startLine": 2,
+                    "startColumn": 4,
+                    "startOffset": 55,
+                    "endColumn": 55,
+                    "endOffset": 106
+                },
+                "from": {
+                    "file": "C:\\Users\\kevin\\.android\\build-cache\\0d31f01a5a8303c0a97438928fe79c30d4370616\\output\\res\\values-port\\values-port.xml",
                     "position": {
                         "startLine": 2,
                         "startColumn": 4,

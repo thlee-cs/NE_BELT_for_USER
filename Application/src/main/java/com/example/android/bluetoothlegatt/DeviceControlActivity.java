@@ -285,8 +285,11 @@ public class DeviceControlActivity extends Activity {
             // mBIA_Chart.setPoint(ecgDataArray[0]); // set ECG Chart Y scale
             // mBIA_Chart.buildRenderer(0xff7d7d7d);
             mBIA_Chart.updateChart(ecgDataArray);
-            mUpdateDataHandler = new Handler();
-            mUpdateDataHandler.postDelayed(updateDataMethod, 5000);
+//            mUpdateDataHandler = new Handler();
+//            mUpdateDataHandler.postDelayed(updateDataMethod, 5000);
+
+            if (mTextView_BodyImpedance != null) mTextView_BodyImpedance.setText(String.format("%,d", mBiaDataList.get(mBiaDataList.size() - 1)));
+            if (mTextView_MoistureSensor != null) mTextView_MoistureSensor.setText(String.format("%,d", mMoiDataList.get(mMoiDataList.size() - 1)));
         }
 
 
@@ -426,14 +429,14 @@ public class DeviceControlActivity extends Activity {
         return super.onOptionsItemSelected(item);
     }
 
-    private Runnable updateDataMethod = new Runnable() {
-        public void run() {
-
-            if (mTextView_BodyImpedance != null) mTextView_BodyImpedance.setText(String.format("%,d", mBiaDataList.get(mBiaDataList.size() - 1)));
-            if (mTextView_MoistureSensor != null) mTextView_MoistureSensor.setText(String.format("%,d", mMoiDataList.get(mMoiDataList.size() - 1)));
-            mUpdateDataHandler.postDelayed(updateDataMethod, 5000);
-        }
-    };
+//    private Runnable updateDataMethod = new Runnable() {
+//        public void run() {
+//
+//            if (mTextView_BodyImpedance != null) mTextView_BodyImpedance.setText(String.format("%,d", mBiaDataList.get(mBiaDataList.size() - 1)));
+//            if (mTextView_MoistureSensor != null) mTextView_MoistureSensor.setText(String.format("%,d", mMoiDataList.get(mMoiDataList.size() - 1)));
+//            mUpdateDataHandler.postDelayed(updateDataMethod, 5000);
+//        }
+//    };
 
     int bia_ctrl_time = 0;
     int bia_temp=0;
