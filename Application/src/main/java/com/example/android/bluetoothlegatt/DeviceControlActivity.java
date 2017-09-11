@@ -295,7 +295,6 @@ public class DeviceControlActivity extends Activity {
             if (mTextView_MoistureSensor != null) mTextView_MoistureSensor.setText(String.format("%,d", mMoiDataList.get(mMoiDataList.size() - 1)));
         }
 
-
         mFileManager.saveData(packet, NEventMarker, BiaMarker);
         NEventMarker = 0;
 
