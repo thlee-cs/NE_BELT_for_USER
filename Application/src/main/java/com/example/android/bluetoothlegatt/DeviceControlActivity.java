@@ -282,7 +282,7 @@ public class DeviceControlActivity extends Activity {
             }
         }
 
-        //RR interval noise detection
+        //RR interval noise detectionss
 
 
         if (mBIA_Chart != null) {
