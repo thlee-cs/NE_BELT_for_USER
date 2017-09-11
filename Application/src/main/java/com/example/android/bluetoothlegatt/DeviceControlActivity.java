@@ -74,7 +74,7 @@ public class DeviceControlActivity extends Activity {
     public static final String EXTRAS_DEVICE_NAME = "NE_BELT1";
     public static final String EXTRAS_DEVICE_ADDRESS = "98:2D:68:2D:60:05";
 
-    private int mfile_Num;
+
     private TextView mSaveView;
     private Button mSaveButton;
     private Button mStartButton;
@@ -106,9 +106,9 @@ public class DeviceControlActivity extends Activity {
     private ArrayList<Integer> mMoiDataList = new ArrayList<Integer>();
     private int MULDataListSize = 64;
     // 256Hz, 10sec
-    private int BiaDataListSize = 64 * 4 * 10 * 2;
-    private int EcgDataListSize = 64 * 4 * 10 * 2;
-    private int MoiDataListSize = 64 * 4 * 10 * 2;
+    private int BiaDataListSize = 64 * 4 * 10;
+    private int EcgDataListSize = 64 * 4 * 10;
+    private int MoiDataListSize = 64 * 4 * 10;
 
     private int NEventMarker = 0;
     private int BiaMarker = 0;
@@ -193,8 +193,7 @@ public class DeviceControlActivity extends Activity {
         public void onClick(View v) {
             switch (v.getId()) {
                 case R.id.save:
-                    mfile_Num = mfile_Num + 1;
-                    mFileManager.createFile("NE _ #" + (mfile_Num));
+                    mFileManager.createFile("NE");
                     break;
                 case R.id.start_button:
                     Log.d(TAG,"start");
@@ -284,25 +283,14 @@ public class DeviceControlActivity extends Activity {
         if (mBIA_Chart != null) {
             // mBIA_Chart.setPoint(ecgDataArray[0]); // set ECG Chart Y scale
             // mBIA_Chart.buildRenderer(0xff7d7d7d);
-            mBIA_Chart.updateChart(ecgDataArray);
-//            mUpdateDataHandler = new Handler();
-//            mUpdateDataHandler.postDelayed(updateDataMethod, 5000);
-
-            if (mTextView_BodyImpedance != null) mTextView_BodyImpedance.setText(String.format("%,d", mBiaDataList.get(mBiaDataList.size() - 1)));
-            if (mTextView_MoistureSensor != null) mTextView_MoistureSensor.setText(String.format("%,d", mMoiDataList.get(mMoiDataList.size() - 1)));
+            mUpdateDataHandler.postDelayed(updateDataMethod, 10);
         }
-
 
         mFileManager.saveData(packet, NEventMarker, BiaMarker);
         NEventMarker = 0;
 
         int fileKb = (int) (mFileManager.getFileSize()/1000);
-        mSaveView.setText("Storage Time : " + mFileManager.getStorageTime()+"/File Size : "+fileKb+" KB");
-        if (mFileManager.getMinute() > 59){
-            mfile_Num ++;
-            mFileManager.setHours();
-            mFileManager.createFile("NE _ #" + (mfile_Num));// Later, it will be user name.
-        }
+        mSaveView.setText("Storage Time : " + mFileManager.getStorageTime()+"File Size : "+fileKb+" KB");
     }
 
     private void getGattServices(List<BluetoothGattService> gattServices) {
@@ -350,6 +338,8 @@ public class DeviceControlActivity extends Activity {
         mBIA_Chart = (BIA_Chart) findViewById(R.id.bia_chart);
         mBIA_Chart.setColor(0xff7d7d7d);
 
+        mUpdateDataHandler = new Handler();
+
         vibe = (Vibrator)getSystemService(Context.VIBRATOR_SERVICE);
 
         mTextView_BodyImpedance = (TextView) findViewById(R.id.textView_bodyImpedance);
@@ -375,7 +365,7 @@ public class DeviceControlActivity extends Activity {
         bindService(gattServiceIntent, mServiceConnection, BIND_AUTO_CREATE);
         mPacketParser = new PacketParser();
 
-        mFileManager.createFile("NE _ #" + (mfile_Num));// Later, it will be user name.
+        mFileManager.createFile("Sample");// Later, it will be user name.
         Arrays.fill(biaDataArray, 0);
         Arrays.fill(ecgDataArray, 0);
         Arrays.fill(moiDataArray, 0);
@@ -430,14 +420,15 @@ public class DeviceControlActivity extends Activity {
         return super.onOptionsItemSelected(item);
     }
 
-//    private Runnable updateDataMethod = new Runnable() {
-//        public void run() {
-//
-//            if (mTextView_BodyImpedance != null) mTextView_BodyImpedance.setText(String.format("%,d", mBiaDataList.get(mBiaDataList.size() - 1)));
-//            if (mTextView_MoistureSensor != null) mTextView_MoistureSensor.setText(String.format("%,d", mMoiDataList.get(mMoiDataList.size() - 1)));
-//            mUpdateDataHandler.postDelayed(updateDataMethod, 5000);
-//        }
-//    };
+    private Runnable updateDataMethod = new Runnable() {
+        public void run() {
+
+            if (mTextView_BodyImpedance != null) mTextView_BodyImpedance.setText(String.format("%,d", mBiaDataList.get(mBiaDataList.size() - 1)));
+            if (mTextView_MoistureSensor != null) mTextView_MoistureSensor.setText(String.format("%,d", mMoiDataList.get(mMoiDataList.size() - 1)));
+            mBIA_Chart.updateChart(ecgDataArray);
+            //mUpdateDataHandler.postDelayed(updateDataMethod, 5000);
+        }
+    };
 
     int bia_ctrl_time = 0;
     int bia_temp=0;
