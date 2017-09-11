@@ -269,24 +269,32 @@ public class DeviceControlActivity extends Activity {
             //log urine event
         }
 
-        //Set Heart rate
+        //Detect qrs pulse
         QRSDetector2 qrsDetector = OSEAFactory.createQRSDetector2(sampleRate);
-        for_count= for_count+1;
-        int beat_array [] ;
+        int beat_temp_buf = 0 ;
+        ArrayList<Integer> RRinterval_buf = new ArrayList<Integer>();
         for (int i = 0; i < ecgDataArray.length; i++) {
             int result = qrsDetector.QRSDet(ecgDataArray[i]);
             if (result != 0) {
-                Log.w(TAG,(for_count)+": A QRS-Complex was detected at sample: " + (i-result));
-                Log.w(TAG," "+(result));
+                beat_temp_buf = beat_temp_buf-(i-result);
+                RRinterval_buf.add(beat_temp_buf);
                 ecgDataArray[i-result] = 0;
             }
         }
 
+        //RR interval noise detection
+
+
         if (mBIA_Chart != null) {
             // mBIA_Chart.setPoint(ecgDataArray[0]); // set ECG Chart Y scale
             // mBIA_Chart.buildRenderer(0xff7d7d7d);
-            mUpdateDataHandler.postDelayed(updateDataMethod, 10); //handler
+            mBIA_Chart.updateChart(ecgDataArray);
+//            mUpdateDataHandler = new Handler();
+//            mUpdateDataHandler.postDelayed(updateDataMethod, 5000);
+            if (mTextView_BodyImpedance != null) mTextView_BodyImpedance.setText(String.format("%,d", mBiaDataList.get(mBiaDataList.size() - 1)));
+            if (mTextView_MoistureSensor != null) mTextView_MoistureSensor.setText(String.format("%,d", mMoiDataList.get(mMoiDataList.size() - 1)));
         }
+
 
         mFileManager.saveData(packet, NEventMarker, BiaMarker);
         NEventMarker = 0;
@@ -422,15 +430,14 @@ public class DeviceControlActivity extends Activity {
         return super.onOptionsItemSelected(item);
     }
 
-    private Runnable updateDataMethod = new Runnable() {
-        public void run() {
-
-            if (mTextView_BodyImpedance != null) mTextView_BodyImpedance.setText(String.format("%,d", mBiaDataList.get(mBiaDataList.size() - 1)));
-            if (mTextView_MoistureSensor != null) mTextView_MoistureSensor.setText(String.format("%,d", mMoiDataList.get(mMoiDataList.size() - 1)));
-            mBIA_Chart.updateChart(ecgDataArray);
-            //mUpdateDataHandler.postDelayed(updateDataMethod, 5000);
-        }
-    };
+//    private Runnable updateDataMethod = new Runnable() {
+//        public void run() {
+//
+//            if (mTextView_BodyImpedance != null) mTextView_BodyImpedance.setText(String.format("%,d", mBiaDataList.get(mBiaDataList.size() - 1)));
+//            if (mTextView_MoistureSensor != null) mTextView_MoistureSensor.setText(String.format("%,d", mMoiDataList.get(mMoiDataList.size() - 1)));
+//            mUpdateDataHandler.postDelayed(updateDataMethod, 5000);
+//        }
+//    };
 
     int bia_ctrl_time = 0;
     int bia_temp=0;
