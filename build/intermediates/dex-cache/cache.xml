@@ -3,12 +3,174 @@
 
     <item
         is-multidex="false"
-        jar="C:\Users\Yeop_DCLab\Documents\GitHub\NE_BELT\achartengine-1.1.0\achartengine-1.1.0.jar"
+        jar="C:\Users\yeop-lee\Documents\GitHub\NE_BELT\achartengine-1.1.0\achartengine-1.1.0.jar"
         jumboMode="false"
         optimize="true"
         revision="25.0.2"
         sha1="9932e3fb9fbe54e80873e77f72a99f79e33b3250">
-        <dex dex="C:\Users\Yeop_DCLab\Documents\GitHub\NE_BELT\Application\build\intermediates\pre-dexed\debug\achartengine-1.1.0_9141e92e5bc2f7bfd898dae178b82f6a3c5bc425.jar" />
+        <dex dex="C:\Users\yeop-lee\Documents\GitHub\NE_BELT\Application\build\intermediates\pre-dexed\debug\achartengine-1.1.0_55b148a3d64fe79a516afc65cbf40372fe478342.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\yeop-lee\.android\build-cache\2a7f0b0a3f0f1e238394dbf057ca77304b5ef3d2\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="00d4c8eebf2b681073c72a26bd0849549e51c7cb">
+        <dex dex="C:\Users\yeop-lee\Documents\GitHub\NE_BELT\Application\build\intermediates\pre-dexed\debug\classes_55f9bdb7a06d9b707f381cf90211fd995db5a02a.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\yeop-lee\.android\build-cache\d4e6c1f4883c47e699364bc10a4ac7d72a063d5e\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="1108575c7dc7b7f5b378b3290ac90de81a9b8830">
+        <dex dex="C:\Users\yeop-lee\Documents\GitHub\NE_BELT\Application\build\intermediates\pre-dexed\debug\classes_c50f9fbde158991d2308c85ba401f691ffa7600f.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\yeop-lee\.android\build-cache\658f9dbaf56cf548e4f44b502336c89e32300a2e\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="772bed2d992b67b9d0327f766cc95cd63031dcd3">
+        <dex dex="C:\Users\yeop-lee\Documents\GitHub\NE_BELT\Application\build\intermediates\pre-dexed\debug\classes_fc3b6b8ac11ef145293d8cadbf099d9e3c467933.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\yeop-lee\.android\build-cache\7b34a2962d1e2ccbcb25bc87d5c39cd564491b91\output\jars\libs\internal_impl-25.0.1.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="3af8cc51ef7088e56f132780da8c0bd858b6a6ad">
+        <dex dex="C:\Users\yeop-lee\Documents\GitHub\NE_BELT\Application\build\intermediates\pre-dexed\debug\internal_impl-25.0.1_ac3dbceb440bebbc5743198be723b3b2e114262c.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\yeop-lee\.android\build-cache\4c05027d3bd805ac9b2be9fd65af1fa3ba1968c0\output\jars\libs\internal_impl-25.0.1.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="f83b00041ecfba705603fec40363416c7de69719">
+        <dex dex="C:\Users\yeop-lee\Documents\GitHub\NE_BELT\Application\build\intermediates\pre-dexed\debug\internal_impl-25.0.1_33ac6b2e0314183b1bb917df213767f883aa00d2.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\yeop-lee\.android\build-cache\2a7f0b0a3f0f1e238394dbf057ca77304b5ef3d2\output\jars\libs\internal_impl-25.0.1.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="c5b7145fb34779b6639147b8f2f8dd77c0db771b">
+        <dex dex="C:\Users\yeop-lee\Documents\GitHub\NE_BELT\Application\build\intermediates\pre-dexed\debug\internal_impl-25.0.1_2ba83b2eebcc6336e1f5e1ab58c664b93847562d.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\yeop-lee\.android\build-cache\b1cf4add5df63bf374d6abc88c7724f40e706af0\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="d7c42c80f6509b9ea4db28ca7859ffae08ec5741">
+        <dex dex="C:\Users\yeop-lee\Documents\GitHub\NE_BELT\Application\build\intermediates\pre-dexed\debug\classes_b18db8009e28f53c1e0f3d8e8238e3cbb8dc2b20.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\yeop-lee\AppData\Local\Android\sdk\extras\android\m2repository\com\android\support\support-annotations\25.0.1\support-annotations-25.0.1.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="a09194311f8f89c3e6db09d79f50897a889d615e">
+        <dex dex="C:\Users\yeop-lee\Documents\GitHub\NE_BELT\Application\build\intermediates\pre-dexed\debug\support-annotations-25.0.1_fc00890e40f22370d49b0912066ce73755bd953f.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\yeop-lee\.android\build-cache\faae74cceb24c80d42be61589a2bc959a5beb7dc\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="bc7e99e8d0fc279a05aa91378530f467ad62d443">
+        <dex dex="C:\Users\yeop-lee\Documents\GitHub\NE_BELT\Application\build\intermediates\pre-dexed\debug\classes_5f4ec96181f9c0599ea61446d6e837fdd48ca786.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\yeop-lee\.android\build-cache\a0c02dbfe6be637cc678508e290f7f26d31be993\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="9abf11d546d9e0ee82da86df608ced7a961b76ac">
+        <dex dex="C:\Users\yeop-lee\Documents\GitHub\NE_BELT\Application\build\intermediates\pre-dexed\debug\classes_9eb83b752e8b3e9dac636e93dbd8665ebb0cdee3.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\yeop-lee\.android\build-cache\7b34a2962d1e2ccbcb25bc87d5c39cd564491b91\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="51eba4a4dd73044f90a9d58dd7ca34adbebfcf4e">
+        <dex dex="C:\Users\yeop-lee\Documents\GitHub\NE_BELT\Application\build\intermediates\pre-dexed\debug\classes_25b73d00cac80c2c4a09a4c275396401842691e2.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\yeop-lee\.android\build-cache\f8462bcd9df949f743c3c5be7ebcef5e2bcde4ea\output\jars\libs\internal_impl-25.0.1.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="c0bd6ffb002a85b5e7cad29f8558d1cc59539679">
+        <dex dex="C:\Users\yeop-lee\Documents\GitHub\NE_BELT\Application\build\intermediates\pre-dexed\debug\internal_impl-25.0.1_3b25e137a31a395eedc365778c20f29cdda27950.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\yeop-lee\.android\build-cache\4c05027d3bd805ac9b2be9fd65af1fa3ba1968c0\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="6a1479afe9f1b3645e1cd9a87318976893472818">
+        <dex dex="C:\Users\yeop-lee\Documents\GitHub\NE_BELT\Application\build\intermediates\pre-dexed\debug\classes_8dab61eec1509119160ef2739d9bab174445c325.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\yeop-lee\.android\build-cache\f8462bcd9df949f743c3c5be7ebcef5e2bcde4ea\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="26c6eef571592c91f29e56fda0bac73321de0c92">
+        <dex dex="C:\Users\yeop-lee\Documents\GitHub\NE_BELT\Application\build\intermediates\pre-dexed\debug\classes_9c4747ce2c13ff334ef69e487ba7ba578fef4e9c.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\yeop-lee\.android\build-cache\a0c02dbfe6be637cc678508e290f7f26d31be993\output\jars\libs\internal_impl-25.0.1.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="cfb91ea7c6890336890ccb42767041af6b863e32">
+        <dex dex="C:\Users\yeop-lee\Documents\GitHub\NE_BELT\Application\build\intermediates\pre-dexed\debug\internal_impl-25.0.1_d555f5f84bab66d5875569034cff019dc25aa24f.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\yeop-lee\.android\build-cache\eed65568bc27879eea8833229ecd88a44ad03885\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="b24e1c688744078e1fa833ffadf696794761bbe5">
+        <dex dex="C:\Users\yeop-lee\Documents\GitHub\NE_BELT\Application\build\intermediates\pre-dexed\debug\classes_0a65ea01387fc19f749da4383a1d40aa0f32e652.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\yeop-lee\.android\build-cache\fe8365225e7210f4739ed5735886fa7281c666bf\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="f7ac4b327fdb9e2ee386f5adc46164927658de4b">
+        <dex dex="C:\Users\yeop-lee\Documents\GitHub\NE_BELT\Application\build\intermediates\pre-dexed\debug\classes_d0d77c2dd483622c2824718b00ad15589cffd458.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\yeop-lee\.android\build-cache\faae74cceb24c80d42be61589a2bc959a5beb7dc\output\jars\libs\internal_impl-25.0.1.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="e5343c9d19cb19ff55f6b268c7f3fe8c9d224f6f">
+        <dex dex="C:\Users\yeop-lee\Documents\GitHub\NE_BELT\Application\build\intermediates\pre-dexed\debug\internal_impl-25.0.1_882219c5bb9c0912a80a94f87e397ff935c896bf.jar" />
     </item>
 
 </items>
