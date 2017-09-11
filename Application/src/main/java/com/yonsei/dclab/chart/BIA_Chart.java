@@ -42,7 +42,7 @@ public class BIA_Chart extends View {
     private XYMultipleSeriesRenderer mXYMultipleSeriesRenderer;
     private XYMultipleSeriesDataset mXYMultipleSeriesDataset;
 
-    private double MAXBIATime = 10; //250 = 0.250 * 4 * 10 /40
+    private double MAXBIATime = 20; //250 = 0.250 * 4 * 10 /40
     private double mXAxisMax = MAXBIATime;
 
     public int staringPoint = 8500;
