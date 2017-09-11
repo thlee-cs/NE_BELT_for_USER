@@ -218,14 +218,16 @@ public class DeviceControlActivity extends Activity {
                         rot_st = Integer.parseInt( ((EditText) findViewById(R.id.rot_st)).getText().toString() );
                         rot_ed = Integer.parseInt( ((EditText) findViewById(R.id.rot_ed)).getText().toString() );
 //                        bia_temp = rot_st+rot_ed;
+                        request_bia_off(); //bia off at first button touched
                         mRotationHandler.postDelayed(rotationMethod, 0);
                         mBiaSetButton.setText("STOP");
-                        rot_state = 1; //rotation on
+                        rot_state = 1; //rotation STATE on
                     }else if (rot_state ==1){
                         mRotationHandler.removeCallbacks(rotationMethod);
                         request_bia_on(); //bia on
                         mBiaSetButton.setText("BIA set");
-                        rot_state = 0; //rotation off
+                        rot_state = 0; //rotation STATE off
+                        bia_temp = 0; //initialize the iterator
                     }
                     break;
                 default:
@@ -434,9 +436,7 @@ public class DeviceControlActivity extends Activity {
     int bia_temp=0;
     private Runnable rotationMethod = new Runnable() {
         public void run() {
-            if (bia_temp == 0){
-                request_bia_off();
-            }else if (bia_temp == rot_st ) {
+            if (bia_temp == rot_st ) {
                 request_bia_on();
             }else if(bia_temp == rot_st+rot_ed) {
                 request_bia_off();
