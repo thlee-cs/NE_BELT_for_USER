@@ -283,7 +283,7 @@ public class DeviceControlActivity extends Activity {
         if (mBIA_Chart != null) {
             // mBIA_Chart.setPoint(ecgDataArray[0]); // set ECG Chart Y scale
             // mBIA_Chart.buildRenderer(0xff7d7d7d);
-            mUpdateDataHandler.postDelayed(updateDataMethod, 10);
+            mUpdateDataHandler.postDelayed(updateDataMethod, 10); //handler
         }
 
         mFileManager.saveData(packet, NEventMarker, BiaMarker);
