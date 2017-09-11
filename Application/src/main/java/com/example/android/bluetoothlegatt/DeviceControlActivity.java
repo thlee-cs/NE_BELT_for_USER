@@ -297,9 +297,10 @@ public class DeviceControlActivity extends Activity {
         NEventMarker = 0;
 
         int fileKb = (int) (mFileManager.getFileSize()/1000);
-        mSaveView.setText("Storage Time : " + mFileManager.getStorageTime()+"File Size : "+fileKb+" KB");
-        if (mFileManager.getMinute() > 29){
+        mSaveView.setText("Storage Time : " + mFileManager.getStorageTime()+"/File Size : "+fileKb+" KB");
+        if (mFileManager.getMinute() > 59){
             mfile_Num ++;
+            mFileManager.setHours();
             mFileManager.createFile("NE _ #" + (mfile_Num));// Later, it will be user name.
         }
     }

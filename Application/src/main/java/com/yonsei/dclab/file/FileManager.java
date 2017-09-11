@@ -28,6 +28,7 @@ public class FileManager {
     public long startTimeMillis;
     public long updateTimeMillis;
     private int packetLookup = -1;
+    private int hours = 0;
 
     public static final String TAG = "FileManager";
 
@@ -73,7 +74,7 @@ public class FileManager {
         long storageTime = updateTimeMillis - startTimeMillis;
         int seconds = (int)(storageTime / 1000) % 60 ;
         int minutes = (int)((storageTime / (1000*60)) % 60);
-        int hours = (int)((storageTime / (1000*60*60)) % 24);
+//        int hours = (int)((storageTime / (1000*60*60)) % 24);
         return String.format("%02dh %02dm %02ds", hours, minutes, seconds);
     }
 
@@ -82,6 +83,10 @@ public class FileManager {
         int minutes = (int)((storageTime / (1000*60)) % 60);
         return minutes;
     }
+    public void setHours() {
+        hours = hours++;
+    }
+
 
 
     public long getFileSize() {
