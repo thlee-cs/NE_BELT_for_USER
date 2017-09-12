@@ -74,7 +74,7 @@ public class DeviceControlActivity extends Activity {
     public static final String EXTRAS_DEVICE_NAME = "NE_BELT1";
     public static final String EXTRAS_DEVICE_ADDRESS = "98:2D:68:2D:60:05";
 
-
+    private int mfile_Num;
     private TextView mSaveView;
     private Button mSaveButton;
     private Button mStartButton;
@@ -84,6 +84,7 @@ public class DeviceControlActivity extends Activity {
     private String mDeviceName;
     private String mDeviceAddress;
     private BIA_Chart mBIA_Chart;
+    private TextView mTextView_Heartrate;
     private TextView mTextView_BodyImpedance;
     private TextView mTextView_MoistureSensor;
     private Handler mUpdateDataHandler;
@@ -106,9 +107,9 @@ public class DeviceControlActivity extends Activity {
     private ArrayList<Integer> mMoiDataList = new ArrayList<Integer>();
     private int MULDataListSize = 64;
     // 256Hz, 10sec
-    private int BiaDataListSize = 64 * 4 * 10;
-    private int EcgDataListSize = 64 * 4 * 10;
-    private int MoiDataListSize = 64 * 4 * 10;
+    private int BiaDataListSize = 64 * 4 * 10 * 2;
+    private int EcgDataListSize = 64 * 4 * 10 * 2;
+    private int MoiDataListSize = 64 * 4 * 10 * 2;
 
     private int NEventMarker = 0;
     private int BiaMarker = 0;
@@ -193,7 +194,8 @@ public class DeviceControlActivity extends Activity {
         public void onClick(View v) {
             switch (v.getId()) {
                 case R.id.save:
-                    mFileManager.createFile("NE");
+                    mfile_Num = 0;
+                    mFileManager.createFile("NE _ #" + (mfile_Num));
                     break;
                 case R.id.start_button:
                     Log.d(TAG,"start");
@@ -236,7 +238,6 @@ public class DeviceControlActivity extends Activity {
         }
     };
 
-    int for_count = 0;
     public void receivedData(Packet packet) {
         for (int i = 0; i < MULDataListSize; i++) {
             mEcgDataList.add(packet.rawData.get(0).get(i));
@@ -272,18 +273,15 @@ public class DeviceControlActivity extends Activity {
         //Detect qrs pulse
         QRSDetector2 qrsDetector = OSEAFactory.createQRSDetector2(sampleRate);
         int beat_temp_buf = 0 ;
-        ArrayList<Integer> RRinterval_buf = new ArrayList<Integer>();
+        ArrayList<Integer> RR_buf = new ArrayList<Integer>();
         for (int i = 0; i < ecgDataArray.length; i++) {
             int result = qrsDetector.QRSDet(ecgDataArray[i]);
             if (result != 0) {
-                beat_temp_buf = beat_temp_buf-(i-result);
-                RRinterval_buf.add(beat_temp_buf);
+                beat_temp_buf = (i-result) - beat_temp_buf;
+                RR_buf.add((60*sampleRate)/beat_temp_buf);
                 ecgDataArray[i-result] = 0;
             }
         }
-
-        //RR interval noise detectionss
-
 
         if (mBIA_Chart != null) {
             mBIA_Chart.updateChart(ecgDataArray);
@@ -291,11 +289,31 @@ public class DeviceControlActivity extends Activity {
             if (mTextView_MoistureSensor != null) mTextView_MoistureSensor.setText(String.format("%,d", mMoiDataList.get(mMoiDataList.size() - 1)));
         }
 
+
+        int buf_size = RR_buf.size ();
+        if (RR_buf.size()>1){
+            //RR interval noise detection
+            int ths = RR_buf.get(1);
+            for (int i = 1; i<buf_size; i++){
+                int maxths = RR_buf.get(i)*2;
+                int minths = RR_buf.get(i)/2;
+                if (ths>minths && ths <maxths){
+                    ths = RR_buf.get(i);
+                }
+            }
+            mTextView_Heartrate.setText(String.format("%,d", ths));
+        }
+
+
         mFileManager.saveData(packet, NEventMarker, BiaMarker);
         NEventMarker = 0;
 
         int fileKb = (int) (mFileManager.getFileSize()/1000);
-        mSaveView.setText("Storage Time : " + mFileManager.getStorageTime()+"File Size : "+fileKb+" KB");
+        mSaveView.setText("Storage Time : " + (mfile_Num) + "h" + mFileManager.getStorageTime()+"/File Size : "+fileKb+" KB");
+        if (mFileManager.getMinute() > 59){
+            mfile_Num ++;
+            mFileManager.createFile("NE _ #" + (mfile_Num));// Later, it will be user name.
+        }
     }
 
     private void getGattServices(List<BluetoothGattService> gattServices) {
@@ -343,10 +361,9 @@ public class DeviceControlActivity extends Activity {
         mBIA_Chart = (BIA_Chart) findViewById(R.id.bia_chart);
         mBIA_Chart.setColor(0xff7d7d7d);
 
-        mUpdateDataHandler = new Handler();
-
         vibe = (Vibrator)getSystemService(Context.VIBRATOR_SERVICE);
 
+        mTextView_Heartrate = (TextView) findViewById(R.id.textView_heartrate);
         mTextView_BodyImpedance = (TextView) findViewById(R.id.textView_bodyImpedance);
         mTextView_MoistureSensor = (TextView) findViewById(R.id.textView_moisturesensor);
 
@@ -370,7 +387,7 @@ public class DeviceControlActivity extends Activity {
         bindService(gattServiceIntent, mServiceConnection, BIND_AUTO_CREATE);
         mPacketParser = new PacketParser();
 
-        mFileManager.createFile("Sample");// Later, it will be user name.
+        mFileManager.createFile("NE _ #" + (mfile_Num));// Later, it will be user name.
         Arrays.fill(biaDataArray, 0);
         Arrays.fill(ecgDataArray, 0);
         Arrays.fill(moiDataArray, 0);

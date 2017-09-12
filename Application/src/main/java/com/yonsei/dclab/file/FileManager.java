@@ -75,7 +75,7 @@ public class FileManager {
         int seconds = (int)(storageTime / 1000) % 60 ;
         int minutes = (int)((storageTime / (1000*60)) % 60);
 //        int hours = (int)((storageTime / (1000*60*60)) % 24);
-        return String.format("%02dh %02dm %02ds", hours, minutes, seconds);
+        return String.format(" %02dm %02ds",  minutes, seconds);
     }
 
     public int getMinute() {
@@ -83,11 +83,6 @@ public class FileManager {
         int minutes = (int)((storageTime / (1000*60)) % 60);
         return minutes;
     }
-    public void setHours() {
-        hours = hours++;
-    }
-
-
 
     public long getFileSize() {
         File file = file = new File(STRSAVEPATH+filename);
