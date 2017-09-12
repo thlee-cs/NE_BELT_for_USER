@@ -83,6 +83,11 @@ public class FileManager {
         int minutes = (int)((storageTime / (1000*60)) % 60);
         return minutes;
     }
+    public int getHours() {
+        long storageTime = updateTimeMillis - startTimeMillis;
+        int hours = (int)((storageTime / (1000*60*60)) % 24);
+        return hours;
+    }
 
     public long getFileSize() {
         File file = file = new File(STRSAVEPATH+filename);

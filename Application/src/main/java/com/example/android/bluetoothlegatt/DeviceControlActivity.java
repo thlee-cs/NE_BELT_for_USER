@@ -195,7 +195,7 @@ public class DeviceControlActivity extends Activity {
             switch (v.getId()) {
                 case R.id.save:
                     mfile_Num = 0;
-                    mFileManager.createFile("NE _ #" + (mfile_Num));
+                    mFileManager.createFile("NE_" + (mfile_Num));
                     break;
                 case R.id.start_button:
                     Log.d(TAG,"start");
@@ -310,9 +310,9 @@ public class DeviceControlActivity extends Activity {
 
         int fileKb = (int) (mFileManager.getFileSize()/1000);
         mSaveView.setText("Storage Time : " + (mfile_Num) + "h" + mFileManager.getStorageTime()+"/File Size : "+fileKb+" KB");
-        if (mFileManager.getMinute() > 59){
+        if (mFileManager.getHours() == 1){
             mfile_Num ++;
-            mFileManager.createFile("NE _ #" + (mfile_Num));// Later, it will be user name.
+            mFileManager.createFile("NE_" + (mfile_Num));// Later, it will be user name.
         }
     }
 
@@ -387,7 +387,7 @@ public class DeviceControlActivity extends Activity {
         bindService(gattServiceIntent, mServiceConnection, BIND_AUTO_CREATE);
         mPacketParser = new PacketParser();
 
-        mFileManager.createFile("NE _ #" + (mfile_Num));// Later, it will be user name.
+        mFileManager.createFile("NE_" + (mfile_Num));// Later, it will be user name.
         Arrays.fill(biaDataArray, 0);
         Arrays.fill(ecgDataArray, 0);
         Arrays.fill(moiDataArray, 0);
