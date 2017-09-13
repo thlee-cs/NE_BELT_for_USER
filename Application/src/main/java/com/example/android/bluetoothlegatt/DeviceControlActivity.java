@@ -26,6 +26,9 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.IntentFilter;
 import android.content.ServiceConnection;
+import android.media.AudioManager;
+import android.media.MediaPlayer;
+import android.media.SoundPool;
 import android.os.Bundle;
 import android.os.Environment;
 import android.os.Handler;
@@ -79,12 +82,12 @@ public class DeviceControlActivity extends Activity {
     private Button mSaveButton;
     private Button mStartButton;
     private Button mBiaSetButton;
+    private Button mOffNeAlarmButton;
     private EditText mRotst;
     private EditText mRoted;
     private String mDeviceName;
     private String mDeviceAddress;
     private BIA_Chart mBIA_Chart;
-    private TextView mTextView_Heartrate;
     private TextView mTextView_BodyImpedance;
     private TextView mTextView_MoistureSensor;
     private Handler mUpdateDataHandler;
@@ -99,6 +102,9 @@ public class DeviceControlActivity extends Activity {
     private FileManager mFileManager;
     private PacketParser mPacketParser;
     private Vibrator vibe;
+    private SoundPool sound;
+    private int music;
+    private int NE_event;
     private BluetoothGattCharacteristic mNotifyCharacteristic;
     private BluetoothGattCharacteristic mNotifyCharacteristic_W;
     private BluetoothGattCharacteristic mNotifyCharacteristic_C;
@@ -107,12 +113,15 @@ public class DeviceControlActivity extends Activity {
     private ArrayList<Integer> mMoiDataList = new ArrayList<Integer>();
     private int MULDataListSize = 64;
     // 256Hz, 10sec
-    private int BiaDataListSize = 64 * 4 * 10 * 2;
-    private int EcgDataListSize = 64 * 4 * 10 * 2;
-    private int MoiDataListSize = 64 * 4 * 10 * 2;
+    private int BiaDataListSize = 64 * 4 * 10 ;
+    private int EcgDataListSize = 64 * 4 * 10 ;
+    private int MoiDataListSize = 64 * 4 * 10 ;
 
     private int NEventMarker = 0;
     private int BiaMarker = 0;
+
+    private int bell_max = 8300;
+    private int bell_min = 8200;
 
     private int rot_state = 0;
     private int rot_st;
@@ -194,8 +203,8 @@ public class DeviceControlActivity extends Activity {
         public void onClick(View v) {
             switch (v.getId()) {
                 case R.id.save:
-                    mfile_Num = 0;
-                    mFileManager.createFile("NE_" + (mfile_Num));
+                    mfile_Num = mfile_Num + 1;
+                    mFileManager.createFile("NE _ #" + (mfile_Num));
                     break;
                 case R.id.start_button:
                     Log.d(TAG,"start");
@@ -232,12 +241,20 @@ public class DeviceControlActivity extends Activity {
                         bia_temp = 0; //initialize the iterator
                     }
                     break;
+                case R.id.off_ne_alarm:
+                    NE_event = 0;
+                    sound.stop(music);
+                    vibe.cancel();
+                    for (int j = 0; j < 64*4*10; j++){
+                            moiDataArray[j] = 0;
+                        }
                 default:
                     break;
             }
         }
     };
 
+    int for_count = 0;
     public void receivedData(Packet packet) {
         for (int i = 0; i < MULDataListSize; i++) {
             mEcgDataList.add(packet.rawData.get(0).get(i));
@@ -263,25 +280,36 @@ public class DeviceControlActivity extends Activity {
             }
         }
 
-        //Set Urine bell
-        if((moiDataArray[0] <= 8300 && moiDataArray[0] >= 7900)||(moiDataArray[255] <= 8300 && moiDataArray[255] >= 7900)||(moiDataArray[511] <= 8300 && moiDataArray[511] >= 7900)||(moiDataArray[766] <= 8300 && moiDataArray[766] >= 7900)||(moiDataArray[1023] <= 8300 && moiDataArray[1023] >= 7900)||(moiDataArray[1278] <= 8300 && moiDataArray[1278] >= 7900)||(moiDataArray[1533] <= 8300 && moiDataArray[1533] >= 7900)||(moiDataArray[1788] <= 8300 && moiDataArray[1788] >= 7900)){
-            if((moiDataArray[4] <= 8300 && moiDataArray[4] >= 7900)||(moiDataArray[259] <= 8300 && moiDataArray[259] >= 7900)||(moiDataArray[515] <= 8300 && moiDataArray[515] >= 7900)||(moiDataArray[770] <= 8300 && moiDataArray[770] >= 7900)||(moiDataArray[1027] <= 8300 && moiDataArray[1027] >= 7900)||(moiDataArray[1282] <= 8300 && moiDataArray[1282] >= 7900)||(moiDataArray[1537] <= 8300 && moiDataArray[1537] >= 7900)||(moiDataArray[1792] <= 8300 && moiDataArray[1792] >= 7900))
-                vibe.vibrate(3000);
-            //log urine event
+
+
+        for(int i = 0; i <16; i++) {
+            //Set Urine bell
+            if (moiDataArray[128*i] <= bell_max && moiDataArray[128*i] >= bell_min) {
+                if (moiDataArray[128*i + 64] <= bell_max && moiDataArray[128*i + 64] >= bell_min) {
+                    if (NE_event == 0) {
+                        vibe.vibrate(1000000);
+                        sound.play(music, 1, 1, 0, -1, 1);
+                        NE_event = 1;
+                    }
+                }
+            }
         }
 
         //Detect qrs pulse
         QRSDetector2 qrsDetector = OSEAFactory.createQRSDetector2(sampleRate);
         int beat_temp_buf = 0 ;
-        ArrayList<Integer> RR_buf = new ArrayList<Integer>();
+        ArrayList<Integer> RRinterval_buf = new ArrayList<Integer>();
         for (int i = 0; i < ecgDataArray.length; i++) {
             int result = qrsDetector.QRSDet(ecgDataArray[i]);
             if (result != 0) {
-                beat_temp_buf = (i-result) - beat_temp_buf;
-                RR_buf.add((60*sampleRate)/beat_temp_buf);
+                beat_temp_buf = beat_temp_buf-(i-result);
+                RRinterval_buf.add(beat_temp_buf);
                 ecgDataArray[i-result] = 0;
             }
         }
+
+        //RR interval noise detectionss
+
 
         if (mBIA_Chart != null) {
             mBIA_Chart.updateChart(ecgDataArray);
@@ -289,30 +317,15 @@ public class DeviceControlActivity extends Activity {
             if (mTextView_MoistureSensor != null) mTextView_MoistureSensor.setText(String.format("%,d", mMoiDataList.get(mMoiDataList.size() - 1)));
         }
 
-
-        int buf_size = RR_buf.size ();
-        if (RR_buf.size()>1){
-            //RR interval noise detection
-            int ths = RR_buf.get(1);
-            for (int i = 1; i<buf_size; i++){
-                int maxths = RR_buf.get(i)*2;
-                int minths = RR_buf.get(i)/2;
-                if (ths>minths && ths <maxths){
-                    ths = RR_buf.get(i);
-                }
-            }
-            mTextView_Heartrate.setText(String.format("%,d", ths));
-        }
-
-
         mFileManager.saveData(packet, NEventMarker, BiaMarker);
         NEventMarker = 0;
 
         int fileKb = (int) (mFileManager.getFileSize()/1000);
-        mSaveView.setText("Storage Time : " + (mfile_Num) + "h" + mFileManager.getStorageTime()+"/File Size : "+fileKb+" KB");
-        if (mFileManager.getHours() == 1){
+        mSaveView.setText("Storage Time : " + mFileManager.getStorageTime()+"/File Size : "+fileKb+" KB");
+        if (mFileManager.getMinute() > 59){
             mfile_Num ++;
-            mFileManager.createFile("NE_" + (mfile_Num));// Later, it will be user name.
+            mFileManager.setHours();
+            mFileManager.createFile("NE _ #" + (mfile_Num));// Later, it will be user name.
         }
     }
 
@@ -363,7 +376,11 @@ public class DeviceControlActivity extends Activity {
 
         vibe = (Vibrator)getSystemService(Context.VIBRATOR_SERVICE);
 
-        mTextView_Heartrate = (TextView) findViewById(R.id.textView_heartrate);
+        sound = new SoundPool(1, AudioManager.STREAM_NOTIFICATION, 0);
+        music = sound.load(this, R.raw.sample, 1);
+
+        NE_event = 0;
+
         mTextView_BodyImpedance = (TextView) findViewById(R.id.textView_bodyImpedance);
         mTextView_MoistureSensor = (TextView) findViewById(R.id.textView_moisturesensor);
 
@@ -375,6 +392,8 @@ public class DeviceControlActivity extends Activity {
         mStartButton.setOnClickListener(mClickListener);
         mBiaSetButton =  (Button) findViewById(R.id.bia_rot);
         mBiaSetButton.setOnClickListener(mClickListener);
+        mOffNeAlarmButton = (Button) findViewById(R.id.off_ne_alarm);
+        mOffNeAlarmButton.setOnClickListener(mClickListener);
 
         mRotst = (EditText) findViewById(R.id.rot_st);
         mRoted = (EditText) findViewById(R.id.rot_ed);
@@ -387,7 +406,7 @@ public class DeviceControlActivity extends Activity {
         bindService(gattServiceIntent, mServiceConnection, BIND_AUTO_CREATE);
         mPacketParser = new PacketParser();
 
-        mFileManager.createFile("NE_" + (mfile_Num));// Later, it will be user name.
+        mFileManager.createFile("NE _ #" + (mfile_Num));// Later, it will be user name.
         Arrays.fill(biaDataArray, 0);
         Arrays.fill(ecgDataArray, 0);
         Arrays.fill(moiDataArray, 0);
@@ -441,6 +460,15 @@ public class DeviceControlActivity extends Activity {
         }
         return super.onOptionsItemSelected(item);
     }
+
+//    private Runnable updateDataMethod = new Runnable() {
+//        public void run() {
+//
+//            if (mTextView_BodyImpedance != null) mTextView_BodyImpedance.setText(String.format("%,d", mBiaDataList.get(mBiaDataList.size() - 1)));
+//            if (mTextView_MoistureSensor != null) mTextView_MoistureSensor.setText(String.format("%,d", mMoiDataList.get(mMoiDataList.size() - 1)));
+//            mUpdateDataHandler.postDelayed(updateDataMethod, 5000);
+//        }
+//    };
 
     int bia_ctrl_time = 0;
     int bia_temp=0;
