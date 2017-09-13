@@ -281,7 +281,7 @@ public class DeviceControlActivity extends Activity {
         }
 
 
-
+//알람
         for(int i = 0; i <16; i++) {
             //Set Urine bell
             if (moiDataArray[128*i] <= bell_max && moiDataArray[128*i] >= bell_min) {
