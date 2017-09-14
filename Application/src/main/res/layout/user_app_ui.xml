@@ -5,14 +5,16 @@
     android:layout_height="match_parent">
 
     <GridLayout
-        android:layout_width="match_parent"
-        android:layout_height="337dp">
+        android:layout_width="301dp"
+        android:layout_height="318dp"
+        android:layout_gravity="center">
 
         <ImageView
             android:id="@+id/heart_img"
             android:layout_width="100dp"
             android:layout_height="100dp"
             android:layout_column="0"
+            android:layout_gravity="left"
             android:layout_row="0"
             android:src="@drawable/NE_heart" />
 
@@ -21,8 +23,8 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_column="0"
+            android:layout_gravity="center_horizontal"
             android:layout_row="1"
-            android:gravity="center_horizontal|center_vertical"
             android:text="HR: 88"
             android:textColor="#1b1b1b" />
 
@@ -31,6 +33,7 @@
             android:layout_width="100dp"
             android:layout_height="100dp"
             android:layout_column="0"
+            android:layout_gravity="left"
             android:layout_row="1"
             android:src="@drawable/line_2" />
 
@@ -39,6 +42,7 @@
             android:layout_width="100dp"
             android:layout_height="100dp"
             android:layout_column="1"
+            android:layout_gravity="center_horizontal"
             android:layout_row="0"
             android:src="@drawable/line_1" />
 
@@ -47,6 +51,7 @@
             android:layout_width="100dp"
             android:layout_height="100dp"
             android:layout_column="2"
+            android:layout_gravity="left"
             android:layout_row="0"
             android:src="@drawable/NE_bia" />
 
@@ -55,8 +60,8 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_column="2"
+            android:layout_gravity="center_horizontal"
             android:layout_row="1"
-            android:gravity="center_horizontal|center_vertical"
             android:text="BIA : 3377"
             android:textColor="#1b1b1b" />
 
@@ -65,6 +70,7 @@
             android:layout_width="100dp"
             android:layout_height="100dp"
             android:layout_column="2"
+            android:layout_gravity="left"
             android:layout_row="1"
             android:src="@drawable/line_2" />
 
@@ -73,6 +79,7 @@
             android:layout_width="100dp"
             android:layout_height="100dp"
             android:layout_column="0"
+            android:layout_gravity="center_horizontal"
             android:layout_row="2"
             android:src="@drawable/NE_start" />
 
@@ -81,26 +88,27 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_column="0"
+            android:layout_gravity="center_horizontal"
             android:layout_row="3"
-            android:gravity="center_horizontal|center_vertical"
             android:text="START"
             android:textColor="#1b1b1b" />
 
         <ImageView
-            android:id="@+id/alram_img"
-            android:layout_width="100dp"
-            android:layout_height="100dp"
+            android:id="@+id/alarm_img"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
             android:layout_column="1"
+            android:layout_gravity="center"
             android:layout_row="1"
             android:src="@drawable/NE_alarm" />
 
         <TextView
-            android:id="@+id/alram_img_text"
+            android:id="@+id/alarm_img_text"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_column="1"
+            android:layout_gravity="center_horizontal"
             android:layout_row="2"
-            android:gravity="center_horizontal|center_vertical"
             android:text="OFF"
             android:textColor="#1b1b1b" />
 
@@ -109,6 +117,7 @@
             android:layout_width="100dp"
             android:layout_height="100dp"
             android:layout_column="1"
+            android:layout_gravity="center_horizontal"
             android:layout_row="2"
             android:src="@drawable/line_1" />
 
@@ -117,6 +126,7 @@
             android:layout_width="100dp"
             android:layout_height="100dp"
             android:layout_column="2"
+            android:layout_gravity="center_horizontal"
             android:layout_row="2"
             android:src="@drawable/NE_log" />
 
@@ -125,8 +135,8 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_column="2"
+            android:layout_gravity="center_horizontal"
             android:layout_row="3"
-            android:gravity="center_horizontal|center_vertical"
             android:text="#Log"
             android:textColor="#1b1b1b" />
     </GridLayout>
@@ -134,16 +144,18 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:orientation="vertical">
+        android:orientation="vertical"
+        android:layout_gravity="center">
 
 
         <ImageView
             android:id="@+id/bulb_img"
             android:layout_width="match_parent"
-            android:layout_height="40dp"
+            android:layout_height="59dp"
             android:background="#FF1C304D"
             android:layout_column="2"
             android:layout_row="2"
+            android:layout_gravity="center_horizontal"
             android:src="@drawable/NE_bulb" />
 
         <TextView
@@ -152,9 +164,8 @@
             android:layout_height="match_parent"
             android:background="#FF1C304D"
             android:textColor="#ffffff"
-            android:gravity="center_horizontal|center_vertical"
             android:textSize="12pt"
-            android:textIsSelectable="true"
+            android:textAlignment="gravity"
             android:text="# NE BELT manual \>" />
 
 
