@@ -26,6 +26,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.IntentFilter;
 import android.content.ServiceConnection;
+import android.graphics.Typeface;
 import android.media.AudioManager;
 import android.media.MediaPlayer;
 import android.media.SoundPool;
@@ -368,6 +369,10 @@ public class DeviceControlActivity extends Activity {
         final Intent intent = getIntent();
         mDeviceName = intent.getStringExtra(EXTRAS_DEVICE_NAME);
         mDeviceAddress = intent.getStringExtra(EXTRAS_DEVICE_ADDRESS);
+
+        TextView text = (TextView) findViewById(R.id.go_manual);
+        Typeface face = Typeface.createFromAsset(getAssets(), "fonts/BMHANNA_11yrs");
+        text.setTypeface(face);
 
         ActivityCompat.requestPermissions(DeviceControlActivity.this, STORAGE_PERMISSION, 1);
 
