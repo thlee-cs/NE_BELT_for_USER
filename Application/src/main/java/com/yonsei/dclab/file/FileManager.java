@@ -29,7 +29,7 @@ import java.util.Calendar;
  */
 
 public class FileManager {
-    private int patient_num = 01;
+    public String patient_num = "P01";
 
     public static final String STRSAVEPATH = Environment.getExternalStorageDirectory()+"/NE BELT/";
     public String filename;
@@ -209,12 +209,12 @@ public class FileManager {
             now.set(current);
             String text = "";
             if (sensor =="accel"){
-                text += String.format("Acc, "+macaddress);
-                text += now.format(", %Y-%m-%d %H:%M:%S."+mls);
+                text += String.format("A, "+macaddress);
+                text += now.format(", %M:%S."+mls);
                 text += String.format(",%.3f, %.3f, %.3f\n", x, y, z);
             }else if (sensor =="gyro"){
-                text +=String.format("Gyro, "+macaddress);
-                text += now.format(", %Y-%m-%d %H:%M:%S."+mls);
+                text +=String.format("G, "+macaddress);
+                text += now.format(", %M:%S."+mls);
                 text += String.format(",%.3f, %.3f, %.3f\n", x, y, z);
             }else{
                 text += "Wrong data-";

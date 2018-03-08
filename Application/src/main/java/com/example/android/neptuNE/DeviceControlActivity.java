@@ -79,6 +79,7 @@ public class DeviceControlActivity extends Activity {
     private final static String TAG = DeviceControlActivity.class.getSimpleName();
     int sampleRate = 256;
 
+    public String name = "P0";
     public static final String EXTRAS_DEVICE_NAME = "NE_BELT";
     public static final String EXTRAS_DEVICE_ADDRESS = "98:2D:68:2D:60:00";
 
@@ -101,7 +102,6 @@ public class DeviceControlActivity extends Activity {
     private ImageButton mStartButton;
     private ImageButton mHomePageButton;
     private Button mOffNeAlarmButton;
-
 
     private String mDeviceName;
     private String mDeviceAddress;
@@ -870,7 +870,11 @@ public class DeviceControlActivity extends Activity {
         accelerometer.acceleration().addRouteAsync(source -> source.stream((data, env) -> {
             final Acceleration value = data.value(Acceleration.class);
             runOnUiThread(() -> sensorOutput.setText(value.x() + ", " + value.y() + ", " + value.z()));
-            mFileManager.saveData(mwBoard.getMacAddress(), value.x(), value.y(), value.z(),"accel");
+            if (mwBoard.getMacAddress() == deviceUUIDs[0]){
+                mFileManager.saveData("0", value.x(), value.y(), value.z(),"accel");
+            }else if (mwBoard.getMacAddress() == deviceUUIDs[1]){
+                mFileManager.saveData("1", value.x(), value.y(), value.z(),"accel");
+            }
         })).continueWith(task -> {
             streamRoute = task.getResult();
             accelerometerSensors.get(mwBoard.getMacAddress()).acceleration().start();
@@ -905,7 +909,11 @@ public class DeviceControlActivity extends Activity {
         gyroBmi160.angularVelocity().addRouteAsync(source -> source.stream((data, env) -> {
             final AngularVelocity value = data.value(AngularVelocity.class);
             runOnUiThread(() -> gyrosensorOutput.setText(value.x() + ", " + value.y() + ", " + value.z()));
-            mFileManager.saveData(mwBoard.getMacAddress(), value.x(), value.y(), value.z(), "gyro");
+            if (mwBoard.getMacAddress() == deviceUUIDs[0]){
+                mFileManager.saveData("0", value.x(), value.y(), value.z(),"gyro");
+            }else if (mwBoard.getMacAddress() == deviceUUIDs[1]){
+                mFileManager.saveData("1", value.x(), value.y(), value.z(),"gyro");
+            }
         })).continueWith(task -> {
             streamRoute = task.getResult();
             gyroSensors.get(mwBoard.getMacAddress()).angularVelocity().start();
