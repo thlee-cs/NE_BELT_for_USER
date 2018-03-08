@@ -1,9 +1,15 @@
 package com.yonsei.dclab.file;
 
+import android.net.Uri;
 import android.os.Environment;
+import android.support.annotation.NonNull;
 import android.text.format.Time;
 import android.util.Log;
 
+import com.google.android.gms.tasks.OnFailureListener;
+import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.firebase.firestore.FirebaseFirestore;
+import com.google.firebase.storage.*;
 import com.yonsei.dclab.packet.Packet;
 
 import java.io.BufferedReader;
@@ -23,12 +29,19 @@ import java.util.Calendar;
  */
 
 public class FileManager {
+    private int patient_num = 01;
+
     public static final String STRSAVEPATH = Environment.getExternalStorageDirectory()+"/NE BELT/";
     public String filename;
+    public String filenameMo;
     public long startTimeMillis;
     public long updateTimeMillis;
     private int packetLookup = -1;
     private int hours = 0;
+    public long current;
+
+    private FirebaseFirestore db = FirebaseFirestore.getInstance();
+    private FirebaseStorage storage = FirebaseStorage.getInstance();
 
     public static final String TAG = "FileManager";
 
@@ -52,10 +65,75 @@ public class FileManager {
             if (isFileExist(file) == false) {
                 makeFile(dir, (STRSAVEPATH+filename));
                 startTimeMillis = System.currentTimeMillis();
-                saveString(String.format("DATE TIME = %s\n", getStartTime2()));
+//                saveString(String.format("DATE TIME = %s\n", getStartTime2()));
                 break;
             }
         }
+    }
+
+    public void createMoFile(String name) {
+        Log.e(TAG,"creating File");
+        File dir = makeDirectory(STRSAVEPATH);
+//        File dir = new File(Environment.getExternalStorageDirectory().getAbsolutePath(),"NE BELT");
+//        dir.mkdirs();
+        Calendar c = Calendar.getInstance();
+
+        SimpleDateFormat dateFormat = new SimpleDateFormat("yyMMdd'_'HHmmss");
+
+        for(int i = 0; i < 1000; i++)    {
+            //String fileNum = String.format("BIA%03d", i);
+            filenameMo = String.format("MO_" + dateFormat.format(c.getTime())+"_"+ name  +".csv", i);
+            File file = new File(STRSAVEPATH+filenameMo);
+            if (isFileExist(file) == false) {
+                makeFile(dir, (STRSAVEPATH+filenameMo));
+//                saveString(String.format("DATE TIME = %s\n", getStartTime2()));
+                break;
+            }
+        }
+    }
+
+    public void uploadFile(){
+        StorageReference storageRef = storage.getReference();
+
+        Uri file = Uri.fromFile(new File(STRSAVEPATH+filename));
+        StorageReference spaceRef = storageRef.child("Patient_"+patient_num+"_"+file.getLastPathSegment());
+        UploadTask uploadTask = spaceRef.putFile(file);
+
+        // Register observers to listen for when the download is done or if it fails
+        uploadTask.addOnFailureListener(new OnFailureListener() {
+            @Override
+            public void onFailure(@NonNull Exception exception) {
+                // Handle unsuccessful uploads
+            }
+        }).addOnSuccessListener(new OnSuccessListener<UploadTask.TaskSnapshot>() {
+            @Override
+            public void onSuccess(UploadTask.TaskSnapshot taskSnapshot) {
+                // taskSnapshot.getMetadata() contains file metadata such as size, content-type, and download URL.
+                Uri downloadUrl = taskSnapshot.getDownloadUrl();
+            }
+        });
+    }
+
+    public void uploadMoFile(){
+        StorageReference storageRef = storage.getReference();
+
+        Uri moFile = Uri.fromFile(new File(STRSAVEPATH+filenameMo));
+        StorageReference spaceRef = storageRef.child("Patient_"+patient_num+"_"+moFile.getLastPathSegment());
+        UploadTask uploadTask = spaceRef.putFile(moFile);
+
+        // Register observers to listen for when the download is done or if it fails
+        uploadTask.addOnFailureListener(new OnFailureListener() {
+            @Override
+            public void onFailure(@NonNull Exception exception) {
+                // Handle unsuccessful uploads
+            }
+        }).addOnSuccessListener(new OnSuccessListener<UploadTask.TaskSnapshot>() {
+            @Override
+            public void onSuccess(UploadTask.TaskSnapshot taskSnapshot) {
+                // taskSnapshot.getMetadata() contains file metadata such as size, content-type, and download URL.
+                Uri downloadUrl = taskSnapshot.getDownloadUrl();
+            }
+        });
     }
 
     public String getStartTime() {
@@ -94,18 +172,22 @@ public class FileManager {
         return file.length();
     }
 
-    public void saveData(Packet packet, int NEventMarker, int BiaMarker) {//, String strVolume
+    public void saveData(Packet packet, int NEventMarker, int BiaMarker, int HeartRate, String Posture) {//, String strVolume
         FileOutputStream fos;
         if(packetLookup != packet.seqNum){
             packetLookup = packet.seqNum;
             try {
                 fos = new FileOutputStream((STRSAVEPATH+filename), true);
+                current =  System.currentTimeMillis();
+                String mls = String.format("%03d",current % 1000);
                 Time now = new Time();
-                now.set(System.currentTimeMillis());
+                now.set(current);
                 String text = "";
-                text += String.format("\nSEQ=%d, NE=%d, Bia=%d", packet.seqNum, NEventMarker, BiaMarker);
+                text += String.format("SEQ=%d, NE=%d, Bia=%d, HR=%d, %s", packet.seqNum, NEventMarker, BiaMarker, HeartRate, Posture,"\n");
+                text += now.format(", %Y-%m-%d %H:%M:%S."+mls);
+                text += "\n";
                 for (int i = 0; i < packet.rawData.get(0).size(); i++) {//rawData.get(x).size() == 64
-                    text += String.format("\n%d, %d, %d", packet.rawData.get(0).get(i), packet.rawData.get(1).get(i), packet.rawData.get(2).get(i));
+                    text += String.format(" %d, %d, %d\n", packet.rawData.get(0).get(i), packet.rawData.get(1).get(i), packet.rawData.get(2).get(i));
                 }
                 fos.write(text.getBytes());
                 fos.close();
@@ -115,6 +197,36 @@ public class FileManager {
                 Log.w(TAG, "saveData");
             }
         }
+    }
+
+    public void saveData(String macaddress, float x, float y, float z, String sensor) {//, String xyz acc
+        FileOutputStream fos;
+        try {
+            fos = new FileOutputStream((STRSAVEPATH+filenameMo), true);
+            current =  System.currentTimeMillis();
+            String mls = String.format("%03d",current % 1000);
+            Time now = new Time();
+            now.set(current);
+            String text = "";
+            if (sensor =="accel"){
+                text += String.format("Acc, "+macaddress);
+                text += now.format(", %Y-%m-%d %H:%M:%S."+mls);
+                text += String.format(",%.3f, %.3f, %.3f\n", x, y, z);
+            }else if (sensor =="gyro"){
+                text +=String.format("Gyro, "+macaddress);
+                text += now.format(", %Y-%m-%d %H:%M:%S."+mls);
+                text += String.format(",%.3f, %.3f, %.3f\n", x, y, z);
+            }else{
+                text += "Wrong data-";
+            }
+            fos.write(text.getBytes());
+            fos.close();
+            updateTimeMillis = System.currentTimeMillis();
+        }
+        catch (IOException e) {
+            Log.w(TAG, "save_meta_Data");
+        }
+
     }
 
     public void saveFile(float[] data) {

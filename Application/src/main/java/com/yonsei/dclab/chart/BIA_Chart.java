@@ -15,12 +15,9 @@ import android.view.GestureDetector;
 import android.view.MotionEvent;
 import android.view.View;
 
-import com.example.android.bluetoothlegatt.BluetoothLeService;
-
 import org.achartengine.ChartFactory;
 import org.achartengine.GraphicalView;
 import org.achartengine.chart.CubicLineChart;
-import org.achartengine.chart.LineChart;
 import org.achartengine.model.XYMultipleSeriesDataset;
 import org.achartengine.model.XYSeries;
 import org.achartengine.renderer.XYMultipleSeriesRenderer;
@@ -42,11 +39,11 @@ public class BIA_Chart extends View {
     private XYMultipleSeriesRenderer mXYMultipleSeriesRenderer;
     private XYMultipleSeriesDataset mXYMultipleSeriesDataset;
 
-    private double MAXBIATime = 10; //250 = 0.250 * 4 * 10 /40
+    private double MAXBIATime = 20; //250 = 0.250 * 4 * 10 /40
     private double mXAxisMax = MAXBIATime;
 
-    public int staringPoint = 8500;
-    public int yUpDown = 5000;
+    public int staringPoint = 2000;
+    public int yUpDown = 1500;
 
     //private double MAXBIAValue = 6000;
     //private double MAXBIAValue = 80000;
@@ -137,9 +134,9 @@ public class BIA_Chart extends View {
         XYMultipleSeriesRenderer tXYMultipleSeriesRenderer = new XYMultipleSeriesRenderer();
         tXYMultipleSeriesRenderer.addSeriesRenderer(tXYSeriesRenderer);
 
-        tXYMultipleSeriesRenderer.setXTitle("Time (sec.)");
+        tXYMultipleSeriesRenderer.setXTitle("BIA/Time (sec.)");
 
-        tXYMultipleSeriesRenderer.setYTitle("Value");
+//        tXYMultipleSeriesRenderer.setYTitle("BIA - Value");
 
         tXYMultipleSeriesRenderer.setXAxisMin(0);
         tXYMultipleSeriesRenderer.setXAxisMax(mXAxisMax);
@@ -154,7 +151,7 @@ public class BIA_Chart extends View {
 
         switch (getResources().getDisplayMetrics().densityDpi) {
             case DisplayMetrics.DENSITY_XXXHIGH:
-                tXYMultipleSeriesRenderer.setMargins(new int[] { 80, 140, 50, 30 });
+                tXYMultipleSeriesRenderer.setMargins(new int[] { 60, 80, 15, 15 });
                 tXYMultipleSeriesRenderer.setAxisTitleTextSize(TEXT_SIZE_XXXHDPI);
                 tXYMultipleSeriesRenderer.setChartTitleTextSize(TEXT_SIZE_XXXHDPI);
                 tXYMultipleSeriesRenderer.setLabelsTextSize((float)(TEXT_SIZE_XXXHDPI*0.7));
@@ -212,9 +209,6 @@ public class BIA_Chart extends View {
     }
 
     public void updateChart(int[] biaVal) {
-
-//        Log.d(TAG, String.format("MyDEBUG: Update Chart"));
-        // if (pause) return;
         mXYSeries.clear();
 
         for (int i = 0; i < biaVal.length; i++) {

@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "36841727368",
+    "firebase_url": "https://neptune-8ff50.firebaseio.com",
+    "project_id": "neptune-8ff50",
+    "storage_bucket": "neptune-8ff50.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:36841727368:android:a9151b6b57592bf3",
+        "android_client_info": {
+          "package_name": "com.example.android.neptuNE"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "36841727368-fef23hmnvtrjaudeon1gk8g3ej6vds3j.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA06B8Pyrql9TINdB9G7DQ0UEhzIFIs46U"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

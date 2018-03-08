@@ -6,6 +6,8 @@ import java.util.ArrayList;
 
 /**
  * Created by Yeop_DCLab on 2017-08-23.
+ * Start와 End로 잘려진 한 패킷을 원하는 데이터로 변환해줌
+ *
  */
 
 public class Packet {
@@ -68,7 +70,7 @@ public class Packet {
 //                        Log.d(TAG, String.format("cfgNumCh = %02X", this.cfgNumCh));
 //                        Log.d(TAG, String.format("cfgformat = %02X", this.cfgFormat));
                         this.seqNum = (data[18] & 0x000000ff) + ((data[19] << 8) & 0x0000ff00) + ((data[20] << 16) & 0x00ff0000) + ((data[21] << 24) & 0xff000000);
-                        //Log.d(TAG, String.format("SEQ_NUM = %d", this.seqNum));
+//                        Log.d(TAG, String.format("SEQ_NUM = %d", this.seqNum));
                         this.reserved = (data[22] & 0x000000ff) + ((data[23] << 8) & 0x0000ff00) + ((data[24] << 16) & 0x00ff0000) + ((data[25] << 24) & 0xff000000);
                         rawData =  new ArrayList<ArrayList<Integer>>();
                         if (this.addr == 0x01 && this.id == 0x11000200) {//Hard coding for MUL (ECG 1 , BIA 1, Reserved 200 (moisture)) 16bit

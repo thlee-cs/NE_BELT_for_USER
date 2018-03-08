@@ -1,4 +1,0 @@
-#Fri Sep 08 20:19:26 KST 2017
-base.0=C\:\\Users\\yeop-lee\\Documents\\GitHub\\NE_BELT\\Application\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\1f\\main
-renamed.0=classes.dex
-file.0=C\:\\Users\\yeop-lee\\Documents\\GitHub\\NE_BELT\\Application\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\1f\\main\\classes.dex
