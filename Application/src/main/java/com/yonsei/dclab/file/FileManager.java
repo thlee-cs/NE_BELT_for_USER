@@ -29,7 +29,7 @@ import java.util.Calendar;
  */
 
 public class FileManager {
-    public String patient_num = "P01";
+    public String patient_num = "2";
 
     public static final String STRSAVEPATH = Environment.getExternalStorageDirectory()+"/NE BELT/";
     public String filename;

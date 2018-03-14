@@ -31,6 +31,7 @@ import android.content.ServiceConnection;
 import android.graphics.Color;
 import android.media.AudioManager;
 import android.media.SoundPool;
+import android.net.Uri;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.IBinder;
@@ -79,11 +80,12 @@ public class DeviceControlActivity extends Activity {
     private final static String TAG = DeviceControlActivity.class.getSimpleName();
     int sampleRate = 256;
 
-    public String name = "P0";
+    public String name = "P2";
     public static final String EXTRAS_DEVICE_NAME = "NE_BELT";
     public static final String EXTRAS_DEVICE_ADDRESS = "98:2D:68:2D:60:00";
 
-    private static final String[] deviceUUIDs = {"ED:C9:56:60:56:4C", "FD:0F:59:E2:F4:C5"};//"FD:0F:59:E2:F4:C5" "D4:25:5C:D6:2E:F5"
+    //MetaWear
+    private static final String[] deviceUUIDs = {"ED:C9:56:60:56:4B", "FD:0F:59:E2:F4:C4"};//"FD:0F:59:E2:F4:C5" "D4:25:5C:D6:2E:F5"
     private BtleService.LocalBinder serviceBinder;
 
     //data catch map for accel & gyro scope
@@ -291,8 +293,8 @@ public class DeviceControlActivity extends Activity {
                     gain_st = Integer.parseInt("01" );
                     gain_ed = Integer.parseInt("07");
                     if (rot_state == 0){
-                        rot_st = Integer.parseInt("6");
-                        rot_ed = Integer.parseInt("24");
+                        rot_st = Integer.parseInt("24");
+                        rot_ed = Integer.parseInt("6");
 //                        bia_temp = rot_st+rot_ed;
                         request_bia_off(); //bia off at first button touched
                         SystemClock.sleep(100);
@@ -322,7 +324,7 @@ public class DeviceControlActivity extends Activity {
 
 
                 case R.id.homepage_img:
-                    Toast.makeText(getApplicationContext(), "홈페이지 기능 구현 중", Toast.LENGTH_LONG).show();
+                    goToUrl ( "http://dclab.yonsei.ac.kr/neptune/");
                     vibe.vibrate(40);
                     break;
                 case R.id.ne_alram:
@@ -920,6 +922,12 @@ public class DeviceControlActivity extends Activity {
             gyroSensors.get(mwBoard.getMacAddress()).start();
             return null;
         });
+    }
+
+    private void goToUrl (String url) {
+        Uri uriUrl = Uri.parse(url);
+        Intent WebView = new Intent(Intent.ACTION_VIEW, uriUrl);
+        startActivity(WebView);
     }
 
     protected void stopGyro(String deviceUUID) {
