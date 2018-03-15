@@ -32,6 +32,7 @@ import android.graphics.Color;
 import android.media.AudioManager;
 import android.media.SoundPool;
 import android.net.Uri;
+import android.os.BatteryManager;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.IBinder;
@@ -80,7 +81,8 @@ public class DeviceControlActivity extends Activity {
     private final static String TAG = DeviceControlActivity.class.getSimpleName();
     int sampleRate = 256;
 
-    public String name = "P2";
+    String patient_num = "02";
+
     public static final String EXTRAS_DEVICE_NAME = "NE_BELT";
     public static final String EXTRAS_DEVICE_ADDRESS = "98:2D:68:2D:60:00";
 
@@ -150,6 +152,9 @@ public class DeviceControlActivity extends Activity {
     private int NEventMarker = 0;
     private int BiaMarker = 0;
     private int Heartrate = 0;
+
+    private String ChargeStatus;
+    private float BatteryStatus;
 
     private int bell_max = 8250;
     private int bell_min = 8150;
@@ -293,8 +298,8 @@ public class DeviceControlActivity extends Activity {
                     gain_st = Integer.parseInt("01" );
                     gain_ed = Integer.parseInt("07");
                     if (rot_state == 0){
-                        rot_st = Integer.parseInt("24");
-                        rot_ed = Integer.parseInt("6");
+                        rot_st = Integer.parseInt("26");
+                        rot_ed = Integer.parseInt("4");
 //                        bia_temp = rot_st+rot_ed;
                         request_bia_off(); //bia off at first button touched
                         SystemClock.sleep(100);
@@ -457,8 +462,8 @@ public class DeviceControlActivity extends Activity {
             mfile_Num ++;
             mFileManager.uploadFile();
             mFileManager.uploadMoFile();
-            mFileManager.createFile("NE_" + (mfile_Num));// Later, it will be user name.
-            mFileManager.createMoFile("MO_" + (mfile_Num));// Later, it will be user name.
+            mFileManager.createFile(patient_num , String.valueOf(mfile_Num),ChargeStatus, String.valueOf(BatteryStatus));// Later, it will be user name.
+            mFileManager.createMoFile(patient_num , String.valueOf(mfile_Num),ChargeStatus, String.valueOf(BatteryStatus));// Later, it will be user name.
         }
         if ((mFileManager.getMinute() != minute_now) && ((mFileManager.getMinute() % 1) == 0) ){
             ne_event_lock = 0;
@@ -539,10 +544,39 @@ public class DeviceControlActivity extends Activity {
         getApplicationContext().bindService(new Intent(this, BtleService.class), meta_ServiceConnection, BIND_AUTO_CREATE);
         bindService(gattServiceIntent, mServiceConnection, BIND_AUTO_CREATE);
 
+        //Battery part
+        IntentFilter ifilter = new IntentFilter(Intent.ACTION_BATTERY_CHANGED);
+        Intent batteryStatus = getApplicationContext().registerReceiver(null, ifilter);
+
+        // Are we charging / charged?
+        int status = batteryStatus.getIntExtra(BatteryManager.EXTRA_STATUS, -1);
+        boolean isCharging = status == BatteryManager.BATTERY_STATUS_CHARGING ||
+                status == BatteryManager.BATTERY_STATUS_FULL;
+
+        // How are we charging?
+        int chargePlug = batteryStatus.getIntExtra(BatteryManager.EXTRA_PLUGGED, -1);
+        boolean usbCharge = chargePlug == BatteryManager.BATTERY_PLUGGED_USB;
+        boolean acCharge = chargePlug == BatteryManager.BATTERY_PLUGGED_AC;
+
+        int level = batteryStatus.getIntExtra(BatteryManager.EXTRA_LEVEL, -1);
+        int scale = batteryStatus.getIntExtra(BatteryManager.EXTRA_SCALE, -1);
+
+        float batteryPct = level / (float)scale;
+        BatteryStatus = batteryPct;
+        if (isCharging == true){
+            if (usbCharge ==true){
+                ChargeStatus = "U";
+            }else if (acCharge == true){
+                ChargeStatus = "A";
+            }
+        }else {
+            ChargeStatus = "N";
+        }
+
         mPacketParser = new PacketParser();
 
-        mFileManager.createFile("NE_" + (mfile_Num));// Later, it will be user name.
-        mFileManager.createMoFile("MO_" + (mfile_Num));// Later, it will be user name.
+        mFileManager.createFile(patient_num, String.valueOf(mfile_Num),ChargeStatus, String.valueOf(BatteryStatus));// Later, it will be user name.
+        mFileManager.createMoFile(patient_num, String.valueOf(mfile_Num),ChargeStatus, String.valueOf(BatteryStatus));// Later, it will be user name.
         Arrays.fill(biaDataArray, 0);
         Arrays.fill(ecgDataArray, 0);
         Arrays.fill(moiDataArray, 0);
@@ -853,6 +887,7 @@ public class DeviceControlActivity extends Activity {
                     }
                     return null;
                 });
+
     }
 
     /**

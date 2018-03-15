@@ -29,8 +29,6 @@ import java.util.Calendar;
  */
 
 public class FileManager {
-    public String patient_num = "2";
-
     public static final String STRSAVEPATH = Environment.getExternalStorageDirectory()+"/NE BELT/";
     public String filename;
     public String filenameMo;
@@ -49,7 +47,7 @@ public class FileManager {
 
     }
 
-    public void createFile(String name) {
+    public void createFile(String patient_num, String filenum, String isCharged, String percentage) {
         Log.e(TAG,"creating File");
         File dir = makeDirectory(STRSAVEPATH);
 //        File dir = new File(Environment.getExternalStorageDirectory().getAbsolutePath(),"NE BELT");
@@ -60,7 +58,7 @@ public class FileManager {
 
         for(int i = 0; i < 1000; i++)    {
             //String fileNum = String.format("BIA%03d", i);
-            filename = String.format("NE_" + dateFormat.format(c.getTime())+"_"+ name  +".csv", i);
+            filename = String.format("Patient_"+patient_num+"_NE_"+ dateFormat.format(c.getTime())+"_"+filenum+"_"+isCharged+percentage+".csv", i);
             File file = new File(STRSAVEPATH+filename);
             if (isFileExist(file) == false) {
                 makeFile(dir, (STRSAVEPATH+filename));
@@ -71,7 +69,7 @@ public class FileManager {
         }
     }
 
-    public void createMoFile(String name) {
+    public void createMoFile(String patient_num,String filenum, String isCharged, String percentage) {
         Log.e(TAG,"creating File");
         File dir = makeDirectory(STRSAVEPATH);
 //        File dir = new File(Environment.getExternalStorageDirectory().getAbsolutePath(),"NE BELT");
@@ -82,7 +80,7 @@ public class FileManager {
 
         for(int i = 0; i < 1000; i++)    {
             //String fileNum = String.format("BIA%03d", i);
-            filenameMo = String.format("MO_" + dateFormat.format(c.getTime())+"_"+ name  +".csv", i);
+            filenameMo = String.format("Patient_"+patient_num+"_Mo_"+ dateFormat.format(c.getTime())+"_"+filenum+"_"+isCharged+percentage+".csv", i);
             File file = new File(STRSAVEPATH+filenameMo);
             if (isFileExist(file) == false) {
                 makeFile(dir, (STRSAVEPATH+filenameMo));
@@ -96,7 +94,7 @@ public class FileManager {
         StorageReference storageRef = storage.getReference();
 
         Uri file = Uri.fromFile(new File(STRSAVEPATH+filename));
-        StorageReference spaceRef = storageRef.child("Patient_"+patient_num+"_"+file.getLastPathSegment());
+        StorageReference spaceRef = storageRef.child(file.getLastPathSegment());
         UploadTask uploadTask = spaceRef.putFile(file);
 
         // Register observers to listen for when the download is done or if it fails
@@ -118,7 +116,7 @@ public class FileManager {
         StorageReference storageRef = storage.getReference();
 
         Uri moFile = Uri.fromFile(new File(STRSAVEPATH+filenameMo));
-        StorageReference spaceRef = storageRef.child("Patient_"+patient_num+"_"+moFile.getLastPathSegment());
+        StorageReference spaceRef = storageRef.child(moFile.getLastPathSegment());
         UploadTask uploadTask = spaceRef.putFile(moFile);
 
         // Register observers to listen for when the download is done or if it fails
