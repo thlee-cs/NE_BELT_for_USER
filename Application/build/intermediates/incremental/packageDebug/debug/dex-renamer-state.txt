@@ -1,4 +1,4 @@
-#Tue Mar 13 12:33:07 KST 2018
-base.0=/Users/kevin/Documents/NE_BELT_forR/Application/build/intermediates/transforms/dexMerger/debug/0
+#Fri Mar 23 16:57:23 KST 2018
+base.0=C\:\\Users\\yeop-lee\\Documents\\GitHub\\NE_BELT_for_USER\\Application\\build\\intermediates\\transforms\\dexMerger\\debug\\0
 path.0=classes.dex
 renamed.0=classes.dex

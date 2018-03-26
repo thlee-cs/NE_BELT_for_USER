@@ -87,7 +87,7 @@ public class DeviceControlActivity extends Activity {
     public static final String EXTRAS_DEVICE_ADDRESS = "98:2D:68:2D:60:00";
 
     //MetaWear
-    private static final String[] deviceUUIDs = {"ED:C9:56:60:56:4B", "FD:0F:59:E2:F4:C4"};//"FD:0F:59:E2:F4:C5" "D4:25:5C:D6:2E:F5"
+    private static final String[] deviceUUIDs = {"ED:FA:59:4C:73:0F", "E7:E0:46:6C:C1:0F"};//"FD:0F:59:E2:F4:C5" "D4:25:5C:D6:2E:F5"
     private BtleService.LocalBinder serviceBinder;
 
     //data catch map for accel & gyro scope
@@ -115,6 +115,7 @@ public class DeviceControlActivity extends Activity {
 
     private Handler mUpdateDataHandler;
     private  Handler mRotationHandler;
+    private Handler startSeqHandler;
 
     private BluetoothLeService mBluetoothLeService;
     private ArrayList<ArrayList<BluetoothGattCharacteristic>> mGattCharacteristics =
@@ -230,10 +231,12 @@ public class DeviceControlActivity extends Activity {
             } else if (BluetoothLeService.ACTION_GATT_DISCONNECTED.equals(action)) { // 연결 끊김
                 mConnected = false;
                 invalidateOptionsMenu();
+                Log.e(TAG,"DIsconnected");
             } else if (BluetoothLeService.ACTION_GATT_SERVICES_DISCOVERED.equals(action)) { //BLE를 찾은 뒤
                 // Show all the supported services and characteristics on the user interface.
                 getGattServices(mBluetoothLeService.getSupportedGattServices());//GATT설정
             } else if (BluetoothLeService.ACTION_DATA_AVAILABLE.equals(action)) { // 데이터가 교환중임
+
 //                Log.d(TAG, String.format("MyDEBUG: mGattUpdateReceiver[2] = %s", action));
                 byte[] data = intent.getByteArrayExtra(BluetoothLeService.ACTION_DATA_AVAILABLE); //교환된 데이터를 받음
 
@@ -280,44 +283,45 @@ public class DeviceControlActivity extends Activity {
 
                 case R.id.start_button: // Start버튼이 눌리면, 기기로부터 얻
                     Log.d(TAG,"start");
+                    start_sequence();
 //                    SystemClock.sleep(100);
 //                    request_basic();
-                    SystemClock.sleep(100);
-                    request_3ch();
-                    SystemClock.sleep(100);
-                    request_Initial();
-                    SystemClock.sleep(100);
-                    request_pm();
-                    SystemClock.sleep(100);
-                    request_ecg_gain();
-                    SystemClock.sleep(100);
-                    request_start();
 //                    SystemClock.sleep(100);
-                    vibe.vibrate(40);
-
-                    gain_st = Integer.parseInt("01" );
-                    gain_ed = Integer.parseInt("07");
-                    if (rot_state == 0){
-                        rot_st = Integer.parseInt("26");
-                        rot_ed = Integer.parseInt("4");
-//                        bia_temp = rot_st+rot_ed;
-                        request_bia_off(); //bia off at first button touched
-                        SystemClock.sleep(100);
-                        request_ecg_ctrl((byte) gain_st);
-                        mRotationHandler.postDelayed(rotationMethod, 0);
-//                        mBiaSetButton.setText("Stop interval");
-                        rot_state = 1; //rotation STATE on
-//                        Toast.makeText(getApplicationContext(),"Send BIA interval start packet to device", Toast.LENGTH_SHORT).show();
-                    }else if (rot_state ==1){
-                        mRotationHandler.removeCallbacks(rotationMethod);
-                        request_bia_on(); //bia on
-                        SystemClock.sleep(100);
-                        request_ecg_ctrl((byte) gain_ed);
-//                        mBiaSetButton.setText("Start interval");
-                        rot_state = 0; //rotation STATE off
-                        bia_temp = 0; //initialize the iterator
-//                        Toast.makeText(getApplicationContext(),"Send BIA interval stop packet to device", Toast.LENGTH_SHORT).show();
-                    }
+//                    request_3ch();
+//                    SystemClock.sleep(100);
+//                    request_Initial();
+//                    SystemClock.sleep(100);
+//                    request_pm();
+//                    SystemClock.sleep(100);
+//                    request_ecg_gain();
+//                    SystemClock.sleep(100);
+//                    request_start();
+////                    SystemClock.sleep(100);
+//                    vibe.vibrate(40);
+//
+//                    gain_st = Integer.parseInt("01" );
+//                    gain_ed = Integer.parseInt("07");
+//                    if (rot_state == 0){
+//                        rot_st = Integer.parseInt("26");
+//                        rot_ed = Integer.parseInt("4");
+////                        bia_temp = rot_st+rot_ed;
+//                        request_bia_off(); //bia off at first button touched
+//                        SystemClock.sleep(100);
+//                        request_ecg_ctrl((byte) gain_st);
+//                        mRotationHandler.postDelayed(rotationMethod, 0);
+////                        mBiaSetButton.setText("Stop interval");
+//                        rot_state = 1; //rotation STATE on
+////                        Toast.makeText(getApplicationContext(),"Send BIA interval start packet to device", Toast.LENGTH_SHORT).show();
+//                    }else if (rot_state ==1){
+//                        mRotationHandler.removeCallbacks(rotationMethod);
+//                        request_bia_on(); //bia on
+//                        SystemClock.sleep(100);
+//                        request_ecg_ctrl((byte) gain_ed);
+////                        mBiaSetButton.setText("Start interval");
+//                        rot_state = 0; //rotation STATE off
+//                        bia_temp = 0; //initialize the iterator
+////                        Toast.makeText(getApplicationContext(),"Send BIA interval stop packet to device", Toast.LENGTH_SHORT).show();
+//                    }
 
                     connectToMetawear(deviceUUIDs[0]);
                     connectToMetawear(deviceUUIDs[1]);
@@ -582,6 +586,8 @@ public class DeviceControlActivity extends Activity {
         Arrays.fill(moiDataArray, 0);
 
         mRotationHandler = new Handler();
+        startSeqHandler = new Handler();
+        startSeqHandler.postDelayed(startMethod,20000);
 
         /**
          * left metawear setting
@@ -648,7 +654,6 @@ public class DeviceControlActivity extends Activity {
         unregisterReceiver(mGattUpdateReceiver);
         unbindService(mServiceConnection);
 
-
         try{
             mRotationHandler.removeCallbacks(rotationMethod);
         }catch (Exception e){
@@ -667,7 +672,6 @@ public class DeviceControlActivity extends Activity {
             mNow_state.setText("> 기기와 연결됨");
             mNow_guide.setText("\n\n1. 좌측 상단의 '측정시작' 버튼을 눌러주세요\n\n*매일 취침 전 야뇨 경보기 배터리 교체를 권장합니다");
             start_state = 1;
-
         } else {
             menu.findItem(R.id.menu_connect).setVisible(true);
             menu.findItem(R.id.menu_disconnect).setVisible(false);
@@ -732,6 +736,22 @@ public class DeviceControlActivity extends Activity {
             }
             bia_temp = bia_temp + 1;
             mRotationHandler.postDelayed(rotationMethod, 1000);
+        }
+    };
+    private Runnable startMethod = new Runnable(){
+        public void run(){
+            start_sequence();
+            connectToMetawear(deviceUUIDs[0]);
+            connectToMetawear(deviceUUIDs[1]);
+            startSeqHandler.postDelayed(reconnectMethod, 3000);
+        }
+    };
+    private Runnable reconnectMethod = new Runnable(){
+        public void run(){
+            if (mConnected == false){
+                mBluetoothLeService.connect(mDeviceAddress);
+            }
+            startSeqHandler.postDelayed(reconnectMethod,3000);
         }
     };
 
@@ -972,5 +992,46 @@ public class DeviceControlActivity extends Activity {
         if (streamRoute != null){
             streamRoute.remove();
         }
+    }
+    private void start_sequence(){
+        SystemClock.sleep(500);
+        request_3ch();
+        SystemClock.sleep(100);
+        request_Initial();
+        SystemClock.sleep(100);
+        request_pm();
+        SystemClock.sleep(100);
+        request_ecg_gain();
+        SystemClock.sleep(100);
+        request_start();
+        SystemClock.sleep(100);
+//                    SystemClock.sleep(100);
+        vibe.vibrate(40);
+
+        gain_st = Integer.parseInt("01" );
+        gain_ed = Integer.parseInt("07");
+//        if (rot_state == 0)
+        {
+            rot_st = Integer.parseInt("26");
+            rot_ed = Integer.parseInt("4");
+//                        bia_temp = rot_st+rot_ed;
+            request_bia_off(); //bia off at first button touched
+            SystemClock.sleep(100);
+            request_ecg_ctrl((byte) gain_st);
+            mRotationHandler.postDelayed(rotationMethod, 0);
+//                        mBiaSetButton.setText("Stop interval");
+            rot_state = 1; //rotation STATE on
+//                        Toast.makeText(getApplicationContext(),"Send BIA interval start packet to device", Toast.LENGTH_SHORT).show();
+        }
+//        else if (rot_state ==1){
+//            mRotationHandler.removeCallbacks(rotationMethod);
+//            request_bia_on(); //bia on
+//            SystemClock.sleep(100);
+//            request_ecg_ctrl((byte) gain_ed);
+////                        mBiaSetButton.setText("Start interval");
+//            rot_state = 0; //rotation STATE off
+//            bia_temp = 0; //initialize the iterator
+////                        Toast.makeText(getApplicationContext(),"Send BIA interval stop packet to device", Toast.LENGTH_SHORT).show();
+//        }
     }
 }
