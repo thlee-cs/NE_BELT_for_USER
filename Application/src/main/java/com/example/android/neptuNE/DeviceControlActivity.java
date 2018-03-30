@@ -83,13 +83,13 @@ public class DeviceControlActivity extends Activity {
     private final static String TAG = DeviceControlActivity.class.getSimpleName();
     int sampleRate = 256;
 
-    String patient_num = "06";
+    String patient_num = "07";
 
     public static final String EXTRAS_DEVICE_NAME = "NE_BELT";
     public static final String EXTRAS_DEVICE_ADDRESS = "98:2D:68:2D:60:00";
 
     //MetaWear
-    private static final String[] deviceUUIDs = {"FE:55:A5:71:F0:0B","D2:40:D3:0A:06:8B"};//"FD:0F:59:E2:F4:C5" "D4:25:5C:D6:2E:F5"
+    private static final String[] deviceUUIDs = {"FC:13:52:E1:B2:25","F7:EB:5E:DA:D7:AC"};//"FD:0F:59:E2:F4:C5" "D4:25:5C:D6:2E:F5"
     private BtleService.LocalBinder serviceBinder;
 
     //data catch map for accel & gyro scope
@@ -104,12 +104,15 @@ public class DeviceControlActivity extends Activity {
     private int mfile_Num;
     private TextView mSaveView;
     private Button mSaveButton;
-    private ImageButton mStartButton;
-    private ImageButton mHomePageButton;
+    private Button mStartButton;
+//    private ImageButton mHomePageButton;
     private Button mOffNeAlarmButton;
 
     private String mDeviceName;
     private String mDeviceAddress;
+
+    private TextView mTextView_Heartrate;
+    private TextView mTextView_BodyImpedance;
 
     private TextView mTextView_Leftfoot;
     private TextView mTextView_Rightfoot;
@@ -336,10 +339,10 @@ public class DeviceControlActivity extends Activity {
                     break;
 
 
-                case R.id.homepage_img:
-                    goToUrl ( "http://dclab.yonsei.ac.kr/neptune/");
-                    vibe.vibrate(40);
-                    break;
+//                case R.id.homepage_img:
+//                    goToUrl ( "http://dclab.yonsei.ac.kr/neptune/");
+//                    vibe.vibrate(40);
+//                    break;
                 case R.id.ne_alram:
                     if(NE_event == 1) {
                         // sound.stop(music);
@@ -451,13 +454,13 @@ public class DeviceControlActivity extends Activity {
                 count +=1;
             }
             Heartrate = (int) sum/count;
-//            mTextView_Heartrate.setText(String.format("심박 측정중"));
+            mTextView_Heartrate.setText(String.format("심박 측정중"));
             hrimg.setImageResource(R.drawable.ne_heart);
             RR_buf.clear();
         }
 
         //화면에 BIA, MOI 패킷의 맨 마지막을 출력함 1/4초마다 출력됨
-//        if (mTextView_BodyImpedance != null) mTextView_BodyImpedance.setText(String.format("임피던스: "+"%d", packet.rawData.get(1).get(MULDataListSize-1)));
+        if (mTextView_BodyImpedance != null) mTextView_BodyImpedance.setText(String.format("임피던스: "+"%d", packet.rawData.get(1).get(MULDataListSize-1)));
 
         if(NE_event == 0 && (packet.rawData.get(1).get(MULDataListSize-1)!=null)){
             mNow_state.setText("> 정상적으로 연결되어 측정 중입니다");
@@ -536,14 +539,17 @@ public class DeviceControlActivity extends Activity {
         mTextView_Rightfoot = (TextView) findViewById(R.id.right_foot);
         mTextView_Leftfoot = (TextView) findViewById(R.id.left_foot);
 
-        mStartButton = (ImageButton) findViewById(R.id.start_button);
+        mStartButton = (Button) findViewById(R.id.start_button);
         mStartButton.setOnClickListener(mClickListener);
 
         mOffNeAlarmButton = (Button) findViewById(R.id.ne_alram);
         mOffNeAlarmButton.setOnClickListener(mClickListener);
 
-        mHomePageButton = (ImageButton) findViewById(R.id.homepage_img);
-        mHomePageButton.setOnClickListener(mClickListener);
+//        mHomePageButton = (ImageButton) findViewById(R.id.homepage_img);
+//        mHomePageButton.setOnClickListener(mClickListener);
+
+        mTextView_BodyImpedance = (TextView) findViewById(R.id.bia_view);
+        mTextView_Heartrate = (TextView) findViewById(R.id.hr_view);
 
         mSaveView = (TextView) findViewById(R.id.start_time_count);
 
@@ -937,9 +943,18 @@ public class DeviceControlActivity extends Activity {
                         startAccelerometer(mwBoard);
                         startGyro(mwBoard);
                         if (mwBoard.getMacAddress() == deviceUUIDs[0]){
-                            mTextView_Leftfoot.setTextColor(Color.parseColor("#ff8800"));
+//                            mTextView_Leftfoot.setTextColor(Color.parseColor("#ff8800"));
+                            ImageView leftimg= (ImageView) findViewById(R.id.left_foot_img);
+                            leftimg.setImageResource(R.drawable.left_foot);
+                            mTextView_Leftfoot.setText(String.format("측정중"));
+
+
                         }else if (mwBoard.getMacAddress() == deviceUUIDs[1]){
-                            mTextView_Rightfoot.setTextColor(Color.parseColor("#008b8b"));
+//                            mTextView_Rightfoot.setTextColor(Color.parseColor("#008b8b"));
+                            ImageView leftimg= (ImageView) findViewById(R.id.right_foot_img);
+                            leftimg.setImageResource(R.drawable.right_foot);
+                            mTextView_Rightfoot.setText(String.format("측정중"));
+
                         }
                     }
                     return null;

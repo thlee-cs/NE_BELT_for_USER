@@ -1,4 +1,0 @@
-#Tue Mar 27 19:51:06 KST 2018
-base.0=C\:\\Users\\yeop-lee\\Documents\\GitHub\\NE_BELT_for_USER\\Application\\build\\intermediates\\transforms\\dexMerger\\debug\\0
-path.0=classes.dex
-renamed.0=classes.dex

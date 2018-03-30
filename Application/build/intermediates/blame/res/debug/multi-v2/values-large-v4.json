@@ -1,10 +1,10 @@
 {
     "logs": [
         {
-            "outputFile": "C:\\Users\\yeop-lee\\Documents\\GitHub\\NE_BELT_for_USER\\Application\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-large-v4\\values-large-v4.xml",
+            "outputFile": "/Users/kevin/Documents/NE_BELT_forR/Application/build/intermediates/incremental/mergeDebugResources/merged.dir/values-large-v4/values-large-v4.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\yeop-lee\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-25.0.1.aar\\f163b6ae488f4b974668a40604dfeb36\\res\\values-large-v4\\values-large-v4.xml",
+                    "source": "/Users/kevin/.gradle/caches/transforms-1/files-1.1/appcompat-v7-25.2.0.aar/0f5302db0a9a766f501858cd7d806b6a/res/values-large-v4/values-large-v4.xml",
                     "from": {
                         "startLines": "2,3,4,5,6,7,8,9,10",
                         "startColumns": "4,4,4,4,4,4,4,4,4",
