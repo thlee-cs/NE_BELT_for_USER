@@ -18,6 +18,7 @@ package com.example.android.neptuNE;
 
 import android.Manifest;
 import android.app.Activity;
+import android.bluetooth.BluetoothAdapter;
 import android.bluetooth.BluetoothDevice;
 import android.bluetooth.BluetoothGattCharacteristic;
 import android.bluetooth.BluetoothGattService;
@@ -45,6 +46,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageButton;
+import android.widget.ImageView;
 import android.widget.Switch;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -81,13 +83,13 @@ public class DeviceControlActivity extends Activity {
     private final static String TAG = DeviceControlActivity.class.getSimpleName();
     int sampleRate = 256;
 
-    String patient_num = "02";
+    String patient_num = "06";
 
     public static final String EXTRAS_DEVICE_NAME = "NE_BELT";
     public static final String EXTRAS_DEVICE_ADDRESS = "98:2D:68:2D:60:00";
 
     //MetaWear
-    private static final String[] deviceUUIDs = {"ED:FA:59:4C:73:0F", "E7:E0:46:6C:C1:0F"};//"FD:0F:59:E2:F4:C5" "D4:25:5C:D6:2E:F5"
+    private static final String[] deviceUUIDs = {"FE:55:A5:71:F0:0B","D2:40:D3:0A:06:8B"};//"FD:0F:59:E2:F4:C5" "D4:25:5C:D6:2E:F5"
     private BtleService.LocalBinder serviceBinder;
 
     //data catch map for accel & gyro scope
@@ -99,7 +101,6 @@ public class DeviceControlActivity extends Activity {
 
 
     private Route streamRoute;
-
     private int mfile_Num;
     private TextView mSaveView;
     private Button mSaveButton;
@@ -110,8 +111,8 @@ public class DeviceControlActivity extends Activity {
     private String mDeviceName;
     private String mDeviceAddress;
 
-    private TextView mTextView_Heartrate;
-    private TextView mTextView_BodyImpedance;
+    private TextView mTextView_Leftfoot;
+    private TextView mTextView_Rightfoot;
 
     private Handler mUpdateDataHandler;
     private  Handler mRotationHandler;
@@ -132,6 +133,10 @@ public class DeviceControlActivity extends Activity {
     private int minute_now = 60;
     private int start_state = 0;
     private int start_button_counter = 0;
+    private String getHz_l_a = "";
+    private String getHz_l_g = "";
+    private String getHz_r_a = "";
+    private String getHz_r_g = "";
 
 
     private BluetoothGattCharacteristic mNotifyCharacteristic;
@@ -236,7 +241,6 @@ public class DeviceControlActivity extends Activity {
                 // Show all the supported services and characteristics on the user interface.
                 getGattServices(mBluetoothLeService.getSupportedGattServices());//GATT설정
             } else if (BluetoothLeService.ACTION_DATA_AVAILABLE.equals(action)) { // 데이터가 교환중임
-
 //                Log.d(TAG, String.format("MyDEBUG: mGattUpdateReceiver[2] = %s", action));
                 byte[] data = intent.getByteArrayExtra(BluetoothLeService.ACTION_DATA_AVAILABLE); //교환된 데이터를 받음
 
@@ -366,6 +370,8 @@ public class DeviceControlActivity extends Activity {
      * packet의 속도가 1/4초에 1번씩 보내므로 1/4초마다 한번씩 실행됨
      * */
     public void receivedData(Packet packet) {
+        ImageView hrimg= (ImageView) findViewById(R.id.heart_img);
+        hrimg.setImageResource(R.drawable.ne_heart_off);
         //패킷에서 얻은 데이터를 List로 생성함
         for (int i = 0; i < MULDataListSize; i++) {
             mEcgDataList.add(packet.rawData.get(0).get(i));
@@ -405,6 +411,7 @@ public class DeviceControlActivity extends Activity {
                         sound.play(music, 1, 1, 0, -1, 1);
                         sound.autoResume();
                         NE_event = 1; //Mark the event
+                        NEventMarker = 1;
                         mFileManager.uploadFile();
                         mFileManager.uploadMoFile();
                         mNow_state.setText("> 야뇨가 감지되었습니다");
@@ -421,6 +428,7 @@ public class DeviceControlActivity extends Activity {
         int beat_temp_buf = 0 ;
         int hr  = 0;
         //make HR_buf
+
         for (int i = 0; i < ecgDataArray.length; i++) {
             int result = qrsDetector.QRSDet(ecgDataArray[i]);
             if (result != 0) {
@@ -428,7 +436,6 @@ public class DeviceControlActivity extends Activity {
                 hr = (60*sampleRate)/beat_temp_buf;
                 if (hr > 40 && hr < 200){
                     RR_buf.add(hr);
-                    //image
                 }
                 ecgDataArray[i-result] = 0;
             }
@@ -444,14 +451,15 @@ public class DeviceControlActivity extends Activity {
                 count +=1;
             }
             Heartrate = (int) sum/count;
-            mTextView_Heartrate.setText(String.format("심박 측정중"));
+//            mTextView_Heartrate.setText(String.format("심박 측정중"));
+            hrimg.setImageResource(R.drawable.ne_heart);
             RR_buf.clear();
         }
 
         //화면에 BIA, MOI 패킷의 맨 마지막을 출력함 1/4초마다 출력됨
-        if (mTextView_BodyImpedance != null) mTextView_BodyImpedance.setText(String.format("임피던스: "+"%d", packet.rawData.get(1).get(MULDataListSize-1)));
+//        if (mTextView_BodyImpedance != null) mTextView_BodyImpedance.setText(String.format("임피던스: "+"%d", packet.rawData.get(1).get(MULDataListSize-1)));
 
-        if(NE_event == 0 && (mTextView_BodyImpedance != null)){
+        if(NE_event == 0 && (packet.rawData.get(1).get(MULDataListSize-1)!=null)){
             mNow_state.setText("> 정상적으로 연결되어 측정 중입니다");
             mNow_guide.setText("\n\n1. 아이가 올바르게 기기를 착용하고 자도록 지도해주세요 \n\n2. 스마트폰을 충전기와 연결하여 사용하는것을 권장합니다");
         }
@@ -459,6 +467,7 @@ public class DeviceControlActivity extends Activity {
 
         mFileManager.saveData(packet, NEventMarker, BiaMarker, Heartrate, Posture);
         NEventMarker = 0;
+
 
         int fileKb = (int) (mFileManager.getFileSize()/1000);
         mSaveView.setText((mfile_Num) + "h" + mFileManager.getStorageTime());
@@ -481,7 +490,6 @@ public class DeviceControlActivity extends Activity {
     private void getGattServices(List<BluetoothGattService> gattServices) {
         if (gattServices == null) return;
         mGattCharacteristics = new ArrayList<ArrayList<BluetoothGattCharacteristic>>();
-
         for (BluetoothGattService gattService : gattServices) {
             Log.d(TAG, String.format("BluetoothGattService = %s", gattService.getUuid().toString()));
             List<BluetoothGattCharacteristic> gattCharacteristics = gattService.getCharacteristics();
@@ -525,8 +533,8 @@ public class DeviceControlActivity extends Activity {
 
         vibe = (Vibrator)getSystemService(Context.VIBRATOR_SERVICE);
 
-        mTextView_BodyImpedance = (TextView) findViewById(R.id.bia_view);
-        mTextView_Heartrate = (TextView) findViewById(R.id.hr_view);
+        mTextView_Rightfoot = (TextView) findViewById(R.id.right_foot);
+        mTextView_Leftfoot = (TextView) findViewById(R.id.left_foot);
 
         mStartButton = (ImageButton) findViewById(R.id.start_button);
         mStartButton.setOnClickListener(mClickListener);
@@ -587,7 +595,7 @@ public class DeviceControlActivity extends Activity {
 
         mRotationHandler = new Handler();
         startSeqHandler = new Handler();
-        startSeqHandler.postDelayed(startMethod,20000);
+        startSeqHandler.postDelayed(startMethod,10000);
 
         /**
          * left metawear setting
@@ -651,11 +659,21 @@ public class DeviceControlActivity extends Activity {
     @Override
     protected void onDestroy() {
         super.onDestroy();
+        //Unbind BLE intant
         unregisterReceiver(mGattUpdateReceiver);
         unbindService(mServiceConnection);
 
+        //Disable bluetooth
+        BluetoothAdapter mBluetoothAdapter = BluetoothAdapter.getDefaultAdapter();
+        if (mBluetoothAdapter.isEnabled()) {
+            mBluetoothAdapter.disable();
+        }
+
+        //Stop Handler
         try{
-            mRotationHandler.removeCallbacks(rotationMethod);
+            mRotationHandler.removeCallbacks(biaONrotationMethod);
+            mRotationHandler.removeCallbacks(biaOFFrotationMethod);
+            startSeqHandler.removeCallbacks(reconnectMethod);
         }catch (Exception e){
 
         }
@@ -690,7 +708,7 @@ public class DeviceControlActivity extends Activity {
 
     @Override
     public void onBackPressed() {
-        Toast.makeText(getApplicationContext(), "뒤로가기 버튼 (비활성화 상태) \n 휴대폰의 메뉴 버튼을 눌러 앱을 종료해주세요", Toast.LENGTH_LONG).show();
+        Toast.makeText(getApplicationContext(), "뒤로가기 버튼 (비활성화 상태) \n 모바일 좌측 하단의 [=] 메뉴 버튼을 눌러 앱을 종료해주세요", Toast.LENGTH_LONG).show();
         vibe.vibrate(40);
     }
 
@@ -704,8 +722,8 @@ public class DeviceControlActivity extends Activity {
                 return true;
             case R.id.menu_disconnect:
 //                mBluetoothLeService.disconnect();
-                Toast.makeText(getApplicationContext(), "연결 해제 버튼 (비활성화 상태)", Toast.LENGTH_LONG).show();
-                vibe.vibrate(40);
+//                Toast.makeText(getApplicationContext(), "연결 해제 버튼 (비활성화 상태)", Toast.LENGTH_LONG).show();
+//                vibe.vibrate(40);
                 return true;
             case android.R.id.home:
                 //             onBackPressed();
@@ -718,26 +736,40 @@ public class DeviceControlActivity extends Activity {
      * BIA interval을 하기 위한 메서드
      * */
     int bia_temp=0;
-    private Runnable rotationMethod = new Runnable() {
+    private Runnable biaOFFrotationMethod = new Runnable() {
         public void run() {
-            if (bia_temp == rot_st ) {
-                request_bia_on();
-                SystemClock.sleep(100);
-                request_ecg_ctrl((byte) gain_ed);
-                SystemClock.sleep(100);
-//                Toast.makeText(getApplicationContext(),"Turn on the BIA signal", Toast.LENGTH_SHORT).show();
-            }else if(bia_temp == rot_st+rot_ed) {
-                request_bia_off();
-                SystemClock.sleep(100);
-                request_ecg_ctrl((byte) gain_st);
-                SystemClock.sleep(100);
-                bia_temp  = -1;
-//                Toast.makeText(getApplicationContext(),"Turn off the BIA signal", Toast.LENGTH_SHORT).show();
-            }
-            bia_temp = bia_temp + 1;
-            mRotationHandler.postDelayed(rotationMethod, 1000);
+            request_bia_off();
+            SystemClock.sleep(100);
+            request_ecg_ctrl((byte) gain_st);
+            SystemClock.sleep(100);
+            mRotationHandler.postDelayed(biaONrotationMethod, 26000);
         }
     };
+    private Runnable biaONrotationMethod = new Runnable() {
+        public void run() {
+            request_bia_on();
+            SystemClock.sleep(100);
+            request_ecg_ctrl((byte) gain_ed);
+            SystemClock.sleep(100);
+//            if (bia_temp == rot_st ) {
+//                request_bia_on();
+//                SystemClock.sleep(100);
+//                request_ecg_ctrl((byte) gain_ed);
+//                SystemClock.sleep(100);
+////                Toast.makeText(getApplicationContext(),"Turn on the BIA signal", Toast.LENGTH_SHORT).show();
+//            }else if(bia_temp == rot_st+rot_ed) {
+//                request_bia_off();
+//                SystemClock.sleep(100);
+//                request_ecg_ctrl((byte) gain_st);
+//                SystemClock.sleep(100);
+//                bia_temp  = -1;
+////                Toast.makeText(getApplicationContext(),"Turn off the BIA signal", Toast.LENGTH_SHORT).show();
+//            }
+//            bia_temp = bia_temp + 1;
+            mRotationHandler.postDelayed(biaOFFrotationMethod, 4000);
+        }
+    };
+
     private Runnable startMethod = new Runnable(){
         public void run(){
             start_sequence();
@@ -904,6 +936,11 @@ public class DeviceControlActivity extends Activity {
                     if (!task.isCancelled()) {
                         startAccelerometer(mwBoard);
                         startGyro(mwBoard);
+                        if (mwBoard.getMacAddress() == deviceUUIDs[0]){
+                            mTextView_Leftfoot.setTextColor(Color.parseColor("#ff8800"));
+                        }else if (mwBoard.getMacAddress() == deviceUUIDs[1]){
+                            mTextView_Rightfoot.setTextColor(Color.parseColor("#008b8b"));
+                        }
                     }
                     return null;
                 });
@@ -917,16 +954,16 @@ public class DeviceControlActivity extends Activity {
     private void startAccelerometer(MetaWearBoard mwBoard){
         Accelerometer accelerometer = accelerometerSensors.get(mwBoard.getMacAddress());
         if (accelerometer == null) {
-
             accelerometer = mwBoard.getModule(Accelerometer.class);
             accelerometerSensors.put(mwBoard.getMacAddress(), accelerometer);
         }
 
+        getHz_l_a = String.valueOf(accelerometer.getOdr());
         TextView sensorOutput = sensorOutputs.get(mwBoard.getMacAddress());
 
         accelerometer.acceleration().addRouteAsync(source -> source.stream((data, env) -> {
             final Acceleration value = data.value(Acceleration.class);
-            runOnUiThread(() -> sensorOutput.setText(value.x() + ", " + value.y() + ", " + value.z()));
+            runOnUiThread(() -> sensorOutput.setText(getHz_l_a+"HZ : "+value.x() + ", " + value.y() + ", " + value.z()));
             if (mwBoard.getMacAddress() == deviceUUIDs[0]){
                 mFileManager.saveData("0", value.x(), value.y(), value.z(),"accel");
             }else if (mwBoard.getMacAddress() == deviceUUIDs[1]){
@@ -960,7 +997,6 @@ public class DeviceControlActivity extends Activity {
             gyroBmi160 = mwBoard.getModule(GyroBmi160.class);
             gyroSensors.put(mwBoard.getMacAddress(), gyroBmi160);
         }
-
         TextView gyrosensorOutput = gyrosensorOutputs.get(mwBoard.getMacAddress());
 
         gyroBmi160.angularVelocity().addRouteAsync(source -> source.stream((data, env) -> {
@@ -1012,15 +1048,15 @@ public class DeviceControlActivity extends Activity {
         gain_ed = Integer.parseInt("07");
 //        if (rot_state == 0)
         {
-            rot_st = Integer.parseInt("26");
-            rot_ed = Integer.parseInt("4");
+//            rot_st = Integer.parseInt("26");
+//            rot_ed = Integer.parseInt("4");
 //                        bia_temp = rot_st+rot_ed;
-            request_bia_off(); //bia off at first button touched
-            SystemClock.sleep(100);
-            request_ecg_ctrl((byte) gain_st);
-            mRotationHandler.postDelayed(rotationMethod, 0);
+//            request_bia_off(); //bia off at first button touched
+//            SystemClock.sleep(100);
+//            request_ecg_ctrl((byte) gain_st);
+            mRotationHandler.postDelayed(biaOFFrotationMethod, 30000);
 //                        mBiaSetButton.setText("Stop interval");
-            rot_state = 1; //rotation STATE on
+//            rot_state = 1; //rotation STATE on
 //                        Toast.makeText(getApplicationContext(),"Send BIA interval start packet to device", Toast.LENGTH_SHORT).show();
         }
 //        else if (rot_state ==1){

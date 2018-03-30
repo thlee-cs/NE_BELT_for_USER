@@ -4,42 +4,7 @@
             "outputFile": "C:\\Users\\yeop-lee\\Documents\\GitHub\\NE_BELT_for_USER\\Application\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-v23\\values-v23.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\yeop-lee\\.gradle\\caches\\transforms-1\\files-1.1\\cardview-v7-25.0.1.aar\\6a032727b4163d8af6d77a198cbf419e\\res\\values-v23\\values-v23.xml",
-                    "from": {
-                        "startLines": "2",
-                        "startColumns": "4",
-                        "startOffsets": "55",
-                        "endLines": "4",
-                        "endColumns": "12",
-                        "endOffsets": "200"
-                    },
-                    "to": {
-                        "startLines": "37",
-                        "startColumns": "4",
-                        "startOffsets": "2646",
-                        "endLines": "39",
-                        "endColumns": "12",
-                        "endOffsets": "2791"
-                    }
-                },
-                {
-                    "source": "C:\\Users\\yeop-lee\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-25.0.1.aar\\fdf413eae9cad36ebdaf9b6e596c2fa9\\res\\values-v23\\values-v23.xml",
-                    "from": {
-                        "startLines": "2,3,4,5,6,19,32,33,34,35,36",
-                        "startColumns": "4,4,4,4,4,4,4,4,4,4,4",
-                        "startOffsets": "55,190,325,400,487,1277,2079,2206,2311,2426,2533",
-                        "endLines": "2,3,4,5,18,31,32,33,34,35,36",
-                        "endColumns": "134,134,74,86,12,12,126,104,114,106,112",
-                        "endOffsets": "185,320,395,482,1272,2074,2201,2306,2421,2528,2641"
-                    }
-                }
-            ]
-        },
-        {
-            "outputFile": "C:\\Users\\kevin\\Documents\\NE_BELT_forR\\Application\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-v23\\values-v23.xml",
-            "map": [
-                {
-                    "source": "C:\\Users\\kevin\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-25.0.1.aar\\3170afe027fc9f6bfce50aceef1ce23e\\res\\values-v23\\values-v23.xml",
+                    "source": "C:\\Users\\yeop-lee\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-25.0.1.aar\\f163b6ae488f4b974668a40604dfeb36\\res\\values-v23\\values-v23.xml",
                     "from": {
                         "startLines": "2,3,4,5,6,19,32,33,34,35,36",
                         "startColumns": "4,4,4,4,4,4,4,4,4,4,4",
@@ -50,7 +15,7 @@
                     }
                 },
                 {
-                    "source": "C:\\Users\\kevin\\.gradle\\caches\\transforms-1\\files-1.1\\cardview-v7-25.0.1.aar\\e288013714701f7142d124977fa94cbb\\res\\values-v23\\values-v23.xml",
+                    "source": "C:\\Users\\yeop-lee\\.gradle\\caches\\transforms-1\\files-1.1\\cardview-v7-25.0.1.aar\\cd2ee1b799d4f7e633c19ba42881c625\\res\\values-v23\\values-v23.xml",
                     "from": {
                         "startLines": "2",
                         "startColumns": "4",

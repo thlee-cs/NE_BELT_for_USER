@@ -4,23 +4,7 @@
             "outputFile": "C:\\Users\\yeop-lee\\Documents\\GitHub\\NE_BELT_for_USER\\Application\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-v22\\values-v22.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\yeop-lee\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-25.0.1.aar\\fdf413eae9cad36ebdaf9b6e596c2fa9\\res\\values-v22\\values-v22.xml",
-                    "from": {
-                        "startLines": "2,3,4,9",
-                        "startColumns": "4,4,4,4",
-                        "startOffsets": "55,130,217,553",
-                        "endLines": "2,3,8,13",
-                        "endColumns": "74,86,12,12",
-                        "endOffsets": "125,212,548,896"
-                    }
-                }
-            ]
-        },
-        {
-            "outputFile": "C:\\Users\\kevin\\Documents\\NE_BELT_forR\\Application\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-v22\\values-v22.xml",
-            "map": [
-                {
-                    "source": "C:\\Users\\kevin\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-25.0.1.aar\\3170afe027fc9f6bfce50aceef1ce23e\\res\\values-v22\\values-v22.xml",
+                    "source": "C:\\Users\\yeop-lee\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-25.0.1.aar\\f163b6ae488f4b974668a40604dfeb36\\res\\values-v22\\values-v22.xml",
                     "from": {
                         "startLines": "2,3,4,9",
                         "startColumns": "4,4,4,4",
