@@ -557,9 +557,11 @@ public class DeviceControlActivity extends Activity {
         mDeviceName = intent.getStringExtra(EXTRAS_DEVICE_NAME);
         mDeviceAddress = intent.getStringExtra(EXTRAS_DEVICE_ADDRESS);
 
+        //set by last 2 character of device address
         String mIndexId = mDeviceAddress.substring(mDeviceAddress.length() - 2);
         mdevicesetter = new DeviceSetter();
         mdevicesetter.setter(mIndexId);
+        patient_num = mdevicesetter.getPatientNum();
         deviceUUIDs = new String[] {mdevicesetter.getLeftNum(), mdevicesetter.getRightNum()};
         bell_max = mdevicesetter.getAlarmThreshold() + 50;
         bell_min = mdevicesetter.getAlarmThreshold() - 50;
