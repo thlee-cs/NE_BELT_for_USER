@@ -35,6 +35,7 @@ import android.media.SoundPool;
 import android.net.Uri;
 import android.os.BatteryManager;
 import android.os.Bundle;
+import android.os.CountDownTimer;
 import android.os.Handler;
 import android.os.IBinder;
 import android.os.SystemClock;
@@ -83,13 +84,14 @@ public class DeviceControlActivity extends Activity {
     private final static String TAG = DeviceControlActivity.class.getSimpleName();
     int sampleRate = 256;
 
-    String patient_num = "07";
+    String version_num = "  v1.2";
+    String patient_num = "01";
 
     public static final String EXTRAS_DEVICE_NAME = "NE_BELT";
     public static final String EXTRAS_DEVICE_ADDRESS = "98:2D:68:2D:60:00";
 
     //MetaWear
-    private static final String[] deviceUUIDs = {"FC:13:52:E1:B2:25","F7:EB:5E:DA:D7:AC"};//"FD:0F:59:E2:F4:C5" "D4:25:5C:D6:2E:F5"
+    private static final String[] deviceUUIDs = {"DA:C7:9A:F5:27:85","EF:75:65:27:A4:CD"};//"FD:0F:59:E2:F4:C5" "D4:25:5C:D6:2E:F5"
     private BtleService.LocalBinder serviceBinder;
 
     //data catch map for accel & gyro scope
@@ -99,7 +101,7 @@ public class DeviceControlActivity extends Activity {
     private Map<String, TextView> sensorOutputs = new HashMap<>();
     private Map<String, TextView> gyrosensorOutputs = new HashMap<>();
 
-
+    CountDownTimer cTimer = null;
     private Route streamRoute;
     private int mfile_Num;
     private TextView mSaveView;
@@ -374,7 +376,10 @@ public class DeviceControlActivity extends Activity {
      * */
     public void receivedData(Packet packet) {
         ImageView hrimg= (ImageView) findViewById(R.id.heart_img);
-        hrimg.setImageResource(R.drawable.ne_heart_off);
+        ImageView biamg= (ImageView) findViewById(R.id.bia_img);
+        hrimg.setImageResource(R.drawable.ne_heart);
+        biamg.setImageResource(R.drawable.ne_bia);
+
         //패킷에서 얻은 데이터를 List로 생성함
         for (int i = 0; i < MULDataListSize; i++) {
             mEcgDataList.add(packet.rawData.get(0).get(i));
@@ -420,7 +425,6 @@ public class DeviceControlActivity extends Activity {
                         mNow_state.setText("> 야뇨가 감지되었습니다");
                         mNow_guide.setText("\n\n1. 알람을 끄기위해 화면 중앙에 위치한 '알람 끄기' 버튼을 눌러주세요\n\n2.아이를 화장실로 데려가 잔뇨를 볼 수 있도록 도와주세요");
                         mOffNeAlarmButton.setBackgroundColor(Color.RED);
-
                     }
                 }
             }
@@ -455,7 +459,6 @@ public class DeviceControlActivity extends Activity {
             }
             Heartrate = (int) sum/count;
             mTextView_Heartrate.setText(String.format("심박 측정중"));
-            hrimg.setImageResource(R.drawable.ne_heart);
             RR_buf.clear();
         }
 
@@ -513,6 +516,30 @@ public class DeviceControlActivity extends Activity {
             }
         }
     }
+    //start timer function
+    void startTimer() {
+        cTimer = new CountDownTimer(5000, 1000) {
+            TextView timer = (TextView) findViewById(R.id.start_time_count);
+            public void onTick(long millisUntilFinished) {
+                timer.setText((millisUntilFinished / 1000)+"초 후 시작");
+            }
+            public void onFinish() {
+                timer.setText("이제 시작");
+                connectToMetawear(deviceUUIDs[0]);
+                connectToMetawear(deviceUUIDs[1]);
+                startSeqHandler.postDelayed(startMethod,0);
+                cancelTimer();
+            }
+        };
+        cTimer.start();
+    }
+
+
+    //cancel timer
+    void cancelTimer() {
+        if(cTimer!=null)
+            cTimer.cancel();
+    }
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -556,7 +583,7 @@ public class DeviceControlActivity extends Activity {
         mNow_state = (TextView) findViewById(R.id.now_state);
         mNow_guide = (TextView) findViewById(R.id.now_guide);
 
-        getActionBar().setTitle("neptuNE");
+        getActionBar().setTitle("neptuNE"+version_num);
         getActionBar().setDisplayHomeAsUpEnabled(true);
         Intent gattServiceIntent = new Intent(this, BluetoothLeService.class);
         getApplicationContext().bindService(new Intent(this, BtleService.class), meta_ServiceConnection, BIND_AUTO_CREATE);
@@ -601,7 +628,8 @@ public class DeviceControlActivity extends Activity {
 
         mRotationHandler = new Handler();
         startSeqHandler = new Handler();
-        startSeqHandler.postDelayed(startMethod,10000);
+        startTimer();
+//        startSeqHandler.postDelayed(startMethod,10000);
 
         /**
          * left metawear setting
@@ -665,6 +693,9 @@ public class DeviceControlActivity extends Activity {
     @Override
     protected void onDestroy() {
         super.onDestroy();
+        destroyBLE();
+    }
+    protected void destroyBLE(){
         //Unbind BLE intant
         unregisterReceiver(mGattUpdateReceiver);
         unbindService(mServiceConnection);
@@ -674,7 +705,6 @@ public class DeviceControlActivity extends Activity {
         if (mBluetoothAdapter.isEnabled()) {
             mBluetoothAdapter.disable();
         }
-
         //Stop Handler
         try{
             mRotationHandler.removeCallbacks(biaONrotationMethod);
@@ -685,6 +715,20 @@ public class DeviceControlActivity extends Activity {
         }
         mBluetoothLeService = null;
     }
+
+    protected void createBLE(){
+        registerReceiver(mGattUpdateReceiver, makeGattUpdateIntentFilter());
+        if (mBluetoothLeService != null) {
+            final boolean result = mBluetoothLeService.connect(mDeviceAddress);
+            Log.d(TAG, "Connect request result=" + result);
+        }
+
+        Intent gattServiceIntent = new Intent(this, BluetoothLeService.class);
+        getApplicationContext().bindService(new Intent(this, BtleService.class), meta_ServiceConnection, BIND_AUTO_CREATE);
+        bindService(gattServiceIntent, mServiceConnection, BIND_AUTO_CREATE);
+    }
+
+
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
@@ -779,17 +823,26 @@ public class DeviceControlActivity extends Activity {
     private Runnable startMethod = new Runnable(){
         public void run(){
             start_sequence();
-            connectToMetawear(deviceUUIDs[0]);
-            connectToMetawear(deviceUUIDs[1]);
             startSeqHandler.postDelayed(reconnectMethod, 3000);
         }
     };
     private Runnable reconnectMethod = new Runnable(){
         public void run(){
             if (mConnected == false){
+                SystemClock.sleep(100);
+                try{
+                    mRotationHandler.removeCallbacks(biaONrotationMethod);
+                    mRotationHandler.removeCallbacks(biaOFFrotationMethod);
+                }catch (Exception e){
+
+                }
+                SystemClock.sleep(100);
                 mBluetoothLeService.connect(mDeviceAddress);
+                startSeqHandler.postDelayed(startMethod,3000);
             }
-            startSeqHandler.postDelayed(reconnectMethod,3000);
+            else{
+                startSeqHandler.postDelayed(reconnectMethod,3000);
+            }
         }
     };
 

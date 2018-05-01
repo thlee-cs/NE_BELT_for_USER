@@ -1,16 +1,16 @@
 {
     "logs": [
         {
-            "outputFile": "/Users/kevin/Documents/NE_BELT_forR/Application/build/intermediates/incremental/mergeDebugResources/merged.dir/values-sw600dp-v13/values-sw600dp-v13.xml",
+            "outputFile": "C:\\Users\\Yeop_DCLab\\Documents\\GitHub\\NE_BELT_user\\Application\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-sw600dp-v13\\values-sw600dp-v13.xml",
             "map": [
                 {
-                    "source": "/Users/kevin/Documents/NE_BELT_forR/Application/src/main/res/values-sw600dp/template-dimens.xml",
+                    "source": "C:\\Users\\Yeop_DCLab\\Documents\\GitHub\\NE_BELT_user\\Application\\src\\main\\res\\values-sw600dp\\template-dimens.xml",
                     "from": {
                         "startLines": "20,21",
                         "startColumns": "4,4",
-                        "startOffsets": "656,724",
+                        "startOffsets": "676,745",
                         "endColumns": "67,67",
-                        "endOffsets": "719,787"
+                        "endOffsets": "739,808"
                     },
                     "to": {
                         "startLines": "10,11",
@@ -21,7 +21,7 @@
                     }
                 },
                 {
-                    "source": "/Users/kevin/.gradle/caches/transforms-1/files-1.1/appcompat-v7-25.2.0.aar/0f5302db0a9a766f501858cd7d806b6a/res/values-sw600dp-v13/values-sw600dp-v13.xml",
+                    "source": "C:\\Users\\Yeop_DCLab\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-25.2.0.aar\\69947c1e2ced17e3858cf6a665e25dfe\\res\\values-sw600dp-v13\\values-sw600dp-v13.xml",
                     "from": {
                         "startLines": "2,3,4,5,6,7,8,9",
                         "startColumns": "4,4,4,4,4,4,4,4",
@@ -31,14 +31,14 @@
                     }
                 },
                 {
-                    "source": "/Users/kevin/Documents/NE_BELT_forR/Application/src/main/res/values-sw600dp/template-styles.xml",
+                    "source": "C:\\Users\\Yeop_DCLab\\Documents\\GitHub\\NE_BELT_user\\Application\\src\\main\\res\\values-sw600dp\\template-styles.xml",
                     "from": {
                         "startLines": "18",
                         "startColumns": "4",
-                        "startOffsets": "621",
+                        "startOffsets": "639",
                         "endLines": "22",
                         "endColumns": "12",
-                        "endOffsets": "861"
+                        "endOffsets": "883"
                     },
                     "to": {
                         "startLines": "12",

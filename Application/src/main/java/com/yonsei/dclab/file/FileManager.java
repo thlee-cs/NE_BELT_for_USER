@@ -44,7 +44,6 @@ public class FileManager {
     public static final String TAG = "FileManager";
 
     public FileManager() {
-
     }
 
     public void createFile(String patient_num, String filenum, String isCharged, String percentage) {
@@ -75,11 +74,10 @@ public class FileManager {
 //        File dir = new File(Environment.getExternalStorageDirectory().getAbsolutePath(),"NE BELT");
 //        dir.mkdirs();
         Calendar c = Calendar.getInstance();
-
         SimpleDateFormat dateFormat = new SimpleDateFormat("yyMMdd'_'HHmmss");
 
         for(int i = 0; i < 1000; i++)    {
-            //String fileNum = String.format("BIA%03d", i);
+//            String fileNum = String.format("BIA%03d", i);
             filenameMo = String.format("Patient_"+patient_num+"_Mo_"+ dateFormat.format(c.getTime())+"_"+filenum+"_"+isCharged+percentage+".csv", i);
             File file = new File(STRSAVEPATH+filenameMo);
             if (isFileExist(file) == false) {
@@ -92,7 +90,6 @@ public class FileManager {
 
     public void uploadFile(){
         StorageReference storageRef = storage.getReference();
-
         Uri file = Uri.fromFile(new File(STRSAVEPATH+filename));
         StorageReference spaceRef = storageRef.child(file.getLastPathSegment());
         UploadTask uploadTask = spaceRef.putFile(file);
@@ -224,7 +221,6 @@ public class FileManager {
         catch (IOException e) {
             Log.w(TAG, "save_meta_Data");
         }
-
     }
 
     public void saveFile(float[] data) {
@@ -241,7 +237,6 @@ public class FileManager {
         catch (IOException e) {
             Log.d(TAG, "saveFile");
         }
-
     }
 
     public void saveString(String data) {
@@ -293,7 +288,6 @@ public class FileManager {
             }
         }else{
         }
-
         return dir;
     }
 
@@ -365,7 +359,6 @@ public class FileManager {
                     e.printStackTrace();
                 }
             } catch (FileNotFoundException e) {
-
             }
             result = true;
         }else{

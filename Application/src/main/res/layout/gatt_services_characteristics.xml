@@ -88,7 +88,7 @@
             android:layout_column="2"
             android:layout_gravity="center"
             android:layout_row="0"
-            android:src="@drawable/ne_bia"
+            android:src="@drawable/ne_bia_off"
             android:layout_weight="1"/>
 
 
