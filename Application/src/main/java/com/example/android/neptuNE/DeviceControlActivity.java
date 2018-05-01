@@ -70,6 +70,7 @@ import com.yonsei.dclab.OSEAFactory;
 //import com.yonsei.dclab.chart.BIA_Chart;
 //import com.yonsei.dclab.chart.ECG_Chart;
 //import com.yonsei.dclab.chart.Moi_Chart;
+import com.yonsei.dclab.file.DeviceSetter;
 import com.yonsei.dclab.file.FileManager;
 import com.yonsei.dclab.packet.Packet;
 import com.yonsei.dclab.packet.PacketParser;
@@ -85,13 +86,13 @@ public class DeviceControlActivity extends Activity {
     int sampleRate = 256;
 
     String version_num = "  v1.2";
-    String patient_num = "01";
+    String patient_num = null;
 
     public static final String EXTRAS_DEVICE_NAME = "NE_BELT";
     public static final String EXTRAS_DEVICE_ADDRESS = "98:2D:68:2D:60:00";
 
     //MetaWear
-    private static final String[] deviceUUIDs = {"DA:C7:9A:F5:27:85","EF:75:65:27:A4:CD"};//"FD:0F:59:E2:F4:C5" "D4:25:5C:D6:2E:F5"
+    private static String[] deviceUUIDs = {"",""};//"FD:0F:59:E2:F4:C5" "D4:25:5C:D6:2E:F5"
     private BtleService.LocalBinder serviceBinder;
 
     //data catch map for accel & gyro scope
@@ -102,6 +103,7 @@ public class DeviceControlActivity extends Activity {
     private Map<String, TextView> gyrosensorOutputs = new HashMap<>();
 
     CountDownTimer cTimer = null;
+    public DeviceSetter mdevicesetter;
     private Route streamRoute;
     private int mfile_Num;
     private TextView mSaveView;
@@ -554,7 +556,16 @@ public class DeviceControlActivity extends Activity {
         final Intent intent = getIntent();
         mDeviceName = intent.getStringExtra(EXTRAS_DEVICE_NAME);
         mDeviceAddress = intent.getStringExtra(EXTRAS_DEVICE_ADDRESS);
+
+        String mIndexId = mDeviceAddress.substring(mDeviceAddress.length() - 2);
+        mdevicesetter = new DeviceSetter();
+        mdevicesetter.setter(mIndexId);
+        deviceUUIDs = new String[] {mdevicesetter.getLeftNum(), mdevicesetter.getRightNum()};
+        bell_max = mdevicesetter.getAlarmThreshold() + 50;
+        bell_min = mdevicesetter.getAlarmThreshold() - 50;
+
         ActivityCompat.requestPermissions(DeviceControlActivity.this, STORAGE_PERMISSION, 1);
+
 
         mFileManager = new FileManager();
         sound = new SoundPool(1, AudioManager.STREAM_NOTIFICATION, 0);
@@ -999,14 +1010,14 @@ public class DeviceControlActivity extends Activity {
 //                            mTextView_Leftfoot.setTextColor(Color.parseColor("#ff8800"));
                             ImageView leftimg= (ImageView) findViewById(R.id.left_foot_img);
                             leftimg.setImageResource(R.drawable.left_foot);
-                            mTextView_Leftfoot.setText(String.format("측정중"));
+//                            mTextView_Leftfoot.setText(String.format("측정중"));
 
 
                         }else if (mwBoard.getMacAddress() == deviceUUIDs[1]){
 //                            mTextView_Rightfoot.setTextColor(Color.parseColor("#008b8b"));
                             ImageView leftimg= (ImageView) findViewById(R.id.right_foot_img);
                             leftimg.setImageResource(R.drawable.right_foot);
-                            mTextView_Rightfoot.setText(String.format("측정중"));
+//                            mTextView_Rightfoot.setText(String.format("측정중"));
 
                         }
                     }
