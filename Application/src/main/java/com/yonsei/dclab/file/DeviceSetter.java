@@ -91,7 +91,7 @@ public class DeviceSetter {
             case "0F":
                 PatientNum = "15";
                 LeftNum = "C4:01:92:F3:0D:4A";
-                RightNum = "C4:01:92:F3:0D:4A";
+                RightNum = "F3:01:E7:BB:4D:70";
                 AlarmThreshold = 8322;
                 break;
         }
