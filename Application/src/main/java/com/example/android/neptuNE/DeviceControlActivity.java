@@ -85,7 +85,7 @@ public class DeviceControlActivity extends Activity {
     private final static String TAG = DeviceControlActivity.class.getSimpleName();
     int sampleRate = 256;
 
-    String version_num = "  v1.2";
+    String version_num = "  v1.3";
     String patient_num = null;
 
     public static final String EXTRAS_DEVICE_NAME = "NE_BELT";
@@ -103,6 +103,8 @@ public class DeviceControlActivity extends Activity {
     private Map<String, TextView> gyrosensorOutputs = new HashMap<>();
 
     CountDownTimer cTimer = null;
+    public int DisconnectCounter = 0;
+    public int DisconnectThreshold = 10;
     public DeviceSetter mdevicesetter;
     private Route streamRoute;
     private int mfile_Num;
@@ -239,6 +241,7 @@ public class DeviceControlActivity extends Activity {
             final String action = intent.getAction();
             if (BluetoothLeService.ACTION_GATT_CONNECTED.equals(action)) { //연결됨
                 mConnected = true;
+                DisconnectCounter = 0;
                 invalidateOptionsMenu();
             } else if (BluetoothLeService.ACTION_GATT_DISCONNECTED.equals(action)) { // 연결 끊김
                 mConnected = false;
@@ -841,6 +844,11 @@ public class DeviceControlActivity extends Activity {
     };
     private Runnable reconnectMethod = new Runnable(){
         public void run(){
+            if (DisconnectCounter > DisconnectThreshold){
+                final Intent intent = new Intent(DeviceControlActivity.this, DeviceScanActivity.class);
+                System.exit(0);
+                startActivity(intent);
+            }
             if (mConnected == false){
                 SystemClock.sleep(100);
                 try{
@@ -851,6 +859,7 @@ public class DeviceControlActivity extends Activity {
                 }
                 SystemClock.sleep(100);
                 mBluetoothLeService.connect(mDeviceAddress);
+                DisconnectCounter += 1;
                 startSeqHandler.postDelayed(startMethod,3000);
             }
             else{

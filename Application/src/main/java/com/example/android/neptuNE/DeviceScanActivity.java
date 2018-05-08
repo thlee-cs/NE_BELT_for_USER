@@ -54,8 +54,8 @@ public class DeviceScanActivity extends ListActivity {
     private Handler mHandler;
 
     private static final int REQUEST_ENABLE_BT = 1;
-    // Stops scanning after 1000 seconds.
-    private static final long SCAN_PERIOD = 1000000;
+    // Stops scanning after 30 min.
+    private static final long SCAN_PERIOD = 1800000;
 
     private static String[] ACCESS_PERMISSION = {
             Manifest.permission.ACCESS_COARSE_LOCATION,
