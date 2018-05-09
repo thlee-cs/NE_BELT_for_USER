@@ -85,7 +85,7 @@ public class DeviceControlActivity extends Activity {
     private final static String TAG = DeviceControlActivity.class.getSimpleName();
     int sampleRate = 256;
 
-    String version_num = "  v1.3";
+    String version_num = "  v1.4";
     String patient_num = null;
 
     public static final String EXTRAS_DEVICE_NAME = "NE_BELT";
@@ -143,9 +143,9 @@ public class DeviceControlActivity extends Activity {
     private int start_state = 0;
     private int start_button_counter = 0;
     private String getHz_l_a = "";
-    private String getHz_l_g = "";
-    private String getHz_r_a = "";
-    private String getHz_r_g = "";
+//    private String getHz_l_g = "";
+//    private String getHz_r_a = "";
+//    private String getHz_r_g = "";
 
 
     private BluetoothGattCharacteristic mNotifyCharacteristic;
@@ -174,9 +174,9 @@ public class DeviceControlActivity extends Activity {
     private int bell_max = 8250;
     private int bell_min = 8150;
 
-    private int rot_state = 0;
-    private int rot_st;
-    private int rot_ed;
+//    private int rot_state = 0;
+//    private int rot_st;
+//    private int rot_ed;
     private int gain_st = (byte) 0x01;
     private int gain_ed = (byte) 0x07;
 
@@ -521,6 +521,7 @@ public class DeviceControlActivity extends Activity {
             }
         }
     }
+
     //start timer function
     void startTimer() {
         cTimer = new CountDownTimer(5000, 1000) {
@@ -529,10 +530,14 @@ public class DeviceControlActivity extends Activity {
                 timer.setText((millisUntilFinished / 1000)+"초 후 시작");
             }
             public void onFinish() {
-                timer.setText("이제 시작");
+                timer.setText("이제   시작");
+                start_sequence();
+                SystemClock.sleep(100);
                 connectToMetawear(deviceUUIDs[0]);
+                SystemClock.sleep(100);
                 connectToMetawear(deviceUUIDs[1]);
-                startSeqHandler.postDelayed(startMethod,0);
+                SystemClock.sleep(100);
+                startSeqHandler.postDelayed(reconnectMethod,0);
                 cancelTimer();
             }
         };
@@ -593,12 +598,9 @@ public class DeviceControlActivity extends Activity {
 
         mTextView_BodyImpedance = (TextView) findViewById(R.id.bia_view);
         mTextView_Heartrate = (TextView) findViewById(R.id.hr_view);
-
         mSaveView = (TextView) findViewById(R.id.start_time_count);
-
         mNow_state = (TextView) findViewById(R.id.now_state);
         mNow_guide = (TextView) findViewById(R.id.now_guide);
-
         getActionBar().setTitle("neptuNE"+version_num);
         getActionBar().setDisplayHomeAsUpEnabled(true);
         Intent gattServiceIntent = new Intent(this, BluetoothLeService.class);
@@ -618,10 +620,8 @@ public class DeviceControlActivity extends Activity {
         int chargePlug = batteryStatus.getIntExtra(BatteryManager.EXTRA_PLUGGED, -1);
         boolean usbCharge = chargePlug == BatteryManager.BATTERY_PLUGGED_USB;
         boolean acCharge = chargePlug == BatteryManager.BATTERY_PLUGGED_AC;
-
         int level = batteryStatus.getIntExtra(BatteryManager.EXTRA_LEVEL, -1);
         int scale = batteryStatus.getIntExtra(BatteryManager.EXTRA_SCALE, -1);
-
         float batteryPct = level / (float)scale;
         BatteryStatus = batteryPct;
         if (isCharging == true){
@@ -641,7 +641,6 @@ public class DeviceControlActivity extends Activity {
         Arrays.fill(biaDataArray, 0);
         Arrays.fill(ecgDataArray, 0);
         Arrays.fill(moiDataArray, 0);
-
         mRotationHandler = new Handler();
         startSeqHandler = new Handler();
         startTimer();
@@ -838,13 +837,16 @@ public class DeviceControlActivity extends Activity {
 
     private Runnable startMethod = new Runnable(){
         public void run(){
+            SystemClock.sleep(100);
             start_sequence();
+            SystemClock.sleep(100);
             startSeqHandler.postDelayed(reconnectMethod, 3000);
         }
     };
     private Runnable reconnectMethod = new Runnable(){
         public void run(){
             if (DisconnectCounter > DisconnectThreshold){
+                DisconnectCounter = 0; //for initiate the value
                 final Intent intent = new Intent(DeviceControlActivity.this, DeviceScanActivity.class);
                 System.exit(0);
                 startActivity(intent);
@@ -1119,6 +1121,7 @@ public class DeviceControlActivity extends Activity {
             streamRoute.remove();
         }
     }
+
     private void start_sequence(){
         SystemClock.sleep(500);
         request_3ch();
@@ -1131,10 +1134,9 @@ public class DeviceControlActivity extends Activity {
         SystemClock.sleep(100);
         request_start();
         SystemClock.sleep(100);
-//                    SystemClock.sleep(100);
         vibe.vibrate(40);
 
-        gain_st = Integer.parseInt("01" );
+        gain_st = Integer.parseInt("01");
         gain_ed = Integer.parseInt("07");
 //        if (rot_state == 0)
         {
