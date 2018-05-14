@@ -85,7 +85,7 @@ public class DeviceControlActivity extends Activity {
     private final static String TAG = DeviceControlActivity.class.getSimpleName();
     int sampleRate = 256;
 
-    String version_num = "  v1.4";
+    String version_num = "  v1.41";
     String patient_num = null;
 
     public static final String EXTRAS_DEVICE_NAME = "NE_BELT";
@@ -763,6 +763,8 @@ public class DeviceControlActivity extends Activity {
                 mNow_guide.setText("\n\n잠시만 기다려주세요");
             }
             else {
+                mFileManager.uploadFile(); //연결이 끊겼을때 파일 업로드
+                mFileManager.uploadMoFile();
                 Toast.makeText(getApplicationContext(), "기기와 연결 상태를 확인해주세요", Toast.LENGTH_LONG).show();
                 mNow_state.setText("> 기기와 연결이 되어있지않습니다");
                 mNow_guide.setText("\n\n1. 기기의 전원 상태를 확인해주세요\n2. 우측 상단의 'CONNECT' 버튼을 눌러주세요\n3. 기기와 스마트폰을 가까이 위치해주세요\n4. 해당 문제가 반복되면 기기와 앱을 종료 후 다시 켜주세요");
