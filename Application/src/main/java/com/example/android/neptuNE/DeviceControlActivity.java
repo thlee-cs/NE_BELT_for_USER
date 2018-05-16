@@ -85,7 +85,7 @@ public class DeviceControlActivity extends Activity {
     private final static String TAG = DeviceControlActivity.class.getSimpleName();
     int sampleRate = 256;
 
-    String version_num = "  v1.41";
+    String version_num = "  v1.42";
     String patient_num = null;
 
     public static final String EXTRAS_DEVICE_NAME = "NE_BELT";
@@ -298,54 +298,15 @@ public class DeviceControlActivity extends Activity {
                 case R.id.start_button: // Start버튼이 눌리면, 기기로부터 얻
                     Log.d(TAG,"start");
                     start_sequence();
-//                    SystemClock.sleep(100);
-//                    request_basic();
-//                    SystemClock.sleep(100);
-//                    request_3ch();
-//                    SystemClock.sleep(100);
-//                    request_Initial();
-//                    SystemClock.sleep(100);
-//                    request_pm();
-//                    SystemClock.sleep(100);
-//                    request_ecg_gain();
-//                    SystemClock.sleep(100);
-//                    request_start();
-////                    SystemClock.sleep(100);
-//                    vibe.vibrate(40);
-//
-//                    gain_st = Integer.parseInt("01" );
-//                    gain_ed = Integer.parseInt("07");
-//                    if (rot_state == 0){
-//                        rot_st = Integer.parseInt("26");
-//                        rot_ed = Integer.parseInt("4");
-////                        bia_temp = rot_st+rot_ed;
-//                        request_bia_off(); //bia off at first button touched
-//                        SystemClock.sleep(100);
-//                        request_ecg_ctrl((byte) gain_st);
-//                        mRotationHandler.postDelayed(rotationMethod, 0);
-////                        mBiaSetButton.setText("Stop interval");
-//                        rot_state = 1; //rotation STATE on
-////                        Toast.makeText(getApplicationContext(),"Send BIA interval start packet to device", Toast.LENGTH_SHORT).show();
-//                    }else if (rot_state ==1){
-//                        mRotationHandler.removeCallbacks(rotationMethod);
-//                        request_bia_on(); //bia on
-//                        SystemClock.sleep(100);
-//                        request_ecg_ctrl((byte) gain_ed);
-////                        mBiaSetButton.setText("Start interval");
-//                        rot_state = 0; //rotation STATE off
-//                        bia_temp = 0; //initialize the iterator
-////                        Toast.makeText(getApplicationContext(),"Send BIA interval stop packet to device", Toast.LENGTH_SHORT).show();
-//                    }
-
-                    connectToMetawear(deviceUUIDs[0]);
-                    connectToMetawear(deviceUUIDs[1]);
+                    if (deviceUUIDs[0] != null){
+                        connectToMetawear(deviceUUIDs[0]);
+                        connectToMetawear(deviceUUIDs[1]);
+                    }
                     if(start_button_counter == 0) {
                         Toast.makeText(getApplicationContext(), "시작 버튼이 눌렸어요", Toast.LENGTH_LONG).show();
                         start_button_counter = 1;
                     }
                     break;
-
-
 //                case R.id.homepage_img:
 //                    goToUrl ( "http://dclab.yonsei.ac.kr/neptune/");
 //                    vibe.vibrate(40);
@@ -474,14 +435,11 @@ public class DeviceControlActivity extends Activity {
             mNow_state.setText("> 정상적으로 연결되어 측정 중입니다");
             mNow_guide.setText("\n\n1. 아이가 올바르게 기기를 착용하고 자도록 지도해주세요 \n\n2. 스마트폰을 충전기와 연결하여 사용하는것을 권장합니다");
         }
-
-
         mFileManager.saveData(packet, NEventMarker, BiaMarker, Heartrate, Posture);
         NEventMarker = 0;
-
-
         int fileKb = (int) (mFileManager.getFileSize()/1000);
         mSaveView.setText((mfile_Num) + "h" + mFileManager.getStorageTime());
+
         if (mFileManager.getHours() == 1){
             mfile_Num ++;
             mFileManager.uploadFile();
@@ -533,9 +491,10 @@ public class DeviceControlActivity extends Activity {
                 timer.setText("이제   시작");
                 start_sequence();
                 SystemClock.sleep(100);
-                connectToMetawear(deviceUUIDs[0]);
-                SystemClock.sleep(100);
-                connectToMetawear(deviceUUIDs[1]);
+                if (deviceUUIDs != null){
+                    connectToMetawear(deviceUUIDs[0]);
+                    connectToMetawear(deviceUUIDs[1]);
+                }
                 SystemClock.sleep(100);
                 startSeqHandler.postDelayed(reconnectMethod,0);
                 cancelTimer();
@@ -646,6 +605,7 @@ public class DeviceControlActivity extends Activity {
         startTimer();
 //        startSeqHandler.postDelayed(startMethod,10000);
 
+
         /**
          * left metawear setting
          */
@@ -731,20 +691,6 @@ public class DeviceControlActivity extends Activity {
         mBluetoothLeService = null;
     }
 
-    protected void createBLE(){
-        registerReceiver(mGattUpdateReceiver, makeGattUpdateIntentFilter());
-        if (mBluetoothLeService != null) {
-            final boolean result = mBluetoothLeService.connect(mDeviceAddress);
-            Log.d(TAG, "Connect request result=" + result);
-        }
-
-        Intent gattServiceIntent = new Intent(this, BluetoothLeService.class);
-        getApplicationContext().bindService(new Intent(this, BtleService.class), meta_ServiceConnection, BIND_AUTO_CREATE);
-        bindService(gattServiceIntent, mServiceConnection, BIND_AUTO_CREATE);
-    }
-
-
-
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         getMenuInflater().inflate(R.menu.gatt_services, menu);
@@ -802,7 +748,6 @@ public class DeviceControlActivity extends Activity {
     /**
      * BIA interval을 하기 위한 메서드
      * */
-    int bia_temp=0;
     private Runnable biaOFFrotationMethod = new Runnable() {
         public void run() {
             request_bia_off();
@@ -818,21 +763,6 @@ public class DeviceControlActivity extends Activity {
             SystemClock.sleep(100);
             request_ecg_ctrl((byte) gain_ed);
             SystemClock.sleep(100);
-//            if (bia_temp == rot_st ) {
-//                request_bia_on();
-//                SystemClock.sleep(100);
-//                request_ecg_ctrl((byte) gain_ed);
-//                SystemClock.sleep(100);
-////                Toast.makeText(getApplicationContext(),"Turn on the BIA signal", Toast.LENGTH_SHORT).show();
-//            }else if(bia_temp == rot_st+rot_ed) {
-//                request_bia_off();
-//                SystemClock.sleep(100);
-//                request_ecg_ctrl((byte) gain_st);
-//                SystemClock.sleep(100);
-//                bia_temp  = -1;
-////                Toast.makeText(getApplicationContext(),"Turn off the BIA signal", Toast.LENGTH_SHORT).show();
-//            }
-//            bia_temp = bia_temp + 1;
             mRotationHandler.postDelayed(biaOFFrotationMethod, 4000);
         }
     };
@@ -1006,38 +936,41 @@ public class DeviceControlActivity extends Activity {
      * @param deviceUUID
      */
     public void connectToMetawear(String deviceUUID){
-        BluetoothManager btManager = (BluetoothManager) getSystemService(BLUETOOTH_SERVICE);
-        BluetoothDevice btDevice = btManager.getAdapter().getRemoteDevice(deviceUUID);
-        MetaWearBoard mwBoard = serviceBinder.getMetaWearBoard(btDevice);
+        if (deviceUUID != null){
+            BluetoothManager btManager = (BluetoothManager) getSystemService(BLUETOOTH_SERVICE);
+            BluetoothDevice btDevice = btManager.getAdapter().getRemoteDevice(deviceUUID);
+            MetaWearBoard mwBoard = serviceBinder.getMetaWearBoard(btDevice);
 
-        mwBoard.connectAsync()
-                .continueWithTask(task -> {
-                    if (task.isCancelled()) {
-                        return task;
-                    }
-                    return task.isFaulted() ? reconnect(mwBoard) : Task.forResult(null);
-                })
-                .continueWith(task -> {
-                    if (!task.isCancelled()) {
-                        startAccelerometer(mwBoard);
-                        startGyro(mwBoard);
-                        if (mwBoard.getMacAddress() == deviceUUIDs[0]){
+            mwBoard.connectAsync()
+                    .continueWithTask(task -> {
+                        if (task.isCancelled()) {
+                            return task;
+                        }
+                        return task.isFaulted() ? reconnect(mwBoard) : Task.forResult(null);
+                    })
+                    .continueWith(task -> {
+                        if (!task.isCancelled()) {
+                            startAccelerometer(mwBoard);
+                            startGyro(mwBoard);
+                            if (mwBoard.getMacAddress() == deviceUUIDs[0]){
 //                            mTextView_Leftfoot.setTextColor(Color.parseColor("#ff8800"));
-                            ImageView leftimg= (ImageView) findViewById(R.id.left_foot_img);
-                            leftimg.setImageResource(R.drawable.left_foot);
+                                ImageView leftimg= (ImageView) findViewById(R.id.left_foot_img);
+                                leftimg.setImageResource(R.drawable.left_foot);
 //                            mTextView_Leftfoot.setText(String.format("측정중"));
 
 
-                        }else if (mwBoard.getMacAddress() == deviceUUIDs[1]){
+                            }else if (mwBoard.getMacAddress() == deviceUUIDs[1]){
 //                            mTextView_Rightfoot.setTextColor(Color.parseColor("#008b8b"));
-                            ImageView leftimg= (ImageView) findViewById(R.id.right_foot_img);
-                            leftimg.setImageResource(R.drawable.right_foot);
+                                ImageView leftimg= (ImageView) findViewById(R.id.right_foot_img);
+                                leftimg.setImageResource(R.drawable.right_foot);
 //                            mTextView_Rightfoot.setText(String.format("측정중"));
 
+                            }
                         }
-                    }
-                    return null;
-                });
+                        return null;
+                    });
+        }
+
 
     }
 
@@ -1140,28 +1073,6 @@ public class DeviceControlActivity extends Activity {
 
         gain_st = Integer.parseInt("01");
         gain_ed = Integer.parseInt("07");
-//        if (rot_state == 0)
-        {
-//            rot_st = Integer.parseInt("26");
-//            rot_ed = Integer.parseInt("4");
-//                        bia_temp = rot_st+rot_ed;
-//            request_bia_off(); //bia off at first button touched
-//            SystemClock.sleep(100);
-//            request_ecg_ctrl((byte) gain_st);
-            mRotationHandler.postDelayed(biaOFFrotationMethod, 30000);
-//                        mBiaSetButton.setText("Stop interval");
-//            rot_state = 1; //rotation STATE on
-//                        Toast.makeText(getApplicationContext(),"Send BIA interval start packet to device", Toast.LENGTH_SHORT).show();
-        }
-//        else if (rot_state ==1){
-//            mRotationHandler.removeCallbacks(rotationMethod);
-//            request_bia_on(); //bia on
-//            SystemClock.sleep(100);
-//            request_ecg_ctrl((byte) gain_ed);
-////                        mBiaSetButton.setText("Start interval");
-//            rot_state = 0; //rotation STATE off
-//            bia_temp = 0; //initialize the iterator
-////                        Toast.makeText(getApplicationContext(),"Send BIA interval stop packet to device", Toast.LENGTH_SHORT).show();
-//        }
+        mRotationHandler.postDelayed(biaOFFrotationMethod, 30000);
     }
 }
