@@ -85,7 +85,7 @@ public class DeviceControlActivity extends Activity {
     private final static String TAG = DeviceControlActivity.class.getSimpleName();
     int sampleRate = 256;
 
-    String version_num = "  v1.42";
+    String version_num = "  v1.43";
     String patient_num = null;
 
     public static final String EXTRAS_DEVICE_NAME = "NE_BELT";
@@ -107,7 +107,7 @@ public class DeviceControlActivity extends Activity {
     public int DisconnectThreshold = 10;
     public DeviceSetter mdevicesetter;
     private Route streamRoute;
-    private int mfile_Num;
+    private int mfile_Num = 0;
     private TextView mSaveView;
     private Button mSaveButton;
     private Button mStartButton;
@@ -341,6 +341,18 @@ public class DeviceControlActivity extends Activity {
      * packet의 속도가 1/4초에 1번씩 보내므로 1/4초마다 한번씩 실행됨
      * */
     public void receivedData(Packet packet) {
+        if (mFileManager.getHours() == 1 || mfile_Num == 0 ){
+            try{
+                mFileManager.uploadFile();
+                mFileManager.uploadMoFile();
+            }
+            catch (Exception e){
+                Log.e(TAG, "Upload Failed");
+            }
+            mFileManager.createFile(patient_num , String.valueOf(mfile_Num),ChargeStatus, String.valueOf(BatteryStatus));
+            mFileManager.createMoFile(patient_num , String.valueOf(mfile_Num),ChargeStatus, String.valueOf(BatteryStatus));
+            mfile_Num ++;
+        }
         ImageView hrimg= (ImageView) findViewById(R.id.heart_img);
         ImageView biamg= (ImageView) findViewById(R.id.bia_img);
         hrimg.setImageResource(R.drawable.ne_heart);
@@ -440,17 +452,11 @@ public class DeviceControlActivity extends Activity {
         int fileKb = (int) (mFileManager.getFileSize()/1000);
         mSaveView.setText((mfile_Num) + "h" + mFileManager.getStorageTime());
 
-        if (mFileManager.getHours() == 1){
-            mfile_Num ++;
-            mFileManager.uploadFile();
-            mFileManager.uploadMoFile();
-            mFileManager.createFile(patient_num , String.valueOf(mfile_Num),ChargeStatus, String.valueOf(BatteryStatus));// Later, it will be user name.
-            mFileManager.createMoFile(patient_num , String.valueOf(mfile_Num),ChargeStatus, String.valueOf(BatteryStatus));// Later, it will be user name.
-        }
         if ((mFileManager.getMinute() != minute_now) && ((mFileManager.getMinute() % 1) == 0) ){
             ne_event_lock = 0;
             //music = sound.load(this, R.raw.sample, 1);
         }
+
     }
 
     /**
@@ -595,8 +601,8 @@ public class DeviceControlActivity extends Activity {
 
         mPacketParser = new PacketParser();
 
-        mFileManager.createFile(patient_num, String.valueOf(mfile_Num),ChargeStatus, String.valueOf(BatteryStatus));// Later, it will be user name.
-        mFileManager.createMoFile(patient_num, String.valueOf(mfile_Num),ChargeStatus, String.valueOf(BatteryStatus));// Later, it will be user name.
+//        mFileManager.createFile(patient_num, String.valueOf(mfile_Num),ChargeStatus, String.valueOf(BatteryStatus));
+//        mFileManager.createMoFile(patient_num, String.valueOf(mfile_Num),ChargeStatus, String.valueOf(BatteryStatus));
         Arrays.fill(biaDataArray, 0);
         Arrays.fill(ecgDataArray, 0);
         Arrays.fill(moiDataArray, 0);
