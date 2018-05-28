@@ -86,7 +86,7 @@ public class DeviceControlActivity extends Activity {
     private final static String TAG = DeviceControlActivity.class.getSimpleName();
     int sampleRate = 256;
 
-    String version_num = "  v1.43";
+    String version_num = "  v1.45";
     String patient_num = null;
 
     public static final String EXTRAS_DEVICE_NAME = "NE_BELT";
@@ -343,6 +343,33 @@ public class DeviceControlActivity extends Activity {
      * */
     public void receivedData(Packet packet) {
         if (mFileManager.getHours() == 1 || mfile_Num == 0 ){
+            //Battery part
+            IntentFilter ifilter = new IntentFilter(Intent.ACTION_BATTERY_CHANGED);
+            Intent batteryStatus = getApplicationContext().registerReceiver(null, ifilter);
+
+            // Are we charging / charged?
+            int status = batteryStatus.getIntExtra(BatteryManager.EXTRA_STATUS, -1);
+            boolean isCharging = status == BatteryManager.BATTERY_STATUS_CHARGING ||
+                    status == BatteryManager.BATTERY_STATUS_FULL;
+
+            // How are we charging?
+            int chargePlug = batteryStatus.getIntExtra(BatteryManager.EXTRA_PLUGGED, -1);
+            boolean usbCharge = chargePlug == BatteryManager.BATTERY_PLUGGED_USB;
+            boolean acCharge = chargePlug == BatteryManager.BATTERY_PLUGGED_AC;
+            int level = batteryStatus.getIntExtra(BatteryManager.EXTRA_LEVEL, -1);
+            int scale = batteryStatus.getIntExtra(BatteryManager.EXTRA_SCALE, -1);
+            float batteryPct = level / (float)scale;
+            BatteryStatus = batteryPct;
+            if (isCharging == true){
+                if (usbCharge ==true){
+                    ChargeStatus = "U";
+                }else if (acCharge == true){
+                    ChargeStatus = "A";
+                }
+            }else {
+                ChargeStatus = "N";
+            }
+
             try{
                 mFileManager.uploadFile();
                 mFileManager.uploadMoFile();
@@ -451,7 +478,7 @@ public class DeviceControlActivity extends Activity {
         mFileManager.saveData(packet, NEventMarker, BiaMarker, Heartrate, Posture);
         NEventMarker = 0;
         int fileKb = (int) (mFileManager.getFileSize()/1000);
-        mSaveView.setText((mfile_Num) + "h" + mFileManager.getStorageTime());
+        mSaveView.setText((mfile_Num-1) + "h" + mFileManager.getStorageTime());
 
         if ((mFileManager.getMinute() != minute_now) && ((mFileManager.getMinute() % 1) == 0) ){
             ne_event_lock = 0;
@@ -573,33 +600,6 @@ public class DeviceControlActivity extends Activity {
         Intent gattServiceIntent = new Intent(this, BluetoothLeService.class);
         getApplicationContext().bindService(new Intent(this, BtleService.class), meta_ServiceConnection, BIND_AUTO_CREATE);
         bindService(gattServiceIntent, mServiceConnection, BIND_AUTO_CREATE);
-
-        //Battery part
-        IntentFilter ifilter = new IntentFilter(Intent.ACTION_BATTERY_CHANGED);
-        Intent batteryStatus = getApplicationContext().registerReceiver(null, ifilter);
-
-        // Are we charging / charged?
-        int status = batteryStatus.getIntExtra(BatteryManager.EXTRA_STATUS, -1);
-        boolean isCharging = status == BatteryManager.BATTERY_STATUS_CHARGING ||
-                status == BatteryManager.BATTERY_STATUS_FULL;
-
-        // How are we charging?
-        int chargePlug = batteryStatus.getIntExtra(BatteryManager.EXTRA_PLUGGED, -1);
-        boolean usbCharge = chargePlug == BatteryManager.BATTERY_PLUGGED_USB;
-        boolean acCharge = chargePlug == BatteryManager.BATTERY_PLUGGED_AC;
-        int level = batteryStatus.getIntExtra(BatteryManager.EXTRA_LEVEL, -1);
-        int scale = batteryStatus.getIntExtra(BatteryManager.EXTRA_SCALE, -1);
-        float batteryPct = level / (float)scale;
-        BatteryStatus = batteryPct;
-        if (isCharging == true){
-            if (usbCharge ==true){
-                ChargeStatus = "U";
-            }else if (acCharge == true){
-                ChargeStatus = "A";
-            }
-        }else {
-            ChargeStatus = "N";
-        }
 
         mPacketParser = new PacketParser();
 
@@ -965,21 +965,16 @@ public class DeviceControlActivity extends Activity {
                                 ImageView leftimg= (ImageView) findViewById(R.id.left_foot_img);
                                 leftimg.setImageResource(R.drawable.left_foot);
 //                            mTextView_Leftfoot.setText(String.format("측정중"));
-
-
                             }else if (mwBoard.getMacAddress() == deviceUUIDs[1]){
 //                            mTextView_Rightfoot.setTextColor(Color.parseColor("#008b8b"));
                                 ImageView leftimg= (ImageView) findViewById(R.id.right_foot_img);
                                 leftimg.setImageResource(R.drawable.right_foot);
 //                            mTextView_Rightfoot.setText(String.format("측정중"));
-
                             }
                         }
                         return null;
                     });
         }
-
-
     }
 
     /**
