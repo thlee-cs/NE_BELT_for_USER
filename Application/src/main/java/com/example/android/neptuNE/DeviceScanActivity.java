@@ -251,6 +251,7 @@ public class DeviceScanActivity extends ListActivity {
             return mLeDevices.get(i);
         }
 
+
         @Override
         public long getItemId(int i) {
             return i;

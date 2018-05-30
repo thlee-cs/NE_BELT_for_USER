@@ -86,7 +86,7 @@ public class DeviceControlActivity extends Activity {
     private final static String TAG = DeviceControlActivity.class.getSimpleName();
     int sampleRate = 256;
 
-    String version_num = "  v1.46";
+    String version_num = "  v1.47";
     String patient_num = null;
 
     public static final String EXTRAS_DEVICE_NAME = "NE_BELT";
@@ -359,7 +359,7 @@ public class DeviceControlActivity extends Activity {
             int level = batteryStatus.getIntExtra(BatteryManager.EXTRA_LEVEL, -1);
             int scale = batteryStatus.getIntExtra(BatteryManager.EXTRA_SCALE, -1);
             float batteryPct = level / (float)scale;
-            BatteryStatus = batteryPct;
+            BatteryStatus = (int) batteryPct*100;
             if (isCharging == true){
                 if (usbCharge ==true){
                     ChargeStatus = "U";
