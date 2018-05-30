@@ -65,7 +65,7 @@ public class DeviceSetter {
                 RightNum = null;
                 AlarmThreshold = 8160;
                 break;
-            case "0B":
+            case "1E":
                 PatientNum = "11";
                 LeftNum = "E7:A8:E1:3C:33:66";
                 RightNum = "E1:BD:92:6C:32:E0";
