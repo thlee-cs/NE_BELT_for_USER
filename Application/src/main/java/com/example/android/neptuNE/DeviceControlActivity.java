@@ -86,7 +86,7 @@ public class DeviceControlActivity extends Activity {
     private final static String TAG = DeviceControlActivity.class.getSimpleName();
     int sampleRate = 256;
 
-    String version_num = "  v1.47";
+    String version_num = "  v1.475";
     String patient_num = null;
 
     public static final String EXTRAS_DEVICE_NAME = "NE_BELT";
@@ -290,6 +290,7 @@ public class DeviceControlActivity extends Activity {
      * 버튼이 눌리면 반응하는 함수
      * start_button : 시작
      * bia_rot : bia interval을 시작
+     *
      * */
     Button.OnClickListener mClickListener = new View.OnClickListener(){
         @Override
@@ -567,9 +568,7 @@ public class DeviceControlActivity extends Activity {
         deviceUUIDs = new String[] {mdevicesetter.getLeftNum(), mdevicesetter.getRightNum()};
         bell_max = mdevicesetter.getAlarmThreshold() + 50;
         bell_min = mdevicesetter.getAlarmThreshold() - 50;
-
         ActivityCompat.requestPermissions(DeviceControlActivity.this, STORAGE_PERMISSION, 1);
-
 
         mFileManager = new FileManager();
         sound = new SoundPool(1, AudioManager.STREAM_NOTIFICATION, 0);
@@ -602,7 +601,6 @@ public class DeviceControlActivity extends Activity {
         bindService(gattServiceIntent, mServiceConnection, BIND_AUTO_CREATE);
 
         mPacketParser = new PacketParser();
-
 //        mFileManager.createFile(patient_num, String.valueOf(mfile_Num),ChargeStatus, String.valueOf(BatteryStatus));
 //        mFileManager.createMoFile(patient_num, String.valueOf(mfile_Num),ChargeStatus, String.valueOf(BatteryStatus));
         Arrays.fill(biaDataArray, 0);

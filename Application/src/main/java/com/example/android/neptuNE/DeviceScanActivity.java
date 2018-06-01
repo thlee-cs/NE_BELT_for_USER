@@ -28,6 +28,7 @@ import android.content.pm.ActivityInfo;
 import android.content.pm.PackageManager;
 import android.os.Bundle;
 import android.os.Handler;
+import android.os.SystemClock;
 import android.support.v13.app.ActivityCompat;
 import android.view.LayoutInflater;
 import android.view.Menu;
@@ -82,6 +83,7 @@ public class DeviceScanActivity extends ListActivity {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
         setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
         getActionBar().setTitle("neptuNE");
         mHandler = new Handler();
@@ -90,8 +92,7 @@ public class DeviceScanActivity extends ListActivity {
         ActivityCompat.requestPermissions(DeviceScanActivity.this, STORAGE_PERMISSION, 1);
         ActivityCompat.requestPermissions(DeviceScanActivity.this, BLUETOOTH_PERMISSION, 1);
 
-        //mReadport = (TextView) findViewById(R.id.read_port);
-
+//        mReadport = (TextView) findViewById(R.id.read_port);
 
         // Use this check to determine whether BLE is supported on the device.  Then you can
         // selectively disable BLE-related features.
@@ -151,16 +152,24 @@ public class DeviceScanActivity extends ListActivity {
 
         // Ensures Bluetooth is enabled on the device.  If Bluetooth is not currently enabled,
         // fire an intent to display a dialog asking the user to grant permission to enable it.
-        if (!mBluetoothAdapter.isEnabled()) {
-            if (!mBluetoothAdapter.isEnabled()) {
-                Intent enableBtIntent = new Intent(BluetoothAdapter.ACTION_REQUEST_ENABLE);
-                startActivityForResult(enableBtIntent, REQUEST_ENABLE_BT);
-            }
-        }
+//        if (!mBluetoothAdapter.isEnabled()) {
+//            if (!mBluetoothAdapter.isEnabled()) {
+//                Intent enableBtIntent = new Intent(BluetoothAdapter.ACTION_REQUEST_ENABLE);
+//                startActivityForResult(enableBtIntent, REQUEST_ENABLE_BT);
+//            }
+//        }
 
-        // Initializes list view adapter.
+        mBluetoothAdapter.disable();
+        SystemClock.sleep(100);
+        mBluetoothAdapter.enable();
+
+        // Initializes  list view adapter.
         mLeDeviceListAdapter = new LeDeviceListAdapter();
         setListAdapter(mLeDeviceListAdapter);
+
+        scanLeDevice(false);
+        SystemClock.sleep(2500);
+        mLeDeviceListAdapter.clear();
         scanLeDevice(true);
     }
 
@@ -250,7 +259,6 @@ public class DeviceScanActivity extends ListActivity {
         public Object getItem(int i) {
             return mLeDevices.get(i);
         }
-
 
         @Override
         public long getItemId(int i) {
