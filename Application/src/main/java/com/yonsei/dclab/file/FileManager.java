@@ -99,7 +99,7 @@ public class FileManager {
     public void uploadFile(){
         StorageReference storageRef = storage.getReference(); // root reference /:
         Uri file = Uri.fromFile(new File(STRSAVEPATH+filename)); //local path
-        StorageReference spaceRef = storageRef.child(filePathNum+"/"+filePathDate+"/"+file.getLastPathSegment()); // point file.getLastPathSegment()
+        StorageReference spaceRef = storageRef.child(filePathNum+"/"+filePathDate+"/"+"NE/"+file.getLastPathSegment()); // point file.getLastPathSegment()
         UploadTask uploadTask = spaceRef.putFile(file);
 
         // Register observers to listen for when the download is done or if it fails
@@ -120,7 +120,7 @@ public class FileManager {
     public void uploadMoFile(){
         StorageReference storageRef = storage.getReference();
         Uri moFile = Uri.fromFile(new File(STRSAVEPATH+filenameMo));
-        StorageReference spaceRef = storageRef.child(filePathNum+"/"+filePathDate+"/"+moFile.getLastPathSegment());
+        StorageReference spaceRef = storageRef.child(filePathNum+"/"+filePathDate+"/"+"MO/"+moFile.getLastPathSegment());
         UploadTask uploadTask = spaceRef.putFile(moFile);
 
         // Register observers to listen for when the download is done or if it fails
