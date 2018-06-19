@@ -158,9 +158,6 @@ public class DeviceScanActivity extends ListActivity {
 //                startActivityForResult(enableBtIntent, REQUEST_ENABLE_BT);
 //            }
 //        }
-
-        mBluetoothAdapter.disable();
-        SystemClock.sleep(100);
         mBluetoothAdapter.enable();
 
         // Initializes  list view adapter.
@@ -168,7 +165,7 @@ public class DeviceScanActivity extends ListActivity {
         setListAdapter(mLeDeviceListAdapter);
 
         scanLeDevice(false);
-        SystemClock.sleep(2500);
+        SystemClock.sleep(5000);
         mLeDeviceListAdapter.clear();
         scanLeDevice(true);
     }
@@ -329,6 +326,4 @@ public class DeviceScanActivity extends ListActivity {
         TextView deviceName;
         TextView deviceAddress;
     }
-
-
 }

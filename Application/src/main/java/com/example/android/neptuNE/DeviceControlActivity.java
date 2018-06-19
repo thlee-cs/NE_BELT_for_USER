@@ -86,7 +86,7 @@ public class DeviceControlActivity extends Activity {
     private final static String TAG = DeviceControlActivity.class.getSimpleName();
     int sampleRate = 256;
 
-    String version_num = "  v1.475";
+    String version_num = "  v1.48";
     String patient_num = null;
 
     public static final String EXTRAS_DEVICE_NAME = "NE_BELT";
@@ -105,7 +105,10 @@ public class DeviceControlActivity extends Activity {
 
     CountDownTimer cTimer = null;
     public int DisconnectCounter = 0;
-    public int DisconnectThreshold = 10;
+        public int DisconnectThreshold = 10;
+    public int SeqCounter = 0;
+    public int LastSeqNum = -2;
+    public int NowSeqNum = -1;
     public DeviceSetter mdevicesetter;
     private Route streamRoute;
     private int mfile_Num = 0;
@@ -273,6 +276,7 @@ public class DeviceControlActivity extends Activity {
                         //앱에서 만든 패킷 클래스에 다시 저장함
                         Packet packet_v0 = new Packet(mDeviceName, mDeviceAddress, data);
 
+                        NowSeqNum = packet_v0.seqNum;
                         if (packet_v0.isMULdata()){//받은 패킷이 3채널 데이터일때 아래 함수 실행
 //                            Log.e(TAG,"Get the data");
                             receivedData(packet_v0);
@@ -783,12 +787,21 @@ public class DeviceControlActivity extends Activity {
     };
     private Runnable reconnectMethod = new Runnable(){
         public void run(){
-            if (DisconnectCounter > DisconnectThreshold){
+            if (DisconnectCounter > DisconnectThreshold || SeqCounter > DisconnectThreshold){
                 DisconnectCounter = 0; //for initiate the value
                 final Intent intent = new Intent(DeviceControlActivity.this, DeviceScanActivity.class);
                 System.exit(0);
                 startActivity(intent);
             }
+
+            if (LastSeqNum != NowSeqNum){
+                LastSeqNum = NowSeqNum;
+                SeqCounter = 0;
+            }else if (LastSeqNum == NowSeqNum){
+                SeqCounter += 1;
+            }
+            Log.e(TAG, "SEQ:"+String.valueOf(LastSeqNum)+"->"+String.valueOf(NowSeqNum)+";counter: "+String.valueOf(SeqCounter));
+
             if (mConnected == false){
                 SystemClock.sleep(100);
                 try{
@@ -991,11 +1004,16 @@ public class DeviceControlActivity extends Activity {
 
         accelerometer.acceleration().addRouteAsync(source -> source.stream((data, env) -> {
             final Acceleration value = data.value(Acceleration.class);
-            runOnUiThread(() -> sensorOutput.setText(getHz_l_a+"HZ : "+value.x() + ", " + value.y() + ", " + value.z()));
-            if (mwBoard.getMacAddress() == deviceUUIDs[0]){
-                mFileManager.saveData("0", value.x(), value.y(), value.z(),"accel");
-            }else if (mwBoard.getMacAddress() == deviceUUIDs[1]){
-                mFileManager.saveData("1", value.x(), value.y(), value.z(),"accel");
+            if (NowSeqNum != LastSeqNum){
+//                Log.d(TAG, "SEQ:"+String.valueOf(LastSeqNum)+"->"+String.valueOf(NowSeqNum)+";counter: "+String.valueOf(SeqCounter));
+                runOnUiThread(() -> sensorOutput.setText(getHz_l_a+"HZ : "+value.x() + ", " + value.y() + ", " + value.z()));
+                if (mwBoard.getMacAddress() == deviceUUIDs[0]){
+                    mFileManager.saveData("0", value.x(), value.y(), value.z(),"accel");
+                }else if (mwBoard.getMacAddress() == deviceUUIDs[1]){
+                    mFileManager.saveData("1", value.x(), value.y(), value.z(),"accel");
+                }
+            }else{
+                runOnUiThread(() -> sensorOutput.setText("NEWear를 기다리는중"));
             }
         })).continueWith(task -> {
             streamRoute = task.getResult();
@@ -1028,12 +1046,17 @@ public class DeviceControlActivity extends Activity {
         TextView gyrosensorOutput = gyrosensorOutputs.get(mwBoard.getMacAddress());
 
         gyroBmi160.angularVelocity().addRouteAsync(source -> source.stream((data, env) -> {
-            final AngularVelocity value = data.value(AngularVelocity.class);
-            runOnUiThread(() -> gyrosensorOutput.setText(value.x() + ", " + value.y() + ", " + value.z()));
-            if (mwBoard.getMacAddress() == deviceUUIDs[0]){
-                mFileManager.saveData("0", value.x(), value.y(), value.z(),"gyro");
-            }else if (mwBoard.getMacAddress() == deviceUUIDs[1]){
-                mFileManager.saveData("1", value.x(), value.y(), value.z(),"gyro");
+            if (NowSeqNum != LastSeqNum){
+//                Log.d(TAG, "SEQ:"+String.valueOf(LastSeqNum)+"->"+String.valueOf(NowSeqNum)+";counter: "+String.valueOf(SeqCounter));
+                final AngularVelocity value = data.value(AngularVelocity.class);
+                runOnUiThread(() -> gyrosensorOutput.setText(value.x() + ", " + value.y() + ", " + value.z()));
+                if (mwBoard.getMacAddress() == deviceUUIDs[0]){
+                    mFileManager.saveData("0", value.x(), value.y(), value.z(),"gyro");
+                }else if (mwBoard.getMacAddress() == deviceUUIDs[1]){
+                    mFileManager.saveData("1", value.x(), value.y(), value.z(),"gyro");
+                }
+            }else{
+                runOnUiThread(() -> gyrosensorOutput.setText("NEWear를 기다리는 중"));
             }
         })).continueWith(task -> {
             streamRoute = task.getResult();
@@ -1041,6 +1064,7 @@ public class DeviceControlActivity extends Activity {
             gyroSensors.get(mwBoard.getMacAddress()).start();
             return null;
         });
+
     }
 
     private void goToUrl (String url) {
