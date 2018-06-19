@@ -32,6 +32,8 @@ public class FileManager {
     public static final String STRSAVEPATH = Environment.getExternalStorageDirectory()+"/NE BELT/";
     public String filename;
     public String filenameMo;
+    public String filePathNum;
+    public String filePathDate;
     public long startTimeMillis;
     public long updateTimeMillis;
     private int packetLookup = -1;
@@ -48,12 +50,18 @@ public class FileManager {
 
     public void createFile(String patient_num, String filenum, String isCharged, String percentage) {
         Log.e(TAG,"creating File");
+        filePathNum = patient_num;
+
         File dir = makeDirectory(STRSAVEPATH);
 //        File dir = new File(Environment.getExternalStorageDirectory().getAbsolutePath(),"NE BELT");
 //        dir.mkdirs();
         Calendar c = Calendar.getInstance();
 
         SimpleDateFormat dateFormat = new SimpleDateFormat("yyMMdd'_'HHmmss");
+
+        if(filenum == "0"){
+            filePathDate = String.format(dateFormat.format(c.getTime()));
+        }
 
         for(int i = 0; i < 1000; i++)    {
             //String fileNum = String.format("BIA%03d", i);
@@ -89,9 +97,9 @@ public class FileManager {
     }
 
     public void uploadFile(){
-        StorageReference storageRef = storage.getReference();
-        Uri file = Uri.fromFile(new File(STRSAVEPATH+filename));
-        StorageReference spaceRef = storageRef.child(file.getLastPathSegment());
+        StorageReference storageRef = storage.getReference(); // root reference /:
+        Uri file = Uri.fromFile(new File(STRSAVEPATH+filename)); //local path
+        StorageReference spaceRef = storageRef.child(filePathNum+"/"+filePathDate+"/"+file.getLastPathSegment()); // point file.getLastPathSegment()
         UploadTask uploadTask = spaceRef.putFile(file);
 
         // Register observers to listen for when the download is done or if it fails
@@ -111,9 +119,8 @@ public class FileManager {
 
     public void uploadMoFile(){
         StorageReference storageRef = storage.getReference();
-
         Uri moFile = Uri.fromFile(new File(STRSAVEPATH+filenameMo));
-        StorageReference spaceRef = storageRef.child(moFile.getLastPathSegment());
+        StorageReference spaceRef = storageRef.child(filePathNum+"/"+filePathDate+"/"+moFile.getLastPathSegment());
         UploadTask uploadTask = spaceRef.putFile(moFile);
 
         // Register observers to listen for when the download is done or if it fails
