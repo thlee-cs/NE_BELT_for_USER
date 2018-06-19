@@ -58,9 +58,10 @@ public class FileManager {
         Calendar c = Calendar.getInstance();
 
         SimpleDateFormat dateFormat = new SimpleDateFormat("yyMMdd'_'HHmmss");
+        SimpleDateFormat dateFormat_forPath = new SimpleDateFormat("yyMMdd");
 
         if(filenum == "0"){
-            filePathDate = String.format(dateFormat.format(c.getTime()));
+            filePathDate = String.format(dateFormat_forPath.format(c.getTime()));
         }
 
         for(int i = 0; i < 1000; i++)    {
