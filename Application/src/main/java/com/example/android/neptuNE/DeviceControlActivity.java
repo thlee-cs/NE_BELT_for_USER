@@ -86,12 +86,15 @@ public class DeviceControlActivity extends Activity {
     private final static String TAG = DeviceControlActivity.class.getSimpleName();
     int sampleRate = 256;
 
-    String version_num = "  v1.48";
+    String version_num = "  v1.50";
     String patient_num = null;
 
     public static final String EXTRAS_DEVICE_NAME = "NE_BELT";
     public static final String EXTRAS_DEVICE_ADDRESS = "98:2D:68:2D:60:00";
+    public static int reconnectFlags = 0;
 
+    public long startTime;
+    public int start_file_number;
     //MetaWear
     private static String[] deviceUUIDs = {"",""};//"FD:0F:59:E2:F4:C5" "D4:25:5C:D6:2E:F5"
     private BtleService.LocalBinder serviceBinder;
@@ -105,13 +108,13 @@ public class DeviceControlActivity extends Activity {
 
     CountDownTimer cTimer = null;
     public int DisconnectCounter = 0;
-        public int DisconnectThreshold = 10;
+    public int DisconnectThreshold = 3; //10
     public int SeqCounter = 0;
     public int LastSeqNum = -2;
     public int NowSeqNum = -1;
     public DeviceSetter mdevicesetter;
     private Route streamRoute;
-    private int mfile_Num = 0;
+    private int mfile_Num = -1;
     private TextView mSaveView;
     private Button mSaveButton;
     private Button mStartButton;
@@ -347,7 +350,11 @@ public class DeviceControlActivity extends Activity {
      * packet의 속도가 1/4초에 1번씩 보내므로 1/4초마다 한번씩 실행됨
      * */
     public void receivedData(Packet packet) {
-        if (mFileManager.getHours() == 1 || mfile_Num == 0 ){
+        if (mFileManager.getHours() == 1 || mfile_Num == start_file_number){
+            mfile_Num ++;
+            if (mfile_Num ==0){
+                startTime = System.currentTimeMillis();
+            }
             //Battery part
             IntentFilter ifilter = new IntentFilter(Intent.ACTION_BATTERY_CHANGED);
             Intent batteryStatus = getApplicationContext().registerReceiver(null, ifilter);
@@ -382,9 +389,8 @@ public class DeviceControlActivity extends Activity {
             catch (Exception e){
                 Log.e(TAG, "Upload Failed");
             }
-            mFileManager.createFile(patient_num , String.valueOf(mfile_Num),ChargeStatus, String.valueOf(BatteryStatus));
-            mFileManager.createMoFile(patient_num , String.valueOf(mfile_Num),ChargeStatus, String.valueOf(BatteryStatus));
-            mfile_Num ++;
+            mFileManager.createFile(patient_num , String.valueOf(mfile_Num),ChargeStatus, String.valueOf(BatteryStatus), reconnectFlags, startTime);
+            mFileManager.createMoFile(patient_num , String.valueOf(mfile_Num),ChargeStatus, String.valueOf(BatteryStatus), reconnectFlags);
         }
         ImageView hrimg= (ImageView) findViewById(R.id.heart_img);
         ImageView biamg= (ImageView) findViewById(R.id.bia_img);
@@ -483,7 +489,7 @@ public class DeviceControlActivity extends Activity {
         mFileManager.saveData(packet, NEventMarker, BiaMarker, Heartrate, Posture);
         NEventMarker = 0;
         int fileKb = (int) (mFileManager.getFileSize()/1000);
-        mSaveView.setText((mfile_Num-1) + "h" + mFileManager.getStorageTime());
+        mSaveView.setText(mFileManager.getStorageTime());
 
         if ((mFileManager.getMinute() != minute_now) && ((mFileManager.getMinute() % 1) == 0) ){
             ne_event_lock = 0;
@@ -561,6 +567,10 @@ public class DeviceControlActivity extends Activity {
             Log.d(TAG, "Connect request result=" + result);
         }
         final Intent intent = getIntent();
+        reconnectFlags = intent.getIntExtra("reconnect_flag", 0);
+        start_file_number = intent.getIntExtra("file_num",-1);
+        mfile_Num = start_file_number;
+        startTime = intent.getLongExtra("start_time", System.currentTimeMillis());
         mDeviceName = intent.getStringExtra(EXTRAS_DEVICE_NAME);
         mDeviceAddress = intent.getStringExtra(EXTRAS_DEVICE_ADDRESS);
 
@@ -668,11 +678,15 @@ public class DeviceControlActivity extends Activity {
     @Override
     protected void onResume() {
         super.onResume();
+
+        final Intent intent = getIntent();
+        reconnectFlags = intent.getIntExtra("reconnect_flag", 0);
     }
 
     @Override
     protected void onPause() {
         super.onPause();
+        destroyBLE();
     }
 
     @Override
@@ -788,10 +802,14 @@ public class DeviceControlActivity extends Activity {
     private Runnable reconnectMethod = new Runnable(){
         public void run(){
             if (DisconnectCounter > DisconnectThreshold || SeqCounter > DisconnectThreshold){
+                SeqCounter = 0;
                 DisconnectCounter = 0; //for initiate the value
                 final Intent intent = new Intent(DeviceControlActivity.this, DeviceScanActivity.class);
-                System.exit(0);
+                intent.putExtra("pass_reconnect_flag", reconnectFlags+1);
+                intent.putExtra("pass_file_num", mfile_Num);
+                intent.putExtra("pass_start_time",startTime);
                 startActivity(intent);
+                System.exit(0);
             }
 
             if (LastSeqNum != NowSeqNum){
@@ -800,7 +818,7 @@ public class DeviceControlActivity extends Activity {
             }else if (LastSeqNum == NowSeqNum){
                 SeqCounter += 1;
             }
-            Log.e(TAG, "SEQ:"+String.valueOf(LastSeqNum)+"->"+String.valueOf(NowSeqNum)+";counter: "+String.valueOf(SeqCounter));
+//            Log.e(TAG, "SEQ:"+String.valueOf(LastSeqNum)+"->"+String.valueOf(NowSeqNum)+";counter: "+String.valueOf(SeqCounter));
 
             if (mConnected == false){
                 SystemClock.sleep(100);
