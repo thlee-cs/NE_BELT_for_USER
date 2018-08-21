@@ -29,7 +29,7 @@ import java.util.Calendar;
  */
 
 public class FileManager {
-    public static String STRSAVEPATH = Environment.getExternalStorageDirectory()+"/NE BELT/";
+    public static final String STRSAVEPATH = Environment.getExternalStorageDirectory()+"/NE BELT/";
     public String SDSAVEPATH;
     public String filename;
     public String filenameMo;
@@ -49,13 +49,13 @@ public class FileManager {
     public FileManager() {
     }
 
-    public void createFile(String patient_num, String filenum, String isCharged, String percentage, int recconnectflags, long starttime) {
+    public void createFile(String patient_num, String filenum, String isCharged, String percentage) {
         Log.e(TAG,"creating File");
         filePathNum = patient_num;
         String sdPath = null;
 
         try{
-            sdPath = sdcard.getExternalSDCardPath();
+            sdPath = System.getenv("SECONDARY_STORAGE");
         }catch (Exception e){
 
         }
@@ -64,7 +64,7 @@ public class FileManager {
         Log.e(TAG,"SDCARD:::"+sdPath);
         if (sdPath != null){
             SDSAVEPATH = sdPath+"/NE BELT/";
-            dir = makeDirectory(SDSAVEPATH);
+            dir = makeDirectory(STRSAVEPATH);
         }
         else{
             dir = makeDirectory(STRSAVEPATH);
@@ -82,32 +82,20 @@ public class FileManager {
 
         for(int i = 0; i < 1000; i++)    {
             //String fileNum = String.format("BIA%03d", i);
-            filename = String.format("Patient_"+patient_num+"_NE_"+ dateFormat.format(c.getTime())+"_"+filenum+"_R"+recconnectflags+"_"+isCharged+percentage+".csv", i);
+            filename = String.format("Patient_"+patient_num+"_NE_"+ dateFormat.format(c.getTime())+"_"+filenum+"_"+isCharged+percentage+".csv", i);
             File file = new File(STRSAVEPATH+filename);
             if (isFileExist(file) == false) {
                 makeFile(dir, (STRSAVEPATH+filename));
-                startTimeMillis = starttime;
-//                startTimeMillis = System.currentTimeMillis();
+                startTimeMillis = System.currentTimeMillis();
 //                saveString(String.format("DATE TIME = %s\n", getStartTime2()));
                 break;
             }
         }
     }
 
-    public void createMoFile(String patient_num,String filenum, String isCharged, String percentage, int recconectflags) {
+    public void createMoFile(String patient_num,String filenum, String isCharged, String percentage) {
         Log.e(TAG,"creating File");
-
-        File dir;
-        String sdPath = null;
-
-        if (sdPath != null){
-            STRSAVEPATH = sdPath+"/NE BELT/";
-            dir = makeDirectory(STRSAVEPATH);
-        }
-        else{
-            dir = makeDirectory(STRSAVEPATH);
-        }
-
+        File dir = makeDirectory(STRSAVEPATH);
 //        File dir = new File(Environment.getExternalStorageDirectory().getAbsolutePath(),"NE BELT");
 //        dir.mkdirs();
         Calendar c = Calendar.getInstance();
@@ -115,7 +103,7 @@ public class FileManager {
 
         for(int i = 0; i < 1000; i++)    {
 //            String fileNum = String.format("BIA%03d", i);
-            filenameMo = String.format("Patient_"+patient_num+"_Mo_"+ dateFormat.format(c.getTime())+"_"+filenum+"_R"+recconectflags+"_"+isCharged+percentage+".csv", i);
+            filenameMo = String.format("Patient_"+patient_num+"_Mo_"+ dateFormat.format(c.getTime())+"_"+filenum+"_"+isCharged+percentage+".csv", i);
             File file = new File(STRSAVEPATH+filenameMo);
             if (isFileExist(file) == false) {
                 makeFile(dir, (STRSAVEPATH+filenameMo));
@@ -183,8 +171,8 @@ public class FileManager {
         long storageTime = updateTimeMillis - startTimeMillis;
         int seconds = (int)(storageTime / 1000) % 60 ;
         int minutes = (int)((storageTime / (1000*60)) % 60);
-        int hours = (int)((storageTime / (1000*60*60)) % 24);
-        return String.format("%dh %02dm %02ds", hours,  minutes, seconds);
+//        int hours = (int)((storageTime / (1000*60*60)) % 24);
+        return String.format(" %02dm %02ds",  minutes, seconds);
     }
 
     public int getMinute() {
@@ -225,7 +213,7 @@ public class FileManager {
                 updateTimeMillis = System.currentTimeMillis();
             }
             catch (IOException e) {
-//                Log.w(TAG, "saveData");
+                Log.w(TAG, "saveData");
             }
         }
     }
@@ -255,7 +243,7 @@ public class FileManager {
             updateTimeMillis = System.currentTimeMillis();
         }
         catch (IOException e) {
-//            Log.w(TAG, "save_meta_Data");
+            Log.w(TAG, "save_meta_Data");
         }
     }
 
