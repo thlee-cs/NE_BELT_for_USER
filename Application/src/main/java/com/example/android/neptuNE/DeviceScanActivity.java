@@ -40,7 +40,6 @@ import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import java.io.File;
 import java.util.ArrayList;
 
 /**
@@ -53,15 +52,13 @@ public class DeviceScanActivity extends ListActivity {
     private BluetoothAdapter mBluetoothAdapter;
     private static final String[] BLE_DEVICE_NAME_LIST = new String[] {"NE_BELT1"};
 
-    public long start_time;
-    public static int mReconnect;
-    public static int FileNum;
+    public static int mReconnect = 0;
     private boolean mScanning;
     private Handler mHandler;
 
     private static final int REQUEST_ENABLE_BT = 1;
-    // Stops scanning after 2*30 min.
-    private static final long SCAN_PERIOD = 2*30*60*1000;
+    // Stops scanning after 30 * 10 min.
+    private static final long SCAN_PERIOD = 1800000*10;
 
     private static String[] ACCESS_PERMISSION = {
             Manifest.permission.ACCESS_COARSE_LOCATION,
@@ -79,7 +76,6 @@ public class DeviceScanActivity extends ListActivity {
     };
 
     private TextView mReadport;
-
     private Handler mRotationHandler;
     //
     private static int SPLASH_TIME_OUT = 3000;
@@ -87,6 +83,8 @@ public class DeviceScanActivity extends ListActivity {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+        Intent intent = getIntent();
 
         setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
         getActionBar().setTitle("neptuNE");
@@ -162,11 +160,6 @@ public class DeviceScanActivity extends ListActivity {
 //                startActivityForResult(enableBtIntent, REQUEST_ENABLE_BT);
 //            }
 //        }
-        final Intent intent = getIntent();
-        mReconnect = intent.getIntExtra("pass_reconnect_flag", 0);
-        FileNum = intent.getIntExtra("pass_file_num", -1);
-        start_time = intent.getLongExtra("pass_start_time", System.currentTimeMillis());
-
         if (mReconnect == 0 ){
             mBluetoothAdapter.enable();
             SystemClock.sleep(5000);
@@ -202,12 +195,12 @@ public class DeviceScanActivity extends ListActivity {
         scanLeDevice(false);
         mLeDeviceListAdapter.clear();
     }
-
     @Override
     protected void onDestroy() {
         super.onDestroy();
         mBluetoothAdapter.disable();
     }
+
     @Override
     protected void onListItemClick(ListView l, View v, int position, long id) {
         final BluetoothDevice device = mLeDeviceListAdapter.getDevice(position);
@@ -327,8 +320,6 @@ public class DeviceScanActivity extends ListActivity {
                                         mLeDeviceListAdapter.notifyDataSetChanged();
                                         final Intent intent = new Intent(DeviceScanActivity.this, DeviceControlActivity.class);
                                         intent.putExtra("reconnect_flag", mReconnect);
-                                        intent.putExtra("file_num", FileNum);
-                                        intent.putExtra("start_time", start_time);
                                         intent.putExtra(DeviceControlActivity.EXTRAS_DEVICE_NAME, device.getName());
                                         intent.putExtra(DeviceControlActivity.EXTRAS_DEVICE_ADDRESS, device.getAddress());
                                         if (mScanning) {
