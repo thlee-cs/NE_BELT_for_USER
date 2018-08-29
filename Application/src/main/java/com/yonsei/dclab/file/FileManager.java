@@ -33,6 +33,7 @@ public class FileManager {
     public String SDSAVEPATH;
     public String filename;
     public String filenameMo;
+    public String filenameLog;
     public String filePathNum;
     public String filePathDate;
     public long startTimeMillis;
@@ -51,37 +52,18 @@ public class FileManager {
 
     public void createFile(String patient_num, String filenum, String isCharged, String percentage) {
         Log.e(TAG,"creating File");
-        filePathNum = patient_num;
-        String sdPath = null;
-
-        try{
-            sdPath = System.getenv("SECONDARY_STORAGE");
-        }catch (Exception e){
-
-        }
-
-        File dir;
-        Log.e(TAG,"SDCARD:::"+sdPath);
-        if (sdPath != null){
-            SDSAVEPATH = sdPath+"/NE BELT/";
-            dir = makeDirectory(STRSAVEPATH);
-        }
-        else{
-            dir = makeDirectory(STRSAVEPATH);
-        }
-//        File dir = new File(Environment.getExternalStorageDirectory().getAbsolutePath(),"NE BELT");
-//        dir.mkdirs();
+        File dir = makeDirectory(STRSAVEPATH);
         Calendar c = Calendar.getInstance();
-
         SimpleDateFormat dateFormat = new SimpleDateFormat("yyMMdd'_'HHmmss");
+        this.saveLogData("createFile","NE file create");
+
+        filePathNum = patient_num;
         SimpleDateFormat dateFormat_forPath = new SimpleDateFormat("yyMMdd");
 
         if(filenum == "0"){
             filePathDate = String.format(dateFormat_forPath.format(c.getTime()));
         }
-
         for(int i = 0; i < 1000; i++)    {
-            //String fileNum = String.format("BIA%03d", i);
             filename = String.format("Patient_"+patient_num+"_NE_"+ dateFormat.format(c.getTime())+"_"+filenum+"_"+isCharged+percentage+".csv", i);
             File file = new File(STRSAVEPATH+filename);
             if (isFileExist(file) == false) {
@@ -93,21 +75,46 @@ public class FileManager {
         }
     }
 
+    public void createLogFile(String patient_num,String filenum) {
+        Log.e(TAG,"creating File");
+        File dir = makeDirectory(STRSAVEPATH);
+        Calendar c = Calendar.getInstance();
+
+        SimpleDateFormat dateFormat = new SimpleDateFormat("yyMMdd'_'HHmmss");
+        filePathNum = patient_num;
+        SimpleDateFormat dateFormat_forPath = new SimpleDateFormat("yyMMdd");
+
+        if(filenum == "0"){
+            filePathDate = String.format(dateFormat_forPath.format(c.getTime()));
+        }
+        for(int i = 0; i < 1000; i++)    {
+            filenameLog = String.format("Patient_"+patient_num+"_Log_"+ dateFormat.format(c.getTime())+"_"+filenum+".csv", i);
+            File file = new File(STRSAVEPATH+filenameLog);
+            if (isFileExist(file) == false) {
+                makeFile(dir, (STRSAVEPATH+filenameLog));
+                break;
+            }
+        }
+    }
+
     public void createMoFile(String patient_num,String filenum, String isCharged, String percentage) {
         Log.e(TAG,"creating File");
         File dir = makeDirectory(STRSAVEPATH);
-//        File dir = new File(Environment.getExternalStorageDirectory().getAbsolutePath(),"NE BELT");
-//        dir.mkdirs();
         Calendar c = Calendar.getInstance();
+        filePathNum = patient_num;
+        SimpleDateFormat dateFormat_forPath = new SimpleDateFormat("yyMMdd");
+
+        if(filenum == "0"){
+            filePathDate = String.format(dateFormat_forPath.format(c.getTime()));
+        }
         SimpleDateFormat dateFormat = new SimpleDateFormat("yyMMdd'_'HHmmss");
+        this.saveLogData("createMoFile","Mo file create");
 
         for(int i = 0; i < 1000; i++)    {
-//            String fileNum = String.format("BIA%03d", i);
             filenameMo = String.format("Patient_"+patient_num+"_Mo_"+ dateFormat.format(c.getTime())+"_"+filenum+"_"+isCharged+percentage+".csv", i);
             File file = new File(STRSAVEPATH+filenameMo);
             if (isFileExist(file) == false) {
                 makeFile(dir, (STRSAVEPATH+filenameMo));
-//                saveString(String.format("DATE TIME = %s\n", getStartTime2()));
                 break;
             }
         }
@@ -118,6 +125,27 @@ public class FileManager {
         Uri file = Uri.fromFile(new File(STRSAVEPATH+filename)); //local path
         StorageReference spaceRef = storageRef.child(filePathNum+"/"+filePathDate+"/"+"NE/"+file.getLastPathSegment()); // point file.getLastPathSegment()
         UploadTask uploadTask = spaceRef.putFile(file);
+
+        // Register observers to listen for when the download is done or if it fails
+        uploadTask.addOnFailureListener(new OnFailureListener() {
+            @Override
+            public void onFailure(@NonNull Exception exception) {
+                // Handle unsuccessful uploads
+            }
+        }).addOnSuccessListener(new OnSuccessListener<UploadTask.TaskSnapshot>() {
+            @Override
+            public void onSuccess(UploadTask.TaskSnapshot taskSnapshot) {
+                // taskSnapshot.getMetadata() contains file metadata such as size, content-type, and download URL.
+                Uri downloadUrl = taskSnapshot.getDownloadUrl();
+            }
+        });
+    }
+
+    public void uploadLogFile(){
+        StorageReference storageRef = storage.getReference(); // root reference /:
+        Uri Logfile = Uri.fromFile(new File(STRSAVEPATH+filenameLog)); //local path
+        StorageReference spaceRef = storageRef.child(filePathNum+"/"+filePathDate+"/"+"LOG/"+Logfile.getLastPathSegment()); // point file.getLastPathSegment()
+        UploadTask uploadTask = spaceRef.putFile(Logfile);
 
         // Register observers to listen for when the download is done or if it fails
         uploadTask.addOnFailureListener(new OnFailureListener() {
@@ -244,6 +272,27 @@ public class FileManager {
         }
         catch (IOException e) {
             Log.w(TAG, "save_meta_Data");
+        }
+    }
+
+    public void saveLogData(String tag, String msg) {//, String xyz acc
+        FileOutputStream fos;
+        try {
+            fos = new FileOutputStream((STRSAVEPATH+filenameLog), true);
+            current =  System.currentTimeMillis();
+            String mls = String.format("%03d",current % 1000);
+            Time now = new Time();
+            now.set(current);
+            String text = "";
+            text += now.format("%H:%M:%S."+mls);
+            text += (","+tag);
+            text += (","+msg+ "\n");
+            fos.write(text.getBytes());
+            fos.close();
+            updateTimeMillis = System.currentTimeMillis();
+        }
+        catch (IOException e) {
+            Log.w(TAG, "save_Log_Data");
         }
     }
 

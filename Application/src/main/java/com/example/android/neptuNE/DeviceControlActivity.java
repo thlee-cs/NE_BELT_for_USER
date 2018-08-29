@@ -86,7 +86,7 @@ public class DeviceControlActivity extends Activity {
     private final static String TAG = DeviceControlActivity.class.getSimpleName();
     int sampleRate = 256;
 
-    String version_num = "  v1.52";
+    String version_num = "  v1.53";
     String patient_num = null;
 
     public static final String EXTRAS_DEVICE_NAME = "NE_BELT";
@@ -137,7 +137,7 @@ public class DeviceControlActivity extends Activity {
             new ArrayList<ArrayList<BluetoothGattCharacteristic>>();
 
     private boolean mConnected = false;
-    private FileManager mFileManager;
+    private FileManager mFileManager = new FileManager();
     private PacketParser mPacketParser;
     private Vibrator vibe;
     private SoundPool sound;
@@ -174,7 +174,7 @@ public class DeviceControlActivity extends Activity {
     private int Heartrate = 0;
 
     private String ChargeStatus;
-    private float BatteryStatus;
+    private int BatteryStatus = -1;
 
     private int bell_max = 8250;
     private int bell_min = 8150;
@@ -245,15 +245,18 @@ public class DeviceControlActivity extends Activity {
         public void onReceive(Context context, Intent intent) {
             final String action = intent.getAction();
             if (BluetoothLeService.ACTION_GATT_CONNECTED.equals(action)) { //연결됨
+                mFileManager.saveLogData("mGattUpdateReceiver","NEWear connected:"+mDeviceAddress);
                 mConnected = true;
                 DisconnectCounter = 0;
                 invalidateOptionsMenu();
             } else if (BluetoothLeService.ACTION_GATT_DISCONNECTED.equals(action)) { // 연결 끊김
+                mFileManager.saveLogData("mGattUpdateReceiver","NEWear disconnected:"+mDeviceAddress);
                 mConnected = false;
                 invalidateOptionsMenu();
                 Log.e(TAG,"DIsconnected");
             } else if (BluetoothLeService.ACTION_GATT_SERVICES_DISCOVERED.equals(action)) { //BLE를 찾은 뒤
                 // Show all the supported services and characteristics on the user interface.
+                mFileManager.saveLogData("mGattUpdateReceiver","NEWear discovered"+mDeviceAddress);
                 getGattServices(mBluetoothLeService.getSupportedGattServices());//GATT설정
             } else if (BluetoothLeService.ACTION_DATA_AVAILABLE.equals(action)) { // 데이터가 교환중임
 //                Log.d(TAG, String.format("MyDEBUG: mGattUpdateReceiver[2] = %s", action));
@@ -328,6 +331,7 @@ public class DeviceControlActivity extends Activity {
                         ne_event_lock = 1;
                         minute_now = mFileManager.getMinute();
                         Toast.makeText(getApplicationContext(), "알람이 꺼졌어요", Toast.LENGTH_LONG).show();
+                        mFileManager.saveLogData("mClickListener","Alaram stop button");
                         mOffNeAlarmButton.setBackgroundColor(Color.LTGRAY);
                         vibe.vibrate(40);
                     }
@@ -348,7 +352,7 @@ public class DeviceControlActivity extends Activity {
      * packet의 속도가 1/4초에 1번씩 보내므로 1/4초마다 한번씩 실행됨
      * */
     public void receivedData(Packet packet) {
-        if (mFileManager.getHours() == 1 || mfile_Num == 0 ){
+        if (mFileManager.getMinute() == 1 || mfile_Num == 0 ){
             //Battery part
             IntentFilter ifilter = new IntentFilter(Intent.ACTION_BATTERY_CHANGED);
             Intent batteryStatus = getApplicationContext().registerReceiver(null, ifilter);
@@ -364,8 +368,10 @@ public class DeviceControlActivity extends Activity {
             boolean acCharge = chargePlug == BatteryManager.BATTERY_PLUGGED_AC;
             int level = batteryStatus.getIntExtra(BatteryManager.EXTRA_LEVEL, -1);
             int scale = batteryStatus.getIntExtra(BatteryManager.EXTRA_SCALE, -1);
+
             float batteryPct = level / (float)scale;
             BatteryStatus = (int) batteryPct*100;
+
             if (isCharging == true){
                 if (usbCharge ==true){
                     ChargeStatus = "U";
@@ -376,13 +382,11 @@ public class DeviceControlActivity extends Activity {
                 ChargeStatus = "N";
             }
 
-            try{
-                mFileManager.uploadFile();
-                mFileManager.uploadMoFile();
+            if (mfile_Num!=0){
+                upload();
+                mFileManager.createLogFile(patient_num , String.valueOf(mfile_Num));
             }
-            catch (Exception e){
-                Log.e(TAG, "Upload Failed");
-            }
+            mFileManager.saveLogData("receivedData","Try create File");
             mFileManager.createFile(patient_num , String.valueOf(mfile_Num),ChargeStatus, String.valueOf(BatteryStatus));
             mFileManager.createMoFile(patient_num , String.valueOf(mfile_Num),ChargeStatus, String.valueOf(BatteryStatus));
             mfile_Num ++;
@@ -432,9 +436,17 @@ public class DeviceControlActivity extends Activity {
                         sound.autoResume();
                         NE_event = 1; //Mark the event
                         NEventMarker = 1;
-                        mFileManager.uploadFile();
-                        mFileManager.uploadMoFile();
+                        try{
+                            mFileManager.uploadFile();
+                            mFileManager.uploadMoFile();
+                            mFileManager.uploadLogFile();
+                        }
+                        catch (Exception e){
+                            Log.e(TAG, "Upload Failed");
+                            mFileManager.saveLogData("receivedData-NE","Save failed");
+                        }
                         mNow_state.setText("> 야뇨가 감지되었습니다");
+                        mFileManager.saveLogData("receivedData","NE Detected");
                         mNow_guide.setText("\n\n1. 알람을 끄기위해 화면 중앙에 위치한 '알람 끄기' 버튼을 눌러주세요\n\n2.아이를 화장실로 데려가 잔뇨를 볼 수 있도록 도와주세요");
                         mOffNeAlarmButton.setBackgroundColor(Color.RED);
                     }
@@ -576,7 +588,8 @@ public class DeviceControlActivity extends Activity {
         bell_min = mdevicesetter.getAlarmThreshold() - 50;
         ActivityCompat.requestPermissions(DeviceControlActivity.this, STORAGE_PERMISSION, 1);
 
-        mFileManager = new FileManager();
+        mFileManager.createLogFile(patient_num , String.valueOf(mfile_Num));
+
         sound = new SoundPool(1, AudioManager.STREAM_NOTIFICATION, 0);
         music = sound.load(this, R.raw.sample, 1);
         NE_event = 0;
@@ -681,6 +694,7 @@ public class DeviceControlActivity extends Activity {
     @Override
     protected void onDestroy() {
         super.onDestroy();
+        upload();
         destroyBLE();
     }
     protected void destroyBLE(){
@@ -722,8 +736,6 @@ public class DeviceControlActivity extends Activity {
                 mNow_guide.setText("\n\n잠시만 기다려주세요");
             }
             else {
-                mFileManager.uploadFile(); //연결이 끊겼을때 파일 업로드
-                mFileManager.uploadMoFile();
                 Toast.makeText(getApplicationContext(), "기기와 연결 상태를 확인해주세요", Toast.LENGTH_LONG).show();
                 mNow_state.setText("> 기기와 연결이 되어있지않습니다");
                 mNow_guide.setText("\n\n1. 기기의 전원 상태를 확인해주세요\n2. 우측 상단의 'CONNECT' 버튼을 눌러주세요\n3. 기기와 스마트폰을 가까이 위치해주세요\n4. 해당 문제가 반복되면 기기와 앱을 종료 후 다시 켜주세요");
@@ -786,6 +798,17 @@ public class DeviceControlActivity extends Activity {
             start_sequence();
             SystemClock.sleep(100);
             startSeqHandler.postDelayed(reconnectMethod, 3000);
+            mFileManager.saveLogData("startMethod","Start method started");
+
+            if (mConnected ==false){
+                Log.d(TAG, "Start Method: try reconnect");
+                mFileManager.saveLogData("startMethod","Disconnect detected");
+                SystemClock.sleep(100);
+                mFileManager.saveLogData("startMethod","Try reconnect");
+                mBluetoothLeService.connect(mDeviceAddress);
+                mBluetoothLeService.connect(mDeviceAddress);
+                SystemClock.sleep(100);
+            }
         }
     };
     private Runnable reconnectMethod = new Runnable(){
@@ -795,12 +818,15 @@ public class DeviceControlActivity extends Activity {
                 SeqCounter = 0;
             }else if (LastSeqNum == NowSeqNum){
                 SeqCounter += 1;
+                mFileManager.saveLogData("reconnectMethod","Seq loss detected");
+                mFileManager.saveLogData("reconnectMethod","SEQ:"+String.valueOf(LastSeqNum)+"->"+String.valueOf(NowSeqNum)+";counter: "+String.valueOf(SeqCounter));
             }
-            Log.e(TAG, "SEQ:"+String.valueOf(LastSeqNum)+"->"+String.valueOf(NowSeqNum)+";counter: "+String.valueOf(SeqCounter));
+
 
             if (mConnected == false){
-                start_sequence();
-                SystemClock.sleep(100);
+//                start_sequence();
+                Log.d(TAG, "Reconnect Method: try reconnect");
+                mFileManager.saveLogData("reconnectMethod","Disconnect detected");
                 try{
                     mRotationHandler.removeCallbacks(biaONrotationMethod);
                     mRotationHandler.removeCallbacks(biaOFFrotationMethod);
@@ -809,19 +835,32 @@ public class DeviceControlActivity extends Activity {
                 }
                 SystemClock.sleep(100);
                 mBluetoothLeService.connect(mDeviceAddress);
+                mBluetoothLeService.connect(mDeviceAddress);
+                SystemClock.sleep(100);
                 DisconnectCounter += 1;
                 startSeqHandler.postDelayed(startMethod,3000);
             }
             else{
                 startSeqHandler.postDelayed(reconnectMethod,3000);
             }
+
+            if (DisconnectCounter > DisconnectThreshold||SeqCounter > DisconnectThreshold -1){
+                mFileManager.saveLogData("reconnectMethod","Uploading data before disconnected");
+                upload();
+            }
             if (DisconnectCounter > DisconnectThreshold || SeqCounter > DisconnectThreshold){
+                mFileManager.saveLogData("reconnectMethod","BLE lost & scan activity start");
                 DisconnectCounter = 0; //for initiate the value
 //                final Intent intent = new Intent(DeviceControlActivity.this, DeviceScanActivity.class);
 //                intent.putExtra("pass_reconnect_flag", reconnectFlags+1);
 //                startActivity(intent);
                 System.exit(0);
             }
+            mFileManager.saveLogData("reconnectMethod","Disconnect counter : "+ String.valueOf(DisconnectCounter));
+            mFileManager.saveLogData("reconnectMethod","Sequence counter : "+ String.valueOf(SeqCounter));
+            Log.d(TAG, "Disconnect counter : "+ String.valueOf(DisconnectCounter));
+            Log.d(TAG, "Sequence counter : "+ String.valueOf(SeqCounter));
+            Log.d(TAG, "SEQ:"+String.valueOf(LastSeqNum)+"->"+String.valueOf(NowSeqNum)+";counter: "+String.valueOf(SeqCounter));
         }
     };
 
@@ -963,6 +1002,7 @@ public class DeviceControlActivity extends Activity {
             BluetoothManager btManager = (BluetoothManager) getSystemService(BLUETOOTH_SERVICE);
             BluetoothDevice btDevice = btManager.getAdapter().getRemoteDevice(deviceUUID);
             MetaWearBoard mwBoard = serviceBinder.getMetaWearBoard(btDevice);
+            mFileManager.saveLogData("connectToMetawear","try connect metawear"+deviceUUIDs[0]+":"+deviceUUIDs[1]);
 
             mwBoard.connectAsync()
                     .continueWithTask(task -> {
@@ -1087,6 +1127,7 @@ public class DeviceControlActivity extends Activity {
     }
 
     private void start_sequence(){
+        mFileManager.saveLogData("start_sequence","start data");
         SystemClock.sleep(500);
         request_3ch();
         SystemClock.sleep(100);
@@ -1104,4 +1145,16 @@ public class DeviceControlActivity extends Activity {
         gain_ed = Integer.parseInt("07");
         mRotationHandler.postDelayed(biaOFFrotationMethod, 30000);
     }
+    private void upload(){
+        try{
+            mFileManager.uploadFile();
+            mFileManager.uploadMoFile();
+            mFileManager.uploadLogFile();
+        }
+        catch (Exception e){
+            Log.e(TAG, "Upload Failed");
+            mFileManager.saveLogData("upload","Save failed");
+        }
+    }
+
 }
