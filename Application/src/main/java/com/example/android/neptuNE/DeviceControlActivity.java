@@ -230,7 +230,6 @@ public class DeviceControlActivity extends Activity {
         public void onServiceDisconnected(ComponentName componentName) {
         }
     };
-
     /**
      * BLE의 상태에 따라 지시를 내려주는 함수
      *
@@ -304,7 +303,6 @@ public class DeviceControlActivity extends Activity {
         @Override
         public void onClick(View v) {
             switch (v.getId()) { // 아이템의 ID로 식별함
-
                 case R.id.start_button: // Start버튼이 눌리면, 기기로부터 얻
                     Log.d(TAG,"start");
                     start_sequence();
@@ -352,7 +350,7 @@ public class DeviceControlActivity extends Activity {
      * packet의 속도가 1/4초에 1번씩 보내므로 1/4초마다 한번씩 실행됨
      * */
     public void receivedData(Packet packet) {
-        if (mFileManager.getMinute() == 1 || mfile_Num == 0 ){
+        if (mFileManager.getHours() == 1 || mfile_Num == 0 ){
             //Battery part
             IntentFilter ifilter = new IntentFilter(Intent.ACTION_BATTERY_CHANGED);
             Intent batteryStatus = getApplicationContext().registerReceiver(null, ifilter);
@@ -384,9 +382,11 @@ public class DeviceControlActivity extends Activity {
 
             if (mfile_Num!=0){
                 upload();
-                mFileManager.createLogFile(patient_num , String.valueOf(mfile_Num));
+            }else if (mfile_Num == 0){
+                mFileManager.uploadLogFile();
             }
             mFileManager.saveLogData("receivedData","Try create File");
+            mFileManager.createLogFile(patient_num , String.valueOf(mfile_Num));
             mFileManager.createFile(patient_num , String.valueOf(mfile_Num),ChargeStatus, String.valueOf(BatteryStatus));
             mFileManager.createMoFile(patient_num , String.valueOf(mfile_Num),ChargeStatus, String.valueOf(BatteryStatus));
             mfile_Num ++;
@@ -588,7 +588,7 @@ public class DeviceControlActivity extends Activity {
         bell_min = mdevicesetter.getAlarmThreshold() - 50;
         ActivityCompat.requestPermissions(DeviceControlActivity.this, STORAGE_PERMISSION, 1);
 
-        mFileManager.createLogFile(patient_num , String.valueOf(mfile_Num));
+        mFileManager.createLogFile(patient_num , "init");
 
         sound = new SoundPool(1, AudioManager.STREAM_NOTIFICATION, 0);
         music = sound.load(this, R.raw.sample, 1);
@@ -619,6 +619,7 @@ public class DeviceControlActivity extends Activity {
         Intent gattServiceIntent = new Intent(this, BluetoothLeService.class);
         bindService(gattServiceIntent, mServiceConnection, BIND_AUTO_CREATE);
         getApplicationContext().bindService(new Intent(this, BtleService.class), meta_ServiceConnection, BIND_AUTO_CREATE);
+
 
         mPacketParser = new PacketParser();
 //        mFileManager.createFile(patient_num, String.valueOf(mfile_Num),ChargeStatus, String.valueOf(BatteryStatus));

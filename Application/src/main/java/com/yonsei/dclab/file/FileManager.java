@@ -88,8 +88,14 @@ public class FileManager {
             filePathDate = String.format(dateFormat_forPath.format(c.getTime()));
         }
         for(int i = 0; i < 1000; i++)    {
-            filenameLog = String.format("Patient_"+patient_num+"_Log_"+ dateFormat.format(c.getTime())+"_"+filenum+".csv", i);
-            File file = new File(STRSAVEPATH+filenameLog);
+            File file;
+            if (filenum == "init"){
+                filenameLog = String.format("Patient_"+patient_num+"_Log_"+ filePathDate +"_"+filenum+".csv", i);
+                file = new File(STRSAVEPATH+filenameLog);
+            }else {
+                filenameLog = String.format("Patient_"+patient_num+"_Log_"+ dateFormat.format(c.getTime())+"_"+filenum+".csv", i);
+                file = new File(STRSAVEPATH+filenameLog);
+            }
             if (isFileExist(file) == false) {
                 makeFile(dir, (STRSAVEPATH+filenameLog));
                 break;
