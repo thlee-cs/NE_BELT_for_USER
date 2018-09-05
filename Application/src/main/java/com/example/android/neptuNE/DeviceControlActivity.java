@@ -86,7 +86,7 @@ public class DeviceControlActivity extends Activity {
     private final static String TAG = DeviceControlActivity.class.getSimpleName();
     int sampleRate = 256;
 
-    String version_num = "  v1.53";
+    String version_num = "  v1.54";
     String patient_num = null;
 
     public static final String EXTRAS_DEVICE_NAME = "NE_BELT";

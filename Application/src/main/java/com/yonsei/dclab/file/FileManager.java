@@ -35,12 +35,15 @@ public class FileManager {
     public String filenameMo;
     public String filenameLog;
     public String filePathNum;
-    public String filePathDate;
     public long startTimeMillis;
     public long updateTimeMillis;
     private int packetLookup = -1;
     private int hours = 0;
     public long current;
+
+    Calendar c = Calendar.getInstance();
+    SimpleDateFormat dateFormat_forPath = new SimpleDateFormat("yyMMdd");
+    public String filePathDate = String.format(dateFormat_forPath.format(c.getTime()));
 
     private FirebaseFirestore db = FirebaseFirestore.getInstance();
     private FirebaseStorage storage = FirebaseStorage.getInstance();
@@ -84,9 +87,10 @@ public class FileManager {
         filePathNum = patient_num;
         SimpleDateFormat dateFormat_forPath = new SimpleDateFormat("yyMMdd");
 
-        if(filenum == "0"){
+        if(filenum == "init"){
             filePathDate = String.format(dateFormat_forPath.format(c.getTime()));
         }
+
         for(int i = 0; i < 1000; i++)    {
             File file;
             if (filenum == "init"){
