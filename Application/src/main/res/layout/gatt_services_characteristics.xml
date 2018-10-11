@@ -233,13 +233,20 @@
             android:text="측정 시작" />
 
         <Button
-            android:id="@+id/ne_alram"
+            android:id="@+id/ne_upload"
             android:layout_width="190dp"
             android:layout_height="wrap_content"
             android:layout_gravity="left"
-            android:text="알람 끄기" />
+            android:text="파일 업로드" />
 
     </LinearLayout>
+
+    <Button
+        android:id="@+id/ne_alram"
+        android:layout_width="match_parent"
+        android:layout_height="fill_parent"
+        android:layout_gravity="left"
+        android:text="알람 끄기" />
 
 
     <ScrollView

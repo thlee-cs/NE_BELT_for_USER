@@ -53,6 +53,47 @@ public class FileManager {
     public FileManager() {
     }
 
+    public void uploadAll(){
+        File dir = makeDirectory(STRSAVEPATH);
+        for (File f : dir.listFiles()){
+            Log.e("UploadAll", String.valueOf(f.getName()));
+            if(f.isFile()){
+                String name = f.getName();
+                String[] caching_name = {filename, filenameMo, filenameLog};
+                String[] seperated = name.split("_");
+                Log.e("UploadAll", seperated[1]+": "+seperated[2]+": "+seperated[3]);
+                filePathNum = seperated[1]; // maybe it could be same as existed one
+                String type =seperated[2];
+                filePathDate = seperated[3];
+                if (type == "NE"){
+                    filename = name;
+                    uploadFile();
+                    filename = caching_name[0];
+                }else if (type == "Mo"){
+                    filenameMo = name;
+                    uploadMoFile();
+                    filenameMo = caching_name[1];
+                }else if (type == "Log"){
+                    filenameLog = name;
+                    uploadLogFile();
+                    filenameLog = caching_name[2];
+                }else{
+                    Log.e("UploadAll", "Seperated false");
+                }
+            }
+        }
+        filePathDate = String.format(dateFormat_forPath.format(c.getTime()));
+    }
+
+    public void delete(){
+        File dir = makeDirectory(STRSAVEPATH);
+        for (File f : dir.listFiles()){
+            if(f.isFile()){
+                f.delete();
+            }
+        }
+    }
+
     public void createFile(String patient_num, String filenum, String isCharged, String percentage) {
         Log.e(TAG,"creating File");
         File dir = makeDirectory(STRSAVEPATH);
@@ -141,6 +182,7 @@ public class FileManager {
             @Override
             public void onFailure(@NonNull Exception exception) {
                 // Handle unsuccessful uploads
+                uploadFile();
             }
         }).addOnSuccessListener(new OnSuccessListener<UploadTask.TaskSnapshot>() {
             @Override
@@ -162,6 +204,7 @@ public class FileManager {
             @Override
             public void onFailure(@NonNull Exception exception) {
                 // Handle unsuccessful uploads
+                uploadLogFile();
             }
         }).addOnSuccessListener(new OnSuccessListener<UploadTask.TaskSnapshot>() {
             @Override
@@ -183,6 +226,7 @@ public class FileManager {
             @Override
             public void onFailure(@NonNull Exception exception) {
                 // Handle unsuccessful uploads
+                uploadMoFile();
             }
         }).addOnSuccessListener(new OnSuccessListener<UploadTask.TaskSnapshot>() {
             @Override

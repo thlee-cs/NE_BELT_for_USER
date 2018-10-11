@@ -85,6 +85,7 @@ import bolts.Task;
 public class DeviceControlActivity extends Activity {
     private final static String TAG = DeviceControlActivity.class.getSimpleName();
     int sampleRate = 256;
+    private boolean isCommunicated = false;
 
     String version_num = "  v1.54";
     String patient_num = null;
@@ -106,8 +107,12 @@ public class DeviceControlActivity extends Activity {
 
     CountDownTimer cTimer = null;
     public int DisconnectCounter = 0;
-    public int DisconnectThreshold = 3;
+    public int DisconnectThreshold = 4;
+
+
     public int SeqCounter = 0;
+    public int SeqLossThreshold = 8;
+
     public int LastSeqNum = -2;
     public int NowSeqNum = -1;
     public DeviceSetter mdevicesetter;
@@ -116,6 +121,7 @@ public class DeviceControlActivity extends Activity {
     private TextView mSaveView;
     private Button mSaveButton;
     private Button mStartButton;
+    private Button mUploadButton;
 //    private ImageButton mHomePageButton;
     private Button mOffNeAlarmButton;
 
@@ -129,7 +135,7 @@ public class DeviceControlActivity extends Activity {
     private TextView mTextView_Rightfoot;
 
     private Handler mUpdateDataHandler;
-    private  Handler mRotationHandler;
+    private Handler mRotationHandler;
     private Handler startSeqHandler;
 
     private BluetoothLeService mBluetoothLeService;
@@ -258,6 +264,7 @@ public class DeviceControlActivity extends Activity {
                 mFileManager.saveLogData("mGattUpdateReceiver","NEWear discovered"+mDeviceAddress);
                 getGattServices(mBluetoothLeService.getSupportedGattServices());//GATT설정
             } else if (BluetoothLeService.ACTION_DATA_AVAILABLE.equals(action)) { // 데이터가 교환중임
+                isCommunicated = true;
 //                Log.d(TAG, String.format("MyDEBUG: mGattUpdateReceiver[2] = %s", action));
                 byte[] data = intent.getByteArrayExtra(BluetoothLeService.ACTION_DATA_AVAILABLE); //교환된 데이터를 받음
 
@@ -315,6 +322,12 @@ public class DeviceControlActivity extends Activity {
                         start_button_counter = 1;
                     }
                     break;
+
+                case R.id.ne_upload:
+                    Log.d(TAG, "Upload start");
+                    Toast.makeText(getApplicationContext(), "알람이 꺼졌어요", Toast.LENGTH_LONG).show();
+                    mFileManager.saveLogData("mClickListener","Uploading data");
+                    mFileManager.uploadAll();
 //                case R.id.homepage_img:
 //                    goToUrl ( "http://dclab.yonsei.ac.kr/neptune/");
 //                    vibe.vibrate(40);
@@ -537,12 +550,16 @@ public class DeviceControlActivity extends Activity {
         cTimer = new CountDownTimer(5000, 1000) {
             TextView timer = (TextView) findViewById(R.id.start_time_count);
             public void onTick(long millisUntilFinished) {
-                timer.setText((millisUntilFinished / 1000)+"초 후 시작");
+                if (!isCommunicated){
+                    timer.setText((millisUntilFinished / 1000)+"초 후 시작");
+                }
             }
             public void onFinish() {
-                timer.setText("이제   시작");
-                start_sequence();
-                SystemClock.sleep(100);
+                if(!isCommunicated){
+                    timer.setText("이제   시작");
+                    start_sequence();
+                    SystemClock.sleep(100);
+                }
                 if (deviceUUIDs != null){
                     connectToMetawear(deviceUUIDs[0]);
                     connectToMetawear(deviceUUIDs[1]);
@@ -600,6 +617,9 @@ public class DeviceControlActivity extends Activity {
         mTextView_Leftfoot = (TextView) findViewById(R.id.left_foot);
 
         mStartButton = (Button) findViewById(R.id.start_button);
+        mStartButton.setOnClickListener(mClickListener);
+
+        mUploadButton = (Button) findViewById(R.id.ne_upload);
         mStartButton.setOnClickListener(mClickListener);
 
         mOffNeAlarmButton = (Button) findViewById(R.id.ne_alram);
@@ -695,8 +715,11 @@ public class DeviceControlActivity extends Activity {
     @Override
     protected void onDestroy() {
         super.onDestroy();
-        upload();
+        mFileManager.saveLogData("ondestroy","start");
         destroyBLE();
+        mFileManager.saveLogData("ondestroy","end");
+        upload();
+
     }
     protected void destroyBLE(){
         //Unbind BLE intant
@@ -823,7 +846,6 @@ public class DeviceControlActivity extends Activity {
                 mFileManager.saveLogData("reconnectMethod","SEQ:"+String.valueOf(LastSeqNum)+"->"+String.valueOf(NowSeqNum)+";counter: "+String.valueOf(SeqCounter));
             }
 
-
             if (mConnected == false){
 //                start_sequence();
                 Log.d(TAG, "Reconnect Method: try reconnect");
@@ -844,12 +866,13 @@ public class DeviceControlActivity extends Activity {
             else{
                 startSeqHandler.postDelayed(reconnectMethod,3000);
             }
-
-            if (DisconnectCounter > DisconnectThreshold||SeqCounter > DisconnectThreshold -1){
+            //upload files before disconnected
+            if (DisconnectCounter > DisconnectThreshold -1 ||SeqCounter > SeqLossThreshold - 1){
                 mFileManager.saveLogData("reconnectMethod","Uploading data before disconnected");
                 upload();
             }
-            if (DisconnectCounter > DisconnectThreshold || SeqCounter > DisconnectThreshold){
+            //back to the Sacn Activity
+            if (DisconnectCounter > DisconnectThreshold || SeqCounter > SeqLossThreshold){
                 mFileManager.saveLogData("reconnectMethod","BLE lost & scan activity start");
                 DisconnectCounter = 0; //for initiate the value
 //                final Intent intent = new Intent(DeviceControlActivity.this, DeviceScanActivity.class);
