@@ -87,7 +87,7 @@ public class DeviceControlActivity extends Activity {
     int sampleRate = 256;
     private boolean isCommunicated = false;
 
-    String version_num = "  v1.54";
+    String version_num = "  v1.55";
     String patient_num = null;
 
     public static final String EXTRAS_DEVICE_NAME = "NE_BELT";
@@ -867,12 +867,12 @@ public class DeviceControlActivity extends Activity {
                 startSeqHandler.postDelayed(reconnectMethod,3000);
             }
             //upload files before disconnected
-            if (DisconnectCounter > DisconnectThreshold -1 ||SeqCounter > SeqLossThreshold - 1){
+            if (DisconnectCounter > DisconnectThreshold -1 ){//||SeqCounter > SeqLossThreshold - 1
                 mFileManager.saveLogData("reconnectMethod","Uploading data before disconnected");
                 upload();
             }
             //back to the Sacn Activity
-            if (DisconnectCounter > DisconnectThreshold || SeqCounter > SeqLossThreshold){
+            if (DisconnectCounter > DisconnectThreshold){// || SeqCounter > SeqLossThreshold
                 mFileManager.saveLogData("reconnectMethod","BLE lost & scan activity start");
                 DisconnectCounter = 0; //for initiate the value
 //                final Intent intent = new Intent(DeviceControlActivity.this, DeviceScanActivity.class);
