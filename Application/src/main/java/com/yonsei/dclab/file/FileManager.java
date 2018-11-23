@@ -95,7 +95,7 @@ public class FileManager {
     }
 
     public void createFile(String patient_num, String filenum, String isCharged, String percentage) {
-        Log.e(TAG,"creating File");
+        Log.e(TAG,"creating File" +STRSAVEPATH);
         File dir = makeDirectory(STRSAVEPATH);
         Calendar c = Calendar.getInstance();
         SimpleDateFormat dateFormat = new SimpleDateFormat("yyMMdd'_'HHmmss");

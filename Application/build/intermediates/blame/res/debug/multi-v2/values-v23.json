@@ -1,10 +1,10 @@
 {
     "logs": [
         {
-            "outputFile": "C:\\Users\\Yeop_DCLab\\Documents\\GitHub\\NE_BELT_user\\Application\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-v23\\values-v23.xml",
+            "outputFile": "C:\\Users\\yeop-lee\\Documents\\GitHub\\NE_BELT_for_USER\\Application\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-v23\\values-v23.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\Yeop_DCLab\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-25.2.0.aar\\baf942003f4c5ff7c86dc7ce51204f82\\res\\values-v23\\values-v23.xml",
+                    "source": "C:\\Users\\yeop-lee\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-25.2.0.aar\\8a3117321d66f2dc9892d41a215ff6ca\\res\\values-v23\\values-v23.xml",
                     "from": {
                         "startLines": "2,3,4,5,6,19,32,33,34,35,36",
                         "startColumns": "4,4,4,4,4,4,4,4,4,4,4",
@@ -15,7 +15,7 @@
                     }
                 },
                 {
-                    "source": "C:\\Users\\Yeop_DCLab\\.gradle\\caches\\transforms-1\\files-1.1\\cardview-v7-25.2.0.aar\\2269ac56cb7409e0d472b57823847c5f\\res\\values-v23\\values-v23.xml",
+                    "source": "C:\\Users\\yeop-lee\\.gradle\\caches\\transforms-1\\files-1.1\\cardview-v7-25.2.0.aar\\5eee017193f2107ee6ed28fefbad97b0\\res\\values-v23\\values-v23.xml",
                     "from": {
                         "startLines": "2",
                         "startColumns": "4",

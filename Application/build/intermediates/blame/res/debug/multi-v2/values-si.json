@@ -1,10 +1,10 @@
 {
     "logs": [
         {
-            "outputFile": "C:\\Users\\Yeop_DCLab\\Documents\\GitHub\\NE_BELT_user\\Application\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-si\\values-si.xml",
+            "outputFile": "C:\\Users\\yeop-lee\\Documents\\GitHub\\NE_BELT_for_USER\\Application\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-si\\values-si.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\Yeop_DCLab\\.gradle\\caches\\transforms-1\\files-1.1\\play-services-basement-11.6.2.aar\\b4e4d259974288f7330cf184b3828016\\res\\values-si\\values.xml",
+                    "source": "C:\\Users\\yeop-lee\\.gradle\\caches\\transforms-1\\files-1.1\\play-services-basement-11.6.2.aar\\2b76cf7fbf611f57f213244610bc8c33\\res\\values-si\\values.xml",
                     "from": {
                         "startLines": "4",
                         "startColumns": "0",

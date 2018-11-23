@@ -87,7 +87,7 @@ public class DeviceScanActivity extends ListActivity {
         Intent intent = getIntent();
 
         setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
-        getActionBar().setTitle("neptuNE");
+        getActionBar().setTitle("NETch  ");
         mHandler = new Handler();
 
         ActivityCompat.requestPermissions(DeviceScanActivity.this, ACCESS_PERMISSION, 1);

@@ -87,7 +87,7 @@ public class DeviceControlActivity extends Activity {
     int sampleRate = 256;
     private boolean isCommunicated = false;
 
-    String version_num = "  v1.55";
+    String version_num = "  v1.56";
     String patient_num = null;
 
     public static final String EXTRAS_DEVICE_NAME = "NE_BELT";
@@ -313,6 +313,7 @@ public class DeviceControlActivity extends Activity {
                 case R.id.start_button: // Start버튼이 눌리면, 기기로부터 얻
                     Log.d(TAG,"start");
                     start_sequence();
+                    SystemClock.sleep(5000);
                     if (deviceUUIDs[0] != null){
                         connectToMetawear(deviceUUIDs[0]);
                         connectToMetawear(deviceUUIDs[1]);
@@ -558,7 +559,7 @@ public class DeviceControlActivity extends Activity {
                 if(!isCommunicated){
                     timer.setText("이제   시작");
                     start_sequence();
-                    SystemClock.sleep(100);
+                    SystemClock.sleep(5000);
                 }
                 if (deviceUUIDs != null){
                     connectToMetawear(deviceUUIDs[0]);
@@ -620,7 +621,7 @@ public class DeviceControlActivity extends Activity {
         mStartButton.setOnClickListener(mClickListener);
 
         mUploadButton = (Button) findViewById(R.id.ne_upload);
-        mStartButton.setOnClickListener(mClickListener);
+        mUploadButton.setOnClickListener(mClickListener);
 
         mOffNeAlarmButton = (Button) findViewById(R.id.ne_alram);
         mOffNeAlarmButton.setOnClickListener(mClickListener);
@@ -633,7 +634,7 @@ public class DeviceControlActivity extends Activity {
         mSaveView = (TextView) findViewById(R.id.start_time_count);
         mNow_state = (TextView) findViewById(R.id.now_state);
         mNow_guide = (TextView) findViewById(R.id.now_guide);
-        getActionBar().setTitle("neptuNE"+version_num);
+        getActionBar().setTitle("NETch"+version_num);
         getActionBar().setDisplayHomeAsUpEnabled(true);
 
         Intent gattServiceIntent = new Intent(this, BluetoothLeService.class);
