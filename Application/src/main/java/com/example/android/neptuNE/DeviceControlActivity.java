@@ -107,8 +107,7 @@ public class DeviceControlActivity extends Activity {
 
     CountDownTimer cTimer = null;
     public int DisconnectCounter = 0;
-    public int DisconnectThreshold = 4;
-
+    public int DisconnectThreshold = 8;
 
     public int SeqCounter = 0;
     public int SeqLossThreshold = 8;
@@ -862,7 +861,7 @@ public class DeviceControlActivity extends Activity {
                 mBluetoothLeService.connect(mDeviceAddress);
                 SystemClock.sleep(100);
                 DisconnectCounter += 1;
-                startSeqHandler.postDelayed(startMethod,3000);
+                startSeqHandler.postDelayed(startMethod,1000 + DisconnectCounter*1000);
             }
             else{
                 startSeqHandler.postDelayed(reconnectMethod,3000);
