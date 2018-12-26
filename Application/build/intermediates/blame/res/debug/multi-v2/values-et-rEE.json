@@ -1,10 +1,10 @@
 {
     "logs": [
         {
-            "outputFile": "C:\\Users\\yeop-lee\\Documents\\GitHub\\NE_BELT_for_USER\\Application\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-et-rEE\\values-et-rEE.xml",
+            "outputFile": "/Users/yeoplee/StudioProjects/NE_BELT_for_USER/Application/build/intermediates/incremental/mergeDebugResources/merged.dir/values-et-rEE/values-et-rEE.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\yeop-lee\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-25.2.0.aar\\8a3117321d66f2dc9892d41a215ff6ca\\res\\values-et-rEE\\values-et-rEE.xml",
+                    "source": "/Users/yeoplee/.gradle/caches/transforms-1/files-1.1/appcompat-v7-25.2.0.aar/737fefb59e61ffe3fd5e1b360bbe4356/res/values-et-rEE/values-et-rEE.xml",
                     "from": {
                         "startLines": "2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22",
                         "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",

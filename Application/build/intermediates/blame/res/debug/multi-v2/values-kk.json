@@ -1,10 +1,10 @@
 {
     "logs": [
         {
-            "outputFile": "C:\\Users\\yeop-lee\\Documents\\GitHub\\NE_BELT_for_USER\\Application\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-kk\\values-kk.xml",
+            "outputFile": "/Users/yeoplee/StudioProjects/NE_BELT_for_USER/Application/build/intermediates/incremental/mergeDebugResources/merged.dir/values-kk/values-kk.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\yeop-lee\\.gradle\\caches\\transforms-1\\files-1.1\\play-services-basement-11.6.2.aar\\2b76cf7fbf611f57f213244610bc8c33\\res\\values-kk\\values.xml",
+                    "source": "/Users/yeoplee/.gradle/caches/transforms-1/files-1.1/play-services-basement-11.6.2.aar/3faf72560f3c0601a7c8872fcf9558d1/res/values-kk/values.xml",
                     "from": {
                         "startLines": "4",
                         "startColumns": "0",

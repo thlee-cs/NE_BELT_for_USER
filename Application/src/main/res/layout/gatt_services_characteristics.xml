@@ -237,7 +237,7 @@
             android:layout_width="190dp"
             android:layout_height="wrap_content"
             android:layout_gravity="left"
-            android:text="파일 업로드" />
+            android:text="파일 삭제" />
 
     </LinearLayout>
 

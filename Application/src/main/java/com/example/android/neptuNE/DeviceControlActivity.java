@@ -41,23 +41,16 @@ import android.os.Handler;
 import android.os.IBinder;
 import android.os.SystemClock;
 import android.os.Vibrator;
-import android.support.v13.app.ActivityCompat;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
-import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.Switch;
 import android.widget.TextView;
 import android.widget.Toast;
-
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import android.support.v4.app.ActivityCompat;
 
 import com.mbientlab.metawear.MetaWearBoard;
 import com.mbientlab.metawear.Route;
@@ -66,18 +59,24 @@ import com.mbientlab.metawear.data.Acceleration;
 import com.mbientlab.metawear.data.AngularVelocity;
 import com.mbientlab.metawear.module.Accelerometer;
 import com.mbientlab.metawear.module.GyroBmi160;
-
 import com.yonsei.dclab.OSEAFactory;
-//import com.yonsei.dclab.chart.BIA_Chart;
-//import com.yonsei.dclab.chart.ECG_Chart;
-//import com.yonsei.dclab.chart.Moi_Chart;
 import com.yonsei.dclab.file.DeviceSetter;
 import com.yonsei.dclab.file.FileManager;
 import com.yonsei.dclab.packet.Packet;
 import com.yonsei.dclab.packet.PacketParser;
 import com.yonsei.dclab.processing.QRSDetector2;
 
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+
 import bolts.Task;
+
+//import com.yonsei.dclab.chart.BIA_Chart;
+//import com.yonsei.dclab.chart.ECG_Chart;
+//import com.yonsei.dclab.chart.Moi_Chart;
 
 /**
  * 디바이스와 연결 된 뒤에 실행되는 메인 클래스
@@ -87,7 +86,7 @@ public class DeviceControlActivity extends Activity {
     int sampleRate = 256;
     private boolean isCommunicated = false;
 
-    String version_num = "  v1.56";
+    String version_num = "  v1.57";
     String patient_num = null;
 
     public static final String EXTRAS_DEVICE_NAME = "NE_BELT";
@@ -108,6 +107,7 @@ public class DeviceControlActivity extends Activity {
     CountDownTimer cTimer = null;
     public int DisconnectCounter = 0;
     public int DisconnectThreshold = 8;
+    private int reconnect_call = 1000;
 
     public int SeqCounter = 0;
     public int SeqLossThreshold = 8;
@@ -312,9 +312,10 @@ public class DeviceControlActivity extends Activity {
                 case R.id.start_button: // Start버튼이 눌리면, 기기로부터 얻
                     Log.d(TAG,"start");
                     start_sequence();
-                    SystemClock.sleep(5000);
                     if (deviceUUIDs[0] != null){
+                        SystemClock.sleep(5000);
                         connectToMetawear(deviceUUIDs[0]);
+                        SystemClock.sleep(5000);
                         connectToMetawear(deviceUUIDs[1]);
                     }
                     if(start_button_counter == 0) {
@@ -328,6 +329,8 @@ public class DeviceControlActivity extends Activity {
                     Toast.makeText(getApplicationContext(), "알람이 꺼졌어요", Toast.LENGTH_LONG).show();
                     mFileManager.saveLogData("mClickListener","Uploading data");
                     mFileManager.uploadAll();
+                    SystemClock.sleep(5000);
+                    mFileManager.delete();
 //                case R.id.homepage_img:
 //                    goToUrl ( "http://dclab.yonsei.ac.kr/neptune/");
 //                    vibe.vibrate(40);
@@ -843,7 +846,8 @@ public class DeviceControlActivity extends Activity {
             }else if (LastSeqNum == NowSeqNum){
                 SeqCounter += 1;
                 mFileManager.saveLogData("reconnectMethod","Seq loss detected");
-                mFileManager.saveLogData("reconnectMethod","SEQ:"+String.valueOf(LastSeqNum)+"->"+String.valueOf(NowSeqNum)+";counter: "+String.valueOf(SeqCounter));
+                mFileManager.saveLogData("reconnectMethod",
+                        "SEQ:"+String.valueOf(LastSeqNum)+"->"+String.valueOf(NowSeqNum)+";counter: "+String.valueOf(SeqCounter));
             }
 
             if (mConnected == false){
@@ -861,7 +865,8 @@ public class DeviceControlActivity extends Activity {
                 mBluetoothLeService.connect(mDeviceAddress);
                 SystemClock.sleep(100);
                 DisconnectCounter += 1;
-                startSeqHandler.postDelayed(startMethod,1000 + DisconnectCounter*1000);
+                reconnect_call += DisconnectCounter *1000;
+                startSeqHandler.postDelayed(startMethod,reconnect_call);
             }
             else{
                 startSeqHandler.postDelayed(reconnectMethod,3000);
@@ -869,6 +874,10 @@ public class DeviceControlActivity extends Activity {
             //upload files before disconnected
             if (DisconnectCounter > DisconnectThreshold -1 ){//||SeqCounter > SeqLossThreshold - 1
                 mFileManager.saveLogData("reconnectMethod","Uploading data before disconnected");
+                upload();
+            }
+            if (SeqCounter == 5){
+                mFileManager.saveLogData("reconnectMethod","Uploading data when NO seq in 72sec");
                 upload();
             }
             //back to the Sacn Activity

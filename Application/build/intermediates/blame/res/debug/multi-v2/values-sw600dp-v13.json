@@ -1,10 +1,29 @@
 {
     "logs": [
         {
-            "outputFile": "C:\\Users\\yeop-lee\\Documents\\GitHub\\NE_BELT_for_USER\\Application\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-sw600dp-v13\\values-sw600dp-v13.xml",
+            "outputFile": "/Users/yeoplee/StudioProjects/NE_BELT_for_USER/Application/build/intermediates/incremental/mergeDebugResources/merged.dir/values-sw600dp-v13/values-sw600dp-v13.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\yeop-lee\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-25.2.0.aar\\8a3117321d66f2dc9892d41a215ff6ca\\res\\values-sw600dp-v13\\values-sw600dp-v13.xml",
+                    "source": "/Users/yeoplee/StudioProjects/NE_BELT_for_USER/Application/src/main/res/values-sw600dp/template-styles.xml",
+                    "from": {
+                        "startLines": "18",
+                        "startColumns": "4",
+                        "startOffsets": "621",
+                        "endLines": "22",
+                        "endColumns": "12",
+                        "endOffsets": "861"
+                    },
+                    "to": {
+                        "startLines": "12",
+                        "startColumns": "4",
+                        "startOffsets": "747",
+                        "endLines": "16",
+                        "endColumns": "12",
+                        "endOffsets": "987"
+                    }
+                },
+                {
+                    "source": "/Users/yeoplee/.gradle/caches/transforms-1/files-1.1/appcompat-v7-25.2.0.aar/737fefb59e61ffe3fd5e1b360bbe4356/res/values-sw600dp-v13/values-sw600dp-v13.xml",
                     "from": {
                         "startLines": "2,3,4,5,6,7,8,9",
                         "startColumns": "4,4,4,4,4,4,4,4",
@@ -14,13 +33,13 @@
                     }
                 },
                 {
-                    "source": "C:\\Users\\yeop-lee\\Documents\\GitHub\\NE_BELT_for_USER\\Application\\src\\main\\res\\values-sw600dp\\template-dimens.xml",
+                    "source": "/Users/yeoplee/StudioProjects/NE_BELT_for_USER/Application/src/main/res/values-sw600dp/template-dimens.xml",
                     "from": {
                         "startLines": "20,21",
                         "startColumns": "4,4",
-                        "startOffsets": "676,745",
+                        "startOffsets": "656,724",
                         "endColumns": "67,67",
-                        "endOffsets": "739,808"
+                        "endOffsets": "719,787"
                     },
                     "to": {
                         "startLines": "10,11",
@@ -28,25 +47,6 @@
                         "startOffsets": "611,679",
                         "endColumns": "67,67",
                         "endOffsets": "674,742"
-                    }
-                },
-                {
-                    "source": "C:\\Users\\yeop-lee\\Documents\\GitHub\\NE_BELT_for_USER\\Application\\src\\main\\res\\values-sw600dp\\template-styles.xml",
-                    "from": {
-                        "startLines": "18",
-                        "startColumns": "4",
-                        "startOffsets": "639",
-                        "endLines": "22",
-                        "endColumns": "12",
-                        "endOffsets": "883"
-                    },
-                    "to": {
-                        "startLines": "12",
-                        "startColumns": "4",
-                        "startOffsets": "747",
-                        "endLines": "16",
-                        "endColumns": "12",
-                        "endOffsets": "987"
                     }
                 }
             ]
