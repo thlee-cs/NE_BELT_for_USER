@@ -94,7 +94,7 @@ public class DeviceControlActivity extends Activity {
     public static int reconnectFlags = 0;
 
     //MetaWear
-    private static String[] deviceUUIDs = {"",""};//"FD:0F:59:E2:F4:C5" "D4:25:5C:D6:2E:F5"
+    private static String[] deviceUUIDs = {"", ""};//"FD:0F:59:E2:F4:C5" "D4:25:5C:D6:2E:F5"
     private BtleService.LocalBinder serviceBinder;
 
     //data catch map for accel & gyro scope
@@ -121,7 +121,7 @@ public class DeviceControlActivity extends Activity {
     private Button mSaveButton;
     private Button mStartButton;
     private Button mUploadButton;
-//    private ImageButton mHomePageButton;
+    //    private ImageButton mHomePageButton;
     private Button mOffNeAlarmButton;
 
     private String mDeviceName;
@@ -184,7 +184,7 @@ public class DeviceControlActivity extends Activity {
     private int bell_max = 8250;
     private int bell_min = 8150;
 
-//    private int rot_state = 0;
+    //    private int rot_state = 0;
 //    private int rot_st;
 //    private int rot_ed;
     private int gain_st = (byte) 0x01;
@@ -208,7 +208,7 @@ public class DeviceControlActivity extends Activity {
     private final ServiceConnection mServiceConnection = new ServiceConnection() {
         @Override
         public void onServiceConnected(ComponentName componentName, IBinder service) {
-            Log.i(TAG,"Main service connect");
+            Log.i(TAG, "Main service connect");
             mBluetoothLeService = ((BluetoothLeService.LocalBinder) service).getService();
             if (!mBluetoothLeService.initialize()) {
                 Log.e(TAG, "Unable to initialize Bluetooth");
@@ -227,7 +227,7 @@ public class DeviceControlActivity extends Activity {
     private final ServiceConnection meta_ServiceConnection = new ServiceConnection() {
         @Override
         public void onServiceConnected(ComponentName componentName, IBinder iBinder) {
-            Log.i(TAG,"meta service connect");
+            Log.i(TAG, "meta service connect");
             serviceBinder = (BtleService.LocalBinder) iBinder;
         }
 
@@ -237,30 +237,29 @@ public class DeviceControlActivity extends Activity {
     };
     /**
      * BLE의 상태에 따라 지시를 내려주는 함수
-     *
-     *  BLE 연결됨
-     *  BLE 끊김
-     *  BLE 찾음--> GATT서비스를 설정
-     *  BLE 데이터를 받음 --> 패킷을 뜯고 화면에 출력함
-     *
-     * */
+     * <p>
+     * BLE 연결됨
+     * BLE 끊김
+     * BLE 찾음--> GATT서비스를 설정
+     * BLE 데이터를 받음 --> 패킷을 뜯고 화면에 출력함
+     */
     private final BroadcastReceiver mGattUpdateReceiver = new BroadcastReceiver() {
         @Override
         public void onReceive(Context context, Intent intent) {
             final String action = intent.getAction();
             if (BluetoothLeService.ACTION_GATT_CONNECTED.equals(action)) { //연결됨
-                mFileManager.saveLogData("mGattUpdateReceiver","NEWear connected:"+mDeviceAddress);
+                mFileManager.saveLogData("mGattUpdateReceiver", "NEWear connected:" + mDeviceAddress);
                 mConnected = true;
                 DisconnectCounter = 0;
                 invalidateOptionsMenu();
             } else if (BluetoothLeService.ACTION_GATT_DISCONNECTED.equals(action)) { // 연결 끊김
-                mFileManager.saveLogData("mGattUpdateReceiver","NEWear disconnected:"+mDeviceAddress);
+                mFileManager.saveLogData("mGattUpdateReceiver", "NEWear disconnected:" + mDeviceAddress);
                 mConnected = false;
                 invalidateOptionsMenu();
-                Log.e(TAG,"DIsconnected");
+                Log.e(TAG, "DIsconnected");
             } else if (BluetoothLeService.ACTION_GATT_SERVICES_DISCOVERED.equals(action)) { //BLE를 찾은 뒤
                 // Show all the supported services and characteristics on the user interface.
-                mFileManager.saveLogData("mGattUpdateReceiver","NEWear discovered"+mDeviceAddress);
+                mFileManager.saveLogData("mGattUpdateReceiver", "NEWear discovered" + mDeviceAddress);
                 getGattServices(mBluetoothLeService.getSupportedGattServices());//GATT설정
             } else if (BluetoothLeService.ACTION_DATA_AVAILABLE.equals(action)) { // 데이터가 교환중임
                 isCommunicated = true;
@@ -286,7 +285,7 @@ public class DeviceControlActivity extends Activity {
                         Packet packet_v0 = new Packet(mDeviceName, mDeviceAddress, data);
 
                         NowSeqNum = packet_v0.seqNum;
-                        if (packet_v0.isMULdata()){//받은 패킷이 3채널 데이터일때 아래 함수 실행
+                        if (packet_v0.isMULdata()) {//받은 패킷이 3채널 데이터일때 아래 함수 실행
 //                            Log.e(TAG,"Get the data");
                             receivedData(packet_v0);
                         }
@@ -303,40 +302,51 @@ public class DeviceControlActivity extends Activity {
      * 버튼이 눌리면 반응하는 함수
      * start_button : 시작
      * bia_rot : bia interval을 시작
-     *
-     * */
-    Button.OnClickListener mClickListener = new View.OnClickListener(){
+     */
+
+    private long oneTimePressed;
+    private long twicePressed;
+    Button.OnClickListener mClickListener = new View.OnClickListener() {
         @Override
         public void onClick(View v) {
             switch (v.getId()) { // 아이템의 ID로 식별함
                 case R.id.start_button: // Start버튼이 눌리면, 기기로부터 얻
-                    Log.d(TAG,"start");
+                    Log.d(TAG, "start");
                     start_sequence();
-                    if (deviceUUIDs[0] != null){
+                    if (deviceUUIDs[0] != null) {
                         SystemClock.sleep(5000);
                         connectToMetawear(deviceUUIDs[0]);
                         SystemClock.sleep(5000);
                         connectToMetawear(deviceUUIDs[1]);
                     }
-                    if(start_button_counter == 0) {
+                    if (start_button_counter == 0) {
                         Toast.makeText(getApplicationContext(), "시작 버튼이 눌렸어요", Toast.LENGTH_LONG).show();
                         start_button_counter = 1;
                     }
                     break;
 
                 case R.id.ne_upload:
-                    Log.d(TAG, "Upload start");
-                    Toast.makeText(getApplicationContext(), "알람이 꺼졌어요", Toast.LENGTH_LONG).show();
-                    mFileManager.saveLogData("mClickListener","Uploading data");
-                    mFileManager.uploadAll();
-                    SystemClock.sleep(5000);
-                    mFileManager.delete();
+                    if (System.currentTimeMillis() - oneTimePressed < 5000) {
+                        twicePressed = System.currentTimeMillis();
+                        if (System.currentTimeMillis() - twicePressed < 5000) {
+                            Log.d(TAG, "Upload start");
+                            Toast.makeText(getApplicationContext(), "데이터가 삭제됩니다.", Toast.LENGTH_LONG).show();
+                            mFileManager.saveLogData("mClickListener", "Uploading data");
+//                    mFileManager.uploadAll();
+                            SystemClock.sleep(5000);
+                            mFileManager.delete();
+                        }
+                    }
+                    Toast.makeText(DeviceControlActivity.this, "5초 이내에 3번 클릭하시면 삭제됩니다.", Toast.LENGTH_SHORT).show();
+                    oneTimePressed = System.currentTimeMillis();
+                    break;
+
 //                case R.id.homepage_img:
 //                    goToUrl ( "http://dclab.yonsei.ac.kr/neptune/");
 //                    vibe.vibrate(40);
 //                    break;
                 case R.id.ne_alram:
-                    if(NE_event == 1) {
+                    if (NE_event == 1) {
                         // sound.stop(music);
                         // sound.release();
                         sound.autoPause();
@@ -345,11 +355,10 @@ public class DeviceControlActivity extends Activity {
                         ne_event_lock = 1;
                         minute_now = mFileManager.getMinute();
                         Toast.makeText(getApplicationContext(), "알람이 꺼졌어요", Toast.LENGTH_LONG).show();
-                        mFileManager.saveLogData("mClickListener","Alaram stop button");
+                        mFileManager.saveLogData("mClickListener", "Alaram stop button");
                         mOffNeAlarmButton.setBackgroundColor(Color.LTGRAY);
                         vibe.vibrate(40);
-                    }
-                    else {
+                    } else {
                         Toast.makeText(getApplicationContext(), "알람이 울릴때 눌려주세요", Toast.LENGTH_LONG).show();
                         vibe.vibrate(40);
                     }
@@ -364,9 +373,9 @@ public class DeviceControlActivity extends Activity {
      * 받은 데이터를 처리하는 함수
      * 스트리밍이 될때마다 호출이 되며
      * packet의 속도가 1/4초에 1번씩 보내므로 1/4초마다 한번씩 실행됨
-     * */
+     */
     public void receivedData(Packet packet) {
-        if (mFileManager.getHours() == 1 || mfile_Num == 0 ){
+        if (mFileManager.getHours() == 1 || mfile_Num == 0) {
             //Battery part
             IntentFilter ifilter = new IntentFilter(Intent.ACTION_BATTERY_CHANGED);
             Intent batteryStatus = getApplicationContext().registerReceiver(null, ifilter);
@@ -383,32 +392,32 @@ public class DeviceControlActivity extends Activity {
             int level = batteryStatus.getIntExtra(BatteryManager.EXTRA_LEVEL, -1);
             int scale = batteryStatus.getIntExtra(BatteryManager.EXTRA_SCALE, -1);
 
-            float batteryPct = level / (float)scale;
-            BatteryStatus = (int) batteryPct*100;
+            float batteryPct = level / (float) scale;
+            BatteryStatus = (int) batteryPct * 100;
 
-            if (isCharging == true){
-                if (usbCharge ==true){
+            if (isCharging == true) {
+                if (usbCharge == true) {
                     ChargeStatus = "U";
-                }else if (acCharge == true){
+                } else if (acCharge == true) {
                     ChargeStatus = "A";
                 }
-            }else {
+            } else {
                 ChargeStatus = "N";
             }
 
-            if (mfile_Num!=0){
+            if (mfile_Num != 0) {
                 upload();
-            }else if (mfile_Num == 0){
+            } else if (mfile_Num == 0) {
                 mFileManager.uploadLogFile();
             }
-            mFileManager.saveLogData("receivedData","Try create File");
-            mFileManager.createLogFile(patient_num , String.valueOf(mfile_Num));
-            mFileManager.createFile(patient_num , String.valueOf(mfile_Num),ChargeStatus, String.valueOf(BatteryStatus));
-            mFileManager.createMoFile(patient_num , String.valueOf(mfile_Num),ChargeStatus, String.valueOf(BatteryStatus));
-            mfile_Num ++;
+            mFileManager.saveLogData("receivedData", "Try create File");
+            mFileManager.createLogFile(patient_num, String.valueOf(mfile_Num));
+            mFileManager.createFile(patient_num, String.valueOf(mfile_Num), ChargeStatus, String.valueOf(BatteryStatus));
+            mFileManager.createMoFile(patient_num, String.valueOf(mfile_Num), ChargeStatus, String.valueOf(BatteryStatus));
+            mfile_Num++;
         }
-        ImageView hrimg= (ImageView) findViewById(R.id.heart_img);
-        ImageView biamg= (ImageView) findViewById(R.id.bia_img);
+        ImageView hrimg = (ImageView) findViewById(R.id.heart_img);
+        ImageView biamg = (ImageView) findViewById(R.id.bia_img);
         hrimg.setImageResource(R.drawable.ne_heart);
         biamg.setImageResource(R.drawable.ne_bia);
 
@@ -419,20 +428,20 @@ public class DeviceControlActivity extends Activity {
             mMoiDataList.add(packet.rawData.get(2).get(i));
         }
         //데이터의 frequency에 맞지 않게 들어온 경우 삭제함(20초 기준)
-        while(mEcgDataList.size() > EcgDataListSize){
+        while (mEcgDataList.size() > EcgDataListSize) {
             mBiaDataList.remove(0);
             mEcgDataList.remove(0);
             mMoiDataList.remove(0);
         }
         //얻은 List를 20초 간 활성화 시킴
-        if(mEcgDataList.size()>=EcgDataListSize){ //초기 20초 이전에 돌아가는 함수
+        if (mEcgDataList.size() >= EcgDataListSize) { //초기 20초 이전에 돌아가는 함수
             for (int i = 0; i < EcgDataListSize; i++) {// 10sec
                 biaDataArray[i] = mBiaDataList.get(i);
                 ecgDataArray[i] = mEcgDataList.get(i);
                 moiDataArray[i] = mMoiDataList.get(i);
             }
-        }else{ //20초 이후에 돌아가는 함수
-            for (int i = 0; i < mEcgDataList.size(); i++){
+        } else { //20초 이후에 돌아가는 함수
+            for (int i = 0; i < mEcgDataList.size(); i++) {
                 biaDataArray[i] = mBiaDataList.get(i);
                 ecgDataArray[i] = mEcgDataList.get(i);
                 moiDataArray[i] = mMoiDataList.get(i);
@@ -441,10 +450,10 @@ public class DeviceControlActivity extends Activity {
 
 
         //알람이 울림 128*2*20
-        for(int i = 37; i < 40; i++) {
+        for (int i = 37; i < 40; i++) {
             //Set Urine bell
-            if (moiDataArray[128*i] <= bell_max && moiDataArray[128*i] >= bell_min) {
-                if (moiDataArray[128*i + 64] <= bell_max && moiDataArray[128*i + 64] >= bell_min) { //Ring alert when moiData range is shorted
+            if (moiDataArray[128 * i] <= bell_max && moiDataArray[128 * i] >= bell_min) {
+                if (moiDataArray[128 * i + 64] <= bell_max && moiDataArray[128 * i + 64] >= bell_min) { //Ring alert when moiData range is shorted
                     if (NE_event == 0 && ne_event_lock == 0) {
                         vibe.vibrate(100000); //If NE event detected vibrate
                         music = sound.load(this, R.raw.sample, 1);
@@ -452,17 +461,16 @@ public class DeviceControlActivity extends Activity {
                         sound.autoResume();
                         NE_event = 1; //Mark the event
                         NEventMarker = 1;
-                        try{
+                        try {
                             mFileManager.uploadFile();
                             mFileManager.uploadMoFile();
                             mFileManager.uploadLogFile();
-                        }
-                        catch (Exception e){
+                        } catch (Exception e) {
                             Log.e(TAG, "Upload Failed");
-                            mFileManager.saveLogData("receivedData-NE","Save failed");
+                            mFileManager.saveLogData("receivedData-NE", "Save failed");
                         }
                         mNow_state.setText("> 야뇨가 감지되었습니다");
-                        mFileManager.saveLogData("receivedData","NE Detected");
+                        mFileManager.saveLogData("receivedData", "NE Detected");
                         mNow_guide.setText("\n\n1. 알람을 끄기위해 화면 중앙에 위치한 '알람 끄기' 버튼을 눌러주세요\n\n2.아이를 화장실로 데려가 잔뇨를 볼 수 있도록 도와주세요");
                         mOffNeAlarmButton.setBackgroundColor(Color.RED);
                     }
@@ -472,49 +480,50 @@ public class DeviceControlActivity extends Activity {
 
         //Detect qrs pulse
         QRSDetector2 qrsDetector = OSEAFactory.createQRSDetector2(sampleRate);
-        int beat_temp_buf = 0 ;
-        int hr  = 0;
+        int beat_temp_buf = 0;
+        int hr = 0;
         //make HR_buf
 
         for (int i = 0; i < ecgDataArray.length; i++) {
             int result = qrsDetector.QRSDet(ecgDataArray[i]);
             if (result != 0) {
-                beat_temp_buf = (i-result) - beat_temp_buf;
-                hr = (60*sampleRate)/beat_temp_buf;
-                if (hr > 40 && hr < 200){
+                beat_temp_buf = (i - result) - beat_temp_buf;
+                hr = (60 * sampleRate) / beat_temp_buf;
+                if (hr > 40 && hr < 200) {
                     RR_buf.add(hr);
                 }
-                ecgDataArray[i-result] = 0;
+                ecgDataArray[i - result] = 0;
             }
         }
 
         //get the HR
-        int buf_size = RR_buf.size ();
-        if (RR_buf.size()>3){
+        int buf_size = RR_buf.size();
+        if (RR_buf.size() > 3) {
             int sum = 0;
             int count = 0;
-            for (int i = 1; i<buf_size; i++){
+            for (int i = 1; i < buf_size; i++) {
                 sum += RR_buf.get(i);
-                count +=1;
+                count += 1;
             }
-            Heartrate = (int) sum/count;
+            Heartrate = (int) sum / count;
             mTextView_Heartrate.setText(String.format("심박 측정중"));
             RR_buf.clear();
         }
 
         //화면에 BIA, MOI 패킷의 맨 마지막을 출력함 1/4초마다 출력됨
-        if (mTextView_BodyImpedance != null) mTextView_BodyImpedance.setText(String.format("임피던스: "+"%d", packet.rawData.get(1).get(MULDataListSize-1)));
+        if (mTextView_BodyImpedance != null)
+            mTextView_BodyImpedance.setText(String.format("임피던스: " + "%d", packet.rawData.get(1).get(MULDataListSize - 1)));
 
-        if(NE_event == 0 && (packet.rawData.get(1).get(MULDataListSize-1)!=null)){
+        if (NE_event == 0 && (packet.rawData.get(1).get(MULDataListSize - 1) != null)) {
             mNow_state.setText("> 정상적으로 연결되어 측정 중입니다");
             mNow_guide.setText("\n\n1. 아이가 올바르게 기기를 착용하고 자도록 지도해주세요 \n\n2. 스마트폰을 충전기와 연결하여 사용하는것을 권장합니다");
         }
         mFileManager.saveData(packet, NEventMarker, BiaMarker, Heartrate, Posture);
         NEventMarker = 0;
-        int fileKb = (int) (mFileManager.getFileSize()/1000);
-        mSaveView.setText((mfile_Num-1) + "h" + mFileManager.getStorageTime());
+        int fileKb = (int) (mFileManager.getFileSize() / 1000);
+        mSaveView.setText((mfile_Num - 1) + "h" + mFileManager.getStorageTime());
 
-        if ((mFileManager.getMinute() != minute_now) && ((mFileManager.getMinute() % 1) == 0) ){
+        if ((mFileManager.getMinute() != minute_now) && ((mFileManager.getMinute() % 1) == 0)) {
             ne_event_lock = 0;
             //music = sound.load(this, R.raw.sample, 1);
         }
@@ -523,7 +532,7 @@ public class DeviceControlActivity extends Activity {
 
     /**
      * BLE GATT 설정하는 함수
-     * */
+     */
     private void getGattServices(List<BluetoothGattService> gattServices) {
         if (gattServices == null) return;
         mGattCharacteristics = new ArrayList<ArrayList<BluetoothGattCharacteristic>>();
@@ -531,17 +540,15 @@ public class DeviceControlActivity extends Activity {
             Log.d(TAG, String.format("BluetoothGattService = %s", gattService.getUuid().toString()));
             List<BluetoothGattCharacteristic> gattCharacteristics = gattService.getCharacteristics();
             for (BluetoothGattCharacteristic gattCharacteristic : gattCharacteristics) {
-                if(gattCharacteristic.getUuid().toString().equals(BleUuid.CHAR_MARGAUXL_READ)) {
-                    Log.d(TAG,"read_checked");
+                if (gattCharacteristic.getUuid().toString().equals(BleUuid.CHAR_MARGAUXL_READ)) {
+                    Log.d(TAG, "read_checked");
                     mNotifyCharacteristic = gattCharacteristic;
                     mBluetoothLeService.setCharacteristicNotification(mNotifyCharacteristic, true);
-                }
-                else if(gattCharacteristic.getUuid().toString().equals(BleUuid.CHAR_MARGAUXL_FLOW_CTRL)) {
-                    Log.d(TAG,"ctrl_checked");
+                } else if (gattCharacteristic.getUuid().toString().equals(BleUuid.CHAR_MARGAUXL_FLOW_CTRL)) {
+                    Log.d(TAG, "ctrl_checked");
                     mNotifyCharacteristic_C = gattCharacteristic;
-                }
-                else if(gattCharacteristic.getUuid().toString().equals(BleUuid.CHAR_MARGAUXL_WRITE)) {
-                    Log.d(TAG,"write_checked");
+                } else if (gattCharacteristic.getUuid().toString().equals(BleUuid.CHAR_MARGAUXL_WRITE)) {
+                    Log.d(TAG, "write_checked");
                     mNotifyCharacteristic_W = gattCharacteristic;
                 }
             }
@@ -552,23 +559,25 @@ public class DeviceControlActivity extends Activity {
     void startTimer() {
         cTimer = new CountDownTimer(5000, 1000) {
             TextView timer = (TextView) findViewById(R.id.start_time_count);
+
             public void onTick(long millisUntilFinished) {
-                if (!isCommunicated){
-                    timer.setText((millisUntilFinished / 1000)+"초 후 시작");
+                if (!isCommunicated) {
+                    timer.setText((millisUntilFinished / 1000) + "초 후 시작");
                 }
             }
+
             public void onFinish() {
-                if(!isCommunicated){
+                if (!isCommunicated) {
                     timer.setText("이제   시작");
                     start_sequence();
                     SystemClock.sleep(5000);
                 }
-                if (deviceUUIDs != null){
+                if (deviceUUIDs != null) {
                     connectToMetawear(deviceUUIDs[0]);
                     connectToMetawear(deviceUUIDs[1]);
                 }
                 SystemClock.sleep(100);
-                startSeqHandler.postDelayed(reconnectMethod,0);
+                startSeqHandler.postDelayed(reconnectMethod, 0);
                 cancelTimer();
             }
         };
@@ -578,7 +587,7 @@ public class DeviceControlActivity extends Activity {
 
     //cancel timer
     void cancelTimer() {
-        if(cTimer!=null)
+        if (cTimer != null)
             cTimer.cancel();
     }
 
@@ -603,18 +612,18 @@ public class DeviceControlActivity extends Activity {
         mdevicesetter = new DeviceSetter();
         mdevicesetter.setter(mIndexId);
         patient_num = mdevicesetter.getPatientNum();
-        deviceUUIDs = new String[] {mdevicesetter.getLeftNum(), mdevicesetter.getRightNum()};
+        deviceUUIDs = new String[]{mdevicesetter.getLeftNum(), mdevicesetter.getRightNum()};
         bell_max = mdevicesetter.getAlarmThreshold() + 50;
         bell_min = mdevicesetter.getAlarmThreshold() - 50;
         ActivityCompat.requestPermissions(DeviceControlActivity.this, STORAGE_PERMISSION, 1);
 
-        mFileManager.createLogFile(patient_num , "init");
+        mFileManager.createLogFile(patient_num, "init");
 
         sound = new SoundPool(1, AudioManager.STREAM_NOTIFICATION, 0);
         music = sound.load(this, R.raw.sample, 1);
         NE_event = 0;
 
-        vibe = (Vibrator)getSystemService(Context.VIBRATOR_SERVICE);
+        vibe = (Vibrator) getSystemService(Context.VIBRATOR_SERVICE);
 
         mTextView_Rightfoot = (TextView) findViewById(R.id.right_foot);
         mTextView_Leftfoot = (TextView) findViewById(R.id.left_foot);
@@ -636,7 +645,7 @@ public class DeviceControlActivity extends Activity {
         mSaveView = (TextView) findViewById(R.id.start_time_count);
         mNow_state = (TextView) findViewById(R.id.now_state);
         mNow_guide = (TextView) findViewById(R.id.now_guide);
-        getActionBar().setTitle("NETch"+version_num);
+        getActionBar().setTitle("NETch" + version_num);
         getActionBar().setDisplayHomeAsUpEnabled(true);
 
         Intent gattServiceIntent = new Intent(this, BluetoothLeService.class);
@@ -662,7 +671,7 @@ public class DeviceControlActivity extends Activity {
         String left_device = deviceUUIDs[0];
         Switch metawearSwitch_l = (Switch) findViewById(R.id.switchMetawear_l);
         TextView sensorOutput_l = (TextView) findViewById(R.id.txtSensorOutput_l);
-        TextView gyrosensorOutput_l =(TextView) findViewById(R.id.txtGyroSensorOutput_l);
+        TextView gyrosensorOutput_l = (TextView) findViewById(R.id.txtGyroSensorOutput_l);
 
         sensorOutputs.put(left_device, sensorOutput_l);
         gyrosensorOutputs.put(left_device, gyrosensorOutput_l);
@@ -687,7 +696,7 @@ public class DeviceControlActivity extends Activity {
         String right_device = deviceUUIDs[1];
         Switch metawearSwitch_r = (Switch) findViewById(R.id.switchMetawear_r);
         TextView sensorOutput_r = (TextView) findViewById(R.id.txtSensorOutput_r);
-        TextView gyrosensorOutput_r =(TextView) findViewById(R.id.txtGyroSensorOutput_r);
+        TextView gyrosensorOutput_r = (TextView) findViewById(R.id.txtGyroSensorOutput_r);
 
         sensorOutputs.put(right_device, sensorOutput_r);
         gyrosensorOutputs.put(right_device, gyrosensorOutput_r);
@@ -718,13 +727,14 @@ public class DeviceControlActivity extends Activity {
     @Override
     protected void onDestroy() {
         super.onDestroy();
-        mFileManager.saveLogData("ondestroy","start");
+        mFileManager.saveLogData("ondestroy", "start");
         destroyBLE();
-        mFileManager.saveLogData("ondestroy","end");
+        mFileManager.saveLogData("ondestroy", "end");
         upload();
 
     }
-    protected void destroyBLE(){
+
+    protected void destroyBLE() {
         //Unbind BLE intant
         unregisterReceiver(mGattUpdateReceiver);
         unbindService(mServiceConnection);
@@ -735,11 +745,11 @@ public class DeviceControlActivity extends Activity {
             mBluetoothAdapter.disable();
         }
         //Stop Handler
-        try{
+        try {
             mRotationHandler.removeCallbacks(biaONrotationMethod);
             mRotationHandler.removeCallbacks(biaOFFrotationMethod);
             startSeqHandler.removeCallbacks(reconnectMethod);
-        }catch (Exception e){
+        } catch (Exception e) {
 
         }
         mBluetoothLeService = null;
@@ -758,11 +768,10 @@ public class DeviceControlActivity extends Activity {
         } else {
             menu.findItem(R.id.menu_connect).setVisible(true);
             menu.findItem(R.id.menu_disconnect).setVisible(false);
-            if(start_state == 0){
+            if (start_state == 0) {
                 mNow_state.setText("> 기기와 연결을 시도합니다");
                 mNow_guide.setText("\n\n잠시만 기다려주세요");
-            }
-            else {
+            } else {
                 Toast.makeText(getApplicationContext(), "기기와 연결 상태를 확인해주세요", Toast.LENGTH_LONG).show();
                 mNow_state.setText("> 기기와 연결이 되어있지않습니다");
                 mNow_guide.setText("\n\n1. 기기의 전원 상태를 확인해주세요\n2. 우측 상단의 'CONNECT' 버튼을 눌러주세요\n3. 기기와 스마트폰을 가까이 위치해주세요\n4. 해당 문제가 반복되면 기기와 앱을 종료 후 다시 켜주세요");
@@ -779,7 +788,7 @@ public class DeviceControlActivity extends Activity {
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
-        switch(item.getItemId()) {
+        switch (item.getItemId()) {
             case R.id.menu_connect:
                 mBluetoothLeService.connect(mDeviceAddress);
                 Toast.makeText(getApplicationContext(), "기기와 연결을 시도합니다", Toast.LENGTH_LONG).show();
@@ -799,7 +808,7 @@ public class DeviceControlActivity extends Activity {
 
     /**
      * BIA interval을 하기 위한 메서드
-     * */
+     */
     private Runnable biaOFFrotationMethod = new Runnable() {
         public void run() {
             request_bia_off();
@@ -819,45 +828,45 @@ public class DeviceControlActivity extends Activity {
         }
     };
 
-    private Runnable startMethod = new Runnable(){
-        public void run(){
+    private Runnable startMethod = new Runnable() {
+        public void run() {
             SystemClock.sleep(100);
             start_sequence();
             SystemClock.sleep(100);
             startSeqHandler.postDelayed(reconnectMethod, 3000);
-            mFileManager.saveLogData("startMethod","Start method started");
+            mFileManager.saveLogData("startMethod", "Start method started");
 
-            if (mConnected ==false){
+            if (mConnected == false) {
                 Log.d(TAG, "Start Method: try reconnect");
-                mFileManager.saveLogData("startMethod","Disconnect detected");
+                mFileManager.saveLogData("startMethod", "Disconnect detected");
                 SystemClock.sleep(100);
-                mFileManager.saveLogData("startMethod","Try reconnect");
+                mFileManager.saveLogData("startMethod", "Try reconnect");
                 mBluetoothLeService.connect(mDeviceAddress);
                 mBluetoothLeService.connect(mDeviceAddress);
                 SystemClock.sleep(100);
             }
         }
     };
-    private Runnable reconnectMethod = new Runnable(){
-        public void run(){
-            if (LastSeqNum != NowSeqNum){
+    private Runnable reconnectMethod = new Runnable() {
+        public void run() {
+            if (LastSeqNum != NowSeqNum) {
                 LastSeqNum = NowSeqNum;
                 SeqCounter = 0;
-            }else if (LastSeqNum == NowSeqNum){
+            } else if (LastSeqNum == NowSeqNum) {
                 SeqCounter += 1;
-                mFileManager.saveLogData("reconnectMethod","Seq loss detected");
+                mFileManager.saveLogData("reconnectMethod", "Seq loss detected");
                 mFileManager.saveLogData("reconnectMethod",
-                        "SEQ:"+String.valueOf(LastSeqNum)+"->"+String.valueOf(NowSeqNum)+";counter: "+String.valueOf(SeqCounter));
+                        "SEQ:" + String.valueOf(LastSeqNum) + "->" + String.valueOf(NowSeqNum) + ";counter: " + String.valueOf(SeqCounter));
             }
 
-            if (mConnected == false){
+            if (mConnected == false) {
 //                start_sequence();
                 Log.d(TAG, "Reconnect Method: try reconnect");
-                mFileManager.saveLogData("reconnectMethod","Disconnect detected");
-                try{
+                mFileManager.saveLogData("reconnectMethod", "Disconnect detected");
+                try {
                     mRotationHandler.removeCallbacks(biaONrotationMethod);
                     mRotationHandler.removeCallbacks(biaOFFrotationMethod);
-                }catch (Exception e){
+                } catch (Exception e) {
 
                 }
                 SystemClock.sleep(100);
@@ -865,41 +874,40 @@ public class DeviceControlActivity extends Activity {
                 mBluetoothLeService.connect(mDeviceAddress);
                 SystemClock.sleep(100);
                 DisconnectCounter += 1;
-                reconnect_call += DisconnectCounter *1000;
-                startSeqHandler.postDelayed(startMethod,reconnect_call);
-            }
-            else{
-                startSeqHandler.postDelayed(reconnectMethod,3000);
+                reconnect_call += DisconnectCounter * 1000;
+                startSeqHandler.postDelayed(startMethod, reconnect_call);
+            } else {
+                startSeqHandler.postDelayed(reconnectMethod, 3000);
             }
             //upload files before disconnected
-            if (DisconnectCounter > DisconnectThreshold -1 ){//||SeqCounter > SeqLossThreshold - 1
-                mFileManager.saveLogData("reconnectMethod","Uploading data before disconnected");
+            if (DisconnectCounter > DisconnectThreshold - 1) {//||SeqCounter > SeqLossThreshold - 1
+                mFileManager.saveLogData("reconnectMethod", "Uploading data before disconnected");
                 upload();
             }
-            if (SeqCounter == 5){
-                mFileManager.saveLogData("reconnectMethod","Uploading data when NO seq in 72sec");
+            if (SeqCounter == 5) {
+                mFileManager.saveLogData("reconnectMethod", "Uploading data when NO seq in 72sec");
                 upload();
             }
             //back to the Sacn Activity
-            if (DisconnectCounter > DisconnectThreshold){// || SeqCounter > SeqLossThreshold
-                mFileManager.saveLogData("reconnectMethod","BLE lost & scan activity start");
+            if (DisconnectCounter > DisconnectThreshold) {// || SeqCounter > SeqLossThreshold
+                mFileManager.saveLogData("reconnectMethod", "BLE lost & scan activity start");
                 DisconnectCounter = 0; //for initiate the value
 //                final Intent intent = new Intent(DeviceControlActivity.this, DeviceScanActivity.class);
 //                intent.putExtra("pass_reconnect_flag", reconnectFlags+1);
 //                startActivity(intent);
                 System.exit(0);
             }
-            mFileManager.saveLogData("reconnectMethod","Disconnect counter : "+ String.valueOf(DisconnectCounter));
-            mFileManager.saveLogData("reconnectMethod","Sequence counter : "+ String.valueOf(SeqCounter));
-            Log.d(TAG, "Disconnect counter : "+ String.valueOf(DisconnectCounter));
-            Log.d(TAG, "Sequence counter : "+ String.valueOf(SeqCounter));
-            Log.d(TAG, "SEQ:"+String.valueOf(LastSeqNum)+"->"+String.valueOf(NowSeqNum)+";counter: "+String.valueOf(SeqCounter));
+            mFileManager.saveLogData("reconnectMethod", "Disconnect counter : " + String.valueOf(DisconnectCounter));
+            mFileManager.saveLogData("reconnectMethod", "Sequence counter : " + String.valueOf(SeqCounter));
+            Log.d(TAG, "Disconnect counter : " + String.valueOf(DisconnectCounter));
+            Log.d(TAG, "Sequence counter : " + String.valueOf(SeqCounter));
+            Log.d(TAG, "SEQ:" + String.valueOf(LastSeqNum) + "->" + String.valueOf(NowSeqNum) + ";counter: " + String.valueOf(SeqCounter));
         }
     };
 
     /**
      * 패킷 송신관련
-     * */
+     */
     //BIA, MOI, ECG 3채널을 요청
     public void request_3ch() {
         Log.d(TAG, String.format("0b 74 0500"));
@@ -910,7 +918,7 @@ public class DeviceControlActivity extends Activity {
     }
 
     //디바이스가 기존에 갖고있던 설정을 초기화함
-    public void request_Initial(){
+    public void request_Initial() {
         Log.d(TAG, String.format("0b 70 0001"));
         setMargauxLWrite(new byte[]{(byte) 0x55, (byte) 0xaa, (byte) 0xff, (byte) 0xff,
                 (byte) 0x04, (byte) 0x00, (byte) 0x0B, (byte) 0x70, (byte) 0x01, (byte) 0x00,
@@ -932,6 +940,7 @@ public class DeviceControlActivity extends Activity {
                 (byte) 0x04, (byte) 0x00, (byte) 0x0B, (byte) 0x13, (byte) 0x04, (byte) 0x00,
                 (byte) 0x44, (byte) 0x99, (byte) 0xee, (byte) 0xee});
     }
+
     public void request_some() {
         Log.d(TAG, String.format("1B 4001A104 00000001"));
 //        mEcgctrl.setText(String.format("1B 4001A104 000000 01"));
@@ -950,6 +959,7 @@ public class DeviceControlActivity extends Activity {
                 (byte) 0x07, (byte) 0x00, (byte) 0x00, (byte) 0x00,
                 (byte) 0x44, (byte) 0x99, (byte) 0xee, (byte) 0xee});
     }
+
     //input을 받아 해당 수를 ECG gain으로 설정함 (01~07까지 가능)
     public void request_ecg_ctrl(byte input) {
         Log.d(TAG, String.format("1B 4001A104 000000 %02X", input));
@@ -970,6 +980,7 @@ public class DeviceControlActivity extends Activity {
                 (byte) 0x00, (byte) 0x00, (byte) 0x00, (byte) 0x00,
                 (byte) 0x44, (byte) 0x99, (byte) 0xee, (byte) 0xee});
     }
+
     //BIA를 켜도록 요청함
     public void request_bia_on() {
         Log.d(TAG, String.format("1B 4001A348 00000003_bia_on"));
@@ -984,23 +995,21 @@ public class DeviceControlActivity extends Activity {
     /**
      * 지정 패킷을 BLE로 보내서 write하는 함수
      * input은 패킷이어야함
-     *
-     * */
-    private void setMargauxLWrite(byte[] val)
-    {
-        try{
+     */
+    private void setMargauxLWrite(byte[] val) {
+        try {
             if (mNotifyCharacteristic_W != null) {
                 mNotifyCharacteristic_W.setValue(val);
                 mBluetoothLeService.writeCharacteristic(mNotifyCharacteristic_W);
             }
-        }catch(Exception e){
+        } catch (Exception e) {
 
         }
     }
 
     /**
      * GATT intent를 관리하는 함수
-     * */
+     */
     private static IntentFilter makeGattUpdateIntentFilter() {
         final IntentFilter intentFilter = new IntentFilter();
         intentFilter.addAction(BluetoothLeService.ACTION_GATT_CONNECTED);
@@ -1013,7 +1022,7 @@ public class DeviceControlActivity extends Activity {
 
     /**
      * Meta wear multi connection을 위한 함수
-     * */
+     */
     public static Task<Void> reconnect(final MetaWearBoard board) {
         return board.connectAsync()
                 .continueWithTask(task -> {
@@ -1028,14 +1037,15 @@ public class DeviceControlActivity extends Activity {
 
     /**
      * mbient Connect
+     *
      * @param deviceUUID
      */
-    public void connectToMetawear(String deviceUUID){
-        if (deviceUUID != null){
+    public void connectToMetawear(String deviceUUID) {
+        if (deviceUUID != null) {
             BluetoothManager btManager = (BluetoothManager) getSystemService(BLUETOOTH_SERVICE);
             BluetoothDevice btDevice = btManager.getAdapter().getRemoteDevice(deviceUUID);
             MetaWearBoard mwBoard = serviceBinder.getMetaWearBoard(btDevice);
-            mFileManager.saveLogData("connectToMetawear","try connect metawear"+deviceUUIDs[0]+":"+deviceUUIDs[1]);
+            mFileManager.saveLogData("connectToMetawear", "try connect metawear" + deviceUUIDs[0] + ":" + deviceUUIDs[1]);
 
             mwBoard.connectAsync()
                     .continueWithTask(task -> {
@@ -1048,14 +1058,14 @@ public class DeviceControlActivity extends Activity {
                         if (!task.isCancelled()) {
                             startAccelerometer(mwBoard);
                             startGyro(mwBoard);
-                            if (mwBoard.getMacAddress() == deviceUUIDs[0]){
+                            if (mwBoard.getMacAddress() == deviceUUIDs[0]) {
 //                            mTextView_Leftfoot.setTextColor(Color.parseColor("#ff8800"));
-                                ImageView leftimg= (ImageView) findViewById(R.id.left_foot_img);
+                                ImageView leftimg = (ImageView) findViewById(R.id.left_foot_img);
                                 leftimg.setImageResource(R.drawable.left_foot);
 //                            mTextView_Leftfoot.setText(String.format("측정중"));
-                            }else if (mwBoard.getMacAddress() == deviceUUIDs[1]){
+                            } else if (mwBoard.getMacAddress() == deviceUUIDs[1]) {
 //                            mTextView_Rightfoot.setTextColor(Color.parseColor("#008b8b"));
-                                ImageView leftimg= (ImageView) findViewById(R.id.right_foot_img);
+                                ImageView leftimg = (ImageView) findViewById(R.id.right_foot_img);
                                 leftimg.setImageResource(R.drawable.right_foot);
 //                            mTextView_Rightfoot.setText(String.format("측정중"));
                             }
@@ -1067,9 +1077,10 @@ public class DeviceControlActivity extends Activity {
 
     /**
      * Acc Sensor
+     *
      * @param mwBoard
      */
-    private void startAccelerometer(MetaWearBoard mwBoard){
+    private void startAccelerometer(MetaWearBoard mwBoard) {
         Accelerometer accelerometer = accelerometerSensors.get(mwBoard.getMacAddress());
         if (accelerometer == null) {
             accelerometer = mwBoard.getModule(Accelerometer.class);
@@ -1081,15 +1092,15 @@ public class DeviceControlActivity extends Activity {
 
         accelerometer.acceleration().addRouteAsync(source -> source.stream((data, env) -> {
             final Acceleration value = data.value(Acceleration.class);
-            if (NowSeqNum != LastSeqNum){
+            if (NowSeqNum != LastSeqNum) {
 //                Log.d(TAG, "SEQ:"+String.valueOf(LastSeqNum)+"->"+String.valueOf(NowSeqNum)+";counter: "+String.valueOf(SeqCounter));
-                runOnUiThread(() -> sensorOutput.setText(getHz_l_a+"HZ : "+value.x() + ", " + value.y() + ", " + value.z()));
-                if (mwBoard.getMacAddress() == deviceUUIDs[0]){
-                    mFileManager.saveData("0", value.x(), value.y(), value.z(),"accel");
-                }else if (mwBoard.getMacAddress() == deviceUUIDs[1]){
-                    mFileManager.saveData("1", value.x(), value.y(), value.z(),"accel");
+                runOnUiThread(() -> sensorOutput.setText(getHz_l_a + "HZ : " + value.x() + ", " + value.y() + ", " + value.z()));
+                if (mwBoard.getMacAddress() == deviceUUIDs[0]) {
+                    mFileManager.saveData("0", value.x(), value.y(), value.z(), "accel");
+                } else if (mwBoard.getMacAddress() == deviceUUIDs[1]) {
+                    mFileManager.saveData("1", value.x(), value.y(), value.z(), "accel");
                 }
-            }else{
+            } else {
                 runOnUiThread(() -> sensorOutput.setText("NEWear를 기다리는중"));
             }
         })).continueWith(task -> {
@@ -1104,16 +1115,17 @@ public class DeviceControlActivity extends Activity {
         Accelerometer accelerometer = accelerometerSensors.get(deviceUUID);
         accelerometer.stop();
         accelerometer.acceleration().stop();
-        if (streamRoute != null){
+        if (streamRoute != null) {
             streamRoute.remove();
         }
     }
 
     /**
      * Gyro Sensor
+     *
      * @param mwBoard
      */
-    private void startGyro(MetaWearBoard mwBoard){
+    private void startGyro(MetaWearBoard mwBoard) {
         GyroBmi160 gyroBmi160 = gyroSensors.get(mwBoard.getMacAddress());
         if (gyroBmi160 == null) {
 
@@ -1123,16 +1135,16 @@ public class DeviceControlActivity extends Activity {
         TextView gyrosensorOutput = gyrosensorOutputs.get(mwBoard.getMacAddress());
 
         gyroBmi160.angularVelocity().addRouteAsync(source -> source.stream((data, env) -> {
-            if (NowSeqNum != LastSeqNum){
+            if (NowSeqNum != LastSeqNum) {
 //                Log.d(TAG, "SEQ:"+String.valueOf(LastSeqNum)+"->"+String.valueOf(NowSeqNum)+";counter: "+String.valueOf(SeqCounter));
                 final AngularVelocity value = data.value(AngularVelocity.class);
                 runOnUiThread(() -> gyrosensorOutput.setText(value.x() + ", " + value.y() + ", " + value.z()));
-                if (mwBoard.getMacAddress() == deviceUUIDs[0]){
-                    mFileManager.saveData("0", value.x(), value.y(), value.z(),"gyro");
-                }else if (mwBoard.getMacAddress() == deviceUUIDs[1]){
-                    mFileManager.saveData("1", value.x(), value.y(), value.z(),"gyro");
+                if (mwBoard.getMacAddress() == deviceUUIDs[0]) {
+                    mFileManager.saveData("0", value.x(), value.y(), value.z(), "gyro");
+                } else if (mwBoard.getMacAddress() == deviceUUIDs[1]) {
+                    mFileManager.saveData("1", value.x(), value.y(), value.z(), "gyro");
                 }
-            }else{
+            } else {
                 runOnUiThread(() -> gyrosensorOutput.setText("NEWear를 기다리는 중"));
             }
         })).continueWith(task -> {
@@ -1144,23 +1156,23 @@ public class DeviceControlActivity extends Activity {
 
     }
 
-    private void goToUrl (String url) {
+    private void goToUrl(String url) {
         Uri uriUrl = Uri.parse(url);
         Intent WebView = new Intent(Intent.ACTION_VIEW, uriUrl);
         startActivity(WebView);
     }
 
     protected void stopGyro(String deviceUUID) {
-        GyroBmi160 gyroBmi160 =gyroSensors.get(deviceUUID);
+        GyroBmi160 gyroBmi160 = gyroSensors.get(deviceUUID);
         gyroBmi160.stop();
         gyroBmi160.angularVelocity().stop();
-        if (streamRoute != null){
+        if (streamRoute != null) {
             streamRoute.remove();
         }
     }
 
-    private void start_sequence(){
-        mFileManager.saveLogData("start_sequence","start data");
+    private void start_sequence() {
+        mFileManager.saveLogData("start_sequence", "start data");
         SystemClock.sleep(500);
         request_3ch();
         SystemClock.sleep(100);
@@ -1178,15 +1190,15 @@ public class DeviceControlActivity extends Activity {
         gain_ed = Integer.parseInt("07");
         mRotationHandler.postDelayed(biaOFFrotationMethod, 30000);
     }
-    private void upload(){
-        try{
+
+    private void upload() {
+        try {
             mFileManager.uploadFile();
             mFileManager.uploadMoFile();
             mFileManager.uploadLogFile();
-        }
-        catch (Exception e){
+        } catch (Exception e) {
             Log.e(TAG, "Upload Failed");
-            mFileManager.saveLogData("upload","Save failed");
+            mFileManager.saveLogData("upload", "Save failed");
         }
     }
 

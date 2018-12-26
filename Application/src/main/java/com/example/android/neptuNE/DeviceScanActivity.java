@@ -50,7 +50,7 @@ public class DeviceScanActivity extends ListActivity {
     ;
     private LeDeviceListAdapter mLeDeviceListAdapter;
     private BluetoothAdapter mBluetoothAdapter;
-    private static final String[] BLE_DEVICE_NAME_LIST = new String[] {"NE_BELT1"};
+    private static final String[] BLE_DEVICE_NAME_LIST = new String[]{"NE_BELT1"};
 
     public static int mReconnect = 0;
     private boolean mScanning;
@@ -58,7 +58,7 @@ public class DeviceScanActivity extends ListActivity {
 
     private static final int REQUEST_ENABLE_BT = 1;
     // Stops scanning after 30 * 10 min.
-    private static final long SCAN_PERIOD = 1800000*10;
+    private static final long SCAN_PERIOD = 1800000 * 10;
 
     private static String[] ACCESS_PERMISSION = {
             Manifest.permission.ACCESS_COARSE_LOCATION,
@@ -159,10 +159,10 @@ public class DeviceScanActivity extends ListActivity {
 //                startActivityForResult(enableBtIntent, REQUEST_ENABLE_BT);
 //            }
 //        }
-        if (mReconnect == 0 ){
+        if (mReconnect == 0) {
             mBluetoothAdapter.enable();
             SystemClock.sleep(5000);
-        }else if (!mBluetoothAdapter.isEnabled()){
+        } else if (!mBluetoothAdapter.isEnabled()) {
             if (!mBluetoothAdapter.isEnabled()) {
                 Intent enableBtIntent = new Intent(BluetoothAdapter.ACTION_REQUEST_ENABLE);
                 startActivityForResult(enableBtIntent, REQUEST_ENABLE_BT);
@@ -194,6 +194,7 @@ public class DeviceScanActivity extends ListActivity {
         scanLeDevice(false);
         mLeDeviceListAdapter.clear();
     }
+
     @Override
     protected void onDestroy() {
         super.onDestroy();
@@ -311,9 +312,9 @@ public class DeviceScanActivity extends ListActivity {
                     runOnUiThread(new Runnable() {
                         @Override
                         public void run() {
-                            try{
+                            try {
                                 for (int i = 0; i < BLE_DEVICE_NAME_LIST.length; i++) {
-                                    if (device.getName().equals(BLE_DEVICE_NAME_LIST[i])){
+                                    if (device.getName().equals(BLE_DEVICE_NAME_LIST[i])) {
                                         mLeDeviceListAdapter.addDevice(device);
                                         mLeDeviceListAdapter.notifyDataSetChanged();
                                         final Intent intent = new Intent(DeviceScanActivity.this, DeviceControlActivity.class);
@@ -327,7 +328,7 @@ public class DeviceScanActivity extends ListActivity {
                                         startActivity(intent);
                                     }
                                 }
-                            }catch(Exception e){
+                            } catch (Exception e) {
 
                             }
                         }
