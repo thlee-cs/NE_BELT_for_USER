@@ -86,7 +86,7 @@ public class DeviceControlActivity extends Activity {
     int sampleRate = 256;
     private boolean isCommunicated = false;
 
-    String version_num = "  v1.57";
+    String version_num = "  v1.60";
     String patient_num = null;
 
     public static final String EXTRAS_DEVICE_NAME = "NE_BELT";
@@ -645,7 +645,7 @@ public class DeviceControlActivity extends Activity {
         mSaveView = (TextView) findViewById(R.id.start_time_count);
         mNow_state = (TextView) findViewById(R.id.now_state);
         mNow_guide = (TextView) findViewById(R.id.now_guide);
-        getActionBar().setTitle("NETch" + version_num);
+        getActionBar().setTitle("NETcher" + version_num);
         getActionBar().setDisplayHomeAsUpEnabled(true);
 
         Intent gattServiceIntent = new Intent(this, BluetoothLeService.class);
@@ -727,11 +727,25 @@ public class DeviceControlActivity extends Activity {
     @Override
     protected void onDestroy() {
         super.onDestroy();
-        mFileManager.saveLogData("ondestroy", "start");
-        destroyBLE();
         mFileManager.saveLogData("ondestroy", "end");
-        upload();
+        //Unbind BLE intent
+        unregisterReceiver(mGattUpdateReceiver);
+        unbindService(mServiceConnection);
 
+        //Disable bluetooth
+        BluetoothAdapter mBluetoothAdapter = BluetoothAdapter.getDefaultAdapter();
+        if (mBluetoothAdapter.isEnabled()) {
+            mBluetoothAdapter.disable();
+        }
+        //Stop Handler
+        try {
+            mRotationHandler.removeCallbacks(biaONrotationMethod);
+            mRotationHandler.removeCallbacks(biaOFFrotationMethod);
+            startSeqHandler.removeCallbacks(reconnectMethod);
+        } catch (Exception e) {
+
+        }
+        mBluetoothLeService = null;
     }
 
     protected void destroyBLE() {
@@ -780,9 +794,26 @@ public class DeviceControlActivity extends Activity {
         return true;
     }
 
+    private long backPressed;
+    private long backtwicePressed;
+
     @Override
     public void onBackPressed() {
-        Toast.makeText(getApplicationContext(), "뒤로가기 버튼 (비활성화 상태) \n 모바일 좌측 하단의 [=] 메뉴 버튼을 눌러 앱을 종료해주세요", Toast.LENGTH_LONG).show();
+        if (System.currentTimeMillis() - backPressed < 5000) {
+            backtwicePressed = System.currentTimeMillis();
+//            Toast.makeText(getApplicationContext(), "한번 더 누르시면 앱이 종료됩니다.", Toast.LENGTH_SHORT).show();
+            if (System.currentTimeMillis() - backtwicePressed < 5000) {
+                Log.d(TAG, "Upload start");
+                upload();
+//                final Intent intent = new Intent(DeviceControlActivity.this, DeviceScanActivity.class);
+//                intent.putExtra(DeviceScanActivity.OFFMSG, "YES");
+//                startActivity(intent);
+                setResult(RESULT_OK, null);
+                finish();
+            }
+        }
+        Toast.makeText(DeviceControlActivity.this, "5초 이내에 3번 클릭하시면 앱이 종료됩니다.", Toast.LENGTH_SHORT).show();
+        backPressed = System.currentTimeMillis();
         vibe.vibrate(40);
     }
 
@@ -800,7 +831,7 @@ public class DeviceControlActivity extends Activity {
 //                vibe.vibrate(40);
                 return true;
             case android.R.id.home:
-                //             onBackPressed();
+//             onBackPressed();
                 return true;
         }
         return super.onOptionsItemSelected(item);

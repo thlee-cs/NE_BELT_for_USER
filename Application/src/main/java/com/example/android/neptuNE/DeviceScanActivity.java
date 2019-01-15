@@ -30,6 +30,7 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.os.SystemClock;
 import android.support.v13.app.ActivityCompat;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -51,6 +52,8 @@ public class DeviceScanActivity extends ListActivity {
     private LeDeviceListAdapter mLeDeviceListAdapter;
     private BluetoothAdapter mBluetoothAdapter;
     private static final String[] BLE_DEVICE_NAME_LIST = new String[]{"NE_BELT1"};
+    public static final String OFFMSG = "NO";
+
 
     public static int mReconnect = 0;
     private boolean mScanning;
@@ -80,11 +83,11 @@ public class DeviceScanActivity extends ListActivity {
     //
     private static int SPLASH_TIME_OUT = 3000;
 
+    public String offMsg = "NO";
+
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
-        Intent intent = getIntent();
         setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
         getActionBar().setTitle("NETch  ");
         mHandler = new Handler();
@@ -114,7 +117,6 @@ public class DeviceScanActivity extends ListActivity {
             finish();
             return;
         }
-
     }
 
     @Override
@@ -159,6 +161,21 @@ public class DeviceScanActivity extends ListActivity {
 //                startActivityForResult(enableBtIntent, REQUEST_ENABLE_BT);
 //            }
 //        }
+
+        try{
+
+            final Intent intent = getIntent();
+            offMsg = String.valueOf(intent.getStringExtra(OFFMSG));
+            Log.d("OFFMSG",offMsg);
+            if (offMsg.equals("YES")){
+                finish();
+//                return;
+            }
+
+        }catch (Exception e) {
+
+        }
+
         if (mReconnect == 0) {
             mBluetoothAdapter.enable();
             SystemClock.sleep(5000);
@@ -181,11 +198,21 @@ public class DeviceScanActivity extends ListActivity {
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         // User chose not to enable Bluetooth.
-        if (requestCode == REQUEST_ENABLE_BT && resultCode == Activity.RESULT_CANCELED) {
-            finish();
-            return;
-        }
+//        if (requestCode == REQUEST_ENABLE_BT && resultCode == Activity.RESULT_CANCELED) {
+//            finish();
+//            return;
+//        }
         super.onActivityResult(requestCode, resultCode, data);
+//        if(requestCode == 0)
+//        {
+//            finish();
+//        }
+        if (requestCode == 0) {
+            if (resultCode == RESULT_OK) {
+                this.finish();
+
+            }
+        }
     }
 
     @Override
@@ -325,7 +352,10 @@ public class DeviceScanActivity extends ListActivity {
                                             mBluetoothAdapter.stopLeScan(mLeScanCallback);
                                             mScanning = false;
                                         }
-                                        startActivity(intent);
+//                                        startActivity(intent);
+                                        startActivityForResult(intent, 0);
+//                                        startActivityForResult(new Intent(DeviceScanActivity.this, DeviceControlActivity.class), 0);
+//                                        finish();
                                     }
                                 }
                             } catch (Exception e) {
@@ -340,4 +370,15 @@ public class DeviceScanActivity extends ListActivity {
         TextView deviceName;
         TextView deviceAddress;
     }
+
+//    @Override
+//    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+//
+//        if (requestCode == REQUEST_EXIT) {
+//            if (resultCode == RESULT_OK) {
+//                this.finish();
+//
+//            }
+//        }
+//    }
 }

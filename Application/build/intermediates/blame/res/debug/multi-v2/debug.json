@@ -252,16 +252,16 @@
             ]
         },
         {
-            "outputFile": "/Users/yeoplee/StudioProjects/NE_BELT_for_USER/Application/build/intermediates/res/merged/debug/values-eu-rES_values-eu-rES.arsc.flat",
+            "outputFile": "/Users/yeoplee/StudioProjects/NE_BELT_for_USER/Application/build/intermediates/res/merged/debug/values-ldltr-v21_values-ldltr-v21.arsc.flat",
             "map": [
                 {
-                    "source": "/Users/yeoplee/.gradle/caches/transforms-1/files-1.1/appcompat-v7-25.2.0.aar/737fefb59e61ffe3fd5e1b360bbe4356/res/values-eu-rES/values-eu-rES.xml",
+                    "source": "/Users/yeoplee/.gradle/caches/transforms-1/files-1.1/appcompat-v7-25.2.0.aar/737fefb59e61ffe3fd5e1b360bbe4356/res/values-ldltr-v21/values-ldltr-v21.xml",
                     "from": {
-                        "startLines": "2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22",
-                        "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
-                        "startOffsets": "55,164,272,395,493,603,689,795,919,1006,1090,1172,1281,1391,1490,1599,1712,1823,1960,2059,2141",
-                        "endColumns": "108,107,122,97,109,85,105,123,86,83,81,108,109,98,108,112,110,136,98,81,100",
-                        "endOffsets": "159,267,390,488,598,684,790,914,1001,1085,1167,1276,1386,1485,1594,1707,1818,1955,2054,2136,2237"
+                        "startLines": "2",
+                        "startColumns": "4",
+                        "startOffsets": "55",
+                        "endColumns": "112",
+                        "endOffsets": "163"
                     }
                 }
             ]
@@ -282,16 +282,16 @@
             ]
         },
         {
-            "outputFile": "/Users/yeoplee/StudioProjects/NE_BELT_for_USER/Application/build/intermediates/res/merged/debug/values-ldltr-v21_values-ldltr-v21.arsc.flat",
+            "outputFile": "/Users/yeoplee/StudioProjects/NE_BELT_for_USER/Application/build/intermediates/res/merged/debug/values-eu-rES_values-eu-rES.arsc.flat",
             "map": [
                 {
-                    "source": "/Users/yeoplee/.gradle/caches/transforms-1/files-1.1/appcompat-v7-25.2.0.aar/737fefb59e61ffe3fd5e1b360bbe4356/res/values-ldltr-v21/values-ldltr-v21.xml",
+                    "source": "/Users/yeoplee/.gradle/caches/transforms-1/files-1.1/appcompat-v7-25.2.0.aar/737fefb59e61ffe3fd5e1b360bbe4356/res/values-eu-rES/values-eu-rES.xml",
                     "from": {
-                        "startLines": "2",
-                        "startColumns": "4",
-                        "startOffsets": "55",
-                        "endColumns": "112",
-                        "endOffsets": "163"
+                        "startLines": "2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22",
+                        "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
+                        "startOffsets": "55,164,272,395,493,603,689,795,919,1006,1090,1172,1281,1391,1490,1599,1712,1823,1960,2059,2141",
+                        "endColumns": "108,107,122,97,109,85,105,123,86,83,81,108,109,98,108,112,110,136,98,81,100",
+                        "endOffsets": "159,267,390,488,598,684,790,914,1001,1085,1167,1276,1386,1485,1594,1707,1818,1955,2054,2136,2237"
                     }
                 }
             ]
@@ -2923,7 +2923,7 @@
                     }
                 },
                 {
-                    "source": "/Users/yeoplee/.gradle/caches/transforms-1/files-1.1/constraint-layout-1.0.2.aar/37d90e252380c819d52837240bec1dc0/res/values/values.xml",
+                    "source": "/Users/yeoplee/.gradle/caches/transforms-1/files-1.1/constraint-layout-1.0.2.aar/21eabd2e44dd83bf333e069cbfdd6b4f/res/values/values.xml",
                     "from": {
                         "startLines": "2,3,4,7,8,11,14,15,18,21,22,23,24,28,29,30,31,36,37,38,41,44,45,48,51,54,57,58,61,64,65,70,71,75,76,77,78,79,80,81,82,83,84,85,91,92,93",
                         "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
