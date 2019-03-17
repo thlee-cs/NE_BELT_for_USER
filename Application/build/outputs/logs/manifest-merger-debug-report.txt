@@ -3,41 +3,41 @@ manifest
 ADDED from /Users/yeoplee/StudioProjects/NE_BELT_for_USER/Application/src/main/AndroidManifest.xml:18:1-66:12
 INJECTED from /Users/yeoplee/StudioProjects/NE_BELT_for_USER/Application/src/main/AndroidManifest.xml:18:1-66:12
 INJECTED from /Users/yeoplee/StudioProjects/NE_BELT_for_USER/Application/src/main/AndroidManifest.xml:18:1-66:12
-MERGED from [com.android.support:support-v13:25.2.0] /Users/yeoplee/.gradle/caches/transforms-1/files-1.1/support-v13-25.2.0.aar/72205fa91b4f4d9c9f63ed075822c157/AndroidManifest.xml:17:1-27:12
-MERGED from [com.android.support:appcompat-v7:25.2.0] /Users/yeoplee/.gradle/caches/transforms-1/files-1.1/appcompat-v7-25.2.0.aar/737fefb59e61ffe3fd5e1b360bbe4356/AndroidManifest.xml:17:1-27:12
-MERGED from [com.google.firebase:firebase-database:11.6.2] /Users/yeoplee/.gradle/caches/transforms-1/files-1.1/firebase-database-11.6.2.aar/31195fcfe8e45833b2c8e9e7d21349ff/AndroidManifest.xml:2:1-4:12
-MERGED from [com.google.firebase:firebase-storage:11.6.2] /Users/yeoplee/.gradle/caches/transforms-1/files-1.1/firebase-storage-11.6.2.aar/17831555621d1d7ad79ba9d02b8fa770/AndroidManifest.xml:2:1-4:12
-MERGED from [com.google.firebase:firebase-firestore:11.6.2] /Users/yeoplee/.gradle/caches/transforms-1/files-1.1/firebase-firestore-11.6.2.aar/d6ef639b343e5ab0a9c2c73105a02d78/AndroidManifest.xml:2:1-4:12
-MERGED from [com.google.firebase:firebase-core:11.6.2] /Users/yeoplee/.gradle/caches/transforms-1/files-1.1/firebase-core-11.6.2.aar/eb89e6bcb5feae901920c6a27a37515d/AndroidManifest.xml:2:1-6:12
-MERGED from [com.google.firebase:firebase-analytics:11.6.2] /Users/yeoplee/.gradle/caches/transforms-1/files-1.1/firebase-analytics-11.6.2.aar/8cddf04573ec38d3fe0c8c4ab23826b4/AndroidManifest.xml:16:1-35:12
-MERGED from [com.google.firebase:firebase-database-connection:11.6.2] /Users/yeoplee/.gradle/caches/transforms-1/files-1.1/firebase-database-connection-11.6.2.aar/9c709c9b0b06d78ec3cedeb87e9c8c6e/AndroidManifest.xml:2:1-4:12
-MERGED from [com.google.firebase:firebase-analytics-impl:11.6.2] /Users/yeoplee/.gradle/caches/transforms-1/files-1.1/firebase-analytics-impl-11.6.2.aar/f7f33c47c8382322bcfc8ed1d67376a9/AndroidManifest.xml:16:1-29:12
-MERGED from [com.google.firebase:firebase-iid:11.6.2] /Users/yeoplee/.gradle/caches/transforms-1/files-1.1/firebase-iid-11.6.2.aar/4e1f8b218acac13ccb88b12a969cdb59/AndroidManifest.xml:16:1-47:12
-MERGED from [com.google.firebase:firebase-common:11.6.2] /Users/yeoplee/.gradle/caches/transforms-1/files-1.1/firebase-common-11.6.2.aar/3349ee06ca4100a2104f48638ed5b985/AndroidManifest.xml:2:1-8:12
-MERGED from [com.google.android.gms:play-services-tasks:11.6.2] /Users/yeoplee/.gradle/caches/transforms-1/files-1.1/play-services-tasks-11.6.2.aar/5f228fac4694a1a0e9eb2ce651cade68/AndroidManifest.xml:2:1-5:12
-MERGED from [com.google.firebase:firebase-storage-common:11.6.2] /Users/yeoplee/.gradle/caches/transforms-1/files-1.1/firebase-storage-common-11.6.2.aar/3184aa460cdfb5a7ea753d4c5d6db6da/AndroidManifest.xml:2:1-4:12
-MERGED from [com.google.android.gms:play-services-basement:11.6.2] /Users/yeoplee/.gradle/caches/transforms-1/files-1.1/play-services-basement-11.6.2.aar/3faf72560f3c0601a7c8872fcf9558d1/AndroidManifest.xml:16:1-23:12
-MERGED from [com.android.support:support-v4:25.2.0] /Users/yeoplee/.gradle/caches/transforms-1/files-1.1/support-v4-25.2.0.aar/363aee5fd3b66230da2a1626022620c0/AndroidManifest.xml:17:1-27:12
-MERGED from [com.android.support:cardview-v7:25.2.0] /Users/yeoplee/.gradle/caches/transforms-1/files-1.1/cardview-v7-25.2.0.aar/f4add8b07306698c91db1cf7c53fc25f/AndroidManifest.xml:17:1-24:12
-MERGED from [com.mbientlab:metawear:3.6.2] /Users/yeoplee/.gradle/caches/transforms-1/files-1.1/metawear-3.6.2.aar/7b1764802b5739ceb2553d5f04ce44f1/AndroidManifest.xml:25:1-41:12
-MERGED from [com.android.support.constraint:constraint-layout:1.0.2] /Users/yeoplee/.gradle/caches/transforms-1/files-1.1/constraint-layout-1.0.2.aar/21eabd2e44dd83bf333e069cbfdd6b4f/AndroidManifest.xml:2:1-11:12
-MERGED from [com.android.support:support-fragment:25.2.0] /Users/yeoplee/.gradle/caches/transforms-1/files-1.1/support-fragment-25.2.0.aar/0a0c7a1f37f4e2578dbf18135e22d4fe/AndroidManifest.xml:17:1-27:12
-MERGED from [com.android.support:support-media-compat:25.2.0] /Users/yeoplee/.gradle/caches/transforms-1/files-1.1/support-media-compat-25.2.0.aar/b48bbbfb82254567028802acffe61d9e/AndroidManifest.xml:17:1-27:12
-MERGED from [com.android.support:support-core-utils:25.2.0] /Users/yeoplee/.gradle/caches/transforms-1/files-1.1/support-core-utils-25.2.0.aar/d0ac7e79f40453533e22d31873067d45/AndroidManifest.xml:17:1-27:12
-MERGED from [com.android.support:support-core-ui:25.2.0] /Users/yeoplee/.gradle/caches/transforms-1/files-1.1/support-core-ui-25.2.0.aar/fc5aaf93e63c4349de36257c7ec47688/AndroidManifest.xml:17:1-27:12
-MERGED from [com.android.support:animated-vector-drawable:25.2.0] /Users/yeoplee/.gradle/caches/transforms-1/files-1.1/animated-vector-drawable-25.2.0.aar/aeef99a14552410e71dbc0e12b990a54/AndroidManifest.xml:17:1-24:12
-MERGED from [com.android.support:support-vector-drawable:25.2.0] /Users/yeoplee/.gradle/caches/transforms-1/files-1.1/support-vector-drawable-25.2.0.aar/bece5f452dfcce5fec182099b91cfbcc/AndroidManifest.xml:17:1-25:12
-MERGED from [com.android.support:support-compat:25.2.0] /Users/yeoplee/.gradle/caches/transforms-1/files-1.1/support-compat-25.2.0.aar/fbcf0898ea18e0de4465cd7ee6c19373/AndroidManifest.xml:17:1-27:12
-MERGED from [com.google.firebase:firebase-database-license:11.6.2] /Users/yeoplee/.gradle/caches/transforms-1/files-1.1/firebase-database-license-11.6.2.aar/fa70fb5ccb9279700b6517e1f2132bbf/AndroidManifest.xml:2:1-6:12
-MERGED from [com.google.firebase:firebase-storage-license:11.6.2] /Users/yeoplee/.gradle/caches/transforms-1/files-1.1/firebase-storage-license-11.6.2.aar/ecc0403279546b374e32112d6aadddee/AndroidManifest.xml:2:1-6:12
-MERGED from [com.google.firebase:firebase-analytics-license:11.6.2] /Users/yeoplee/.gradle/caches/transforms-1/files-1.1/firebase-analytics-license-11.6.2.aar/9ac4363077bafe49389dbe8ce05c53e4/AndroidManifest.xml:2:1-6:12
-MERGED from [com.google.firebase:firebase-database-connection-license:11.6.2] /Users/yeoplee/.gradle/caches/transforms-1/files-1.1/firebase-database-connection-license-11.6.2.aar/4dec1d81a84de83db6407f95c5d1ad6b/AndroidManifest.xml:2:1-6:12
-MERGED from [com.google.android.gms:play-services-basement-license:11.6.2] /Users/yeoplee/.gradle/caches/transforms-1/files-1.1/play-services-basement-license-11.6.2.aar/d55c7b7abc7758522058dddb6e0b4d2d/AndroidManifest.xml:2:1-6:12
-MERGED from [com.google.firebase:firebase-common-license:11.6.2] /Users/yeoplee/.gradle/caches/transforms-1/files-1.1/firebase-common-license-11.6.2.aar/94f002083f4f50d15e3df1e276476009/AndroidManifest.xml:2:1-6:12
-MERGED from [com.google.android.gms:play-services-tasks-license:11.6.2] /Users/yeoplee/.gradle/caches/transforms-1/files-1.1/play-services-tasks-license-11.6.2.aar/8f845bc0d37022fc61da9558c6646eb9/AndroidManifest.xml:2:1-6:12
-MERGED from [com.google.firebase:firebase-storage-common-license:11.6.2] /Users/yeoplee/.gradle/caches/transforms-1/files-1.1/firebase-storage-common-license-11.6.2.aar/12df8b2abb43f6e7567c8b44b207ce09/AndroidManifest.xml:2:1-6:12
-MERGED from [com.google.firebase:firebase-analytics-impl-license:11.6.2] /Users/yeoplee/.gradle/caches/transforms-1/files-1.1/firebase-analytics-impl-license-11.6.2.aar/678ca6342454cee0651dc79bedcb4058/AndroidManifest.xml:2:1-6:12
-MERGED from [com.google.firebase:firebase-iid-license:11.6.2] /Users/yeoplee/.gradle/caches/transforms-1/files-1.1/firebase-iid-license-11.6.2.aar/9f242a098dc579081f25cdf17002cf3f/AndroidManifest.xml:2:1-6:12
+MERGED from [com.android.support:support-v13:25.2.0] /Users/yeoplee/.gradle/caches/transforms-1/files-1.1/support-v13-25.2.0.aar/d5eac2e327bbc8fed5ad83a8e939c595/AndroidManifest.xml:17:1-27:12
+MERGED from [com.android.support:appcompat-v7:25.2.0] /Users/yeoplee/.gradle/caches/transforms-1/files-1.1/appcompat-v7-25.2.0.aar/c216f857614dd914ba869162a43d9a8c/AndroidManifest.xml:17:1-27:12
+MERGED from [com.google.firebase:firebase-database:11.6.2] /Users/yeoplee/.gradle/caches/transforms-1/files-1.1/firebase-database-11.6.2.aar/9c582d6fdab4c1c94ba7ed41cdc52f5c/AndroidManifest.xml:2:1-4:12
+MERGED from [com.google.firebase:firebase-storage:11.6.2] /Users/yeoplee/.gradle/caches/transforms-1/files-1.1/firebase-storage-11.6.2.aar/dfb8ded7ebbd11eed6395ae076e3b2b7/AndroidManifest.xml:2:1-4:12
+MERGED from [com.google.firebase:firebase-firestore:11.6.2] /Users/yeoplee/.gradle/caches/transforms-1/files-1.1/firebase-firestore-11.6.2.aar/b079982e1cb8938c131ae3e79d340d03/AndroidManifest.xml:2:1-4:12
+MERGED from [com.google.firebase:firebase-core:11.6.2] /Users/yeoplee/.gradle/caches/transforms-1/files-1.1/firebase-core-11.6.2.aar/2d237c4126aaa7ec39184d428681437a/AndroidManifest.xml:2:1-6:12
+MERGED from [com.google.firebase:firebase-analytics:11.6.2] /Users/yeoplee/.gradle/caches/transforms-1/files-1.1/firebase-analytics-11.6.2.aar/26452ba48490330a19ec28d33fbf893a/AndroidManifest.xml:16:1-35:12
+MERGED from [com.google.firebase:firebase-database-connection:11.6.2] /Users/yeoplee/.gradle/caches/transforms-1/files-1.1/firebase-database-connection-11.6.2.aar/0c468b7edfc95c5326d60e1483305f99/AndroidManifest.xml:2:1-4:12
+MERGED from [com.google.firebase:firebase-analytics-impl:11.6.2] /Users/yeoplee/.gradle/caches/transforms-1/files-1.1/firebase-analytics-impl-11.6.2.aar/c62cf5cc39ee327dc45fa815cfa6c0cb/AndroidManifest.xml:16:1-29:12
+MERGED from [com.google.firebase:firebase-iid:11.6.2] /Users/yeoplee/.gradle/caches/transforms-1/files-1.1/firebase-iid-11.6.2.aar/44604e08201fc68c4d466f62ef7589cf/AndroidManifest.xml:16:1-47:12
+MERGED from [com.google.firebase:firebase-common:11.6.2] /Users/yeoplee/.gradle/caches/transforms-1/files-1.1/firebase-common-11.6.2.aar/5e413b436a9892cb896ede6bec170548/AndroidManifest.xml:2:1-8:12
+MERGED from [com.google.android.gms:play-services-tasks:11.6.2] /Users/yeoplee/.gradle/caches/transforms-1/files-1.1/play-services-tasks-11.6.2.aar/bd6a9ee6e94842faaa1ff9e3622d0631/AndroidManifest.xml:2:1-5:12
+MERGED from [com.google.firebase:firebase-storage-common:11.6.2] /Users/yeoplee/.gradle/caches/transforms-1/files-1.1/firebase-storage-common-11.6.2.aar/111a9e9e99e9f82425c6e2aac5e3dfe4/AndroidManifest.xml:2:1-4:12
+MERGED from [com.google.android.gms:play-services-basement:11.6.2] /Users/yeoplee/.gradle/caches/transforms-1/files-1.1/play-services-basement-11.6.2.aar/c7b6ef1f8aa98469a7ccf1a5513232ce/AndroidManifest.xml:16:1-23:12
+MERGED from [com.android.support:support-v4:25.2.0] /Users/yeoplee/.gradle/caches/transforms-1/files-1.1/support-v4-25.2.0.aar/62e835018976d843073285ca45c8dfb8/AndroidManifest.xml:17:1-27:12
+MERGED from [com.android.support:cardview-v7:25.2.0] /Users/yeoplee/.gradle/caches/transforms-1/files-1.1/cardview-v7-25.2.0.aar/aec52c1d0c7ec44818d38eaf846547b1/AndroidManifest.xml:17:1-24:12
+MERGED from [com.mbientlab:metawear:3.6.2] /Users/yeoplee/.gradle/caches/transforms-1/files-1.1/metawear-3.6.2.aar/08d70612d9573be45675b8f524ec56c9/AndroidManifest.xml:25:1-41:12
+MERGED from [com.android.support.constraint:constraint-layout:1.0.2] /Users/yeoplee/.gradle/caches/transforms-1/files-1.1/constraint-layout-1.0.2.aar/4faa0d7138d438e1125f8d47cd4ebd80/AndroidManifest.xml:2:1-11:12
+MERGED from [com.android.support:support-fragment:25.2.0] /Users/yeoplee/.gradle/caches/transforms-1/files-1.1/support-fragment-25.2.0.aar/e60c4196793ffe6ec0519f52f033b949/AndroidManifest.xml:17:1-27:12
+MERGED from [com.android.support:support-media-compat:25.2.0] /Users/yeoplee/.gradle/caches/transforms-1/files-1.1/support-media-compat-25.2.0.aar/9b02dc266ab77dc85bcad2e3c09e5204/AndroidManifest.xml:17:1-27:12
+MERGED from [com.android.support:support-core-utils:25.2.0] /Users/yeoplee/.gradle/caches/transforms-1/files-1.1/support-core-utils-25.2.0.aar/5043b18ed4847a8269322189998ec258/AndroidManifest.xml:17:1-27:12
+MERGED from [com.android.support:support-core-ui:25.2.0] /Users/yeoplee/.gradle/caches/transforms-1/files-1.1/support-core-ui-25.2.0.aar/ecee88b815e1e5019d3cc56187e907df/AndroidManifest.xml:17:1-27:12
+MERGED from [com.android.support:animated-vector-drawable:25.2.0] /Users/yeoplee/.gradle/caches/transforms-1/files-1.1/animated-vector-drawable-25.2.0.aar/de7a59dc5ca56e57976b9f4404e1a95a/AndroidManifest.xml:17:1-24:12
+MERGED from [com.android.support:support-vector-drawable:25.2.0] /Users/yeoplee/.gradle/caches/transforms-1/files-1.1/support-vector-drawable-25.2.0.aar/70b30da7d8ea465ca1012abd9ab2b0fd/AndroidManifest.xml:17:1-25:12
+MERGED from [com.android.support:support-compat:25.2.0] /Users/yeoplee/.gradle/caches/transforms-1/files-1.1/support-compat-25.2.0.aar/c1534fcc559256bf231226de76320f8d/AndroidManifest.xml:17:1-27:12
+MERGED from [com.google.firebase:firebase-database-license:11.6.2] /Users/yeoplee/.gradle/caches/transforms-1/files-1.1/firebase-database-license-11.6.2.aar/99710f2bb9521880738f87bd345c4d7b/AndroidManifest.xml:2:1-6:12
+MERGED from [com.google.firebase:firebase-storage-license:11.6.2] /Users/yeoplee/.gradle/caches/transforms-1/files-1.1/firebase-storage-license-11.6.2.aar/97d566be3a5820d0427a1ba3d5c6bc6b/AndroidManifest.xml:2:1-6:12
+MERGED from [com.google.firebase:firebase-analytics-license:11.6.2] /Users/yeoplee/.gradle/caches/transforms-1/files-1.1/firebase-analytics-license-11.6.2.aar/1919c2bd30903e72cab7832958461454/AndroidManifest.xml:2:1-6:12
+MERGED from [com.google.firebase:firebase-database-connection-license:11.6.2] /Users/yeoplee/.gradle/caches/transforms-1/files-1.1/firebase-database-connection-license-11.6.2.aar/e21c38dece1f0187929dbc45a0171ea9/AndroidManifest.xml:2:1-6:12
+MERGED from [com.google.android.gms:play-services-basement-license:11.6.2] /Users/yeoplee/.gradle/caches/transforms-1/files-1.1/play-services-basement-license-11.6.2.aar/8e89e6832fd02259d85d7d25c1bf861d/AndroidManifest.xml:2:1-6:12
+MERGED from [com.google.firebase:firebase-common-license:11.6.2] /Users/yeoplee/.gradle/caches/transforms-1/files-1.1/firebase-common-license-11.6.2.aar/dc855e6d013216ebe125a4a66fb94759/AndroidManifest.xml:2:1-6:12
+MERGED from [com.google.android.gms:play-services-tasks-license:11.6.2] /Users/yeoplee/.gradle/caches/transforms-1/files-1.1/play-services-tasks-license-11.6.2.aar/5f083ff03bd8650d825b3e457c377052/AndroidManifest.xml:2:1-6:12
+MERGED from [com.google.firebase:firebase-storage-common-license:11.6.2] /Users/yeoplee/.gradle/caches/transforms-1/files-1.1/firebase-storage-common-license-11.6.2.aar/87dfbc05e538220e95ab532de9ebb622/AndroidManifest.xml:2:1-6:12
+MERGED from [com.google.firebase:firebase-analytics-impl-license:11.6.2] /Users/yeoplee/.gradle/caches/transforms-1/files-1.1/firebase-analytics-impl-license-11.6.2.aar/6501f15e84b942bc45a02b01576de7d7/AndroidManifest.xml:2:1-6:12
+MERGED from [com.google.firebase:firebase-iid-license:11.6.2] /Users/yeoplee/.gradle/caches/transforms-1/files-1.1/firebase-iid-license-11.6.2.aar/64cd15295374f12715ff290b2cce41d9/AndroidManifest.xml:2:1-6:12
 INJECTED from /Users/yeoplee/StudioProjects/NE_BELT_for_USER/Application/src/main/AndroidManifest.xml:18:1-66:12
 INJECTED from /Users/yeoplee/StudioProjects/NE_BELT_for_USER/Application/src/main/AndroidManifest.xml:18:1-66:12
 	package
@@ -54,16 +54,16 @@ INJECTED from /Users/yeoplee/StudioProjects/NE_BELT_for_USER/Application/src/mai
 		INJECTED from /Users/yeoplee/StudioProjects/NE_BELT_for_USER/Application/src/main/AndroidManifest.xml
 uses-feature#android.hardware.bluetooth_le
 ADDED from /Users/yeoplee/StudioProjects/NE_BELT_for_USER/Application/src/main/AndroidManifest.xml:29:5-31:35
-MERGED from [com.mbientlab:metawear:3.6.2] /Users/yeoplee/.gradle/caches/transforms-1/files-1.1/metawear-3.6.2.aar/7b1764802b5739ceb2553d5f04ce44f1/AndroidManifest.xml:34:5-36:35
-MERGED from [com.mbientlab:metawear:3.6.2] /Users/yeoplee/.gradle/caches/transforms-1/files-1.1/metawear-3.6.2.aar/7b1764802b5739ceb2553d5f04ce44f1/AndroidManifest.xml:34:5-36:35
+MERGED from [com.mbientlab:metawear:3.6.2] /Users/yeoplee/.gradle/caches/transforms-1/files-1.1/metawear-3.6.2.aar/08d70612d9573be45675b8f524ec56c9/AndroidManifest.xml:34:5-36:35
+MERGED from [com.mbientlab:metawear:3.6.2] /Users/yeoplee/.gradle/caches/transforms-1/files-1.1/metawear-3.6.2.aar/08d70612d9573be45675b8f524ec56c9/AndroidManifest.xml:34:5-36:35
 	android:required
 		ADDED from /Users/yeoplee/StudioProjects/NE_BELT_for_USER/Application/src/main/AndroidManifest.xml:31:9-32
 	android:name
 		ADDED from /Users/yeoplee/StudioProjects/NE_BELT_for_USER/Application/src/main/AndroidManifest.xml:30:9-53
 uses-permission#android.permission.BLUETOOTH
 ADDED from /Users/yeoplee/StudioProjects/NE_BELT_for_USER/Application/src/main/AndroidManifest.xml:33:5-68
-MERGED from [com.mbientlab:metawear:3.6.2] /Users/yeoplee/.gradle/caches/transforms-1/files-1.1/metawear-3.6.2.aar/7b1764802b5739ceb2553d5f04ce44f1/AndroidManifest.xml:38:5-68
-MERGED from [com.mbientlab:metawear:3.6.2] /Users/yeoplee/.gradle/caches/transforms-1/files-1.1/metawear-3.6.2.aar/7b1764802b5739ceb2553d5f04ce44f1/AndroidManifest.xml:38:5-68
+MERGED from [com.mbientlab:metawear:3.6.2] /Users/yeoplee/.gradle/caches/transforms-1/files-1.1/metawear-3.6.2.aar/08d70612d9573be45675b8f524ec56c9/AndroidManifest.xml:38:5-68
+MERGED from [com.mbientlab:metawear:3.6.2] /Users/yeoplee/.gradle/caches/transforms-1/files-1.1/metawear-3.6.2.aar/08d70612d9573be45675b8f524ec56c9/AndroidManifest.xml:38:5-68
 	android:name
 		ADDED from /Users/yeoplee/StudioProjects/NE_BELT_for_USER/Application/src/main/AndroidManifest.xml:33:22-65
 uses-permission#android.permission.BLUETOOTH_ADMIN
@@ -72,12 +72,12 @@ ADDED from /Users/yeoplee/StudioProjects/NE_BELT_for_USER/Application/src/main/A
 		ADDED from /Users/yeoplee/StudioProjects/NE_BELT_for_USER/Application/src/main/AndroidManifest.xml:34:22-71
 uses-permission#android.permission.WAKE_LOCK
 ADDED from /Users/yeoplee/StudioProjects/NE_BELT_for_USER/Application/src/main/AndroidManifest.xml:35:5-68
-MERGED from [com.google.firebase:firebase-analytics:11.6.2] /Users/yeoplee/.gradle/caches/transforms-1/files-1.1/firebase-analytics-11.6.2.aar/8cddf04573ec38d3fe0c8c4ab23826b4/AndroidManifest.xml:22:5-67
-MERGED from [com.google.firebase:firebase-analytics:11.6.2] /Users/yeoplee/.gradle/caches/transforms-1/files-1.1/firebase-analytics-11.6.2.aar/8cddf04573ec38d3fe0c8c4ab23826b4/AndroidManifest.xml:22:5-67
-MERGED from [com.google.firebase:firebase-analytics-impl:11.6.2] /Users/yeoplee/.gradle/caches/transforms-1/files-1.1/firebase-analytics-impl-11.6.2.aar/f7f33c47c8382322bcfc8ed1d67376a9/AndroidManifest.xml:22:5-67
-MERGED from [com.google.firebase:firebase-analytics-impl:11.6.2] /Users/yeoplee/.gradle/caches/transforms-1/files-1.1/firebase-analytics-impl-11.6.2.aar/f7f33c47c8382322bcfc8ed1d67376a9/AndroidManifest.xml:22:5-67
-MERGED from [com.google.firebase:firebase-iid:11.6.2] /Users/yeoplee/.gradle/caches/transforms-1/files-1.1/firebase-iid-11.6.2.aar/4e1f8b218acac13ccb88b12a969cdb59/AndroidManifest.xml:21:5-67
-MERGED from [com.google.firebase:firebase-iid:11.6.2] /Users/yeoplee/.gradle/caches/transforms-1/files-1.1/firebase-iid-11.6.2.aar/4e1f8b218acac13ccb88b12a969cdb59/AndroidManifest.xml:21:5-67
+MERGED from [com.google.firebase:firebase-analytics:11.6.2] /Users/yeoplee/.gradle/caches/transforms-1/files-1.1/firebase-analytics-11.6.2.aar/26452ba48490330a19ec28d33fbf893a/AndroidManifest.xml:22:5-67
+MERGED from [com.google.firebase:firebase-analytics:11.6.2] /Users/yeoplee/.gradle/caches/transforms-1/files-1.1/firebase-analytics-11.6.2.aar/26452ba48490330a19ec28d33fbf893a/AndroidManifest.xml:22:5-67
+MERGED from [com.google.firebase:firebase-analytics-impl:11.6.2] /Users/yeoplee/.gradle/caches/transforms-1/files-1.1/firebase-analytics-impl-11.6.2.aar/c62cf5cc39ee327dc45fa815cfa6c0cb/AndroidManifest.xml:22:5-67
+MERGED from [com.google.firebase:firebase-analytics-impl:11.6.2] /Users/yeoplee/.gradle/caches/transforms-1/files-1.1/firebase-analytics-impl-11.6.2.aar/c62cf5cc39ee327dc45fa815cfa6c0cb/AndroidManifest.xml:22:5-67
+MERGED from [com.google.firebase:firebase-iid:11.6.2] /Users/yeoplee/.gradle/caches/transforms-1/files-1.1/firebase-iid-11.6.2.aar/44604e08201fc68c4d466f62ef7589cf/AndroidManifest.xml:21:5-67
+MERGED from [com.google.firebase:firebase-iid:11.6.2] /Users/yeoplee/.gradle/caches/transforms-1/files-1.1/firebase-iid-11.6.2.aar/44604e08201fc68c4d466f62ef7589cf/AndroidManifest.xml:21:5-67
 	android:name
 		ADDED from /Users/yeoplee/StudioProjects/NE_BELT_for_USER/Application/src/main/AndroidManifest.xml:35:22-65
 uses-permission#android.permission.VIBRATE
@@ -94,24 +94,24 @@ ADDED from /Users/yeoplee/StudioProjects/NE_BELT_for_USER/Application/src/main/A
 		ADDED from /Users/yeoplee/StudioProjects/NE_BELT_for_USER/Application/src/main/AndroidManifest.xml:38:22-77
 uses-permission#android.permission.ACCESS_NETWORK_STATE
 ADDED from /Users/yeoplee/StudioProjects/NE_BELT_for_USER/Application/src/main/AndroidManifest.xml:39:5-79
-MERGED from [com.google.firebase:firebase-analytics:11.6.2] /Users/yeoplee/.gradle/caches/transforms-1/files-1.1/firebase-analytics-11.6.2.aar/8cddf04573ec38d3fe0c8c4ab23826b4/AndroidManifest.xml:21:5-78
-MERGED from [com.google.firebase:firebase-analytics:11.6.2] /Users/yeoplee/.gradle/caches/transforms-1/files-1.1/firebase-analytics-11.6.2.aar/8cddf04573ec38d3fe0c8c4ab23826b4/AndroidManifest.xml:21:5-78
-MERGED from [com.google.firebase:firebase-analytics-impl:11.6.2] /Users/yeoplee/.gradle/caches/transforms-1/files-1.1/firebase-analytics-impl-11.6.2.aar/f7f33c47c8382322bcfc8ed1d67376a9/AndroidManifest.xml:21:5-78
-MERGED from [com.google.firebase:firebase-analytics-impl:11.6.2] /Users/yeoplee/.gradle/caches/transforms-1/files-1.1/firebase-analytics-impl-11.6.2.aar/f7f33c47c8382322bcfc8ed1d67376a9/AndroidManifest.xml:21:5-78
-MERGED from [com.google.firebase:firebase-iid:11.6.2] /Users/yeoplee/.gradle/caches/transforms-1/files-1.1/firebase-iid-11.6.2.aar/4e1f8b218acac13ccb88b12a969cdb59/AndroidManifest.xml:19:5-78
-MERGED from [com.google.firebase:firebase-iid:11.6.2] /Users/yeoplee/.gradle/caches/transforms-1/files-1.1/firebase-iid-11.6.2.aar/4e1f8b218acac13ccb88b12a969cdb59/AndroidManifest.xml:19:5-78
+MERGED from [com.google.firebase:firebase-analytics:11.6.2] /Users/yeoplee/.gradle/caches/transforms-1/files-1.1/firebase-analytics-11.6.2.aar/26452ba48490330a19ec28d33fbf893a/AndroidManifest.xml:21:5-78
+MERGED from [com.google.firebase:firebase-analytics:11.6.2] /Users/yeoplee/.gradle/caches/transforms-1/files-1.1/firebase-analytics-11.6.2.aar/26452ba48490330a19ec28d33fbf893a/AndroidManifest.xml:21:5-78
+MERGED from [com.google.firebase:firebase-analytics-impl:11.6.2] /Users/yeoplee/.gradle/caches/transforms-1/files-1.1/firebase-analytics-impl-11.6.2.aar/c62cf5cc39ee327dc45fa815cfa6c0cb/AndroidManifest.xml:21:5-78
+MERGED from [com.google.firebase:firebase-analytics-impl:11.6.2] /Users/yeoplee/.gradle/caches/transforms-1/files-1.1/firebase-analytics-impl-11.6.2.aar/c62cf5cc39ee327dc45fa815cfa6c0cb/AndroidManifest.xml:21:5-78
+MERGED from [com.google.firebase:firebase-iid:11.6.2] /Users/yeoplee/.gradle/caches/transforms-1/files-1.1/firebase-iid-11.6.2.aar/44604e08201fc68c4d466f62ef7589cf/AndroidManifest.xml:19:5-78
+MERGED from [com.google.firebase:firebase-iid:11.6.2] /Users/yeoplee/.gradle/caches/transforms-1/files-1.1/firebase-iid-11.6.2.aar/44604e08201fc68c4d466f62ef7589cf/AndroidManifest.xml:19:5-78
 	android:name
 		ADDED from /Users/yeoplee/StudioProjects/NE_BELT_for_USER/Application/src/main/AndroidManifest.xml:39:22-76
 uses-permission#android.permission.INTERNET
 ADDED from /Users/yeoplee/StudioProjects/NE_BELT_for_USER/Application/src/main/AndroidManifest.xml:40:5-67
-MERGED from [com.google.firebase:firebase-analytics:11.6.2] /Users/yeoplee/.gradle/caches/transforms-1/files-1.1/firebase-analytics-11.6.2.aar/8cddf04573ec38d3fe0c8c4ab23826b4/AndroidManifest.xml:20:5-66
-MERGED from [com.google.firebase:firebase-analytics:11.6.2] /Users/yeoplee/.gradle/caches/transforms-1/files-1.1/firebase-analytics-11.6.2.aar/8cddf04573ec38d3fe0c8c4ab23826b4/AndroidManifest.xml:20:5-66
-MERGED from [com.google.firebase:firebase-analytics-impl:11.6.2] /Users/yeoplee/.gradle/caches/transforms-1/files-1.1/firebase-analytics-impl-11.6.2.aar/f7f33c47c8382322bcfc8ed1d67376a9/AndroidManifest.xml:20:5-66
-MERGED from [com.google.firebase:firebase-analytics-impl:11.6.2] /Users/yeoplee/.gradle/caches/transforms-1/files-1.1/firebase-analytics-impl-11.6.2.aar/f7f33c47c8382322bcfc8ed1d67376a9/AndroidManifest.xml:20:5-66
-MERGED from [com.google.firebase:firebase-iid:11.6.2] /Users/yeoplee/.gradle/caches/transforms-1/files-1.1/firebase-iid-11.6.2.aar/4e1f8b218acac13ccb88b12a969cdb59/AndroidManifest.xml:20:5-66
-MERGED from [com.google.firebase:firebase-iid:11.6.2] /Users/yeoplee/.gradle/caches/transforms-1/files-1.1/firebase-iid-11.6.2.aar/4e1f8b218acac13ccb88b12a969cdb59/AndroidManifest.xml:20:5-66
-MERGED from [com.mbientlab:metawear:3.6.2] /Users/yeoplee/.gradle/caches/transforms-1/files-1.1/metawear-3.6.2.aar/7b1764802b5739ceb2553d5f04ce44f1/AndroidManifest.xml:39:5-67
-MERGED from [com.mbientlab:metawear:3.6.2] /Users/yeoplee/.gradle/caches/transforms-1/files-1.1/metawear-3.6.2.aar/7b1764802b5739ceb2553d5f04ce44f1/AndroidManifest.xml:39:5-67
+MERGED from [com.google.firebase:firebase-analytics:11.6.2] /Users/yeoplee/.gradle/caches/transforms-1/files-1.1/firebase-analytics-11.6.2.aar/26452ba48490330a19ec28d33fbf893a/AndroidManifest.xml:20:5-66
+MERGED from [com.google.firebase:firebase-analytics:11.6.2] /Users/yeoplee/.gradle/caches/transforms-1/files-1.1/firebase-analytics-11.6.2.aar/26452ba48490330a19ec28d33fbf893a/AndroidManifest.xml:20:5-66
+MERGED from [com.google.firebase:firebase-analytics-impl:11.6.2] /Users/yeoplee/.gradle/caches/transforms-1/files-1.1/firebase-analytics-impl-11.6.2.aar/c62cf5cc39ee327dc45fa815cfa6c0cb/AndroidManifest.xml:20:5-66
+MERGED from [com.google.firebase:firebase-analytics-impl:11.6.2] /Users/yeoplee/.gradle/caches/transforms-1/files-1.1/firebase-analytics-impl-11.6.2.aar/c62cf5cc39ee327dc45fa815cfa6c0cb/AndroidManifest.xml:20:5-66
+MERGED from [com.google.firebase:firebase-iid:11.6.2] /Users/yeoplee/.gradle/caches/transforms-1/files-1.1/firebase-iid-11.6.2.aar/44604e08201fc68c4d466f62ef7589cf/AndroidManifest.xml:20:5-66
+MERGED from [com.google.firebase:firebase-iid:11.6.2] /Users/yeoplee/.gradle/caches/transforms-1/files-1.1/firebase-iid-11.6.2.aar/44604e08201fc68c4d466f62ef7589cf/AndroidManifest.xml:20:5-66
+MERGED from [com.mbientlab:metawear:3.6.2] /Users/yeoplee/.gradle/caches/transforms-1/files-1.1/metawear-3.6.2.aar/08d70612d9573be45675b8f524ec56c9/AndroidManifest.xml:39:5-67
+MERGED from [com.mbientlab:metawear:3.6.2] /Users/yeoplee/.gradle/caches/transforms-1/files-1.1/metawear-3.6.2.aar/08d70612d9573be45675b8f524ec56c9/AndroidManifest.xml:39:5-67
 	android:name
 		ADDED from /Users/yeoplee/StudioProjects/NE_BELT_for_USER/Application/src/main/AndroidManifest.xml:40:22-64
 uses-permission#android.permission.GET_ACCOUNTS
@@ -124,64 +124,64 @@ ADDED from /Users/yeoplee/StudioProjects/NE_BELT_for_USER/Application/src/main/A
 		ADDED from /Users/yeoplee/StudioProjects/NE_BELT_for_USER/Application/src/main/AndroidManifest.xml:42:22-78
 application
 ADDED from /Users/yeoplee/StudioProjects/NE_BELT_for_USER/Application/src/main/AndroidManifest.xml:45:5-64:19
-MERGED from [com.android.support:support-v13:25.2.0] /Users/yeoplee/.gradle/caches/transforms-1/files-1.1/support-v13-25.2.0.aar/72205fa91b4f4d9c9f63ed075822c157/AndroidManifest.xml:25:5-20
-MERGED from [com.android.support:support-v13:25.2.0] /Users/yeoplee/.gradle/caches/transforms-1/files-1.1/support-v13-25.2.0.aar/72205fa91b4f4d9c9f63ed075822c157/AndroidManifest.xml:25:5-20
-MERGED from [com.android.support:appcompat-v7:25.2.0] /Users/yeoplee/.gradle/caches/transforms-1/files-1.1/appcompat-v7-25.2.0.aar/737fefb59e61ffe3fd5e1b360bbe4356/AndroidManifest.xml:25:5-20
-MERGED from [com.android.support:appcompat-v7:25.2.0] /Users/yeoplee/.gradle/caches/transforms-1/files-1.1/appcompat-v7-25.2.0.aar/737fefb59e61ffe3fd5e1b360bbe4356/AndroidManifest.xml:25:5-20
-MERGED from [com.google.firebase:firebase-core:11.6.2] /Users/yeoplee/.gradle/caches/transforms-1/files-1.1/firebase-core-11.6.2.aar/eb89e6bcb5feae901920c6a27a37515d/AndroidManifest.xml:5:5-20
-MERGED from [com.google.firebase:firebase-core:11.6.2] /Users/yeoplee/.gradle/caches/transforms-1/files-1.1/firebase-core-11.6.2.aar/eb89e6bcb5feae901920c6a27a37515d/AndroidManifest.xml:5:5-20
-MERGED from [com.google.firebase:firebase-analytics:11.6.2] /Users/yeoplee/.gradle/caches/transforms-1/files-1.1/firebase-analytics-11.6.2.aar/8cddf04573ec38d3fe0c8c4ab23826b4/AndroidManifest.xml:24:5-34:19
-MERGED from [com.google.firebase:firebase-analytics:11.6.2] /Users/yeoplee/.gradle/caches/transforms-1/files-1.1/firebase-analytics-11.6.2.aar/8cddf04573ec38d3fe0c8c4ab23826b4/AndroidManifest.xml:24:5-34:19
-MERGED from [com.google.firebase:firebase-analytics-impl:11.6.2] /Users/yeoplee/.gradle/caches/transforms-1/files-1.1/firebase-analytics-impl-11.6.2.aar/f7f33c47c8382322bcfc8ed1d67376a9/AndroidManifest.xml:24:5-28:19
-MERGED from [com.google.firebase:firebase-analytics-impl:11.6.2] /Users/yeoplee/.gradle/caches/transforms-1/files-1.1/firebase-analytics-impl-11.6.2.aar/f7f33c47c8382322bcfc8ed1d67376a9/AndroidManifest.xml:24:5-28:19
-MERGED from [com.google.firebase:firebase-iid:11.6.2] /Users/yeoplee/.gradle/caches/transforms-1/files-1.1/firebase-iid-11.6.2.aar/4e1f8b218acac13ccb88b12a969cdb59/AndroidManifest.xml:29:5-46:19
-MERGED from [com.google.firebase:firebase-iid:11.6.2] /Users/yeoplee/.gradle/caches/transforms-1/files-1.1/firebase-iid-11.6.2.aar/4e1f8b218acac13ccb88b12a969cdb59/AndroidManifest.xml:29:5-46:19
-MERGED from [com.google.firebase:firebase-common:11.6.2] /Users/yeoplee/.gradle/caches/transforms-1/files-1.1/firebase-common-11.6.2.aar/3349ee06ca4100a2104f48638ed5b985/AndroidManifest.xml:4:5-7:19
-MERGED from [com.google.firebase:firebase-common:11.6.2] /Users/yeoplee/.gradle/caches/transforms-1/files-1.1/firebase-common-11.6.2.aar/3349ee06ca4100a2104f48638ed5b985/AndroidManifest.xml:4:5-7:19
-MERGED from [com.google.android.gms:play-services-tasks:11.6.2] /Users/yeoplee/.gradle/caches/transforms-1/files-1.1/play-services-tasks-11.6.2.aar/5f228fac4694a1a0e9eb2ce651cade68/AndroidManifest.xml:4:5-19
-MERGED from [com.google.android.gms:play-services-tasks:11.6.2] /Users/yeoplee/.gradle/caches/transforms-1/files-1.1/play-services-tasks-11.6.2.aar/5f228fac4694a1a0e9eb2ce651cade68/AndroidManifest.xml:4:5-19
-MERGED from [com.google.android.gms:play-services-basement:11.6.2] /Users/yeoplee/.gradle/caches/transforms-1/files-1.1/play-services-basement-11.6.2.aar/3faf72560f3c0601a7c8872fcf9558d1/AndroidManifest.xml:19:5-21:19
-MERGED from [com.google.android.gms:play-services-basement:11.6.2] /Users/yeoplee/.gradle/caches/transforms-1/files-1.1/play-services-basement-11.6.2.aar/3faf72560f3c0601a7c8872fcf9558d1/AndroidManifest.xml:19:5-21:19
-MERGED from [com.android.support:support-v4:25.2.0] /Users/yeoplee/.gradle/caches/transforms-1/files-1.1/support-v4-25.2.0.aar/363aee5fd3b66230da2a1626022620c0/AndroidManifest.xml:25:5-20
-MERGED from [com.android.support:support-v4:25.2.0] /Users/yeoplee/.gradle/caches/transforms-1/files-1.1/support-v4-25.2.0.aar/363aee5fd3b66230da2a1626022620c0/AndroidManifest.xml:25:5-20
-MERGED from [com.android.support:cardview-v7:25.2.0] /Users/yeoplee/.gradle/caches/transforms-1/files-1.1/cardview-v7-25.2.0.aar/f4add8b07306698c91db1cf7c53fc25f/AndroidManifest.xml:22:5-20
-MERGED from [com.android.support:cardview-v7:25.2.0] /Users/yeoplee/.gradle/caches/transforms-1/files-1.1/cardview-v7-25.2.0.aar/f4add8b07306698c91db1cf7c53fc25f/AndroidManifest.xml:22:5-20
-MERGED from [com.android.support.constraint:constraint-layout:1.0.2] /Users/yeoplee/.gradle/caches/transforms-1/files-1.1/constraint-layout-1.0.2.aar/21eabd2e44dd83bf333e069cbfdd6b4f/AndroidManifest.xml:9:5-20
-MERGED from [com.android.support.constraint:constraint-layout:1.0.2] /Users/yeoplee/.gradle/caches/transforms-1/files-1.1/constraint-layout-1.0.2.aar/21eabd2e44dd83bf333e069cbfdd6b4f/AndroidManifest.xml:9:5-20
-MERGED from [com.android.support:support-fragment:25.2.0] /Users/yeoplee/.gradle/caches/transforms-1/files-1.1/support-fragment-25.2.0.aar/0a0c7a1f37f4e2578dbf18135e22d4fe/AndroidManifest.xml:25:5-20
-MERGED from [com.android.support:support-fragment:25.2.0] /Users/yeoplee/.gradle/caches/transforms-1/files-1.1/support-fragment-25.2.0.aar/0a0c7a1f37f4e2578dbf18135e22d4fe/AndroidManifest.xml:25:5-20
-MERGED from [com.android.support:support-media-compat:25.2.0] /Users/yeoplee/.gradle/caches/transforms-1/files-1.1/support-media-compat-25.2.0.aar/b48bbbfb82254567028802acffe61d9e/AndroidManifest.xml:25:5-20
-MERGED from [com.android.support:support-media-compat:25.2.0] /Users/yeoplee/.gradle/caches/transforms-1/files-1.1/support-media-compat-25.2.0.aar/b48bbbfb82254567028802acffe61d9e/AndroidManifest.xml:25:5-20
-MERGED from [com.android.support:support-core-utils:25.2.0] /Users/yeoplee/.gradle/caches/transforms-1/files-1.1/support-core-utils-25.2.0.aar/d0ac7e79f40453533e22d31873067d45/AndroidManifest.xml:25:5-20
-MERGED from [com.android.support:support-core-utils:25.2.0] /Users/yeoplee/.gradle/caches/transforms-1/files-1.1/support-core-utils-25.2.0.aar/d0ac7e79f40453533e22d31873067d45/AndroidManifest.xml:25:5-20
-MERGED from [com.android.support:support-core-ui:25.2.0] /Users/yeoplee/.gradle/caches/transforms-1/files-1.1/support-core-ui-25.2.0.aar/fc5aaf93e63c4349de36257c7ec47688/AndroidManifest.xml:25:5-20
-MERGED from [com.android.support:support-core-ui:25.2.0] /Users/yeoplee/.gradle/caches/transforms-1/files-1.1/support-core-ui-25.2.0.aar/fc5aaf93e63c4349de36257c7ec47688/AndroidManifest.xml:25:5-20
-MERGED from [com.android.support:animated-vector-drawable:25.2.0] /Users/yeoplee/.gradle/caches/transforms-1/files-1.1/animated-vector-drawable-25.2.0.aar/aeef99a14552410e71dbc0e12b990a54/AndroidManifest.xml:22:5-20
-MERGED from [com.android.support:animated-vector-drawable:25.2.0] /Users/yeoplee/.gradle/caches/transforms-1/files-1.1/animated-vector-drawable-25.2.0.aar/aeef99a14552410e71dbc0e12b990a54/AndroidManifest.xml:22:5-20
-MERGED from [com.android.support:support-vector-drawable:25.2.0] /Users/yeoplee/.gradle/caches/transforms-1/files-1.1/support-vector-drawable-25.2.0.aar/bece5f452dfcce5fec182099b91cfbcc/AndroidManifest.xml:23:5-20
-MERGED from [com.android.support:support-vector-drawable:25.2.0] /Users/yeoplee/.gradle/caches/transforms-1/files-1.1/support-vector-drawable-25.2.0.aar/bece5f452dfcce5fec182099b91cfbcc/AndroidManifest.xml:23:5-20
-MERGED from [com.android.support:support-compat:25.2.0] /Users/yeoplee/.gradle/caches/transforms-1/files-1.1/support-compat-25.2.0.aar/fbcf0898ea18e0de4465cd7ee6c19373/AndroidManifest.xml:25:5-20
-MERGED from [com.android.support:support-compat:25.2.0] /Users/yeoplee/.gradle/caches/transforms-1/files-1.1/support-compat-25.2.0.aar/fbcf0898ea18e0de4465cd7ee6c19373/AndroidManifest.xml:25:5-20
-MERGED from [com.google.firebase:firebase-database-license:11.6.2] /Users/yeoplee/.gradle/caches/transforms-1/files-1.1/firebase-database-license-11.6.2.aar/fa70fb5ccb9279700b6517e1f2132bbf/AndroidManifest.xml:5:5-20
-MERGED from [com.google.firebase:firebase-database-license:11.6.2] /Users/yeoplee/.gradle/caches/transforms-1/files-1.1/firebase-database-license-11.6.2.aar/fa70fb5ccb9279700b6517e1f2132bbf/AndroidManifest.xml:5:5-20
-MERGED from [com.google.firebase:firebase-storage-license:11.6.2] /Users/yeoplee/.gradle/caches/transforms-1/files-1.1/firebase-storage-license-11.6.2.aar/ecc0403279546b374e32112d6aadddee/AndroidManifest.xml:5:5-20
-MERGED from [com.google.firebase:firebase-storage-license:11.6.2] /Users/yeoplee/.gradle/caches/transforms-1/files-1.1/firebase-storage-license-11.6.2.aar/ecc0403279546b374e32112d6aadddee/AndroidManifest.xml:5:5-20
-MERGED from [com.google.firebase:firebase-analytics-license:11.6.2] /Users/yeoplee/.gradle/caches/transforms-1/files-1.1/firebase-analytics-license-11.6.2.aar/9ac4363077bafe49389dbe8ce05c53e4/AndroidManifest.xml:5:5-20
-MERGED from [com.google.firebase:firebase-analytics-license:11.6.2] /Users/yeoplee/.gradle/caches/transforms-1/files-1.1/firebase-analytics-license-11.6.2.aar/9ac4363077bafe49389dbe8ce05c53e4/AndroidManifest.xml:5:5-20
-MERGED from [com.google.firebase:firebase-database-connection-license:11.6.2] /Users/yeoplee/.gradle/caches/transforms-1/files-1.1/firebase-database-connection-license-11.6.2.aar/4dec1d81a84de83db6407f95c5d1ad6b/AndroidManifest.xml:5:5-20
-MERGED from [com.google.firebase:firebase-database-connection-license:11.6.2] /Users/yeoplee/.gradle/caches/transforms-1/files-1.1/firebase-database-connection-license-11.6.2.aar/4dec1d81a84de83db6407f95c5d1ad6b/AndroidManifest.xml:5:5-20
-MERGED from [com.google.android.gms:play-services-basement-license:11.6.2] /Users/yeoplee/.gradle/caches/transforms-1/files-1.1/play-services-basement-license-11.6.2.aar/d55c7b7abc7758522058dddb6e0b4d2d/AndroidManifest.xml:5:5-20
-MERGED from [com.google.android.gms:play-services-basement-license:11.6.2] /Users/yeoplee/.gradle/caches/transforms-1/files-1.1/play-services-basement-license-11.6.2.aar/d55c7b7abc7758522058dddb6e0b4d2d/AndroidManifest.xml:5:5-20
-MERGED from [com.google.firebase:firebase-common-license:11.6.2] /Users/yeoplee/.gradle/caches/transforms-1/files-1.1/firebase-common-license-11.6.2.aar/94f002083f4f50d15e3df1e276476009/AndroidManifest.xml:5:5-20
-MERGED from [com.google.firebase:firebase-common-license:11.6.2] /Users/yeoplee/.gradle/caches/transforms-1/files-1.1/firebase-common-license-11.6.2.aar/94f002083f4f50d15e3df1e276476009/AndroidManifest.xml:5:5-20
-MERGED from [com.google.android.gms:play-services-tasks-license:11.6.2] /Users/yeoplee/.gradle/caches/transforms-1/files-1.1/play-services-tasks-license-11.6.2.aar/8f845bc0d37022fc61da9558c6646eb9/AndroidManifest.xml:5:5-20
-MERGED from [com.google.android.gms:play-services-tasks-license:11.6.2] /Users/yeoplee/.gradle/caches/transforms-1/files-1.1/play-services-tasks-license-11.6.2.aar/8f845bc0d37022fc61da9558c6646eb9/AndroidManifest.xml:5:5-20
-MERGED from [com.google.firebase:firebase-storage-common-license:11.6.2] /Users/yeoplee/.gradle/caches/transforms-1/files-1.1/firebase-storage-common-license-11.6.2.aar/12df8b2abb43f6e7567c8b44b207ce09/AndroidManifest.xml:5:5-20
-MERGED from [com.google.firebase:firebase-storage-common-license:11.6.2] /Users/yeoplee/.gradle/caches/transforms-1/files-1.1/firebase-storage-common-license-11.6.2.aar/12df8b2abb43f6e7567c8b44b207ce09/AndroidManifest.xml:5:5-20
-MERGED from [com.google.firebase:firebase-analytics-impl-license:11.6.2] /Users/yeoplee/.gradle/caches/transforms-1/files-1.1/firebase-analytics-impl-license-11.6.2.aar/678ca6342454cee0651dc79bedcb4058/AndroidManifest.xml:5:5-20
-MERGED from [com.google.firebase:firebase-analytics-impl-license:11.6.2] /Users/yeoplee/.gradle/caches/transforms-1/files-1.1/firebase-analytics-impl-license-11.6.2.aar/678ca6342454cee0651dc79bedcb4058/AndroidManifest.xml:5:5-20
-MERGED from [com.google.firebase:firebase-iid-license:11.6.2] /Users/yeoplee/.gradle/caches/transforms-1/files-1.1/firebase-iid-license-11.6.2.aar/9f242a098dc579081f25cdf17002cf3f/AndroidManifest.xml:5:5-20
-MERGED from [com.google.firebase:firebase-iid-license:11.6.2] /Users/yeoplee/.gradle/caches/transforms-1/files-1.1/firebase-iid-license-11.6.2.aar/9f242a098dc579081f25cdf17002cf3f/AndroidManifest.xml:5:5-20
+MERGED from [com.android.support:support-v13:25.2.0] /Users/yeoplee/.gradle/caches/transforms-1/files-1.1/support-v13-25.2.0.aar/d5eac2e327bbc8fed5ad83a8e939c595/AndroidManifest.xml:25:5-20
+MERGED from [com.android.support:support-v13:25.2.0] /Users/yeoplee/.gradle/caches/transforms-1/files-1.1/support-v13-25.2.0.aar/d5eac2e327bbc8fed5ad83a8e939c595/AndroidManifest.xml:25:5-20
+MERGED from [com.android.support:appcompat-v7:25.2.0] /Users/yeoplee/.gradle/caches/transforms-1/files-1.1/appcompat-v7-25.2.0.aar/c216f857614dd914ba869162a43d9a8c/AndroidManifest.xml:25:5-20
+MERGED from [com.android.support:appcompat-v7:25.2.0] /Users/yeoplee/.gradle/caches/transforms-1/files-1.1/appcompat-v7-25.2.0.aar/c216f857614dd914ba869162a43d9a8c/AndroidManifest.xml:25:5-20
+MERGED from [com.google.firebase:firebase-core:11.6.2] /Users/yeoplee/.gradle/caches/transforms-1/files-1.1/firebase-core-11.6.2.aar/2d237c4126aaa7ec39184d428681437a/AndroidManifest.xml:5:5-20
+MERGED from [com.google.firebase:firebase-core:11.6.2] /Users/yeoplee/.gradle/caches/transforms-1/files-1.1/firebase-core-11.6.2.aar/2d237c4126aaa7ec39184d428681437a/AndroidManifest.xml:5:5-20
+MERGED from [com.google.firebase:firebase-analytics:11.6.2] /Users/yeoplee/.gradle/caches/transforms-1/files-1.1/firebase-analytics-11.6.2.aar/26452ba48490330a19ec28d33fbf893a/AndroidManifest.xml:24:5-34:19
+MERGED from [com.google.firebase:firebase-analytics:11.6.2] /Users/yeoplee/.gradle/caches/transforms-1/files-1.1/firebase-analytics-11.6.2.aar/26452ba48490330a19ec28d33fbf893a/AndroidManifest.xml:24:5-34:19
+MERGED from [com.google.firebase:firebase-analytics-impl:11.6.2] /Users/yeoplee/.gradle/caches/transforms-1/files-1.1/firebase-analytics-impl-11.6.2.aar/c62cf5cc39ee327dc45fa815cfa6c0cb/AndroidManifest.xml:24:5-28:19
+MERGED from [com.google.firebase:firebase-analytics-impl:11.6.2] /Users/yeoplee/.gradle/caches/transforms-1/files-1.1/firebase-analytics-impl-11.6.2.aar/c62cf5cc39ee327dc45fa815cfa6c0cb/AndroidManifest.xml:24:5-28:19
+MERGED from [com.google.firebase:firebase-iid:11.6.2] /Users/yeoplee/.gradle/caches/transforms-1/files-1.1/firebase-iid-11.6.2.aar/44604e08201fc68c4d466f62ef7589cf/AndroidManifest.xml:29:5-46:19
+MERGED from [com.google.firebase:firebase-iid:11.6.2] /Users/yeoplee/.gradle/caches/transforms-1/files-1.1/firebase-iid-11.6.2.aar/44604e08201fc68c4d466f62ef7589cf/AndroidManifest.xml:29:5-46:19
+MERGED from [com.google.firebase:firebase-common:11.6.2] /Users/yeoplee/.gradle/caches/transforms-1/files-1.1/firebase-common-11.6.2.aar/5e413b436a9892cb896ede6bec170548/AndroidManifest.xml:4:5-7:19
+MERGED from [com.google.firebase:firebase-common:11.6.2] /Users/yeoplee/.gradle/caches/transforms-1/files-1.1/firebase-common-11.6.2.aar/5e413b436a9892cb896ede6bec170548/AndroidManifest.xml:4:5-7:19
+MERGED from [com.google.android.gms:play-services-tasks:11.6.2] /Users/yeoplee/.gradle/caches/transforms-1/files-1.1/play-services-tasks-11.6.2.aar/bd6a9ee6e94842faaa1ff9e3622d0631/AndroidManifest.xml:4:5-19
+MERGED from [com.google.android.gms:play-services-tasks:11.6.2] /Users/yeoplee/.gradle/caches/transforms-1/files-1.1/play-services-tasks-11.6.2.aar/bd6a9ee6e94842faaa1ff9e3622d0631/AndroidManifest.xml:4:5-19
+MERGED from [com.google.android.gms:play-services-basement:11.6.2] /Users/yeoplee/.gradle/caches/transforms-1/files-1.1/play-services-basement-11.6.2.aar/c7b6ef1f8aa98469a7ccf1a5513232ce/AndroidManifest.xml:19:5-21:19
+MERGED from [com.google.android.gms:play-services-basement:11.6.2] /Users/yeoplee/.gradle/caches/transforms-1/files-1.1/play-services-basement-11.6.2.aar/c7b6ef1f8aa98469a7ccf1a5513232ce/AndroidManifest.xml:19:5-21:19
+MERGED from [com.android.support:support-v4:25.2.0] /Users/yeoplee/.gradle/caches/transforms-1/files-1.1/support-v4-25.2.0.aar/62e835018976d843073285ca45c8dfb8/AndroidManifest.xml:25:5-20
+MERGED from [com.android.support:support-v4:25.2.0] /Users/yeoplee/.gradle/caches/transforms-1/files-1.1/support-v4-25.2.0.aar/62e835018976d843073285ca45c8dfb8/AndroidManifest.xml:25:5-20
+MERGED from [com.android.support:cardview-v7:25.2.0] /Users/yeoplee/.gradle/caches/transforms-1/files-1.1/cardview-v7-25.2.0.aar/aec52c1d0c7ec44818d38eaf846547b1/AndroidManifest.xml:22:5-20
+MERGED from [com.android.support:cardview-v7:25.2.0] /Users/yeoplee/.gradle/caches/transforms-1/files-1.1/cardview-v7-25.2.0.aar/aec52c1d0c7ec44818d38eaf846547b1/AndroidManifest.xml:22:5-20
+MERGED from [com.android.support.constraint:constraint-layout:1.0.2] /Users/yeoplee/.gradle/caches/transforms-1/files-1.1/constraint-layout-1.0.2.aar/4faa0d7138d438e1125f8d47cd4ebd80/AndroidManifest.xml:9:5-20
+MERGED from [com.android.support.constraint:constraint-layout:1.0.2] /Users/yeoplee/.gradle/caches/transforms-1/files-1.1/constraint-layout-1.0.2.aar/4faa0d7138d438e1125f8d47cd4ebd80/AndroidManifest.xml:9:5-20
+MERGED from [com.android.support:support-fragment:25.2.0] /Users/yeoplee/.gradle/caches/transforms-1/files-1.1/support-fragment-25.2.0.aar/e60c4196793ffe6ec0519f52f033b949/AndroidManifest.xml:25:5-20
+MERGED from [com.android.support:support-fragment:25.2.0] /Users/yeoplee/.gradle/caches/transforms-1/files-1.1/support-fragment-25.2.0.aar/e60c4196793ffe6ec0519f52f033b949/AndroidManifest.xml:25:5-20
+MERGED from [com.android.support:support-media-compat:25.2.0] /Users/yeoplee/.gradle/caches/transforms-1/files-1.1/support-media-compat-25.2.0.aar/9b02dc266ab77dc85bcad2e3c09e5204/AndroidManifest.xml:25:5-20
+MERGED from [com.android.support:support-media-compat:25.2.0] /Users/yeoplee/.gradle/caches/transforms-1/files-1.1/support-media-compat-25.2.0.aar/9b02dc266ab77dc85bcad2e3c09e5204/AndroidManifest.xml:25:5-20
+MERGED from [com.android.support:support-core-utils:25.2.0] /Users/yeoplee/.gradle/caches/transforms-1/files-1.1/support-core-utils-25.2.0.aar/5043b18ed4847a8269322189998ec258/AndroidManifest.xml:25:5-20
+MERGED from [com.android.support:support-core-utils:25.2.0] /Users/yeoplee/.gradle/caches/transforms-1/files-1.1/support-core-utils-25.2.0.aar/5043b18ed4847a8269322189998ec258/AndroidManifest.xml:25:5-20
+MERGED from [com.android.support:support-core-ui:25.2.0] /Users/yeoplee/.gradle/caches/transforms-1/files-1.1/support-core-ui-25.2.0.aar/ecee88b815e1e5019d3cc56187e907df/AndroidManifest.xml:25:5-20
+MERGED from [com.android.support:support-core-ui:25.2.0] /Users/yeoplee/.gradle/caches/transforms-1/files-1.1/support-core-ui-25.2.0.aar/ecee88b815e1e5019d3cc56187e907df/AndroidManifest.xml:25:5-20
+MERGED from [com.android.support:animated-vector-drawable:25.2.0] /Users/yeoplee/.gradle/caches/transforms-1/files-1.1/animated-vector-drawable-25.2.0.aar/de7a59dc5ca56e57976b9f4404e1a95a/AndroidManifest.xml:22:5-20
+MERGED from [com.android.support:animated-vector-drawable:25.2.0] /Users/yeoplee/.gradle/caches/transforms-1/files-1.1/animated-vector-drawable-25.2.0.aar/de7a59dc5ca56e57976b9f4404e1a95a/AndroidManifest.xml:22:5-20
+MERGED from [com.android.support:support-vector-drawable:25.2.0] /Users/yeoplee/.gradle/caches/transforms-1/files-1.1/support-vector-drawable-25.2.0.aar/70b30da7d8ea465ca1012abd9ab2b0fd/AndroidManifest.xml:23:5-20
+MERGED from [com.android.support:support-vector-drawable:25.2.0] /Users/yeoplee/.gradle/caches/transforms-1/files-1.1/support-vector-drawable-25.2.0.aar/70b30da7d8ea465ca1012abd9ab2b0fd/AndroidManifest.xml:23:5-20
+MERGED from [com.android.support:support-compat:25.2.0] /Users/yeoplee/.gradle/caches/transforms-1/files-1.1/support-compat-25.2.0.aar/c1534fcc559256bf231226de76320f8d/AndroidManifest.xml:25:5-20
+MERGED from [com.android.support:support-compat:25.2.0] /Users/yeoplee/.gradle/caches/transforms-1/files-1.1/support-compat-25.2.0.aar/c1534fcc559256bf231226de76320f8d/AndroidManifest.xml:25:5-20
+MERGED from [com.google.firebase:firebase-database-license:11.6.2] /Users/yeoplee/.gradle/caches/transforms-1/files-1.1/firebase-database-license-11.6.2.aar/99710f2bb9521880738f87bd345c4d7b/AndroidManifest.xml:5:5-20
+MERGED from [com.google.firebase:firebase-database-license:11.6.2] /Users/yeoplee/.gradle/caches/transforms-1/files-1.1/firebase-database-license-11.6.2.aar/99710f2bb9521880738f87bd345c4d7b/AndroidManifest.xml:5:5-20
+MERGED from [com.google.firebase:firebase-storage-license:11.6.2] /Users/yeoplee/.gradle/caches/transforms-1/files-1.1/firebase-storage-license-11.6.2.aar/97d566be3a5820d0427a1ba3d5c6bc6b/AndroidManifest.xml:5:5-20
+MERGED from [com.google.firebase:firebase-storage-license:11.6.2] /Users/yeoplee/.gradle/caches/transforms-1/files-1.1/firebase-storage-license-11.6.2.aar/97d566be3a5820d0427a1ba3d5c6bc6b/AndroidManifest.xml:5:5-20
+MERGED from [com.google.firebase:firebase-analytics-license:11.6.2] /Users/yeoplee/.gradle/caches/transforms-1/files-1.1/firebase-analytics-license-11.6.2.aar/1919c2bd30903e72cab7832958461454/AndroidManifest.xml:5:5-20
+MERGED from [com.google.firebase:firebase-analytics-license:11.6.2] /Users/yeoplee/.gradle/caches/transforms-1/files-1.1/firebase-analytics-license-11.6.2.aar/1919c2bd30903e72cab7832958461454/AndroidManifest.xml:5:5-20
+MERGED from [com.google.firebase:firebase-database-connection-license:11.6.2] /Users/yeoplee/.gradle/caches/transforms-1/files-1.1/firebase-database-connection-license-11.6.2.aar/e21c38dece1f0187929dbc45a0171ea9/AndroidManifest.xml:5:5-20
+MERGED from [com.google.firebase:firebase-database-connection-license:11.6.2] /Users/yeoplee/.gradle/caches/transforms-1/files-1.1/firebase-database-connection-license-11.6.2.aar/e21c38dece1f0187929dbc45a0171ea9/AndroidManifest.xml:5:5-20
+MERGED from [com.google.android.gms:play-services-basement-license:11.6.2] /Users/yeoplee/.gradle/caches/transforms-1/files-1.1/play-services-basement-license-11.6.2.aar/8e89e6832fd02259d85d7d25c1bf861d/AndroidManifest.xml:5:5-20
+MERGED from [com.google.android.gms:play-services-basement-license:11.6.2] /Users/yeoplee/.gradle/caches/transforms-1/files-1.1/play-services-basement-license-11.6.2.aar/8e89e6832fd02259d85d7d25c1bf861d/AndroidManifest.xml:5:5-20
+MERGED from [com.google.firebase:firebase-common-license:11.6.2] /Users/yeoplee/.gradle/caches/transforms-1/files-1.1/firebase-common-license-11.6.2.aar/dc855e6d013216ebe125a4a66fb94759/AndroidManifest.xml:5:5-20
+MERGED from [com.google.firebase:firebase-common-license:11.6.2] /Users/yeoplee/.gradle/caches/transforms-1/files-1.1/firebase-common-license-11.6.2.aar/dc855e6d013216ebe125a4a66fb94759/AndroidManifest.xml:5:5-20
+MERGED from [com.google.android.gms:play-services-tasks-license:11.6.2] /Users/yeoplee/.gradle/caches/transforms-1/files-1.1/play-services-tasks-license-11.6.2.aar/5f083ff03bd8650d825b3e457c377052/AndroidManifest.xml:5:5-20
+MERGED from [com.google.android.gms:play-services-tasks-license:11.6.2] /Users/yeoplee/.gradle/caches/transforms-1/files-1.1/play-services-tasks-license-11.6.2.aar/5f083ff03bd8650d825b3e457c377052/AndroidManifest.xml:5:5-20
+MERGED from [com.google.firebase:firebase-storage-common-license:11.6.2] /Users/yeoplee/.gradle/caches/transforms-1/files-1.1/firebase-storage-common-license-11.6.2.aar/87dfbc05e538220e95ab532de9ebb622/AndroidManifest.xml:5:5-20
+MERGED from [com.google.firebase:firebase-storage-common-license:11.6.2] /Users/yeoplee/.gradle/caches/transforms-1/files-1.1/firebase-storage-common-license-11.6.2.aar/87dfbc05e538220e95ab532de9ebb622/AndroidManifest.xml:5:5-20
+MERGED from [com.google.firebase:firebase-analytics-impl-license:11.6.2] /Users/yeoplee/.gradle/caches/transforms-1/files-1.1/firebase-analytics-impl-license-11.6.2.aar/6501f15e84b942bc45a02b01576de7d7/AndroidManifest.xml:5:5-20
+MERGED from [com.google.firebase:firebase-analytics-impl-license:11.6.2] /Users/yeoplee/.gradle/caches/transforms-1/files-1.1/firebase-analytics-impl-license-11.6.2.aar/6501f15e84b942bc45a02b01576de7d7/AndroidManifest.xml:5:5-20
+MERGED from [com.google.firebase:firebase-iid-license:11.6.2] /Users/yeoplee/.gradle/caches/transforms-1/files-1.1/firebase-iid-license-11.6.2.aar/64cd15295374f12715ff290b2cce41d9/AndroidManifest.xml:5:5-20
+MERGED from [com.google.firebase:firebase-iid-license:11.6.2] /Users/yeoplee/.gradle/caches/transforms-1/files-1.1/firebase-iid-license-11.6.2.aar/64cd15295374f12715ff290b2cce41d9/AndroidManifest.xml:5:5-20
 	android:label
 		ADDED from /Users/yeoplee/StudioProjects/NE_BELT_for_USER/Application/src/main/AndroidManifest.xml:47:9-41
 	android:icon
@@ -224,80 +224,80 @@ uses-sdk
 INJECTED from /Users/yeoplee/StudioProjects/NE_BELT_for_USER/Application/src/main/AndroidManifest.xml reason: use-sdk injection requested
 INJECTED from /Users/yeoplee/StudioProjects/NE_BELT_for_USER/Application/src/main/AndroidManifest.xml
 INJECTED from /Users/yeoplee/StudioProjects/NE_BELT_for_USER/Application/src/main/AndroidManifest.xml
-MERGED from [com.android.support:support-v13:25.2.0] /Users/yeoplee/.gradle/caches/transforms-1/files-1.1/support-v13-25.2.0.aar/72205fa91b4f4d9c9f63ed075822c157/AndroidManifest.xml:21:5-23:55
-MERGED from [com.android.support:support-v13:25.2.0] /Users/yeoplee/.gradle/caches/transforms-1/files-1.1/support-v13-25.2.0.aar/72205fa91b4f4d9c9f63ed075822c157/AndroidManifest.xml:21:5-23:55
-MERGED from [com.android.support:appcompat-v7:25.2.0] /Users/yeoplee/.gradle/caches/transforms-1/files-1.1/appcompat-v7-25.2.0.aar/737fefb59e61ffe3fd5e1b360bbe4356/AndroidManifest.xml:21:5-23:78
-MERGED from [com.android.support:appcompat-v7:25.2.0] /Users/yeoplee/.gradle/caches/transforms-1/files-1.1/appcompat-v7-25.2.0.aar/737fefb59e61ffe3fd5e1b360bbe4356/AndroidManifest.xml:21:5-23:78
-MERGED from [com.google.firebase:firebase-database:11.6.2] /Users/yeoplee/.gradle/caches/transforms-1/files-1.1/firebase-database-11.6.2.aar/31195fcfe8e45833b2c8e9e7d21349ff/AndroidManifest.xml:3:5-43
-MERGED from [com.google.firebase:firebase-database:11.6.2] /Users/yeoplee/.gradle/caches/transforms-1/files-1.1/firebase-database-11.6.2.aar/31195fcfe8e45833b2c8e9e7d21349ff/AndroidManifest.xml:3:5-43
-MERGED from [com.google.firebase:firebase-storage:11.6.2] /Users/yeoplee/.gradle/caches/transforms-1/files-1.1/firebase-storage-11.6.2.aar/17831555621d1d7ad79ba9d02b8fa770/AndroidManifest.xml:3:5-43
-MERGED from [com.google.firebase:firebase-storage:11.6.2] /Users/yeoplee/.gradle/caches/transforms-1/files-1.1/firebase-storage-11.6.2.aar/17831555621d1d7ad79ba9d02b8fa770/AndroidManifest.xml:3:5-43
-MERGED from [com.google.firebase:firebase-firestore:11.6.2] /Users/yeoplee/.gradle/caches/transforms-1/files-1.1/firebase-firestore-11.6.2.aar/d6ef639b343e5ab0a9c2c73105a02d78/AndroidManifest.xml:3:5-43
-MERGED from [com.google.firebase:firebase-firestore:11.6.2] /Users/yeoplee/.gradle/caches/transforms-1/files-1.1/firebase-firestore-11.6.2.aar/d6ef639b343e5ab0a9c2c73105a02d78/AndroidManifest.xml:3:5-43
-MERGED from [com.google.firebase:firebase-core:11.6.2] /Users/yeoplee/.gradle/caches/transforms-1/files-1.1/firebase-core-11.6.2.aar/eb89e6bcb5feae901920c6a27a37515d/AndroidManifest.xml:4:5-43
-MERGED from [com.google.firebase:firebase-core:11.6.2] /Users/yeoplee/.gradle/caches/transforms-1/files-1.1/firebase-core-11.6.2.aar/eb89e6bcb5feae901920c6a27a37515d/AndroidManifest.xml:4:5-43
-MERGED from [com.google.firebase:firebase-analytics:11.6.2] /Users/yeoplee/.gradle/caches/transforms-1/files-1.1/firebase-analytics-11.6.2.aar/8cddf04573ec38d3fe0c8c4ab23826b4/AndroidManifest.xml:17:5-43
-MERGED from [com.google.firebase:firebase-analytics:11.6.2] /Users/yeoplee/.gradle/caches/transforms-1/files-1.1/firebase-analytics-11.6.2.aar/8cddf04573ec38d3fe0c8c4ab23826b4/AndroidManifest.xml:17:5-43
-MERGED from [com.google.firebase:firebase-database-connection:11.6.2] /Users/yeoplee/.gradle/caches/transforms-1/files-1.1/firebase-database-connection-11.6.2.aar/9c709c9b0b06d78ec3cedeb87e9c8c6e/AndroidManifest.xml:3:5-43
-MERGED from [com.google.firebase:firebase-database-connection:11.6.2] /Users/yeoplee/.gradle/caches/transforms-1/files-1.1/firebase-database-connection-11.6.2.aar/9c709c9b0b06d78ec3cedeb87e9c8c6e/AndroidManifest.xml:3:5-43
-MERGED from [com.google.firebase:firebase-analytics-impl:11.6.2] /Users/yeoplee/.gradle/caches/transforms-1/files-1.1/firebase-analytics-impl-11.6.2.aar/f7f33c47c8382322bcfc8ed1d67376a9/AndroidManifest.xml:17:5-43
-MERGED from [com.google.firebase:firebase-analytics-impl:11.6.2] /Users/yeoplee/.gradle/caches/transforms-1/files-1.1/firebase-analytics-impl-11.6.2.aar/f7f33c47c8382322bcfc8ed1d67376a9/AndroidManifest.xml:17:5-43
-MERGED from [com.google.firebase:firebase-iid:11.6.2] /Users/yeoplee/.gradle/caches/transforms-1/files-1.1/firebase-iid-11.6.2.aar/4e1f8b218acac13ccb88b12a969cdb59/AndroidManifest.xml:17:5-43
-MERGED from [com.google.firebase:firebase-iid:11.6.2] /Users/yeoplee/.gradle/caches/transforms-1/files-1.1/firebase-iid-11.6.2.aar/4e1f8b218acac13ccb88b12a969cdb59/AndroidManifest.xml:17:5-43
-MERGED from [com.google.firebase:firebase-common:11.6.2] /Users/yeoplee/.gradle/caches/transforms-1/files-1.1/firebase-common-11.6.2.aar/3349ee06ca4100a2104f48638ed5b985/AndroidManifest.xml:3:5-43
-MERGED from [com.google.firebase:firebase-common:11.6.2] /Users/yeoplee/.gradle/caches/transforms-1/files-1.1/firebase-common-11.6.2.aar/3349ee06ca4100a2104f48638ed5b985/AndroidManifest.xml:3:5-43
-MERGED from [com.google.android.gms:play-services-tasks:11.6.2] /Users/yeoplee/.gradle/caches/transforms-1/files-1.1/play-services-tasks-11.6.2.aar/5f228fac4694a1a0e9eb2ce651cade68/AndroidManifest.xml:3:5-43
-MERGED from [com.google.android.gms:play-services-tasks:11.6.2] /Users/yeoplee/.gradle/caches/transforms-1/files-1.1/play-services-tasks-11.6.2.aar/5f228fac4694a1a0e9eb2ce651cade68/AndroidManifest.xml:3:5-43
-MERGED from [com.google.firebase:firebase-storage-common:11.6.2] /Users/yeoplee/.gradle/caches/transforms-1/files-1.1/firebase-storage-common-11.6.2.aar/3184aa460cdfb5a7ea753d4c5d6db6da/AndroidManifest.xml:3:5-43
-MERGED from [com.google.firebase:firebase-storage-common:11.6.2] /Users/yeoplee/.gradle/caches/transforms-1/files-1.1/firebase-storage-common-11.6.2.aar/3184aa460cdfb5a7ea753d4c5d6db6da/AndroidManifest.xml:3:5-43
-MERGED from [com.google.android.gms:play-services-basement:11.6.2] /Users/yeoplee/.gradle/caches/transforms-1/files-1.1/play-services-basement-11.6.2.aar/3faf72560f3c0601a7c8872fcf9558d1/AndroidManifest.xml:17:5-43
-MERGED from [com.google.android.gms:play-services-basement:11.6.2] /Users/yeoplee/.gradle/caches/transforms-1/files-1.1/play-services-basement-11.6.2.aar/3faf72560f3c0601a7c8872fcf9558d1/AndroidManifest.xml:17:5-43
-MERGED from [com.android.support:support-v4:25.2.0] /Users/yeoplee/.gradle/caches/transforms-1/files-1.1/support-v4-25.2.0.aar/363aee5fd3b66230da2a1626022620c0/AndroidManifest.xml:21:5-23:54
-MERGED from [com.android.support:support-v4:25.2.0] /Users/yeoplee/.gradle/caches/transforms-1/files-1.1/support-v4-25.2.0.aar/363aee5fd3b66230da2a1626022620c0/AndroidManifest.xml:21:5-23:54
-MERGED from [com.android.support:cardview-v7:25.2.0] /Users/yeoplee/.gradle/caches/transforms-1/files-1.1/cardview-v7-25.2.0.aar/f4add8b07306698c91db1cf7c53fc25f/AndroidManifest.xml:20:5-43
-MERGED from [com.android.support:cardview-v7:25.2.0] /Users/yeoplee/.gradle/caches/transforms-1/files-1.1/cardview-v7-25.2.0.aar/f4add8b07306698c91db1cf7c53fc25f/AndroidManifest.xml:20:5-43
-MERGED from [com.mbientlab:metawear:3.6.2] /Users/yeoplee/.gradle/caches/transforms-1/files-1.1/metawear-3.6.2.aar/7b1764802b5739ceb2553d5f04ce44f1/AndroidManifest.xml:30:5-32:41
-MERGED from [com.mbientlab:metawear:3.6.2] /Users/yeoplee/.gradle/caches/transforms-1/files-1.1/metawear-3.6.2.aar/7b1764802b5739ceb2553d5f04ce44f1/AndroidManifest.xml:30:5-32:41
-MERGED from [com.android.support.constraint:constraint-layout:1.0.2] /Users/yeoplee/.gradle/caches/transforms-1/files-1.1/constraint-layout-1.0.2.aar/21eabd2e44dd83bf333e069cbfdd6b4f/AndroidManifest.xml:5:5-7:41
-MERGED from [com.android.support.constraint:constraint-layout:1.0.2] /Users/yeoplee/.gradle/caches/transforms-1/files-1.1/constraint-layout-1.0.2.aar/21eabd2e44dd83bf333e069cbfdd6b4f/AndroidManifest.xml:5:5-7:41
-MERGED from [com.android.support:support-fragment:25.2.0] /Users/yeoplee/.gradle/caches/transforms-1/files-1.1/support-fragment-25.2.0.aar/0a0c7a1f37f4e2578dbf18135e22d4fe/AndroidManifest.xml:21:5-23:60
-MERGED from [com.android.support:support-fragment:25.2.0] /Users/yeoplee/.gradle/caches/transforms-1/files-1.1/support-fragment-25.2.0.aar/0a0c7a1f37f4e2578dbf18135e22d4fe/AndroidManifest.xml:21:5-23:60
-MERGED from [com.android.support:support-media-compat:25.2.0] /Users/yeoplee/.gradle/caches/transforms-1/files-1.1/support-media-compat-25.2.0.aar/b48bbbfb82254567028802acffe61d9e/AndroidManifest.xml:21:5-23:63
-MERGED from [com.android.support:support-media-compat:25.2.0] /Users/yeoplee/.gradle/caches/transforms-1/files-1.1/support-media-compat-25.2.0.aar/b48bbbfb82254567028802acffe61d9e/AndroidManifest.xml:21:5-23:63
-MERGED from [com.android.support:support-core-utils:25.2.0] /Users/yeoplee/.gradle/caches/transforms-1/files-1.1/support-core-utils-25.2.0.aar/d0ac7e79f40453533e22d31873067d45/AndroidManifest.xml:21:5-23:61
-MERGED from [com.android.support:support-core-utils:25.2.0] /Users/yeoplee/.gradle/caches/transforms-1/files-1.1/support-core-utils-25.2.0.aar/d0ac7e79f40453533e22d31873067d45/AndroidManifest.xml:21:5-23:61
-MERGED from [com.android.support:support-core-ui:25.2.0] /Users/yeoplee/.gradle/caches/transforms-1/files-1.1/support-core-ui-25.2.0.aar/fc5aaf93e63c4349de36257c7ec47688/AndroidManifest.xml:21:5-23:58
-MERGED from [com.android.support:support-core-ui:25.2.0] /Users/yeoplee/.gradle/caches/transforms-1/files-1.1/support-core-ui-25.2.0.aar/fc5aaf93e63c4349de36257c7ec47688/AndroidManifest.xml:21:5-23:58
-MERGED from [com.android.support:animated-vector-drawable:25.2.0] /Users/yeoplee/.gradle/caches/transforms-1/files-1.1/animated-vector-drawable-25.2.0.aar/aeef99a14552410e71dbc0e12b990a54/AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:animated-vector-drawable:25.2.0] /Users/yeoplee/.gradle/caches/transforms-1/files-1.1/animated-vector-drawable-25.2.0.aar/aeef99a14552410e71dbc0e12b990a54/AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:support-vector-drawable:25.2.0] /Users/yeoplee/.gradle/caches/transforms-1/files-1.1/support-vector-drawable-25.2.0.aar/bece5f452dfcce5fec182099b91cfbcc/AndroidManifest.xml:21:5-43
-MERGED from [com.android.support:support-vector-drawable:25.2.0] /Users/yeoplee/.gradle/caches/transforms-1/files-1.1/support-vector-drawable-25.2.0.aar/bece5f452dfcce5fec182099b91cfbcc/AndroidManifest.xml:21:5-43
-MERGED from [com.android.support:support-compat:25.2.0] /Users/yeoplee/.gradle/caches/transforms-1/files-1.1/support-compat-25.2.0.aar/fbcf0898ea18e0de4465cd7ee6c19373/AndroidManifest.xml:21:5-23:58
-MERGED from [com.android.support:support-compat:25.2.0] /Users/yeoplee/.gradle/caches/transforms-1/files-1.1/support-compat-25.2.0.aar/fbcf0898ea18e0de4465cd7ee6c19373/AndroidManifest.xml:21:5-23:58
-MERGED from [com.google.firebase:firebase-database-license:11.6.2] /Users/yeoplee/.gradle/caches/transforms-1/files-1.1/firebase-database-license-11.6.2.aar/fa70fb5ccb9279700b6517e1f2132bbf/AndroidManifest.xml:4:5-43
-MERGED from [com.google.firebase:firebase-database-license:11.6.2] /Users/yeoplee/.gradle/caches/transforms-1/files-1.1/firebase-database-license-11.6.2.aar/fa70fb5ccb9279700b6517e1f2132bbf/AndroidManifest.xml:4:5-43
-MERGED from [com.google.firebase:firebase-storage-license:11.6.2] /Users/yeoplee/.gradle/caches/transforms-1/files-1.1/firebase-storage-license-11.6.2.aar/ecc0403279546b374e32112d6aadddee/AndroidManifest.xml:4:5-43
-MERGED from [com.google.firebase:firebase-storage-license:11.6.2] /Users/yeoplee/.gradle/caches/transforms-1/files-1.1/firebase-storage-license-11.6.2.aar/ecc0403279546b374e32112d6aadddee/AndroidManifest.xml:4:5-43
-MERGED from [com.google.firebase:firebase-analytics-license:11.6.2] /Users/yeoplee/.gradle/caches/transforms-1/files-1.1/firebase-analytics-license-11.6.2.aar/9ac4363077bafe49389dbe8ce05c53e4/AndroidManifest.xml:4:5-43
-MERGED from [com.google.firebase:firebase-analytics-license:11.6.2] /Users/yeoplee/.gradle/caches/transforms-1/files-1.1/firebase-analytics-license-11.6.2.aar/9ac4363077bafe49389dbe8ce05c53e4/AndroidManifest.xml:4:5-43
-MERGED from [com.google.firebase:firebase-database-connection-license:11.6.2] /Users/yeoplee/.gradle/caches/transforms-1/files-1.1/firebase-database-connection-license-11.6.2.aar/4dec1d81a84de83db6407f95c5d1ad6b/AndroidManifest.xml:4:5-43
-MERGED from [com.google.firebase:firebase-database-connection-license:11.6.2] /Users/yeoplee/.gradle/caches/transforms-1/files-1.1/firebase-database-connection-license-11.6.2.aar/4dec1d81a84de83db6407f95c5d1ad6b/AndroidManifest.xml:4:5-43
-MERGED from [com.google.android.gms:play-services-basement-license:11.6.2] /Users/yeoplee/.gradle/caches/transforms-1/files-1.1/play-services-basement-license-11.6.2.aar/d55c7b7abc7758522058dddb6e0b4d2d/AndroidManifest.xml:4:5-43
-MERGED from [com.google.android.gms:play-services-basement-license:11.6.2] /Users/yeoplee/.gradle/caches/transforms-1/files-1.1/play-services-basement-license-11.6.2.aar/d55c7b7abc7758522058dddb6e0b4d2d/AndroidManifest.xml:4:5-43
-MERGED from [com.google.firebase:firebase-common-license:11.6.2] /Users/yeoplee/.gradle/caches/transforms-1/files-1.1/firebase-common-license-11.6.2.aar/94f002083f4f50d15e3df1e276476009/AndroidManifest.xml:4:5-43
-MERGED from [com.google.firebase:firebase-common-license:11.6.2] /Users/yeoplee/.gradle/caches/transforms-1/files-1.1/firebase-common-license-11.6.2.aar/94f002083f4f50d15e3df1e276476009/AndroidManifest.xml:4:5-43
-MERGED from [com.google.android.gms:play-services-tasks-license:11.6.2] /Users/yeoplee/.gradle/caches/transforms-1/files-1.1/play-services-tasks-license-11.6.2.aar/8f845bc0d37022fc61da9558c6646eb9/AndroidManifest.xml:4:5-43
-MERGED from [com.google.android.gms:play-services-tasks-license:11.6.2] /Users/yeoplee/.gradle/caches/transforms-1/files-1.1/play-services-tasks-license-11.6.2.aar/8f845bc0d37022fc61da9558c6646eb9/AndroidManifest.xml:4:5-43
-MERGED from [com.google.firebase:firebase-storage-common-license:11.6.2] /Users/yeoplee/.gradle/caches/transforms-1/files-1.1/firebase-storage-common-license-11.6.2.aar/12df8b2abb43f6e7567c8b44b207ce09/AndroidManifest.xml:4:5-43
-MERGED from [com.google.firebase:firebase-storage-common-license:11.6.2] /Users/yeoplee/.gradle/caches/transforms-1/files-1.1/firebase-storage-common-license-11.6.2.aar/12df8b2abb43f6e7567c8b44b207ce09/AndroidManifest.xml:4:5-43
-MERGED from [com.google.firebase:firebase-analytics-impl-license:11.6.2] /Users/yeoplee/.gradle/caches/transforms-1/files-1.1/firebase-analytics-impl-license-11.6.2.aar/678ca6342454cee0651dc79bedcb4058/AndroidManifest.xml:4:5-43
-MERGED from [com.google.firebase:firebase-analytics-impl-license:11.6.2] /Users/yeoplee/.gradle/caches/transforms-1/files-1.1/firebase-analytics-impl-license-11.6.2.aar/678ca6342454cee0651dc79bedcb4058/AndroidManifest.xml:4:5-43
-MERGED from [com.google.firebase:firebase-iid-license:11.6.2] /Users/yeoplee/.gradle/caches/transforms-1/files-1.1/firebase-iid-license-11.6.2.aar/9f242a098dc579081f25cdf17002cf3f/AndroidManifest.xml:4:5-43
-MERGED from [com.google.firebase:firebase-iid-license:11.6.2] /Users/yeoplee/.gradle/caches/transforms-1/files-1.1/firebase-iid-license-11.6.2.aar/9f242a098dc579081f25cdf17002cf3f/AndroidManifest.xml:4:5-43
+MERGED from [com.android.support:support-v13:25.2.0] /Users/yeoplee/.gradle/caches/transforms-1/files-1.1/support-v13-25.2.0.aar/d5eac2e327bbc8fed5ad83a8e939c595/AndroidManifest.xml:21:5-23:55
+MERGED from [com.android.support:support-v13:25.2.0] /Users/yeoplee/.gradle/caches/transforms-1/files-1.1/support-v13-25.2.0.aar/d5eac2e327bbc8fed5ad83a8e939c595/AndroidManifest.xml:21:5-23:55
+MERGED from [com.android.support:appcompat-v7:25.2.0] /Users/yeoplee/.gradle/caches/transforms-1/files-1.1/appcompat-v7-25.2.0.aar/c216f857614dd914ba869162a43d9a8c/AndroidManifest.xml:21:5-23:78
+MERGED from [com.android.support:appcompat-v7:25.2.0] /Users/yeoplee/.gradle/caches/transforms-1/files-1.1/appcompat-v7-25.2.0.aar/c216f857614dd914ba869162a43d9a8c/AndroidManifest.xml:21:5-23:78
+MERGED from [com.google.firebase:firebase-database:11.6.2] /Users/yeoplee/.gradle/caches/transforms-1/files-1.1/firebase-database-11.6.2.aar/9c582d6fdab4c1c94ba7ed41cdc52f5c/AndroidManifest.xml:3:5-43
+MERGED from [com.google.firebase:firebase-database:11.6.2] /Users/yeoplee/.gradle/caches/transforms-1/files-1.1/firebase-database-11.6.2.aar/9c582d6fdab4c1c94ba7ed41cdc52f5c/AndroidManifest.xml:3:5-43
+MERGED from [com.google.firebase:firebase-storage:11.6.2] /Users/yeoplee/.gradle/caches/transforms-1/files-1.1/firebase-storage-11.6.2.aar/dfb8ded7ebbd11eed6395ae076e3b2b7/AndroidManifest.xml:3:5-43
+MERGED from [com.google.firebase:firebase-storage:11.6.2] /Users/yeoplee/.gradle/caches/transforms-1/files-1.1/firebase-storage-11.6.2.aar/dfb8ded7ebbd11eed6395ae076e3b2b7/AndroidManifest.xml:3:5-43
+MERGED from [com.google.firebase:firebase-firestore:11.6.2] /Users/yeoplee/.gradle/caches/transforms-1/files-1.1/firebase-firestore-11.6.2.aar/b079982e1cb8938c131ae3e79d340d03/AndroidManifest.xml:3:5-43
+MERGED from [com.google.firebase:firebase-firestore:11.6.2] /Users/yeoplee/.gradle/caches/transforms-1/files-1.1/firebase-firestore-11.6.2.aar/b079982e1cb8938c131ae3e79d340d03/AndroidManifest.xml:3:5-43
+MERGED from [com.google.firebase:firebase-core:11.6.2] /Users/yeoplee/.gradle/caches/transforms-1/files-1.1/firebase-core-11.6.2.aar/2d237c4126aaa7ec39184d428681437a/AndroidManifest.xml:4:5-43
+MERGED from [com.google.firebase:firebase-core:11.6.2] /Users/yeoplee/.gradle/caches/transforms-1/files-1.1/firebase-core-11.6.2.aar/2d237c4126aaa7ec39184d428681437a/AndroidManifest.xml:4:5-43
+MERGED from [com.google.firebase:firebase-analytics:11.6.2] /Users/yeoplee/.gradle/caches/transforms-1/files-1.1/firebase-analytics-11.6.2.aar/26452ba48490330a19ec28d33fbf893a/AndroidManifest.xml:17:5-43
+MERGED from [com.google.firebase:firebase-analytics:11.6.2] /Users/yeoplee/.gradle/caches/transforms-1/files-1.1/firebase-analytics-11.6.2.aar/26452ba48490330a19ec28d33fbf893a/AndroidManifest.xml:17:5-43
+MERGED from [com.google.firebase:firebase-database-connection:11.6.2] /Users/yeoplee/.gradle/caches/transforms-1/files-1.1/firebase-database-connection-11.6.2.aar/0c468b7edfc95c5326d60e1483305f99/AndroidManifest.xml:3:5-43
+MERGED from [com.google.firebase:firebase-database-connection:11.6.2] /Users/yeoplee/.gradle/caches/transforms-1/files-1.1/firebase-database-connection-11.6.2.aar/0c468b7edfc95c5326d60e1483305f99/AndroidManifest.xml:3:5-43
+MERGED from [com.google.firebase:firebase-analytics-impl:11.6.2] /Users/yeoplee/.gradle/caches/transforms-1/files-1.1/firebase-analytics-impl-11.6.2.aar/c62cf5cc39ee327dc45fa815cfa6c0cb/AndroidManifest.xml:17:5-43
+MERGED from [com.google.firebase:firebase-analytics-impl:11.6.2] /Users/yeoplee/.gradle/caches/transforms-1/files-1.1/firebase-analytics-impl-11.6.2.aar/c62cf5cc39ee327dc45fa815cfa6c0cb/AndroidManifest.xml:17:5-43
+MERGED from [com.google.firebase:firebase-iid:11.6.2] /Users/yeoplee/.gradle/caches/transforms-1/files-1.1/firebase-iid-11.6.2.aar/44604e08201fc68c4d466f62ef7589cf/AndroidManifest.xml:17:5-43
+MERGED from [com.google.firebase:firebase-iid:11.6.2] /Users/yeoplee/.gradle/caches/transforms-1/files-1.1/firebase-iid-11.6.2.aar/44604e08201fc68c4d466f62ef7589cf/AndroidManifest.xml:17:5-43
+MERGED from [com.google.firebase:firebase-common:11.6.2] /Users/yeoplee/.gradle/caches/transforms-1/files-1.1/firebase-common-11.6.2.aar/5e413b436a9892cb896ede6bec170548/AndroidManifest.xml:3:5-43
+MERGED from [com.google.firebase:firebase-common:11.6.2] /Users/yeoplee/.gradle/caches/transforms-1/files-1.1/firebase-common-11.6.2.aar/5e413b436a9892cb896ede6bec170548/AndroidManifest.xml:3:5-43
+MERGED from [com.google.android.gms:play-services-tasks:11.6.2] /Users/yeoplee/.gradle/caches/transforms-1/files-1.1/play-services-tasks-11.6.2.aar/bd6a9ee6e94842faaa1ff9e3622d0631/AndroidManifest.xml:3:5-43
+MERGED from [com.google.android.gms:play-services-tasks:11.6.2] /Users/yeoplee/.gradle/caches/transforms-1/files-1.1/play-services-tasks-11.6.2.aar/bd6a9ee6e94842faaa1ff9e3622d0631/AndroidManifest.xml:3:5-43
+MERGED from [com.google.firebase:firebase-storage-common:11.6.2] /Users/yeoplee/.gradle/caches/transforms-1/files-1.1/firebase-storage-common-11.6.2.aar/111a9e9e99e9f82425c6e2aac5e3dfe4/AndroidManifest.xml:3:5-43
+MERGED from [com.google.firebase:firebase-storage-common:11.6.2] /Users/yeoplee/.gradle/caches/transforms-1/files-1.1/firebase-storage-common-11.6.2.aar/111a9e9e99e9f82425c6e2aac5e3dfe4/AndroidManifest.xml:3:5-43
+MERGED from [com.google.android.gms:play-services-basement:11.6.2] /Users/yeoplee/.gradle/caches/transforms-1/files-1.1/play-services-basement-11.6.2.aar/c7b6ef1f8aa98469a7ccf1a5513232ce/AndroidManifest.xml:17:5-43
+MERGED from [com.google.android.gms:play-services-basement:11.6.2] /Users/yeoplee/.gradle/caches/transforms-1/files-1.1/play-services-basement-11.6.2.aar/c7b6ef1f8aa98469a7ccf1a5513232ce/AndroidManifest.xml:17:5-43
+MERGED from [com.android.support:support-v4:25.2.0] /Users/yeoplee/.gradle/caches/transforms-1/files-1.1/support-v4-25.2.0.aar/62e835018976d843073285ca45c8dfb8/AndroidManifest.xml:21:5-23:54
+MERGED from [com.android.support:support-v4:25.2.0] /Users/yeoplee/.gradle/caches/transforms-1/files-1.1/support-v4-25.2.0.aar/62e835018976d843073285ca45c8dfb8/AndroidManifest.xml:21:5-23:54
+MERGED from [com.android.support:cardview-v7:25.2.0] /Users/yeoplee/.gradle/caches/transforms-1/files-1.1/cardview-v7-25.2.0.aar/aec52c1d0c7ec44818d38eaf846547b1/AndroidManifest.xml:20:5-43
+MERGED from [com.android.support:cardview-v7:25.2.0] /Users/yeoplee/.gradle/caches/transforms-1/files-1.1/cardview-v7-25.2.0.aar/aec52c1d0c7ec44818d38eaf846547b1/AndroidManifest.xml:20:5-43
+MERGED from [com.mbientlab:metawear:3.6.2] /Users/yeoplee/.gradle/caches/transforms-1/files-1.1/metawear-3.6.2.aar/08d70612d9573be45675b8f524ec56c9/AndroidManifest.xml:30:5-32:41
+MERGED from [com.mbientlab:metawear:3.6.2] /Users/yeoplee/.gradle/caches/transforms-1/files-1.1/metawear-3.6.2.aar/08d70612d9573be45675b8f524ec56c9/AndroidManifest.xml:30:5-32:41
+MERGED from [com.android.support.constraint:constraint-layout:1.0.2] /Users/yeoplee/.gradle/caches/transforms-1/files-1.1/constraint-layout-1.0.2.aar/4faa0d7138d438e1125f8d47cd4ebd80/AndroidManifest.xml:5:5-7:41
+MERGED from [com.android.support.constraint:constraint-layout:1.0.2] /Users/yeoplee/.gradle/caches/transforms-1/files-1.1/constraint-layout-1.0.2.aar/4faa0d7138d438e1125f8d47cd4ebd80/AndroidManifest.xml:5:5-7:41
+MERGED from [com.android.support:support-fragment:25.2.0] /Users/yeoplee/.gradle/caches/transforms-1/files-1.1/support-fragment-25.2.0.aar/e60c4196793ffe6ec0519f52f033b949/AndroidManifest.xml:21:5-23:60
+MERGED from [com.android.support:support-fragment:25.2.0] /Users/yeoplee/.gradle/caches/transforms-1/files-1.1/support-fragment-25.2.0.aar/e60c4196793ffe6ec0519f52f033b949/AndroidManifest.xml:21:5-23:60
+MERGED from [com.android.support:support-media-compat:25.2.0] /Users/yeoplee/.gradle/caches/transforms-1/files-1.1/support-media-compat-25.2.0.aar/9b02dc266ab77dc85bcad2e3c09e5204/AndroidManifest.xml:21:5-23:63
+MERGED from [com.android.support:support-media-compat:25.2.0] /Users/yeoplee/.gradle/caches/transforms-1/files-1.1/support-media-compat-25.2.0.aar/9b02dc266ab77dc85bcad2e3c09e5204/AndroidManifest.xml:21:5-23:63
+MERGED from [com.android.support:support-core-utils:25.2.0] /Users/yeoplee/.gradle/caches/transforms-1/files-1.1/support-core-utils-25.2.0.aar/5043b18ed4847a8269322189998ec258/AndroidManifest.xml:21:5-23:61
+MERGED from [com.android.support:support-core-utils:25.2.0] /Users/yeoplee/.gradle/caches/transforms-1/files-1.1/support-core-utils-25.2.0.aar/5043b18ed4847a8269322189998ec258/AndroidManifest.xml:21:5-23:61
+MERGED from [com.android.support:support-core-ui:25.2.0] /Users/yeoplee/.gradle/caches/transforms-1/files-1.1/support-core-ui-25.2.0.aar/ecee88b815e1e5019d3cc56187e907df/AndroidManifest.xml:21:5-23:58
+MERGED from [com.android.support:support-core-ui:25.2.0] /Users/yeoplee/.gradle/caches/transforms-1/files-1.1/support-core-ui-25.2.0.aar/ecee88b815e1e5019d3cc56187e907df/AndroidManifest.xml:21:5-23:58
+MERGED from [com.android.support:animated-vector-drawable:25.2.0] /Users/yeoplee/.gradle/caches/transforms-1/files-1.1/animated-vector-drawable-25.2.0.aar/de7a59dc5ca56e57976b9f4404e1a95a/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:animated-vector-drawable:25.2.0] /Users/yeoplee/.gradle/caches/transforms-1/files-1.1/animated-vector-drawable-25.2.0.aar/de7a59dc5ca56e57976b9f4404e1a95a/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-vector-drawable:25.2.0] /Users/yeoplee/.gradle/caches/transforms-1/files-1.1/support-vector-drawable-25.2.0.aar/70b30da7d8ea465ca1012abd9ab2b0fd/AndroidManifest.xml:21:5-43
+MERGED from [com.android.support:support-vector-drawable:25.2.0] /Users/yeoplee/.gradle/caches/transforms-1/files-1.1/support-vector-drawable-25.2.0.aar/70b30da7d8ea465ca1012abd9ab2b0fd/AndroidManifest.xml:21:5-43
+MERGED from [com.android.support:support-compat:25.2.0] /Users/yeoplee/.gradle/caches/transforms-1/files-1.1/support-compat-25.2.0.aar/c1534fcc559256bf231226de76320f8d/AndroidManifest.xml:21:5-23:58
+MERGED from [com.android.support:support-compat:25.2.0] /Users/yeoplee/.gradle/caches/transforms-1/files-1.1/support-compat-25.2.0.aar/c1534fcc559256bf231226de76320f8d/AndroidManifest.xml:21:5-23:58
+MERGED from [com.google.firebase:firebase-database-license:11.6.2] /Users/yeoplee/.gradle/caches/transforms-1/files-1.1/firebase-database-license-11.6.2.aar/99710f2bb9521880738f87bd345c4d7b/AndroidManifest.xml:4:5-43
+MERGED from [com.google.firebase:firebase-database-license:11.6.2] /Users/yeoplee/.gradle/caches/transforms-1/files-1.1/firebase-database-license-11.6.2.aar/99710f2bb9521880738f87bd345c4d7b/AndroidManifest.xml:4:5-43
+MERGED from [com.google.firebase:firebase-storage-license:11.6.2] /Users/yeoplee/.gradle/caches/transforms-1/files-1.1/firebase-storage-license-11.6.2.aar/97d566be3a5820d0427a1ba3d5c6bc6b/AndroidManifest.xml:4:5-43
+MERGED from [com.google.firebase:firebase-storage-license:11.6.2] /Users/yeoplee/.gradle/caches/transforms-1/files-1.1/firebase-storage-license-11.6.2.aar/97d566be3a5820d0427a1ba3d5c6bc6b/AndroidManifest.xml:4:5-43
+MERGED from [com.google.firebase:firebase-analytics-license:11.6.2] /Users/yeoplee/.gradle/caches/transforms-1/files-1.1/firebase-analytics-license-11.6.2.aar/1919c2bd30903e72cab7832958461454/AndroidManifest.xml:4:5-43
+MERGED from [com.google.firebase:firebase-analytics-license:11.6.2] /Users/yeoplee/.gradle/caches/transforms-1/files-1.1/firebase-analytics-license-11.6.2.aar/1919c2bd30903e72cab7832958461454/AndroidManifest.xml:4:5-43
+MERGED from [com.google.firebase:firebase-database-connection-license:11.6.2] /Users/yeoplee/.gradle/caches/transforms-1/files-1.1/firebase-database-connection-license-11.6.2.aar/e21c38dece1f0187929dbc45a0171ea9/AndroidManifest.xml:4:5-43
+MERGED from [com.google.firebase:firebase-database-connection-license:11.6.2] /Users/yeoplee/.gradle/caches/transforms-1/files-1.1/firebase-database-connection-license-11.6.2.aar/e21c38dece1f0187929dbc45a0171ea9/AndroidManifest.xml:4:5-43
+MERGED from [com.google.android.gms:play-services-basement-license:11.6.2] /Users/yeoplee/.gradle/caches/transforms-1/files-1.1/play-services-basement-license-11.6.2.aar/8e89e6832fd02259d85d7d25c1bf861d/AndroidManifest.xml:4:5-43
+MERGED from [com.google.android.gms:play-services-basement-license:11.6.2] /Users/yeoplee/.gradle/caches/transforms-1/files-1.1/play-services-basement-license-11.6.2.aar/8e89e6832fd02259d85d7d25c1bf861d/AndroidManifest.xml:4:5-43
+MERGED from [com.google.firebase:firebase-common-license:11.6.2] /Users/yeoplee/.gradle/caches/transforms-1/files-1.1/firebase-common-license-11.6.2.aar/dc855e6d013216ebe125a4a66fb94759/AndroidManifest.xml:4:5-43
+MERGED from [com.google.firebase:firebase-common-license:11.6.2] /Users/yeoplee/.gradle/caches/transforms-1/files-1.1/firebase-common-license-11.6.2.aar/dc855e6d013216ebe125a4a66fb94759/AndroidManifest.xml:4:5-43
+MERGED from [com.google.android.gms:play-services-tasks-license:11.6.2] /Users/yeoplee/.gradle/caches/transforms-1/files-1.1/play-services-tasks-license-11.6.2.aar/5f083ff03bd8650d825b3e457c377052/AndroidManifest.xml:4:5-43
+MERGED from [com.google.android.gms:play-services-tasks-license:11.6.2] /Users/yeoplee/.gradle/caches/transforms-1/files-1.1/play-services-tasks-license-11.6.2.aar/5f083ff03bd8650d825b3e457c377052/AndroidManifest.xml:4:5-43
+MERGED from [com.google.firebase:firebase-storage-common-license:11.6.2] /Users/yeoplee/.gradle/caches/transforms-1/files-1.1/firebase-storage-common-license-11.6.2.aar/87dfbc05e538220e95ab532de9ebb622/AndroidManifest.xml:4:5-43
+MERGED from [com.google.firebase:firebase-storage-common-license:11.6.2] /Users/yeoplee/.gradle/caches/transforms-1/files-1.1/firebase-storage-common-license-11.6.2.aar/87dfbc05e538220e95ab532de9ebb622/AndroidManifest.xml:4:5-43
+MERGED from [com.google.firebase:firebase-analytics-impl-license:11.6.2] /Users/yeoplee/.gradle/caches/transforms-1/files-1.1/firebase-analytics-impl-license-11.6.2.aar/6501f15e84b942bc45a02b01576de7d7/AndroidManifest.xml:4:5-43
+MERGED from [com.google.firebase:firebase-analytics-impl-license:11.6.2] /Users/yeoplee/.gradle/caches/transforms-1/files-1.1/firebase-analytics-impl-license-11.6.2.aar/6501f15e84b942bc45a02b01576de7d7/AndroidManifest.xml:4:5-43
+MERGED from [com.google.firebase:firebase-iid-license:11.6.2] /Users/yeoplee/.gradle/caches/transforms-1/files-1.1/firebase-iid-license-11.6.2.aar/64cd15295374f12715ff290b2cce41d9/AndroidManifest.xml:4:5-43
+MERGED from [com.google.firebase:firebase-iid-license:11.6.2] /Users/yeoplee/.gradle/caches/transforms-1/files-1.1/firebase-iid-license-11.6.2.aar/64cd15295374f12715ff290b2cce41d9/AndroidManifest.xml:4:5-43
 INJECTED from /Users/yeoplee/StudioProjects/NE_BELT_for_USER/Application/src/main/AndroidManifest.xml
 INJECTED from /Users/yeoplee/StudioProjects/NE_BELT_for_USER/Application/src/main/AndroidManifest.xml
 	tools:overrideLibrary
-		ADDED from [com.android.support:support-v13:25.2.0] /Users/yeoplee/.gradle/caches/transforms-1/files-1.1/support-v13-25.2.0.aar/72205fa91b4f4d9c9f63ed075822c157/AndroidManifest.xml:23:9-52
+		ADDED from [com.android.support:support-v13:25.2.0] /Users/yeoplee/.gradle/caches/transforms-1/files-1.1/support-v13-25.2.0.aar/d5eac2e327bbc8fed5ad83a8e939c595/AndroidManifest.xml:23:9-52
 	android:targetSdkVersion
 		INJECTED from /Users/yeoplee/StudioProjects/NE_BELT_for_USER/Application/src/main/AndroidManifest.xml
 		ADDED from /Users/yeoplee/StudioProjects/NE_BELT_for_USER/Application/src/main/AndroidManifest.xml
@@ -307,126 +307,126 @@ INJECTED from /Users/yeoplee/StudioProjects/NE_BELT_for_USER/Application/src/mai
 		ADDED from /Users/yeoplee/StudioProjects/NE_BELT_for_USER/Application/src/main/AndroidManifest.xml
 		INJECTED from /Users/yeoplee/StudioProjects/NE_BELT_for_USER/Application/src/main/AndroidManifest.xml
 receiver#com.google.android.gms.measurement.AppMeasurementReceiver
-ADDED from [com.google.firebase:firebase-analytics:11.6.2] /Users/yeoplee/.gradle/caches/transforms-1/files-1.1/firebase-analytics-11.6.2.aar/8cddf04573ec38d3fe0c8c4ab23826b4/AndroidManifest.xml:25:7-26:18
-MERGED from [com.google.firebase:firebase-analytics-impl:11.6.2] /Users/yeoplee/.gradle/caches/transforms-1/files-1.1/firebase-analytics-impl-11.6.2.aar/f7f33c47c8382322bcfc8ed1d67376a9/AndroidManifest.xml:25:7-26:18
-MERGED from [com.google.firebase:firebase-analytics-impl:11.6.2] /Users/yeoplee/.gradle/caches/transforms-1/files-1.1/firebase-analytics-impl-11.6.2.aar/f7f33c47c8382322bcfc8ed1d67376a9/AndroidManifest.xml:25:7-26:18
+ADDED from [com.google.firebase:firebase-analytics:11.6.2] /Users/yeoplee/.gradle/caches/transforms-1/files-1.1/firebase-analytics-11.6.2.aar/26452ba48490330a19ec28d33fbf893a/AndroidManifest.xml:25:7-26:18
+MERGED from [com.google.firebase:firebase-analytics-impl:11.6.2] /Users/yeoplee/.gradle/caches/transforms-1/files-1.1/firebase-analytics-impl-11.6.2.aar/c62cf5cc39ee327dc45fa815cfa6c0cb/AndroidManifest.xml:25:7-26:18
+MERGED from [com.google.firebase:firebase-analytics-impl:11.6.2] /Users/yeoplee/.gradle/caches/transforms-1/files-1.1/firebase-analytics-impl-11.6.2.aar/c62cf5cc39ee327dc45fa815cfa6c0cb/AndroidManifest.xml:25:7-26:18
 	android:enabled
-		ADDED from [com.google.firebase:firebase-analytics:11.6.2] /Users/yeoplee/.gradle/caches/transforms-1/files-1.1/firebase-analytics-11.6.2.aar/8cddf04573ec38d3fe0c8c4ab23826b4/AndroidManifest.xml:25:90-112
+		ADDED from [com.google.firebase:firebase-analytics:11.6.2] /Users/yeoplee/.gradle/caches/transforms-1/files-1.1/firebase-analytics-11.6.2.aar/26452ba48490330a19ec28d33fbf893a/AndroidManifest.xml:25:90-112
 	android:exported
-		ADDED from [com.google.firebase:firebase-analytics:11.6.2] /Users/yeoplee/.gradle/caches/transforms-1/files-1.1/firebase-analytics-11.6.2.aar/8cddf04573ec38d3fe0c8c4ab23826b4/AndroidManifest.xml:25:113-137
+		ADDED from [com.google.firebase:firebase-analytics:11.6.2] /Users/yeoplee/.gradle/caches/transforms-1/files-1.1/firebase-analytics-11.6.2.aar/26452ba48490330a19ec28d33fbf893a/AndroidManifest.xml:25:113-137
 	android:name
-		ADDED from [com.google.firebase:firebase-analytics:11.6.2] /Users/yeoplee/.gradle/caches/transforms-1/files-1.1/firebase-analytics-11.6.2.aar/8cddf04573ec38d3fe0c8c4ab23826b4/AndroidManifest.xml:25:17-89
+		ADDED from [com.google.firebase:firebase-analytics:11.6.2] /Users/yeoplee/.gradle/caches/transforms-1/files-1.1/firebase-analytics-11.6.2.aar/26452ba48490330a19ec28d33fbf893a/AndroidManifest.xml:25:17-89
 receiver#com.google.android.gms.measurement.AppMeasurementInstallReferrerReceiver
-ADDED from [com.google.firebase:firebase-analytics:11.6.2] /Users/yeoplee/.gradle/caches/transforms-1/files-1.1/firebase-analytics-11.6.2.aar/8cddf04573ec38d3fe0c8c4ab23826b4/AndroidManifest.xml:27:7-31:18
+ADDED from [com.google.firebase:firebase-analytics:11.6.2] /Users/yeoplee/.gradle/caches/transforms-1/files-1.1/firebase-analytics-11.6.2.aar/26452ba48490330a19ec28d33fbf893a/AndroidManifest.xml:27:7-31:18
 	android:enabled
-		ADDED from [com.google.firebase:firebase-analytics:11.6.2] /Users/yeoplee/.gradle/caches/transforms-1/files-1.1/firebase-analytics-11.6.2.aar/8cddf04573ec38d3fe0c8c4ab23826b4/AndroidManifest.xml:27:162-184
+		ADDED from [com.google.firebase:firebase-analytics:11.6.2] /Users/yeoplee/.gradle/caches/transforms-1/files-1.1/firebase-analytics-11.6.2.aar/26452ba48490330a19ec28d33fbf893a/AndroidManifest.xml:27:162-184
 	android:exported
-		ADDED from [com.google.firebase:firebase-analytics:11.6.2] /Users/yeoplee/.gradle/caches/transforms-1/files-1.1/firebase-analytics-11.6.2.aar/8cddf04573ec38d3fe0c8c4ab23826b4/AndroidManifest.xml:27:185-208
+		ADDED from [com.google.firebase:firebase-analytics:11.6.2] /Users/yeoplee/.gradle/caches/transforms-1/files-1.1/firebase-analytics-11.6.2.aar/26452ba48490330a19ec28d33fbf893a/AndroidManifest.xml:27:185-208
 	android:permission
-		ADDED from [com.google.firebase:firebase-analytics:11.6.2] /Users/yeoplee/.gradle/caches/transforms-1/files-1.1/firebase-analytics-11.6.2.aar/8cddf04573ec38d3fe0c8c4ab23826b4/AndroidManifest.xml:27:105-161
+		ADDED from [com.google.firebase:firebase-analytics:11.6.2] /Users/yeoplee/.gradle/caches/transforms-1/files-1.1/firebase-analytics-11.6.2.aar/26452ba48490330a19ec28d33fbf893a/AndroidManifest.xml:27:105-161
 	android:name
-		ADDED from [com.google.firebase:firebase-analytics:11.6.2] /Users/yeoplee/.gradle/caches/transforms-1/files-1.1/firebase-analytics-11.6.2.aar/8cddf04573ec38d3fe0c8c4ab23826b4/AndroidManifest.xml:27:17-104
+		ADDED from [com.google.firebase:firebase-analytics:11.6.2] /Users/yeoplee/.gradle/caches/transforms-1/files-1.1/firebase-analytics-11.6.2.aar/26452ba48490330a19ec28d33fbf893a/AndroidManifest.xml:27:17-104
 intent-filter#action:name:com.android.vending.INSTALL_REFERRER
-ADDED from [com.google.firebase:firebase-analytics:11.6.2] /Users/yeoplee/.gradle/caches/transforms-1/files-1.1/firebase-analytics-11.6.2.aar/8cddf04573ec38d3fe0c8c4ab23826b4/AndroidManifest.xml:28:11-30:27
+ADDED from [com.google.firebase:firebase-analytics:11.6.2] /Users/yeoplee/.gradle/caches/transforms-1/files-1.1/firebase-analytics-11.6.2.aar/26452ba48490330a19ec28d33fbf893a/AndroidManifest.xml:28:11-30:27
 action#com.android.vending.INSTALL_REFERRER
-ADDED from [com.google.firebase:firebase-analytics:11.6.2] /Users/yeoplee/.gradle/caches/transforms-1/files-1.1/firebase-analytics-11.6.2.aar/8cddf04573ec38d3fe0c8c4ab23826b4/AndroidManifest.xml:29:15-76
+ADDED from [com.google.firebase:firebase-analytics:11.6.2] /Users/yeoplee/.gradle/caches/transforms-1/files-1.1/firebase-analytics-11.6.2.aar/26452ba48490330a19ec28d33fbf893a/AndroidManifest.xml:29:15-76
 	android:name
-		ADDED from [com.google.firebase:firebase-analytics:11.6.2] /Users/yeoplee/.gradle/caches/transforms-1/files-1.1/firebase-analytics-11.6.2.aar/8cddf04573ec38d3fe0c8c4ab23826b4/AndroidManifest.xml:29:23-74
+		ADDED from [com.google.firebase:firebase-analytics:11.6.2] /Users/yeoplee/.gradle/caches/transforms-1/files-1.1/firebase-analytics-11.6.2.aar/26452ba48490330a19ec28d33fbf893a/AndroidManifest.xml:29:23-74
 service#com.google.android.gms.measurement.AppMeasurementService
-ADDED from [com.google.firebase:firebase-analytics:11.6.2] /Users/yeoplee/.gradle/caches/transforms-1/files-1.1/firebase-analytics-11.6.2.aar/8cddf04573ec38d3fe0c8c4ab23826b4/AndroidManifest.xml:32:7-137
-MERGED from [com.google.firebase:firebase-analytics-impl:11.6.2] /Users/yeoplee/.gradle/caches/transforms-1/files-1.1/firebase-analytics-impl-11.6.2.aar/f7f33c47c8382322bcfc8ed1d67376a9/AndroidManifest.xml:27:7-137
-MERGED from [com.google.firebase:firebase-analytics-impl:11.6.2] /Users/yeoplee/.gradle/caches/transforms-1/files-1.1/firebase-analytics-impl-11.6.2.aar/f7f33c47c8382322bcfc8ed1d67376a9/AndroidManifest.xml:27:7-137
+ADDED from [com.google.firebase:firebase-analytics:11.6.2] /Users/yeoplee/.gradle/caches/transforms-1/files-1.1/firebase-analytics-11.6.2.aar/26452ba48490330a19ec28d33fbf893a/AndroidManifest.xml:32:7-137
+MERGED from [com.google.firebase:firebase-analytics-impl:11.6.2] /Users/yeoplee/.gradle/caches/transforms-1/files-1.1/firebase-analytics-impl-11.6.2.aar/c62cf5cc39ee327dc45fa815cfa6c0cb/AndroidManifest.xml:27:7-137
+MERGED from [com.google.firebase:firebase-analytics-impl:11.6.2] /Users/yeoplee/.gradle/caches/transforms-1/files-1.1/firebase-analytics-impl-11.6.2.aar/c62cf5cc39ee327dc45fa815cfa6c0cb/AndroidManifest.xml:27:7-137
 	android:enabled
-		ADDED from [com.google.firebase:firebase-analytics:11.6.2] /Users/yeoplee/.gradle/caches/transforms-1/files-1.1/firebase-analytics-11.6.2.aar/8cddf04573ec38d3fe0c8c4ab23826b4/AndroidManifest.xml:32:88-110
+		ADDED from [com.google.firebase:firebase-analytics:11.6.2] /Users/yeoplee/.gradle/caches/transforms-1/files-1.1/firebase-analytics-11.6.2.aar/26452ba48490330a19ec28d33fbf893a/AndroidManifest.xml:32:88-110
 	android:exported
-		ADDED from [com.google.firebase:firebase-analytics:11.6.2] /Users/yeoplee/.gradle/caches/transforms-1/files-1.1/firebase-analytics-11.6.2.aar/8cddf04573ec38d3fe0c8c4ab23826b4/AndroidManifest.xml:32:111-135
+		ADDED from [com.google.firebase:firebase-analytics:11.6.2] /Users/yeoplee/.gradle/caches/transforms-1/files-1.1/firebase-analytics-11.6.2.aar/26452ba48490330a19ec28d33fbf893a/AndroidManifest.xml:32:111-135
 	android:name
-		ADDED from [com.google.firebase:firebase-analytics:11.6.2] /Users/yeoplee/.gradle/caches/transforms-1/files-1.1/firebase-analytics-11.6.2.aar/8cddf04573ec38d3fe0c8c4ab23826b4/AndroidManifest.xml:32:16-87
+		ADDED from [com.google.firebase:firebase-analytics:11.6.2] /Users/yeoplee/.gradle/caches/transforms-1/files-1.1/firebase-analytics-11.6.2.aar/26452ba48490330a19ec28d33fbf893a/AndroidManifest.xml:32:16-87
 service#com.google.android.gms.measurement.AppMeasurementJobService
-ADDED from [com.google.firebase:firebase-analytics:11.6.2] /Users/yeoplee/.gradle/caches/transforms-1/files-1.1/firebase-analytics-11.6.2.aar/8cddf04573ec38d3fe0c8c4ab23826b4/AndroidManifest.xml:33:7-197
+ADDED from [com.google.firebase:firebase-analytics:11.6.2] /Users/yeoplee/.gradle/caches/transforms-1/files-1.1/firebase-analytics-11.6.2.aar/26452ba48490330a19ec28d33fbf893a/AndroidManifest.xml:33:7-197
 	android:enabled
-		ADDED from [com.google.firebase:firebase-analytics:11.6.2] /Users/yeoplee/.gradle/caches/transforms-1/files-1.1/firebase-analytics-11.6.2.aar/8cddf04573ec38d3fe0c8c4ab23826b4/AndroidManifest.xml:33:148-170
+		ADDED from [com.google.firebase:firebase-analytics:11.6.2] /Users/yeoplee/.gradle/caches/transforms-1/files-1.1/firebase-analytics-11.6.2.aar/26452ba48490330a19ec28d33fbf893a/AndroidManifest.xml:33:148-170
 	android:exported
-		ADDED from [com.google.firebase:firebase-analytics:11.6.2] /Users/yeoplee/.gradle/caches/transforms-1/files-1.1/firebase-analytics-11.6.2.aar/8cddf04573ec38d3fe0c8c4ab23826b4/AndroidManifest.xml:33:171-195
+		ADDED from [com.google.firebase:firebase-analytics:11.6.2] /Users/yeoplee/.gradle/caches/transforms-1/files-1.1/firebase-analytics-11.6.2.aar/26452ba48490330a19ec28d33fbf893a/AndroidManifest.xml:33:171-195
 	android:permission
-		ADDED from [com.google.firebase:firebase-analytics:11.6.2] /Users/yeoplee/.gradle/caches/transforms-1/files-1.1/firebase-analytics-11.6.2.aar/8cddf04573ec38d3fe0c8c4ab23826b4/AndroidManifest.xml:33:91-147
+		ADDED from [com.google.firebase:firebase-analytics:11.6.2] /Users/yeoplee/.gradle/caches/transforms-1/files-1.1/firebase-analytics-11.6.2.aar/26452ba48490330a19ec28d33fbf893a/AndroidManifest.xml:33:91-147
 	android:name
-		ADDED from [com.google.firebase:firebase-analytics:11.6.2] /Users/yeoplee/.gradle/caches/transforms-1/files-1.1/firebase-analytics-11.6.2.aar/8cddf04573ec38d3fe0c8c4ab23826b4/AndroidManifest.xml:33:16-90
+		ADDED from [com.google.firebase:firebase-analytics:11.6.2] /Users/yeoplee/.gradle/caches/transforms-1/files-1.1/firebase-analytics-11.6.2.aar/26452ba48490330a19ec28d33fbf893a/AndroidManifest.xml:33:16-90
 uses-permission#com.google.android.c2dm.permission.RECEIVE
-ADDED from [com.google.firebase:firebase-iid:11.6.2] /Users/yeoplee/.gradle/caches/transforms-1/files-1.1/firebase-iid-11.6.2.aar/4e1f8b218acac13ccb88b12a969cdb59/AndroidManifest.xml:23:5-81
+ADDED from [com.google.firebase:firebase-iid:11.6.2] /Users/yeoplee/.gradle/caches/transforms-1/files-1.1/firebase-iid-11.6.2.aar/44604e08201fc68c4d466f62ef7589cf/AndroidManifest.xml:23:5-81
 	android:name
-		ADDED from [com.google.firebase:firebase-iid:11.6.2] /Users/yeoplee/.gradle/caches/transforms-1/files-1.1/firebase-iid-11.6.2.aar/4e1f8b218acac13ccb88b12a969cdb59/AndroidManifest.xml:23:22-79
+		ADDED from [com.google.firebase:firebase-iid:11.6.2] /Users/yeoplee/.gradle/caches/transforms-1/files-1.1/firebase-iid-11.6.2.aar/44604e08201fc68c4d466f62ef7589cf/AndroidManifest.xml:23:22-79
 permission#${applicationId}.permission.C2D_MESSAGE
-ADDED from [com.google.firebase:firebase-iid:11.6.2] /Users/yeoplee/.gradle/caches/transforms-1/files-1.1/firebase-iid-11.6.2.aar/4e1f8b218acac13ccb88b12a969cdb59/AndroidManifest.xml:25:5-109
+ADDED from [com.google.firebase:firebase-iid:11.6.2] /Users/yeoplee/.gradle/caches/transforms-1/files-1.1/firebase-iid-11.6.2.aar/44604e08201fc68c4d466f62ef7589cf/AndroidManifest.xml:25:5-109
 	android:protectionLevel
-		ADDED from [com.google.firebase:firebase-iid:11.6.2] /Users/yeoplee/.gradle/caches/transforms-1/files-1.1/firebase-iid-11.6.2.aar/4e1f8b218acac13ccb88b12a969cdb59/AndroidManifest.xml:25:72-107
+		ADDED from [com.google.firebase:firebase-iid:11.6.2] /Users/yeoplee/.gradle/caches/transforms-1/files-1.1/firebase-iid-11.6.2.aar/44604e08201fc68c4d466f62ef7589cf/AndroidManifest.xml:25:72-107
 	android:name
-		ADDED from [com.google.firebase:firebase-iid:11.6.2] /Users/yeoplee/.gradle/caches/transforms-1/files-1.1/firebase-iid-11.6.2.aar/4e1f8b218acac13ccb88b12a969cdb59/AndroidManifest.xml:25:17-71
+		ADDED from [com.google.firebase:firebase-iid:11.6.2] /Users/yeoplee/.gradle/caches/transforms-1/files-1.1/firebase-iid-11.6.2.aar/44604e08201fc68c4d466f62ef7589cf/AndroidManifest.xml:25:17-71
 permission#com.example.android.neptuNE.permission.C2D_MESSAGE
-ADDED from [com.google.firebase:firebase-iid:11.6.2] /Users/yeoplee/.gradle/caches/transforms-1/files-1.1/firebase-iid-11.6.2.aar/4e1f8b218acac13ccb88b12a969cdb59/AndroidManifest.xml:25:5-109
+ADDED from [com.google.firebase:firebase-iid:11.6.2] /Users/yeoplee/.gradle/caches/transforms-1/files-1.1/firebase-iid-11.6.2.aar/44604e08201fc68c4d466f62ef7589cf/AndroidManifest.xml:25:5-109
 	android:protectionLevel
-		ADDED from [com.google.firebase:firebase-iid:11.6.2] /Users/yeoplee/.gradle/caches/transforms-1/files-1.1/firebase-iid-11.6.2.aar/4e1f8b218acac13ccb88b12a969cdb59/AndroidManifest.xml:25:72-107
+		ADDED from [com.google.firebase:firebase-iid:11.6.2] /Users/yeoplee/.gradle/caches/transforms-1/files-1.1/firebase-iid-11.6.2.aar/44604e08201fc68c4d466f62ef7589cf/AndroidManifest.xml:25:72-107
 	android:name
-		ADDED from [com.google.firebase:firebase-iid:11.6.2] /Users/yeoplee/.gradle/caches/transforms-1/files-1.1/firebase-iid-11.6.2.aar/4e1f8b218acac13ccb88b12a969cdb59/AndroidManifest.xml:25:17-71
+		ADDED from [com.google.firebase:firebase-iid:11.6.2] /Users/yeoplee/.gradle/caches/transforms-1/files-1.1/firebase-iid-11.6.2.aar/44604e08201fc68c4d466f62ef7589cf/AndroidManifest.xml:25:17-71
 uses-permission#${applicationId}.permission.C2D_MESSAGE
-ADDED from [com.google.firebase:firebase-iid:11.6.2] /Users/yeoplee/.gradle/caches/transforms-1/files-1.1/firebase-iid-11.6.2.aar/4e1f8b218acac13ccb88b12a969cdb59/AndroidManifest.xml:27:5-78
+ADDED from [com.google.firebase:firebase-iid:11.6.2] /Users/yeoplee/.gradle/caches/transforms-1/files-1.1/firebase-iid-11.6.2.aar/44604e08201fc68c4d466f62ef7589cf/AndroidManifest.xml:27:5-78
 	android:name
-		ADDED from [com.google.firebase:firebase-iid:11.6.2] /Users/yeoplee/.gradle/caches/transforms-1/files-1.1/firebase-iid-11.6.2.aar/4e1f8b218acac13ccb88b12a969cdb59/AndroidManifest.xml:27:22-76
+		ADDED from [com.google.firebase:firebase-iid:11.6.2] /Users/yeoplee/.gradle/caches/transforms-1/files-1.1/firebase-iid-11.6.2.aar/44604e08201fc68c4d466f62ef7589cf/AndroidManifest.xml:27:22-76
 uses-permission#com.example.android.neptuNE.permission.C2D_MESSAGE
-ADDED from [com.google.firebase:firebase-iid:11.6.2] /Users/yeoplee/.gradle/caches/transforms-1/files-1.1/firebase-iid-11.6.2.aar/4e1f8b218acac13ccb88b12a969cdb59/AndroidManifest.xml:27:5-78
+ADDED from [com.google.firebase:firebase-iid:11.6.2] /Users/yeoplee/.gradle/caches/transforms-1/files-1.1/firebase-iid-11.6.2.aar/44604e08201fc68c4d466f62ef7589cf/AndroidManifest.xml:27:5-78
 	android:name
-		ADDED from [com.google.firebase:firebase-iid:11.6.2] /Users/yeoplee/.gradle/caches/transforms-1/files-1.1/firebase-iid-11.6.2.aar/4e1f8b218acac13ccb88b12a969cdb59/AndroidManifest.xml:27:22-76
+		ADDED from [com.google.firebase:firebase-iid:11.6.2] /Users/yeoplee/.gradle/caches/transforms-1/files-1.1/firebase-iid-11.6.2.aar/44604e08201fc68c4d466f62ef7589cf/AndroidManifest.xml:27:22-76
 receiver#com.google.firebase.iid.FirebaseInstanceIdReceiver
-ADDED from [com.google.firebase:firebase-iid:11.6.2] /Users/yeoplee/.gradle/caches/transforms-1/files-1.1/firebase-iid-11.6.2.aar/4e1f8b218acac13ccb88b12a969cdb59/AndroidManifest.xml:31:9-36:20
+ADDED from [com.google.firebase:firebase-iid:11.6.2] /Users/yeoplee/.gradle/caches/transforms-1/files-1.1/firebase-iid-11.6.2.aar/44604e08201fc68c4d466f62ef7589cf/AndroidManifest.xml:31:9-36:20
 	android:exported
-		ADDED from [com.google.firebase:firebase-iid:11.6.2] /Users/yeoplee/.gradle/caches/transforms-1/files-1.1/firebase-iid-11.6.2.aar/4e1f8b218acac13ccb88b12a969cdb59/AndroidManifest.xml:31:85-108
+		ADDED from [com.google.firebase:firebase-iid:11.6.2] /Users/yeoplee/.gradle/caches/transforms-1/files-1.1/firebase-iid-11.6.2.aar/44604e08201fc68c4d466f62ef7589cf/AndroidManifest.xml:31:85-108
 	android:permission
-		ADDED from [com.google.firebase:firebase-iid:11.6.2] /Users/yeoplee/.gradle/caches/transforms-1/files-1.1/firebase-iid-11.6.2.aar/4e1f8b218acac13ccb88b12a969cdb59/AndroidManifest.xml:31:109-169
+		ADDED from [com.google.firebase:firebase-iid:11.6.2] /Users/yeoplee/.gradle/caches/transforms-1/files-1.1/firebase-iid-11.6.2.aar/44604e08201fc68c4d466f62ef7589cf/AndroidManifest.xml:31:109-169
 	android:name
-		ADDED from [com.google.firebase:firebase-iid:11.6.2] /Users/yeoplee/.gradle/caches/transforms-1/files-1.1/firebase-iid-11.6.2.aar/4e1f8b218acac13ccb88b12a969cdb59/AndroidManifest.xml:31:19-84
+		ADDED from [com.google.firebase:firebase-iid:11.6.2] /Users/yeoplee/.gradle/caches/transforms-1/files-1.1/firebase-iid-11.6.2.aar/44604e08201fc68c4d466f62ef7589cf/AndroidManifest.xml:31:19-84
 intent-filter#action:name:com.google.android.c2dm.intent.RECEIVE+category:name:${applicationId}
-ADDED from [com.google.firebase:firebase-iid:11.6.2] /Users/yeoplee/.gradle/caches/transforms-1/files-1.1/firebase-iid-11.6.2.aar/4e1f8b218acac13ccb88b12a969cdb59/AndroidManifest.xml:32:13-35:29
+ADDED from [com.google.firebase:firebase-iid:11.6.2] /Users/yeoplee/.gradle/caches/transforms-1/files-1.1/firebase-iid-11.6.2.aar/44604e08201fc68c4d466f62ef7589cf/AndroidManifest.xml:32:13-35:29
 intent-filter#action:name:com.google.android.c2dm.intent.RECEIVE+category:name:com.example.android.neptuNE
-ADDED from [com.google.firebase:firebase-iid:11.6.2] /Users/yeoplee/.gradle/caches/transforms-1/files-1.1/firebase-iid-11.6.2.aar/4e1f8b218acac13ccb88b12a969cdb59/AndroidManifest.xml:32:13-35:29
+ADDED from [com.google.firebase:firebase-iid:11.6.2] /Users/yeoplee/.gradle/caches/transforms-1/files-1.1/firebase-iid-11.6.2.aar/44604e08201fc68c4d466f62ef7589cf/AndroidManifest.xml:32:13-35:29
 action#com.google.android.c2dm.intent.RECEIVE
-ADDED from [com.google.firebase:firebase-iid:11.6.2] /Users/yeoplee/.gradle/caches/transforms-1/files-1.1/firebase-iid-11.6.2.aar/4e1f8b218acac13ccb88b12a969cdb59/AndroidManifest.xml:33:17-80
+ADDED from [com.google.firebase:firebase-iid:11.6.2] /Users/yeoplee/.gradle/caches/transforms-1/files-1.1/firebase-iid-11.6.2.aar/44604e08201fc68c4d466f62ef7589cf/AndroidManifest.xml:33:17-80
 	android:name
-		ADDED from [com.google.firebase:firebase-iid:11.6.2] /Users/yeoplee/.gradle/caches/transforms-1/files-1.1/firebase-iid-11.6.2.aar/4e1f8b218acac13ccb88b12a969cdb59/AndroidManifest.xml:33:25-78
+		ADDED from [com.google.firebase:firebase-iid:11.6.2] /Users/yeoplee/.gradle/caches/transforms-1/files-1.1/firebase-iid-11.6.2.aar/44604e08201fc68c4d466f62ef7589cf/AndroidManifest.xml:33:25-78
 category#${applicationId}
-ADDED from [com.google.firebase:firebase-iid:11.6.2] /Users/yeoplee/.gradle/caches/transforms-1/files-1.1/firebase-iid-11.6.2.aar/4e1f8b218acac13ccb88b12a969cdb59/AndroidManifest.xml:34:17-60
+ADDED from [com.google.firebase:firebase-iid:11.6.2] /Users/yeoplee/.gradle/caches/transforms-1/files-1.1/firebase-iid-11.6.2.aar/44604e08201fc68c4d466f62ef7589cf/AndroidManifest.xml:34:17-60
 	android:name
-		ADDED from [com.google.firebase:firebase-iid:11.6.2] /Users/yeoplee/.gradle/caches/transforms-1/files-1.1/firebase-iid-11.6.2.aar/4e1f8b218acac13ccb88b12a969cdb59/AndroidManifest.xml:34:27-58
+		ADDED from [com.google.firebase:firebase-iid:11.6.2] /Users/yeoplee/.gradle/caches/transforms-1/files-1.1/firebase-iid-11.6.2.aar/44604e08201fc68c4d466f62ef7589cf/AndroidManifest.xml:34:27-58
 category#com.example.android.neptuNE
-ADDED from [com.google.firebase:firebase-iid:11.6.2] /Users/yeoplee/.gradle/caches/transforms-1/files-1.1/firebase-iid-11.6.2.aar/4e1f8b218acac13ccb88b12a969cdb59/AndroidManifest.xml:34:17-60
+ADDED from [com.google.firebase:firebase-iid:11.6.2] /Users/yeoplee/.gradle/caches/transforms-1/files-1.1/firebase-iid-11.6.2.aar/44604e08201fc68c4d466f62ef7589cf/AndroidManifest.xml:34:17-60
 	android:name
-		ADDED from [com.google.firebase:firebase-iid:11.6.2] /Users/yeoplee/.gradle/caches/transforms-1/files-1.1/firebase-iid-11.6.2.aar/4e1f8b218acac13ccb88b12a969cdb59/AndroidManifest.xml:34:27-58
+		ADDED from [com.google.firebase:firebase-iid:11.6.2] /Users/yeoplee/.gradle/caches/transforms-1/files-1.1/firebase-iid-11.6.2.aar/44604e08201fc68c4d466f62ef7589cf/AndroidManifest.xml:34:27-58
 service#com.google.firebase.iid.FirebaseInstanceIdService
-ADDED from [com.google.firebase:firebase-iid:11.6.2] /Users/yeoplee/.gradle/caches/transforms-1/files-1.1/firebase-iid-11.6.2.aar/4e1f8b218acac13ccb88b12a969cdb59/AndroidManifest.xml:40:9-44:19
+ADDED from [com.google.firebase:firebase-iid:11.6.2] /Users/yeoplee/.gradle/caches/transforms-1/files-1.1/firebase-iid-11.6.2.aar/44604e08201fc68c4d466f62ef7589cf/AndroidManifest.xml:40:9-44:19
 	android:exported
-		ADDED from [com.google.firebase:firebase-iid:11.6.2] /Users/yeoplee/.gradle/caches/transforms-1/files-1.1/firebase-iid-11.6.2.aar/4e1f8b218acac13ccb88b12a969cdb59/AndroidManifest.xml:40:83-106
+		ADDED from [com.google.firebase:firebase-iid:11.6.2] /Users/yeoplee/.gradle/caches/transforms-1/files-1.1/firebase-iid-11.6.2.aar/44604e08201fc68c4d466f62ef7589cf/AndroidManifest.xml:40:83-106
 	android:name
-		ADDED from [com.google.firebase:firebase-iid:11.6.2] /Users/yeoplee/.gradle/caches/transforms-1/files-1.1/firebase-iid-11.6.2.aar/4e1f8b218acac13ccb88b12a969cdb59/AndroidManifest.xml:40:18-82
+		ADDED from [com.google.firebase:firebase-iid:11.6.2] /Users/yeoplee/.gradle/caches/transforms-1/files-1.1/firebase-iid-11.6.2.aar/44604e08201fc68c4d466f62ef7589cf/AndroidManifest.xml:40:18-82
 intent-filter#action:name:com.google.firebase.INSTANCE_ID_EVENT
-ADDED from [com.google.firebase:firebase-iid:11.6.2] /Users/yeoplee/.gradle/caches/transforms-1/files-1.1/firebase-iid-11.6.2.aar/4e1f8b218acac13ccb88b12a969cdb59/AndroidManifest.xml:41:13-43:29
+ADDED from [com.google.firebase:firebase-iid:11.6.2] /Users/yeoplee/.gradle/caches/transforms-1/files-1.1/firebase-iid-11.6.2.aar/44604e08201fc68c4d466f62ef7589cf/AndroidManifest.xml:41:13-43:29
 	android:priority
-		ADDED from [com.google.firebase:firebase-iid:11.6.2] /Users/yeoplee/.gradle/caches/transforms-1/files-1.1/firebase-iid-11.6.2.aar/4e1f8b218acac13ccb88b12a969cdb59/AndroidManifest.xml:41:28-51
+		ADDED from [com.google.firebase:firebase-iid:11.6.2] /Users/yeoplee/.gradle/caches/transforms-1/files-1.1/firebase-iid-11.6.2.aar/44604e08201fc68c4d466f62ef7589cf/AndroidManifest.xml:41:28-51
 action#com.google.firebase.INSTANCE_ID_EVENT
-ADDED from [com.google.firebase:firebase-iid:11.6.2] /Users/yeoplee/.gradle/caches/transforms-1/files-1.1/firebase-iid-11.6.2.aar/4e1f8b218acac13ccb88b12a969cdb59/AndroidManifest.xml:42:17-79
+ADDED from [com.google.firebase:firebase-iid:11.6.2] /Users/yeoplee/.gradle/caches/transforms-1/files-1.1/firebase-iid-11.6.2.aar/44604e08201fc68c4d466f62ef7589cf/AndroidManifest.xml:42:17-79
 	android:name
-		ADDED from [com.google.firebase:firebase-iid:11.6.2] /Users/yeoplee/.gradle/caches/transforms-1/files-1.1/firebase-iid-11.6.2.aar/4e1f8b218acac13ccb88b12a969cdb59/AndroidManifest.xml:42:25-77
+		ADDED from [com.google.firebase:firebase-iid:11.6.2] /Users/yeoplee/.gradle/caches/transforms-1/files-1.1/firebase-iid-11.6.2.aar/44604e08201fc68c4d466f62ef7589cf/AndroidManifest.xml:42:25-77
 provider#com.google.firebase.provider.FirebaseInitProvider
-ADDED from [com.google.firebase:firebase-common:11.6.2] /Users/yeoplee/.gradle/caches/transforms-1/files-1.1/firebase-common-11.6.2.aar/3349ee06ca4100a2104f48638ed5b985/AndroidManifest.xml:6:9-194
+ADDED from [com.google.firebase:firebase-common:11.6.2] /Users/yeoplee/.gradle/caches/transforms-1/files-1.1/firebase-common-11.6.2.aar/5e413b436a9892cb896ede6bec170548/AndroidManifest.xml:6:9-194
 	android:authorities
-		ADDED from [com.google.firebase:firebase-common:11.6.2] /Users/yeoplee/.gradle/caches/transforms-1/files-1.1/firebase-common-11.6.2.aar/3349ee06ca4100a2104f48638ed5b985/AndroidManifest.xml:6:19-78
+		ADDED from [com.google.firebase:firebase-common:11.6.2] /Users/yeoplee/.gradle/caches/transforms-1/files-1.1/firebase-common-11.6.2.aar/5e413b436a9892cb896ede6bec170548/AndroidManifest.xml:6:19-78
 	android:exported
-		ADDED from [com.google.firebase:firebase-common:11.6.2] /Users/yeoplee/.gradle/caches/transforms-1/files-1.1/firebase-common-11.6.2.aar/3349ee06ca4100a2104f48638ed5b985/AndroidManifest.xml:6:144-168
+		ADDED from [com.google.firebase:firebase-common:11.6.2] /Users/yeoplee/.gradle/caches/transforms-1/files-1.1/firebase-common-11.6.2.aar/5e413b436a9892cb896ede6bec170548/AndroidManifest.xml:6:144-168
 	android:initOrder
-		ADDED from [com.google.firebase:firebase-common:11.6.2] /Users/yeoplee/.gradle/caches/transforms-1/files-1.1/firebase-common-11.6.2.aar/3349ee06ca4100a2104f48638ed5b985/AndroidManifest.xml:6:169-192
+		ADDED from [com.google.firebase:firebase-common:11.6.2] /Users/yeoplee/.gradle/caches/transforms-1/files-1.1/firebase-common-11.6.2.aar/5e413b436a9892cb896ede6bec170548/AndroidManifest.xml:6:169-192
 	android:name
-		ADDED from [com.google.firebase:firebase-common:11.6.2] /Users/yeoplee/.gradle/caches/transforms-1/files-1.1/firebase-common-11.6.2.aar/3349ee06ca4100a2104f48638ed5b985/AndroidManifest.xml:6:79-143
+		ADDED from [com.google.firebase:firebase-common:11.6.2] /Users/yeoplee/.gradle/caches/transforms-1/files-1.1/firebase-common-11.6.2.aar/5e413b436a9892cb896ede6bec170548/AndroidManifest.xml:6:79-143
 meta-data#com.google.android.gms.version
-ADDED from [com.google.android.gms:play-services-basement:11.6.2] /Users/yeoplee/.gradle/caches/transforms-1/files-1.1/play-services-basement-11.6.2.aar/3faf72560f3c0601a7c8872fcf9558d1/AndroidManifest.xml:20:9-121
+ADDED from [com.google.android.gms:play-services-basement:11.6.2] /Users/yeoplee/.gradle/caches/transforms-1/files-1.1/play-services-basement-11.6.2.aar/c7b6ef1f8aa98469a7ccf1a5513232ce/AndroidManifest.xml:20:9-121
 	android:value
-		ADDED from [com.google.android.gms:play-services-basement:11.6.2] /Users/yeoplee/.gradle/caches/transforms-1/files-1.1/play-services-basement-11.6.2.aar/3faf72560f3c0601a7c8872fcf9558d1/AndroidManifest.xml:20:66-119
+		ADDED from [com.google.android.gms:play-services-basement:11.6.2] /Users/yeoplee/.gradle/caches/transforms-1/files-1.1/play-services-basement-11.6.2.aar/c7b6ef1f8aa98469a7ccf1a5513232ce/AndroidManifest.xml:20:66-119
 	android:name
-		ADDED from [com.google.android.gms:play-services-basement:11.6.2] /Users/yeoplee/.gradle/caches/transforms-1/files-1.1/play-services-basement-11.6.2.aar/3faf72560f3c0601a7c8872fcf9558d1/AndroidManifest.xml:20:20-65
+		ADDED from [com.google.android.gms:play-services-basement:11.6.2] /Users/yeoplee/.gradle/caches/transforms-1/files-1.1/play-services-basement-11.6.2.aar/c7b6ef1f8aa98469a7ccf1a5513232ce/AndroidManifest.xml:20:20-65

@@ -86,7 +86,7 @@ public class DeviceControlActivity extends Activity {
     int sampleRate = 256;
     private boolean isCommunicated = false;
 
-    String version_num = "  v1.60";
+    String version_num = "  v1.62";
     String patient_num = null;
 
     public static final String EXTRAS_DEVICE_NAME = "NE_BELT";
@@ -142,6 +142,7 @@ public class DeviceControlActivity extends Activity {
             new ArrayList<ArrayList<BluetoothGattCharacteristic>>();
 
     private boolean mConnected = false;
+    private boolean mMetaWearConnected = false;
     private FileManager mFileManager = new FileManager();
     private PacketParser mPacketParser;
     private Vibrator vibe;
@@ -202,6 +203,7 @@ public class DeviceControlActivity extends Activity {
             Manifest.permission.WRITE_EXTERNAL_STORAGE,
             Manifest.permission.READ_EXTERNAL_STORAGE
     };
+
     /**
      * Code to manage Service lifecycle.
      */
@@ -233,6 +235,7 @@ public class DeviceControlActivity extends Activity {
 
         @Override
         public void onServiceDisconnected(ComponentName componentName) {
+
         }
     };
     /**
@@ -314,9 +317,9 @@ public class DeviceControlActivity extends Activity {
                     Log.d(TAG, "start");
                     start_sequence();
                     if (deviceUUIDs[0] != null) {
-                        SystemClock.sleep(5000);
+                        SystemClock.sleep(1000);
                         connectToMetawear(deviceUUIDs[0]);
-                        SystemClock.sleep(5000);
+                        SystemClock.sleep(1000);
                         connectToMetawear(deviceUUIDs[1]);
                     }
                     if (start_button_counter == 0) {
@@ -570,10 +573,12 @@ public class DeviceControlActivity extends Activity {
                 if (!isCommunicated) {
                     timer.setText("이제   시작");
                     start_sequence();
-                    SystemClock.sleep(5000);
+//                    SystemClock.sleep(5000);
                 }
-                if (deviceUUIDs != null) {
+                if (deviceUUIDs[0] != null) {
+                    SystemClock.sleep(1000);
                     connectToMetawear(deviceUUIDs[0]);
+                    SystemClock.sleep(1000);
                     connectToMetawear(deviceUUIDs[1]);
                 }
                 SystemClock.sleep(100);
@@ -728,6 +733,12 @@ public class DeviceControlActivity extends Activity {
     protected void onDestroy() {
         super.onDestroy();
         mFileManager.saveLogData("ondestroy", "end");
+
+        stopAccelerometer(deviceUUIDs[0]);
+        stopAccelerometer(deviceUUIDs[1]);
+        stopGyro(deviceUUIDs[0]);
+        stopGyro(deviceUUIDs[1]);
+
         //Unbind BLE intent
         unregisterReceiver(mGattUpdateReceiver);
         unbindService(mServiceConnection);
@@ -748,26 +759,26 @@ public class DeviceControlActivity extends Activity {
         mBluetoothLeService = null;
     }
 
-    protected void destroyBLE() {
-        //Unbind BLE intant
-        unregisterReceiver(mGattUpdateReceiver);
-        unbindService(mServiceConnection);
-
-        //Disable bluetooth
-        BluetoothAdapter mBluetoothAdapter = BluetoothAdapter.getDefaultAdapter();
-        if (mBluetoothAdapter.isEnabled()) {
-            mBluetoothAdapter.disable();
-        }
-        //Stop Handler
-        try {
-            mRotationHandler.removeCallbacks(biaONrotationMethod);
-            mRotationHandler.removeCallbacks(biaOFFrotationMethod);
-            startSeqHandler.removeCallbacks(reconnectMethod);
-        } catch (Exception e) {
-
-        }
-        mBluetoothLeService = null;
-    }
+//    protected void destroyBLE() {
+//        //Unbind BLE intant
+//        unregisterReceiver(mGattUpdateReceiver);
+//        unbindService(mServiceConnection);
+//
+//        //Disable bluetooth
+//        BluetoothAdapter mBluetoothAdapter = BluetoothAdapter.getDefaultAdapter();
+//        if (mBluetoothAdapter.isEnabled()) {
+//            mBluetoothAdapter.disable();
+//        }
+//        //Stop Handler
+//        try {
+//            mRotationHandler.removeCallbacks(biaONrotationMethod);
+//            mRotationHandler.removeCallbacks(biaOFFrotationMethod);
+//            startSeqHandler.removeCallbacks(reconnectMethod);
+//        } catch (Exception e) {
+//
+//        }
+//        mBluetoothLeService = null;
+//    }
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
@@ -878,6 +889,7 @@ public class DeviceControlActivity extends Activity {
             }
         }
     };
+
     private Runnable reconnectMethod = new Runnable() {
         public void run() {
             if (LastSeqNum != NowSeqNum) {
@@ -910,6 +922,17 @@ public class DeviceControlActivity extends Activity {
             } else {
                 startSeqHandler.postDelayed(reconnectMethod, 3000);
             }
+
+//            if (mMetaWearConnected == false) {
+//                mFileManager.saveLogData("MetaWear", "Try reconnect");
+//                if (deviceUUIDs[0] != null) {
+//                    SystemClock.sleep(100);
+//                    connectToMetawear(deviceUUIDs[0]);
+//                    SystemClock.sleep(100);
+//                    connectToMetawear(deviceUUIDs[1]);
+//                }
+//
+//            }
             //upload files before disconnected
             if (DisconnectCounter > DisconnectThreshold - 1) {//||SeqCounter > SeqLossThreshold - 1
                 mFileManager.saveLogData("reconnectMethod", "Uploading data before disconnected");
@@ -1087,6 +1110,7 @@ public class DeviceControlActivity extends Activity {
                     })
                     .continueWith(task -> {
                         if (!task.isCancelled()) {
+                            mMetaWearConnected = true;
                             startAccelerometer(mwBoard);
                             startGyro(mwBoard);
                             if (mwBoard.getMacAddress() == deviceUUIDs[0]) {
@@ -1103,6 +1127,14 @@ public class DeviceControlActivity extends Activity {
                         }
                         return null;
                     });
+
+            mwBoard.onUnexpectedDisconnect(new MetaWearBoard.UnexpectedDisconnectHandler() {
+                @Override
+                public void disconnected(int status) {
+                    mFileManager.saveLogData("MetaWear", "disconnected");
+                    mMetaWearConnected = false;
+                }
+            });
         }
     }
 
