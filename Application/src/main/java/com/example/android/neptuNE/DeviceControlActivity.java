@@ -86,7 +86,7 @@ public class DeviceControlActivity extends Activity {
     int sampleRate = 256;
     private boolean isCommunicated = false;
 
-    String version_num = "  v1.62";
+    String version_num = "  v1.64";
     String patient_num = null;
 
     public static final String EXTRAS_DEVICE_NAME = "NE_BELT";
@@ -182,7 +182,7 @@ public class DeviceControlActivity extends Activity {
     private String ChargeStatus;
     private int BatteryStatus = -1;
 
-    private int bell_max = 8250;
+    private int bell_max = 5;
     private int bell_min = 8150;
 
     //    private int rot_state = 0;
@@ -419,6 +419,7 @@ public class DeviceControlActivity extends Activity {
             mFileManager.createMoFile(patient_num, String.valueOf(mfile_Num), ChargeStatus, String.valueOf(BatteryStatus));
             mfile_Num++;
         }
+        int fileKb = (int) (mFileManager.getFileSize() / 1000);
         ImageView hrimg = (ImageView) findViewById(R.id.heart_img);
         ImageView biamg = (ImageView) findViewById(R.id.bia_img);
         hrimg.setImageResource(R.drawable.ne_heart);
@@ -451,35 +452,84 @@ public class DeviceControlActivity extends Activity {
             }
         }
 
-
         //알람이 울림 128*2*20
-        for (int i = 37; i < 40; i++) {
-            //Set Urine bell
-            if (moiDataArray[128 * i] <= bell_max && moiDataArray[128 * i] >= bell_min) {
-                if (moiDataArray[128 * i + 64] <= bell_max && moiDataArray[128 * i + 64] >= bell_min) { //Ring alert when moiData range is shorted
-                    if (NE_event == 0 && ne_event_lock == 0) {
-                        vibe.vibrate(100000); //If NE event detected vibrate
-                        music = sound.load(this, R.raw.sample, 1);
-                        sound.play(music, 1, 1, 0, -1, 1);
-                        sound.autoResume();
-                        NE_event = 1; //Mark the event
-                        NEventMarker = 1;
-                        try {
-                            mFileManager.uploadFile();
-                            mFileManager.uploadMoFile();
-                            mFileManager.uploadLogFile();
-                        } catch (Exception e) {
-                            Log.e(TAG, "Upload Failed");
-                            mFileManager.saveLogData("receivedData-NE", "Save failed");
-                        }
-                        mNow_state.setText("> 야뇨가 감지되었습니다");
-                        mFileManager.saveLogData("receivedData", "NE Detected");
-                        mNow_guide.setText("\n\n1. 알람을 끄기위해 화면 중앙에 위치한 '알람 끄기' 버튼을 눌러주세요\n\n2.아이를 화장실로 데려가 잔뇨를 볼 수 있도록 도와주세요");
-                        mOffNeAlarmButton.setBackgroundColor(Color.RED);
-                    }
+        int[] temp = Arrays.copyOfRange(moiDataArray, 128 * 37, moiDataArray.length);
+        double std = getStd(temp);
+        if ((std < bell_max)  && (fileKb > 100)){
+            if (NE_event == 0 && ne_event_lock == 0) {
+                vibe.vibrate(100000); //If NE event detected vibrate
+                music = sound.load(this, R.raw.sample, 1);
+                sound.play(music, 1, 1, 0, -1, 1);
+                sound.autoResume();
+                NE_event = 1; //Mark the event
+                NEventMarker = 1;
+                try {
+                    mFileManager.uploadFile();
+                    mFileManager.uploadMoFile();
+                    mFileManager.uploadLogFile();
+                } catch (Exception e) {
+                    Log.e(TAG, "Upload Failed");
+                    mFileManager.saveLogData("receivedData-NE", "Save failed");
                 }
+                mNow_state.setText("> 야뇨가 감지되었습니다");
+                mFileManager.saveLogData("receivedData", "NE Detected");
+                mNow_guide.setText("\n\n1. 알람을 끄기위해 화면 중앙에 위치한 '알람 끄기' 버튼을 눌러주세요\n\n2.아이를 화장실로 데려가 잔뇨를 볼 수 있도록 도와주세요");
+                mOffNeAlarmButton.setBackgroundColor(Color.RED);
             }
         }
+
+//        for (int i = 37; i < 40; i++) {
+//            int[] temp = Arrays.copyOfRange(moiDataArray, 128 * i, moiDataArray.length);
+//            double std = getStd(temp);
+//            if (std < bell_max) {
+//                if (NE_event == 0 && ne_event_lock == 0) {
+//                    vibe.vibrate(100000); //If NE event detected vibrate
+//                    music = sound.load(this, R.raw.sample, 1);
+//                    sound.play(music, 1, 1, 0, -1, 1);
+//                    sound.autoResume();
+//                    NE_event = 1; //Mark the event
+//                    NEventMarker = 1;
+//                    try {
+//                        mFileManager.uploadFile();
+//                        mFileManager.uploadMoFile();
+//                        mFileManager.uploadLogFile();
+//                    } catch (Exception e) {
+//                        Log.e(TAG, "Upload Failed");
+//                        mFileManager.saveLogData("receivedData-NE", "Save failed");
+//                    }
+//                    mNow_state.setText("> 야뇨가 감지되었습니다");
+//                    mFileManager.saveLogData("receivedData", "NE Detected");
+//                    mNow_guide.setText("\n\n1. 알람을 끄기위해 화면 중앙에 위치한 '알람 끄기' 버튼을 눌러주세요\n\n2.아이를 화장실로 데려가 잔뇨를 볼 수 있도록 도와주세요");
+//                    mOffNeAlarmButton.setBackgroundColor(Color.RED);
+//                }
+//
+//            }
+//            //Set Urine bell
+//            if (moiDataArray[128 * i] <= bell_max && moiDataArray[128 * i] >= bell_min) {
+//                if (moiDataArray[128 * i + 64] <= bell_max && moiDataArray[128 * i + 64] >= bell_min) { //Ring alert when moiData range is shorted
+//                    if (NE_event == 0 && ne_event_lock == 0) {
+//                        vibe.vibrate(100000); //If NE event detected vibrate
+//                        music = sound.load(this, R.raw.sample, 1);
+//                        sound.play(music, 1, 1, 0, -1, 1);
+//                        sound.autoResume();
+//                        NE_event = 1; //Mark the event
+//                        NEventMarker = 1;
+//                        try {
+//                            mFileManager.uploadFile();
+//                            mFileManager.uploadMoFile();
+//                            mFileManager.uploadLogFile();
+//                        } catch (Exception e) {
+//                            Log.e(TAG, "Upload Failed");
+//                            mFileManager.saveLogData("receivedData-NE", "Save failed");
+//                        }
+//                        mNow_state.setText("> 야뇨가 감지되었습니다");
+//                        mFileManager.saveLogData("receivedData", "NE Detected");
+//                        mNow_guide.setText("\n\n1. 알람을 끄기위해 화면 중앙에 위치한 '알람 끄기' 버튼을 눌러주세요\n\n2.아이를 화장실로 데려가 잔뇨를 볼 수 있도록 도와주세요");
+//                        mOffNeAlarmButton.setBackgroundColor(Color.RED);
+//                    }
+//                }
+//            }
+//        }
 
         //Detect qrs pulse
         QRSDetector2 qrsDetector = OSEAFactory.createQRSDetector2(sampleRate);
@@ -523,7 +573,6 @@ public class DeviceControlActivity extends Activity {
         }
         mFileManager.saveData(packet, NEventMarker, BiaMarker, Heartrate, Posture);
         NEventMarker = 0;
-        int fileKb = (int) (mFileManager.getFileSize() / 1000);
         mSaveView.setText((mfile_Num - 1) + "h" + mFileManager.getStorageTime());
 
         if ((mFileManager.getMinute() != minute_now) && ((mFileManager.getMinute() % 1) == 0)) {
@@ -531,6 +580,23 @@ public class DeviceControlActivity extends Activity {
             //music = sound.load(this, R.raw.sample, 1);
         }
 
+    }
+
+    private double getStd(int[] data) {
+        double sum = 0.0;
+        double temp = 0.0;
+        double mean;
+
+        for (double number : data) {
+            sum += number;
+        }
+        mean = sum / data.length;
+
+
+        for (double number : data) {
+            temp += (number - mean) * (number - mean);
+        }
+        return Math.sqrt(temp / (data.length - 1));
     }
 
     /**
@@ -618,8 +684,8 @@ public class DeviceControlActivity extends Activity {
         mdevicesetter.setter(mIndexId);
         patient_num = mdevicesetter.getPatientNum();
         deviceUUIDs = new String[]{mdevicesetter.getLeftNum(), mdevicesetter.getRightNum()};
-        bell_max = mdevicesetter.getAlarmThreshold() + 50;
-        bell_min = mdevicesetter.getAlarmThreshold() - 50;
+//        bell_max = mdevicesetter.getAlarmThreshold() + 50;
+//        bell_min = mdevicesetter.getAlarmThreshold() - 50;
         ActivityCompat.requestPermissions(DeviceControlActivity.this, STORAGE_PERMISSION, 1);
 
         mFileManager.createLogFile(patient_num, "init");

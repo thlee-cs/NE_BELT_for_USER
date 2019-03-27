@@ -67,8 +67,8 @@ public class DeviceSetter {
                 break;
             case "1E":
                 PatientNum = "11";
-                LeftNum = "E7:A8:E1:3C:33:66";
-                RightNum = "E1:BD:92:6C:32:E0";
+//                LeftNum = "E7:A8:E1:3C:33:66";
+//                RightNum = "E1:BD:92:6C:32:E0";
                 AlarmThreshold = 8180;
                 break;
             case "L":
@@ -78,14 +78,18 @@ public class DeviceSetter {
                 break;
             case "0D":
                 PatientNum = "13";
-                LeftNum = "DC:46:3B:61:67:15";
-                RightNum = "F7:65:AE:7D:81:7B";
+//                LeftNum = "DC:46:3B:61:67:15";
+//                RightNum = "F7:65:AE:7D:81:7B";
+                LeftNum = "E7:A8:E1:3C:33:66";
+                RightNum = "E1:BD:92:6C:32:E0";
                 AlarmThreshold = 8306;
                 break;
             case "0E":
                 PatientNum = "14";
-                LeftNum = "E7:E0:46:6C:C1:0F";
-                RightNum = "ED:FA:59:4C:73:0F";
+//                LeftNum = "E7:E0:46:6C:C1:0F";
+//                RightNum = "ED:FA:59:4C:73:0F";
+                LeftNum = "CA:2E:9A:CE:A8:03";
+                RightNum = "CC:70:FA:98:D4:54";
                 AlarmThreshold = 8160;
                 break;
             case "0F":
