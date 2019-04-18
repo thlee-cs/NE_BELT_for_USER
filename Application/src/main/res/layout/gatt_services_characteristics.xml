@@ -226,7 +226,7 @@
             android:layout_width="190dp"
             android:layout_height="wrap_content"
             android:layout_gravity="left"
-            android:text="측정 시작" />
+            android:text="측정 종료" />
 
         <Button
             android:id="@+id/ne_upload"

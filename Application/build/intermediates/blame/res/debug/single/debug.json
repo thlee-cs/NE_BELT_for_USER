@@ -308,12 +308,12 @@
         "source": "/Users/yeoplee/StudioProjects/NE_BELT_for_USER/Application/src/main/res/drawable/left_foot_off.png"
     },
     {
-        "merged": "/Users/yeoplee/StudioProjects/NE_BELT_for_USER/Application/build/intermediates/res/merged/debug/drawable_notification_bg.xml.flat",
-        "source": "/Users/yeoplee/.gradle/caches/transforms-1/files-1.1/appcompat-v7-25.2.0.aar/c216f857614dd914ba869162a43d9a8c/res/drawable/notification_bg.xml"
-    },
-    {
         "merged": "/Users/yeoplee/StudioProjects/NE_BELT_for_USER/Application/build/intermediates/res/merged/debug/drawable_ne_log.png.flat",
         "source": "/Users/yeoplee/StudioProjects/NE_BELT_for_USER/Application/src/main/res/drawable/ne_log.png"
+    },
+    {
+        "merged": "/Users/yeoplee/StudioProjects/NE_BELT_for_USER/Application/build/intermediates/res/merged/debug/drawable_notification_bg.xml.flat",
+        "source": "/Users/yeoplee/.gradle/caches/transforms-1/files-1.1/appcompat-v7-25.2.0.aar/c216f857614dd914ba869162a43d9a8c/res/drawable/notification_bg.xml"
     },
     {
         "merged": "/Users/yeoplee/StudioProjects/NE_BELT_for_USER/Application/build/intermediates/res/merged/debug/drawable-ldrtl-hdpi-v17_abc_spinner_mtrl_am_alpha.9.png.flat",
@@ -372,12 +372,12 @@
         "source": "/Users/yeoplee/.gradle/caches/transforms-1/files-1.1/appcompat-v7-25.2.0.aar/c216f857614dd914ba869162a43d9a8c/res/drawable-xhdpi-v4/abc_spinner_mtrl_am_alpha.9.png"
     },
     {
-        "merged": "/Users/yeoplee/StudioProjects/NE_BELT_for_USER/Application/build/intermediates/res/merged/debug/drawable-hdpi-v4_abc_scrubber_track_mtrl_alpha.9.png.flat",
-        "source": "/Users/yeoplee/.gradle/caches/transforms-1/files-1.1/appcompat-v7-25.2.0.aar/c216f857614dd914ba869162a43d9a8c/res/drawable-hdpi-v4/abc_scrubber_track_mtrl_alpha.9.png"
-    },
-    {
         "merged": "/Users/yeoplee/StudioProjects/NE_BELT_for_USER/Application/build/intermediates/res/merged/debug/drawable-hdpi_tile.9.png.flat",
         "source": "/Users/yeoplee/StudioProjects/NE_BELT_for_USER/Application/src/main/res/drawable-hdpi/tile.9.png"
+    },
+    {
+        "merged": "/Users/yeoplee/StudioProjects/NE_BELT_for_USER/Application/build/intermediates/res/merged/debug/drawable-hdpi-v4_abc_scrubber_track_mtrl_alpha.9.png.flat",
+        "source": "/Users/yeoplee/.gradle/caches/transforms-1/files-1.1/appcompat-v7-25.2.0.aar/c216f857614dd914ba869162a43d9a8c/res/drawable-hdpi-v4/abc_scrubber_track_mtrl_alpha.9.png"
     },
     {
         "merged": "/Users/yeoplee/StudioProjects/NE_BELT_for_USER/Application/build/intermediates/res/merged/debug/drawable-mdpi-v4_abc_textfield_search_activated_mtrl_alpha.9.png.flat",
@@ -412,12 +412,12 @@
         "source": "/Users/yeoplee/.gradle/caches/transforms-1/files-1.1/appcompat-v7-25.2.0.aar/c216f857614dd914ba869162a43d9a8c/res/drawable-hdpi-v4/abc_list_focused_holo.9.png"
     },
     {
-        "merged": "/Users/yeoplee/StudioProjects/NE_BELT_for_USER/Application/build/intermediates/res/merged/debug/drawable-xhdpi-v4_abc_textfield_activated_mtrl_alpha.9.png.flat",
-        "source": "/Users/yeoplee/.gradle/caches/transforms-1/files-1.1/appcompat-v7-25.2.0.aar/c216f857614dd914ba869162a43d9a8c/res/drawable-xhdpi-v4/abc_textfield_activated_mtrl_alpha.9.png"
-    },
-    {
         "merged": "/Users/yeoplee/StudioProjects/NE_BELT_for_USER/Application/build/intermediates/res/merged/debug/drawable-xhdpi-v4_abc_popup_background_mtrl_mult.9.png.flat",
         "source": "/Users/yeoplee/.gradle/caches/transforms-1/files-1.1/appcompat-v7-25.2.0.aar/c216f857614dd914ba869162a43d9a8c/res/drawable-xhdpi-v4/abc_popup_background_mtrl_mult.9.png"
+    },
+    {
+        "merged": "/Users/yeoplee/StudioProjects/NE_BELT_for_USER/Application/build/intermediates/res/merged/debug/drawable-xhdpi-v4_abc_textfield_activated_mtrl_alpha.9.png.flat",
+        "source": "/Users/yeoplee/.gradle/caches/transforms-1/files-1.1/appcompat-v7-25.2.0.aar/c216f857614dd914ba869162a43d9a8c/res/drawable-xhdpi-v4/abc_textfield_activated_mtrl_alpha.9.png"
     },
     {
         "merged": "/Users/yeoplee/StudioProjects/NE_BELT_for_USER/Application/build/intermediates/res/merged/debug/drawable-xxhdpi-v4_abc_ic_menu_selectall_mtrl_alpha.png.flat",
@@ -488,12 +488,12 @@
         "source": "/Users/yeoplee/.gradle/caches/transforms-1/files-1.1/appcompat-v7-25.2.0.aar/c216f857614dd914ba869162a43d9a8c/res/color/abc_secondary_text_material_dark.xml"
     },
     {
-        "merged": "/Users/yeoplee/StudioProjects/NE_BELT_for_USER/Application/build/intermediates/res/merged/debug/drawable-hdpi-v4_abc_ic_star_black_36dp.png.flat",
-        "source": "/Users/yeoplee/.gradle/caches/transforms-1/files-1.1/appcompat-v7-25.2.0.aar/c216f857614dd914ba869162a43d9a8c/res/drawable-hdpi-v4/abc_ic_star_black_36dp.png"
-    },
-    {
         "merged": "/Users/yeoplee/StudioProjects/NE_BELT_for_USER/Application/build/intermediates/res/merged/debug/drawable_abc_vector_test.xml.flat",
         "source": "/Users/yeoplee/.gradle/caches/transforms-1/files-1.1/appcompat-v7-25.2.0.aar/c216f857614dd914ba869162a43d9a8c/res/drawable/abc_vector_test.xml"
+    },
+    {
+        "merged": "/Users/yeoplee/StudioProjects/NE_BELT_for_USER/Application/build/intermediates/res/merged/debug/drawable-hdpi-v4_abc_ic_star_black_36dp.png.flat",
+        "source": "/Users/yeoplee/.gradle/caches/transforms-1/files-1.1/appcompat-v7-25.2.0.aar/c216f857614dd914ba869162a43d9a8c/res/drawable-hdpi-v4/abc_ic_star_black_36dp.png"
     },
     {
         "merged": "/Users/yeoplee/StudioProjects/NE_BELT_for_USER/Application/build/intermediates/res/merged/debug/drawable-mdpi-v4_abc_text_select_handle_right_mtrl_light.png.flat",
@@ -544,32 +544,32 @@
         "source": "/Users/yeoplee/.gradle/caches/transforms-1/files-1.1/appcompat-v7-25.2.0.aar/c216f857614dd914ba869162a43d9a8c/res/drawable/abc_btn_colored_material.xml"
     },
     {
-        "merged": "/Users/yeoplee/StudioProjects/NE_BELT_for_USER/Application/build/intermediates/res/merged/debug/drawable-hdpi-v4_abc_tab_indicator_mtrl_alpha.9.png.flat",
-        "source": "/Users/yeoplee/.gradle/caches/transforms-1/files-1.1/appcompat-v7-25.2.0.aar/c216f857614dd914ba869162a43d9a8c/res/drawable-hdpi-v4/abc_tab_indicator_mtrl_alpha.9.png"
-    },
-    {
         "merged": "/Users/yeoplee/StudioProjects/NE_BELT_for_USER/Application/build/intermediates/res/merged/debug/drawable-hdpi-v4_abc_btn_switch_to_on_mtrl_00012.9.png.flat",
         "source": "/Users/yeoplee/.gradle/caches/transforms-1/files-1.1/appcompat-v7-25.2.0.aar/c216f857614dd914ba869162a43d9a8c/res/drawable-hdpi-v4/abc_btn_switch_to_on_mtrl_00012.9.png"
     },
     {
-        "merged": "/Users/yeoplee/StudioProjects/NE_BELT_for_USER/Application/build/intermediates/res/merged/debug/drawable_abc_seekbar_tick_mark_material.xml.flat",
-        "source": "/Users/yeoplee/.gradle/caches/transforms-1/files-1.1/appcompat-v7-25.2.0.aar/c216f857614dd914ba869162a43d9a8c/res/drawable/abc_seekbar_tick_mark_material.xml"
+        "merged": "/Users/yeoplee/StudioProjects/NE_BELT_for_USER/Application/build/intermediates/res/merged/debug/drawable-hdpi-v4_abc_tab_indicator_mtrl_alpha.9.png.flat",
+        "source": "/Users/yeoplee/.gradle/caches/transforms-1/files-1.1/appcompat-v7-25.2.0.aar/c216f857614dd914ba869162a43d9a8c/res/drawable-hdpi-v4/abc_tab_indicator_mtrl_alpha.9.png"
     },
     {
         "merged": "/Users/yeoplee/StudioProjects/NE_BELT_for_USER/Application/build/intermediates/res/merged/debug/anim_abc_slide_out_bottom.xml.flat",
         "source": "/Users/yeoplee/.gradle/caches/transforms-1/files-1.1/appcompat-v7-25.2.0.aar/c216f857614dd914ba869162a43d9a8c/res/anim/abc_slide_out_bottom.xml"
     },
     {
+        "merged": "/Users/yeoplee/StudioProjects/NE_BELT_for_USER/Application/build/intermediates/res/merged/debug/drawable_abc_seekbar_tick_mark_material.xml.flat",
+        "source": "/Users/yeoplee/.gradle/caches/transforms-1/files-1.1/appcompat-v7-25.2.0.aar/c216f857614dd914ba869162a43d9a8c/res/drawable/abc_seekbar_tick_mark_material.xml"
+    },
+    {
         "merged": "/Users/yeoplee/StudioProjects/NE_BELT_for_USER/Application/build/intermediates/res/merged/debug/layout_abc_select_dialog_material.xml.flat",
         "source": "/Users/yeoplee/.gradle/caches/transforms-1/files-1.1/appcompat-v7-25.2.0.aar/c216f857614dd914ba869162a43d9a8c/res/layout/abc_select_dialog_material.xml"
     },
     {
-        "merged": "/Users/yeoplee/StudioProjects/NE_BELT_for_USER/Application/build/intermediates/res/merged/debug/drawable-xxxhdpi-v4_abc_ic_menu_paste_mtrl_am_alpha.png.flat",
-        "source": "/Users/yeoplee/.gradle/caches/transforms-1/files-1.1/appcompat-v7-25.2.0.aar/c216f857614dd914ba869162a43d9a8c/res/drawable-xxxhdpi-v4/abc_ic_menu_paste_mtrl_am_alpha.png"
-    },
-    {
         "merged": "/Users/yeoplee/StudioProjects/NE_BELT_for_USER/Application/build/intermediates/res/merged/debug/layout_notification_template_media.xml.flat",
         "source": "/Users/yeoplee/.gradle/caches/transforms-1/files-1.1/appcompat-v7-25.2.0.aar/c216f857614dd914ba869162a43d9a8c/res/layout/notification_template_media.xml"
+    },
+    {
+        "merged": "/Users/yeoplee/StudioProjects/NE_BELT_for_USER/Application/build/intermediates/res/merged/debug/drawable-xxxhdpi-v4_abc_ic_menu_paste_mtrl_am_alpha.png.flat",
+        "source": "/Users/yeoplee/.gradle/caches/transforms-1/files-1.1/appcompat-v7-25.2.0.aar/c216f857614dd914ba869162a43d9a8c/res/drawable-xxxhdpi-v4/abc_ic_menu_paste_mtrl_am_alpha.png"
     },
     {
         "merged": "/Users/yeoplee/StudioProjects/NE_BELT_for_USER/Application/build/intermediates/res/merged/debug/drawable_abc_ic_go_search_api_material.xml.flat",
@@ -616,16 +616,16 @@
         "source": "/Users/yeoplee/.gradle/caches/transforms-1/files-1.1/appcompat-v7-25.2.0.aar/c216f857614dd914ba869162a43d9a8c/res/anim/abc_popup_exit.xml"
     },
     {
-        "merged": "/Users/yeoplee/StudioProjects/NE_BELT_for_USER/Application/build/intermediates/res/merged/debug/drawable-xhdpi-v4_abc_list_focused_holo.9.png.flat",
-        "source": "/Users/yeoplee/.gradle/caches/transforms-1/files-1.1/appcompat-v7-25.2.0.aar/c216f857614dd914ba869162a43d9a8c/res/drawable-xhdpi-v4/abc_list_focused_holo.9.png"
+        "merged": "/Users/yeoplee/StudioProjects/NE_BELT_for_USER/Application/build/intermediates/res/merged/debug/drawable-xhdpi-v4_abc_btn_check_to_on_mtrl_000.png.flat",
+        "source": "/Users/yeoplee/.gradle/caches/transforms-1/files-1.1/appcompat-v7-25.2.0.aar/c216f857614dd914ba869162a43d9a8c/res/drawable-xhdpi-v4/abc_btn_check_to_on_mtrl_000.png"
     },
     {
         "merged": "/Users/yeoplee/StudioProjects/NE_BELT_for_USER/Application/build/intermediates/res/merged/debug/drawable-mdpi-v4_abc_scrubber_control_to_pressed_mtrl_005.png.flat",
         "source": "/Users/yeoplee/.gradle/caches/transforms-1/files-1.1/appcompat-v7-25.2.0.aar/c216f857614dd914ba869162a43d9a8c/res/drawable-mdpi-v4/abc_scrubber_control_to_pressed_mtrl_005.png"
     },
     {
-        "merged": "/Users/yeoplee/StudioProjects/NE_BELT_for_USER/Application/build/intermediates/res/merged/debug/drawable-xhdpi-v4_abc_btn_check_to_on_mtrl_000.png.flat",
-        "source": "/Users/yeoplee/.gradle/caches/transforms-1/files-1.1/appcompat-v7-25.2.0.aar/c216f857614dd914ba869162a43d9a8c/res/drawable-xhdpi-v4/abc_btn_check_to_on_mtrl_000.png"
+        "merged": "/Users/yeoplee/StudioProjects/NE_BELT_for_USER/Application/build/intermediates/res/merged/debug/drawable-xhdpi-v4_abc_list_focused_holo.9.png.flat",
+        "source": "/Users/yeoplee/.gradle/caches/transforms-1/files-1.1/appcompat-v7-25.2.0.aar/c216f857614dd914ba869162a43d9a8c/res/drawable-xhdpi-v4/abc_list_focused_holo.9.png"
     },
     {
         "merged": "/Users/yeoplee/StudioProjects/NE_BELT_for_USER/Application/build/intermediates/res/merged/debug/drawable-hdpi-v4_abc_btn_switch_to_on_mtrl_00001.9.png.flat",
@@ -680,12 +680,12 @@
         "source": "/Users/yeoplee/.gradle/caches/transforms-1/files-1.1/appcompat-v7-25.2.0.aar/c216f857614dd914ba869162a43d9a8c/res/drawable-mdpi-v4/abc_textfield_search_default_mtrl_alpha.9.png"
     },
     {
-        "merged": "/Users/yeoplee/StudioProjects/NE_BELT_for_USER/Application/build/intermediates/res/merged/debug/drawable_abc_text_cursor_material.xml.flat",
-        "source": "/Users/yeoplee/.gradle/caches/transforms-1/files-1.1/appcompat-v7-25.2.0.aar/c216f857614dd914ba869162a43d9a8c/res/drawable/abc_text_cursor_material.xml"
-    },
-    {
         "merged": "/Users/yeoplee/StudioProjects/NE_BELT_for_USER/Application/build/intermediates/res/merged/debug/drawable_abc_seekbar_thumb_material.xml.flat",
         "source": "/Users/yeoplee/.gradle/caches/transforms-1/files-1.1/appcompat-v7-25.2.0.aar/c216f857614dd914ba869162a43d9a8c/res/drawable/abc_seekbar_thumb_material.xml"
+    },
+    {
+        "merged": "/Users/yeoplee/StudioProjects/NE_BELT_for_USER/Application/build/intermediates/res/merged/debug/drawable_abc_text_cursor_material.xml.flat",
+        "source": "/Users/yeoplee/.gradle/caches/transforms-1/files-1.1/appcompat-v7-25.2.0.aar/c216f857614dd914ba869162a43d9a8c/res/drawable/abc_text_cursor_material.xml"
     },
     {
         "merged": "/Users/yeoplee/StudioProjects/NE_BELT_for_USER/Application/build/intermediates/res/merged/debug/drawable-hdpi-v4_abc_spinner_mtrl_am_alpha.9.png.flat",

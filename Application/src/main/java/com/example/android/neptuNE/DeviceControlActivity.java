@@ -86,7 +86,7 @@ public class DeviceControlActivity extends Activity {
     int sampleRate = 256;
     private boolean isCommunicated = false;
 
-    String version_num = "  v1.64";
+    String version_num = "  v1.67";
     String patient_num = null;
 
     public static final String EXTRAS_DEVICE_NAME = "NE_BELT";
@@ -309,23 +309,40 @@ public class DeviceControlActivity extends Activity {
 
     private long oneTimePressed;
     private long twicePressed;
+
     Button.OnClickListener mClickListener = new View.OnClickListener() {
         @Override
         public void onClick(View v) {
             switch (v.getId()) { // 아이템의 ID로 식별함
                 case R.id.start_button: // Start버튼이 눌리면, 기기로부터 얻
-                    Log.d(TAG, "start");
-                    start_sequence();
-                    if (deviceUUIDs[0] != null) {
-                        SystemClock.sleep(1000);
-                        connectToMetawear(deviceUUIDs[0]);
-                        SystemClock.sleep(1000);
-                        connectToMetawear(deviceUUIDs[1]);
+                    if (System.currentTimeMillis() - backPressed < 5000) {
+                        backtwicePressed = System.currentTimeMillis();
+                        if (System.currentTimeMillis() - backtwicePressed < 5000) {
+                            backthirdPressed = System.currentTimeMillis();
+                            Log.d(TAG, "Upload start");
+                            upload();
+                            if (System.currentTimeMillis() - backthirdPressed < 5000) {
+                                setResult(RESULT_OK, null);
+                                finish();
+                            }
+                        }
                     }
-                    if (start_button_counter == 0) {
-                        Toast.makeText(getApplicationContext(), "시작 버튼이 눌렸어요", Toast.LENGTH_LONG).show();
-                        start_button_counter = 1;
-                    }
+
+                    Toast.makeText(DeviceControlActivity.this, "5초 이내에 3번 클릭하시면 앱이 종료됩니다.", Toast.LENGTH_SHORT).show();
+                    backPressed = System.currentTimeMillis();
+                    vibe.vibrate(40);
+//                    Log.d(TAG, "start");
+//                    start_sequence();
+//                    if (deviceUUIDs[0] != null) {
+//                        SystemClock.sleep(1000);
+//                        connectToMetawear(deviceUUIDs[0]);
+//                        SystemClock.sleep(1000);
+//                        connectToMetawear(deviceUUIDs[1]);
+//                    }
+//                    if (start_button_counter == 0) {
+//                        Toast.makeText(getApplicationContext(), "시작 버튼이 눌렸어요", Toast.LENGTH_LONG).show();
+//                        start_button_counter = 1;
+//                    }
                     break;
 
                 case R.id.ne_upload:
@@ -452,10 +469,18 @@ public class DeviceControlActivity extends Activity {
             }
         }
 
-        //알람이 울림 128*2*20
-        int[] temp = Arrays.copyOfRange(moiDataArray, 128 * 37, moiDataArray.length);
-        double std = getStd(temp);
-        if ((std < bell_max)  && (fileKb > 100)){
+        int tempCounter = 0;
+        if (moiDataArray.length > (15 * 256)) { //mainly moiDataArray.length = 256 * 20
+            for (int i = moiDataArray.length; i > (5 * 256); i = i - (3 * 128)) {
+                int[] tempMoi = Arrays.copyOfRange(moiDataArray, i - (3 * 128), i);
+//                double tempMean = getMean(tempMoi);
+                double tempStd = getStd(tempMoi);
+                if ((tempStd < bell_max) && (fileKb > 100)) {//&& tempMean > 8000 && tempMean < 8500
+                    tempCounter += 1;
+                }
+            }
+        }
+        if (tempCounter > 8) {
             if (NE_event == 0 && ne_event_lock == 0) {
                 vibe.vibrate(100000); //If NE event detected vibrate
                 music = sound.load(this, R.raw.sample, 1);
@@ -476,7 +501,38 @@ public class DeviceControlActivity extends Activity {
                 mNow_guide.setText("\n\n1. 알람을 끄기위해 화면 중앙에 위치한 '알람 끄기' 버튼을 눌러주세요\n\n2.아이를 화장실로 데려가 잔뇨를 볼 수 있도록 도와주세요");
                 mOffNeAlarmButton.setBackgroundColor(Color.RED);
             }
+
         }
+
+//        //알람이 울림 128*2*20
+//        int[] temp1 = Arrays.copyOfRange(moiDataArray, 128 * 34, 128 * 37);
+//        int[] temp2 = Arrays.copyOfRange(moiDataArray, 128 * 37, moiDataArray.length);
+//        double std1 = getStd(temp1);
+//        double std2 = getStd(temp2);
+//        if ((std1 < bell_max) && (fileKb > 100)) {
+//            if (std2 < bell_max) {
+//                if (NE_event == 0 && ne_event_lock == 0) {
+//                    vibe.vibrate(100000); //If NE event detected vibrate
+//                    music = sound.load(this, R.raw.sample, 1);
+//                    sound.play(music, 1, 1, 0, -1, 1);
+//                    sound.autoResume();
+//                    NE_event = 1; //Mark the event
+//                    NEventMarker = 1;
+//                    try {
+//                        mFileManager.uploadFile();
+//                        mFileManager.uploadMoFile();
+//                        mFileManager.uploadLogFile();
+//                    } catch (Exception e) {
+//                        Log.e(TAG, "Upload Failed");
+//                        mFileManager.saveLogData("receivedData-NE", "Save failed");
+//                    }
+//                    mNow_state.setText("> 야뇨가 감지되었습니다");
+//                    mFileManager.saveLogData("receivedData", "NE Detected");
+//                    mNow_guide.setText("\n\n1. 알람을 끄기위해 화면 중앙에 위치한 '알람 끄기' 버튼을 눌러주세요\n\n2.아이를 화장실로 데려가 잔뇨를 볼 수 있도록 도와주세요");
+//                    mOffNeAlarmButton.setBackgroundColor(Color.RED);
+//                }
+//            }
+//        }
 
 //        for (int i = 37; i < 40; i++) {
 //            int[] temp = Arrays.copyOfRange(moiDataArray, 128 * i, moiDataArray.length);
@@ -504,6 +560,7 @@ public class DeviceControlActivity extends Activity {
 //                }
 //
 //            }
+
 //            //Set Urine bell
 //            if (moiDataArray[128 * i] <= bell_max && moiDataArray[128 * i] >= bell_min) {
 //                if (moiDataArray[128 * i + 64] <= bell_max && moiDataArray[128 * i + 64] >= bell_min) { //Ring alert when moiData range is shorted
@@ -597,6 +654,17 @@ public class DeviceControlActivity extends Activity {
             temp += (number - mean) * (number - mean);
         }
         return Math.sqrt(temp / (data.length - 1));
+    }
+
+    private double getMean(int[] data) {
+        double sum = 0.0;
+        double temp = 0.0;
+        double mean;
+
+        for (double number : data) {
+            sum += number;
+        }
+        return sum / data.length;
     }
 
     /**
@@ -716,7 +784,7 @@ public class DeviceControlActivity extends Activity {
         mSaveView = (TextView) findViewById(R.id.start_time_count);
         mNow_state = (TextView) findViewById(R.id.now_state);
         mNow_guide = (TextView) findViewById(R.id.now_guide);
-        getActionBar().setTitle("NETcher" + version_num);
+        getActionBar().setTitle("NETcher - 우리 아이 야뇨 측정");//+ version_num
         getActionBar().setDisplayHomeAsUpEnabled(true);
 
         Intent gattServiceIntent = new Intent(this, BluetoothLeService.class);
@@ -798,27 +866,34 @@ public class DeviceControlActivity extends Activity {
     @Override
     protected void onDestroy() {
         super.onDestroy();
-        mFileManager.saveLogData("ondestroy", "end");
-
-        stopAccelerometer(deviceUUIDs[0]);
-        stopAccelerometer(deviceUUIDs[1]);
-        stopGyro(deviceUUIDs[0]);
-        stopGyro(deviceUUIDs[1]);
-
-        //Unbind BLE intent
-        unregisterReceiver(mGattUpdateReceiver);
-        unbindService(mServiceConnection);
-
-        //Disable bluetooth
-        BluetoothAdapter mBluetoothAdapter = BluetoothAdapter.getDefaultAdapter();
-        if (mBluetoothAdapter.isEnabled()) {
-            mBluetoothAdapter.disable();
-        }
         //Stop Handler
         try {
-            mRotationHandler.removeCallbacks(biaONrotationMethod);
-            mRotationHandler.removeCallbacks(biaOFFrotationMethod);
-            startSeqHandler.removeCallbacks(reconnectMethod);
+            mFileManager.saveLogData("ondestroy", "end");
+
+            stopAccelerometer(deviceUUIDs[0]);
+            stopAccelerometer(deviceUUIDs[1]);
+            stopGyro(deviceUUIDs[0]);
+            stopGyro(deviceUUIDs[1]);
+
+            //Unbind BLE intent
+            unregisterReceiver(mGattUpdateReceiver);
+            unbindService(mServiceConnection);
+
+            //Disable bluetooth
+            BluetoothAdapter mBluetoothAdapter = BluetoothAdapter.getDefaultAdapter();
+            if (mBluetoothAdapter.isEnabled()) {
+                mBluetoothAdapter.disable();
+            }
+            if (biaMethodFlag == 1) {
+                mRotationHandler.removeCallbacks(biaONrotationMethod);
+            } else if (biaMethodFlag == -1) {
+                mRotationHandler.removeCallbacks(biaOFFrotationMethod);
+            }
+            if (recMethodFlag == 1) {
+                startSeqHandler.removeCallbacks(reconnectMethod);
+            } else if (recMethodFlag == -1) {
+                startSeqHandler.removeCallbacks(startMethod);
+            }
         } catch (Exception e) {
 
         }
@@ -854,7 +929,7 @@ public class DeviceControlActivity extends Activity {
             menu.findItem(R.id.menu_disconnect).setVisible(true);
             Toast.makeText(getApplicationContext(), "기기와 연결에 성공", Toast.LENGTH_LONG).show();
             mNow_state.setText("> 기기와 연결됨");
-            mNow_guide.setText("\n\n1. 좌측 상단의 '측정시작' 버튼을 눌러주세요\n\n*매일 취침 전 야뇨 경보기 배터리 교체를 권장합니다");
+            mNow_guide.setText("\n\n1. 측정이 시작될 때까지 기다려주세요\n\n*매일 취침 전 야뇨 경보기 배터리 교체를 권장합니다");
             start_state = 1;
         } else {
             menu.findItem(R.id.menu_connect).setVisible(true);
@@ -873,6 +948,7 @@ public class DeviceControlActivity extends Activity {
 
     private long backPressed;
     private long backtwicePressed;
+    private long backthirdPressed;
 
     @Override
     public void onBackPressed() {
@@ -880,13 +956,16 @@ public class DeviceControlActivity extends Activity {
             backtwicePressed = System.currentTimeMillis();
 //            Toast.makeText(getApplicationContext(), "한번 더 누르시면 앱이 종료됩니다.", Toast.LENGTH_SHORT).show();
             if (System.currentTimeMillis() - backtwicePressed < 5000) {
+                backthirdPressed = System.currentTimeMillis();
                 Log.d(TAG, "Upload start");
                 upload();
 //                final Intent intent = new Intent(DeviceControlActivity.this, DeviceScanActivity.class);
 //                intent.putExtra(DeviceScanActivity.OFFMSG, "YES");
 //                startActivity(intent);
-                setResult(RESULT_OK, null);
-                finish();
+                if (System.currentTimeMillis() - backthirdPressed < 5000) {
+                    setResult(RESULT_OK, null);
+                    finish();
+                }
             }
         }
         Toast.makeText(DeviceControlActivity.this, "5초 이내에 3번 클릭하시면 앱이 종료됩니다.", Toast.LENGTH_SHORT).show();
@@ -917,8 +996,10 @@ public class DeviceControlActivity extends Activity {
     /**
      * BIA interval을 하기 위한 메서드
      */
+    private int biaMethodFlag = 0;
     private Runnable biaOFFrotationMethod = new Runnable() {
         public void run() {
+            biaMethodFlag = -1;
             request_bia_off();
             SystemClock.sleep(100);
             request_ecg_ctrl((byte) gain_st);
@@ -926,18 +1007,22 @@ public class DeviceControlActivity extends Activity {
             mRotationHandler.postDelayed(biaONrotationMethod, 26000);
         }
     };
-    private Runnable biaONrotationMethod = new Runnable() {
-        public void run() {
-            request_bia_on();
-            SystemClock.sleep(100);
-            request_ecg_ctrl((byte) gain_ed);
-            SystemClock.sleep(100);
-            mRotationHandler.postDelayed(biaOFFrotationMethod, 4000);
-        }
-    };
+    private Runnable biaONrotationMethod = new
+            Runnable() {
+                public void run() {
+                    biaMethodFlag = 1;
+                    request_bia_on();
+                    SystemClock.sleep(100);
+                    request_ecg_ctrl((byte) gain_ed);
+                    SystemClock.sleep(100);
+                    mRotationHandler.postDelayed(biaOFFrotationMethod, 4000);
+                }
+            };
 
+    private int recMethodFlag = 0;
     private Runnable startMethod = new Runnable() {
         public void run() {
+            recMethodFlag = -1;
             SystemClock.sleep(100);
             start_sequence();
             SystemClock.sleep(100);
@@ -952,12 +1037,14 @@ public class DeviceControlActivity extends Activity {
                 mBluetoothLeService.connect(mDeviceAddress);
                 mBluetoothLeService.connect(mDeviceAddress);
                 SystemClock.sleep(100);
+
             }
         }
     };
 
     private Runnable reconnectMethod = new Runnable() {
         public void run() {
+            recMethodFlag = 1;
             if (LastSeqNum != NowSeqNum) {
                 LastSeqNum = NowSeqNum;
                 SeqCounter = 0;
@@ -1004,7 +1091,7 @@ public class DeviceControlActivity extends Activity {
                 mFileManager.saveLogData("reconnectMethod", "Uploading data before disconnected");
                 upload();
             }
-            if (SeqCounter == 5) {
+            if (SeqCounter == 15) {
                 mFileManager.saveLogData("reconnectMethod", "Uploading data when NO seq in 72sec");
                 upload();
             }
