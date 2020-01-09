@@ -110,6 +110,9 @@ public class DeviceControlActivity extends Activity {
     private int reconnect_call = 1000;
 
     public int SeqCounter = 0;
+    public int IntervalCounter = 0;
+    public int IntervalIndex = -1;
+    public int IntervalBuf = 0;
     public int SeqLossThreshold = 8;
 
     public int LastSeqNum = -2;
@@ -132,8 +135,8 @@ public class DeviceControlActivity extends Activity {
 
     private TextView mTextView_Leftfoot;
     private TextView mTextView_Rightfoot;
-
     private Handler mUpdateDataHandler;
+
     private Handler mRotationHandler;
     private Handler startSeqHandler;
 
@@ -470,17 +473,21 @@ public class DeviceControlActivity extends Activity {
         }
 
         int tempCounter = 0;
+        int tempMeanCounter = 0;
         if (moiDataArray.length > (15 * 256)) { //mainly moiDataArray.length = 256 * 20
             for (int i = moiDataArray.length; i > (5 * 256); i = i - (3 * 128)) {
                 int[] tempMoi = Arrays.copyOfRange(moiDataArray, i - (3 * 128), i);
-//                double tempMean = getMean(tempMoi);
+                double tempMean = getMean(tempMoi);
                 double tempStd = getStd(tempMoi);
                 if ((tempStd < bell_max) && (fileKb > 100)) {//&& tempMean > 8000 && tempMean < 8500
+                    if (tempMean > 8000 && tempMean < 8500){
+                        tempMeanCounter += 1;
+                    }
                     tempCounter += 1;
                 }
             }
         }
-        if (tempCounter > 8) {
+        if ( tempCounter > 8) {// && tempMeanCounter > 2
             if (NE_event == 0 && ne_event_lock == 0) {
                 vibe.vibrate(100000); //If NE event detected vibrate
                 music = sound.load(this, R.raw.sample, 1);
@@ -501,7 +508,6 @@ public class DeviceControlActivity extends Activity {
                 mNow_guide.setText("\n\n1. 알람을 끄기위해 화면 중앙에 위치한 '알람 끄기' 버튼을 눌러주세요\n\n2.아이를 화장실로 데려가 잔뇨를 볼 수 있도록 도와주세요");
                 mOffNeAlarmButton.setBackgroundColor(Color.RED);
             }
-
         }
 
 //        //알람이 울림 128*2*20
@@ -561,32 +567,33 @@ public class DeviceControlActivity extends Activity {
 //
 //            }
 
-//            //Set Urine bell
-//            if (moiDataArray[128 * i] <= bell_max && moiDataArray[128 * i] >= bell_min) {
-//                if (moiDataArray[128 * i + 64] <= bell_max && moiDataArray[128 * i + 64] >= bell_min) { //Ring alert when moiData range is shorted
-//                    if (NE_event == 0 && ne_event_lock == 0) {
-//                        vibe.vibrate(100000); //If NE event detected vibrate
-//                        music = sound.load(this, R.raw.sample, 1);
-//                        sound.play(music, 1, 1, 0, -1, 1);
-//                        sound.autoResume();
-//                        NE_event = 1; //Mark the event
-//                        NEventMarker = 1;
-//                        try {
-//                            mFileManager.uploadFile();
-//                            mFileManager.uploadMoFile();
-//                            mFileManager.uploadLogFile();
-//                        } catch (Exception e) {
-//                            Log.e(TAG, "Upload Failed");
-//                            mFileManager.saveLogData("receivedData-NE", "Save failed");
-//                        }
-//                        mNow_state.setText("> 야뇨가 감지되었습니다");
-//                        mFileManager.saveLogData("receivedData", "NE Detected");
-//                        mNow_guide.setText("\n\n1. 알람을 끄기위해 화면 중앙에 위치한 '알람 끄기' 버튼을 눌러주세요\n\n2.아이를 화장실로 데려가 잔뇨를 볼 수 있도록 도와주세요");
-//                        mOffNeAlarmButton.setBackgroundColor(Color.RED);
-//                    }
-//                }
-//            }
-//        }
+            //Set Urine bell
+        for (int i = 37; i < 40; i++) {
+            if (moiDataArray[128 * i] <= bell_max && moiDataArray[128 * i] >= bell_min) {
+                if (moiDataArray[128 * i + 64] <= bell_max && moiDataArray[128 * i + 64] >= bell_min) { //Ring alert when moiData range is shorted
+                    if (NE_event == 0 && ne_event_lock == 0) {
+                        vibe.vibrate(100000); //If NE event detected vibrate
+                        music = sound.load(this, R.raw.sample, 1);
+                        sound.play(music, 1, 1, 0, -1, 1);
+                        sound.autoResume();
+                        NE_event = 1; //Mark the event
+                        NEventMarker = 1;
+                        try {
+                            mFileManager.uploadFile();
+                            mFileManager.uploadMoFile();
+                            mFileManager.uploadLogFile();
+                        } catch (Exception e) {
+                            Log.e(TAG, "Upload Failed");
+                            mFileManager.saveLogData("receivedData-NE", "Save failed");
+                        }
+                        mNow_state.setText("> 야뇨가 감지되었습니다");
+                        mFileManager.saveLogData("receivedData", "NE Detected");
+                        mNow_guide.setText("\n\n1. 알람을 끄기위해 화면 중앙에 위치한 '알람 끄기' 버튼을 눌러주세요\n\n2.아이를 화장실로 데려가 잔뇨를 볼 수 있도록 도와주세요");
+                        mOffNeAlarmButton.setBackgroundColor(Color.RED);
+                    }
+                }
+            }
+        }
 
         //Detect qrs pulse
         QRSDetector2 qrsDetector = OSEAFactory.createQRSDetector2(sampleRate);
@@ -1004,7 +1011,9 @@ public class DeviceControlActivity extends Activity {
             SystemClock.sleep(100);
             request_ecg_ctrl((byte) gain_st);
             SystemClock.sleep(100);
-            mRotationHandler.postDelayed(biaONrotationMethod, 26000);
+            mFileManager.saveLogData("BIA on/off", "BIA OFF");
+            mRotationHandler.postDelayed(biaONrotationMethod, 15000);//26000
+            IntervalIndex = 0;
         }
     };
     private Runnable biaONrotationMethod = new
@@ -1015,7 +1024,9 @@ public class DeviceControlActivity extends Activity {
                     SystemClock.sleep(100);
                     request_ecg_ctrl((byte) gain_ed);
                     SystemClock.sleep(100);
-                    mRotationHandler.postDelayed(biaOFFrotationMethod, 4000);
+                    mFileManager.saveLogData("BIA on/off", "BIA ON");
+                    mRotationHandler.postDelayed(biaOFFrotationMethod, 15000);//4000
+                    IntervalIndex = 1;
                 }
             };
 
@@ -1044,6 +1055,33 @@ public class DeviceControlActivity extends Activity {
 
     private Runnable reconnectMethod = new Runnable() {
         public void run() {
+            if (IntervalIndex != IntervalBuf){
+                IntervalBuf = IntervalIndex;
+                IntervalCounter = 0;
+            }else{
+                IntervalCounter += 1;
+                mFileManager.saveLogData("reconnectMethod", "Interval counting,"+String.valueOf(IntervalCounter));
+            }
+
+            if (IntervalCounter > 30){
+                mFileManager.saveLogData("reconnectMethod", "Interval does not working, counter#:"+String.valueOf(IntervalCounter));
+                try{
+                    if (biaMethodFlag == 1) {
+                        mRotationHandler.removeCallbacks(biaONrotationMethod);
+                        mFileManager.saveLogData("reconnectMethod", "Shut the Bia ON method");
+                    } else if (biaMethodFlag == -1) {
+                        mRotationHandler.removeCallbacks(biaOFFrotationMethod);
+                        mFileManager.saveLogData("reconnectMethod", "Shut the Bia OFF method");
+                    }
+                    mRotationHandler.postDelayed(biaONrotationMethod, 0);
+                    mFileManager.saveLogData("reconnectMethod", "Turn ON BIA thread");
+                    IntervalCounter = 0;
+                }catch (Exception e) {
+                    mFileManager.saveLogData("reconnectMethod", "Failed to shut the BIA on/off thread");
+                }
+
+            }
+
             recMethodFlag = 1;
             if (LastSeqNum != NowSeqNum) {
                 LastSeqNum = NowSeqNum;
@@ -1075,6 +1113,8 @@ public class DeviceControlActivity extends Activity {
             } else {
                 startSeqHandler.postDelayed(reconnectMethod, 3000);
             }
+
+
 
 //            if (mMetaWearConnected == false) {
 //                mFileManager.saveLogData("MetaWear", "Try reconnect");
